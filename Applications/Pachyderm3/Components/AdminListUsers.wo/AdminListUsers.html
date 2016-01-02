@@ -1,0 +1,43 @@
+<wo:switch WOComponentName="[pageWrapperName]" 
+                      css1="style/pachyderm.css">
+
+<h2>List of Pachyderm Authoring Accounts [Administrator]</h2>
+
+<wo:if condition="[message]"><p style="color:red"><wo:string value="[message]" escapeHTML="FALSE"/></p>
+                    <wo:else><p style="color:green">REMEMBER to "Save" to record any changes.</p></wo:else></wo:if>
+
+<wo:form multipleSubmit="TRUE">
+  <p style="text-align:right"><wo:submit action="[cancelAction]" value=" Admin Home " class="blok tint edge"/>&nbsp;&nbsp;&nbsp;
+                              <wo:submit action="[submitAction]" value="Save Changes" class="blok tint edge"/>&nbsp;&nbsp;&nbsp;</p>
+
+<h3>There <wo:MessageFormatter value="{0,choice,1#is one account|2≤are {0,number,integer} accounts}" 
+                              param0="[people.count]"/>
+    <wo:if condition="[loggedInPerson.isMrBig]" negate="TRUE"> (including SuperAdmin not shown)</wo:if></h3>
+    
+  <table border="1" cellpadding="3" width="100%">
+    <tr><th>key</th><th>User Name</th><th>Login</th><th>Edit</th><th>Administrator</th><th>Disable</th><th>OK to Delete</th></tr>
+    <wo:repeat list="[people]" 
+               item="[person]">
+     <wo:if condition="[showUserInfo]">
+     <tr>
+      <td width="40px"><wo:string value="[person.personid]"/></td>
+      <td width="240px"><wo:string value="[person.firstName]" valueWhenEmpty="--" />
+          <wo:string value="[person.lastName]" valueWhenEmpty="--" />
+          <wo:ERXMailTo email="[person.workMail]" /></td>
+      <td align="center" width="80px"><wo:link action="[impersonate]" class="blok mini tint edge"><wo:string value="[person.getUsername]"/></wo:link></td>
+      <td align="center" width="80px"><wo:link action="[editAccount]" class="blok mini tint edge">Edit</wo:link></td>
+      <td align="center" width="80px"><wo:checkBox checked="[person.isAdministrator]"/></td>
+      <td align="center" width="80px"><wo:checkBox checked="[person.isDisabled]"/></td>
+      <td align="center" width="80px"><wo:checkBox checked="[person.okToDelete]"/></td>
+    </tr>
+    </wo:if>
+   </wo:repeat>
+  </table>
+
+  <p style="text-align:right"><wo:submit action="[cancelAction]" value=" Admin Home " class="blok tint edge"/>&nbsp;&nbsp;&nbsp;
+                              <wo:submit action="[submitAction]" value="Save Changes" class="blok tint edge"/>&nbsp;&nbsp;&nbsp;
+  <wo:if condition="[loggedInPerson.isMrBig]">
+                              <wo:link action="[deleteAction]" class="blok tint edge">Remove "OK to Delete" People</wo:link>&nbsp;&nbsp;&nbsp;<br/>
+  </wo:if></p>
+  </wo:form>
+</wo:switch>

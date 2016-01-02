@@ -1,0 +1,92 @@
+<wo:switch WOComponentName="[pageWrapperName]" 
+                      css1="style/pachyderm.css"
+                      css2="style/presentations.css">
+                      
+<h2>Edit Presentation<wo:if condition="[document.displayName]">: <wo:string value="[document.displayName]"/><wo:else> with no name.</wo:else></wo:if></h2>
+<h4>Below is the list of interlinked screens in use in this presentation.
+    Here you can change which screen is the presentation's "Home Screen,"
+    edit the screen's content or delete screens from this presentation.
+    The screen thumbnail is representative of the template design.<br/><br/></h4>
+
+<div style="width:30%; float:left; margin:20px 0 0 0">
+  <wo:link action="[editPresentationInfo]" class="blok tint edge">Edit Name/Description</wo:link><br/><br/><br/>
+  <wo:link action="[selectScreen]" class="blok tint edge">Add Screen to Presentation</wo:link><br/><br/>
+</div>
+
+<div style="width:300px; margin-right:10px; float:left; text-align:right;">
+ <wo:form>
+  Flash <wo:radioButton checked="[flash]" name="style" class="blok"/>&nbsp;&nbsp;&nbsp;&nbsp;
+  HTML5 <wo:radioButton checked="[html5]" name="style" class="blok"/>&nbsp;&nbsp;&nbsp;&nbsp;
+  <wo:submit action="[publishAction]" class="blok tint edge" value="Publish"/>
+ </wo:form>
+    Note: Flash presentations require .flv files for video, HTML5 presentations require .mp4 for video.
+    If you change the format of a presentation, you must publish it once to make screen previews work properly.
+</div>
+
+<div style="width:160px; margin-right:10px; float:left; text-align:right;">
+ <wo:if condition="[isPublished]">
+  <wo:link href="[presentationURL]" target="_blank" class="blok tint edge">View Presentation</wo:link><br/><br/>
+  <wo:link href="[zipURL]" class="blok tint edge">Download Presentation</wo:link>
+ </wo:if>
+</div>
+
+<div style="width:180px; margin:20 30 0 0; float:right; text-align:right;">
+  <b>VIEW BY:</b>
+    <wo:link disabled="[displayModeIsIcons]" action="[iconsDisplayMode]" class="blok tint edge">THUMBNAILS</wo:link> &harr;
+    <wo:link disabled="[displayModeIsList]"  action="[listDisplayMode]"  class="blok tint edge">LIST</wo:link>
+</div>
+
+<wo:if condition="[displayModeIsIcons]">
+  <div id="home_screen">
+    <h2>Home Screen</h2>
+    <wo:ScreenSummaryDisplay screen="[primaryScreen]" 
+                       deleteAction="[ignoreAction]"
+                      previewAction="[previewHomeScreen]"
+                         editAction="[editPrimaryScreenAction]" 
+                       showMakeHome="FALSE" 
+                              scrid="homescr" />
+    <p id="home_screen_description">The Home Screen is the starting screen of your presentation. 
+                                    Convert any of the Linked Screens below into the Home Screen 
+                                    at any time by clicking "Make Home".</p>
+  </div>
+
+  <wo:if condition="[moreScreens]">
+	<div id="linked_screens">
+	  <h2>Linked Screens</h2>
+	    <em>Click screen title or thumbnail to edit.</em>
+	    <wo:repeat list="[secondaryScreens]"
+	               item="[screen]">
+	      <wo:ScreenSummaryDisplay screen="[screen]" 
+	                         deleteAction="[deleteScreenConfirmationAction]"
+	                        previewAction="[previewCurrentScreen]" 
+	                           editAction="[editScreenAction]" 
+	                        primaryAction="[makePrimaryAction]" 
+	                         showMakeHome="TRUE" /></wo:repeat>
+	</div>
+  </wo:if>
+</wo:if>
+    
+<wo:if condition="[displayModeIsList]">
+  <h2 id="lscrhead">Screens</h2>
+  <table id="scrstable">
+    <colgroup><col id="titlecol" /><col id="datemodcol" /><col id="optcol" /></colgroup>
+    <thead><tr><th>Name</th><th>Date Modified</th><th>Options</th></tr></thead>
+	<tr>
+      <td><wo:link action="[editPrimaryScreenAction]"><wo:string value="[primaryTitle]" /></wo:link> [Home]</td>
+      <td><wo:string value="[primaryScreen.dateModified]" dateformat="%b %d, %Y at %I:%M %p"/></td>
+      <td><ul>
+	      <li><wo:link action="[editPrimaryScreenAction]" class="blok mini tint edge">Edit</wo:link></li></ul></td></tr>
+	<wo:repeat item="[screen]" list="[secondaryScreens]">                   
+	<tr>
+      <td><wo:link action="[editScreenAction]"><wo:string value="[screen.title]" /></wo:link></td>
+      <td><wo:string value="[screen.dateModified]" dateformat="%b %d, %Y at %I:%M %p"/></td>
+      <td><ul>
+          <li><wo:link action="[makePrimaryAction]" class="blok mini tint edge">Make Home</wo:link> | </li>
+          <li><wo:link action="[editScreenAction]" class="blok mini tint edge">Edit</wo:link> | </li>
+          <li><wo:link action="[deleteScreenConfirmationAction]" class="blok mini tint edge">Delete</wo:link></li></ul></td></tr>
+    </wo:repeat>
+  </table>
+</wo:if>
+  
+<div class="clearBoth"/>
+</wo:switch>

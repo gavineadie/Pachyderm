@@ -1,0 +1,5 @@
+**/*.eomodeld~/
+**/*.eogen
+**/*.woa/**
+**/*.framework/**
+**/*.api

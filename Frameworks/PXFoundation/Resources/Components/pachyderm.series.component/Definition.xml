@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<component-definition>
+	<identification>
+		<localized-name>
+			<string lang="en">Series Screen</string>
+		</localized-name>
+		<version>100</version>
+		<version-string>Version 1.0, Pachyderm 3.0, 2014-Dec-19</version-string>
+		<component-identifier>pachyderm.series</component-identifier>
+		<conforming-identifiers>
+			<identifier>pachyderm.abstract.screen</identifier>
+		</conforming-identifiers>
+	</identification>
+	<binding-list>
+		<binding type="attribute" container="none">
+			 <x-auto-instantiate>YES</x-auto-instantiate>
+			<binding-key>compoundTitle</binding-key>
+			<localized-name>
+				<string lang="en">Title and Subtitle</string>
+			</localized-name>
+			<content-types>
+				<identifier>pachyderm.general.compound_title</identifier>
+				<identifier>pachyderm.abstract.item</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Enter your screen title and subtitle as you wish it displayed.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			 <x-auto-instantiate>YES</x-auto-instantiate>
+			<binding-key>midground_image</binding-key>
+			<localized-name>
+				<string lang="en">Background Image (Optional)</string>
+			</localized-name>
+			<content-types>
+				<identifier>pachyderm.general.compound_title</identifier>
+				<identifier>pachyderm.abstract.item</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>OPTIONAL. Displays a background image behind the screen where normally a rounded white rectangle appears. If left empty, the white background will be used.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>image</binding-key>
+			<localized-name>
+				<string lang="en">Series Image</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.image</identifier>
+				<identifier>pachyderm.resource</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Choose an image for the series.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="public.image" strict="YES">
+					<key>min-size</key>
+					<size>{280, 200}</size>
+					<key>max-size</key>
+					<size>{280, 200}</size>
+				</limit>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>media</binding-key>
+			<localized-name>
+				<string lang="en">Series Main Media</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.audiovisual-content</identifier>
+				<identifier>pachyderm.resource</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Choose a playable media item (Movie or Audio) to be used in the main view (Optional).</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="public.audiovisual-content" strict="YES">
+					<key>min-size</key>
+					<size>{280, 200}</size>
+					<key>max-size</key>
+					<size>{280, 200}</size>
+				</limit>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>screenLink</binding-key>
+			<localized-name>
+				<string lang="en">Screen Link</string>
+			</localized-name>
+			<content-types>
+				<identifier>pachyderm.atomic.link</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Choose a screen or URL to link to.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>caption</binding-key>
+			<localized-name>
+				<string lang="en">Media Caption</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.text</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Enter a caption to display with your main image or media.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="public.text" strict="YES">
+					<key>max-length</key>
+					<integer>100</integer>
+				</limit>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>text</binding-key>
+			<localized-name>
+				<string lang="en">Main Content Text</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.text</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Enter the main descriptive text for the series.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="public.text" strict="YES">
+					<key>max-length</key>
+					<integer>3000</integer>
+				</limit>
+			</limits>
+		</binding>
+		<binding type="attribute" container="array">
+			 <x-auto-instantiate>YES</x-auto-instantiate>
+			<binding-key>page</binding-key>
+			<localized-name>
+				<string lang="en">Series Page</string>
+			</localized-name>
+			<content-types>
+				<identifier>pachyderm.series.page</identifier>
+				<identifier>pachyderm.abstract.item</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Series Page</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="pachyderm.series.page" strict="YES">
+					<key>min-length</key>
+					<integer>1</integer>
+				</limit>
+			</limits>
+		</binding>
+	</binding-list>
+	<binding-validators>
+	</binding-validators>
+	<user-interface>
+		<preferred-binding-ordering>
+			<binding-key>compoundTitle</binding-key>
+			<binding-key>midground_image</binding-key>
+			<binding-key>image</binding-key>
+			<binding-key>media</binding-key>
+			<binding-key>caption</binding-key>
+			<binding-key>screenLink</binding-key>
+			<binding-key>text</binding-key>
+			<binding-key>page</binding-key>
+		</preferred-binding-ordering>
+	</user-interface>
+	<environment-support>
+		<environment>
+			<identifier>pachyderm.flash-environment</identifier>
+			<min-size>{0.0, 0.0}</min-size>
+			<max-size>{0.0, 0.0}</max-size>
+			<auto-layout>NO</auto-layout>
+			<accepts-children>NO</accepts-children>
+			<resources>
+				<resource>series.swf</resource>
+			</resources>
+		</environment>
+	</environment-support>
+</component-definition>

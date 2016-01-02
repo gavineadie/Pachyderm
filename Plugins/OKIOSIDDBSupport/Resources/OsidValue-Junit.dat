@@ -1,0 +1,7 @@
+#
+# MIB Auxiliary Data File for junit tests
+#
+# CVS $Id: OsidValue-Junit.dat,v 1.1 2005/09/28 13:32:38 tom Exp $
+#
+
+hello/hello value@junit.osid.org:helloValue:hello:hi:The value.

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<component-definition>
+	<identification>
+		<localized-name>
+			<string lang="en">Slider Media Item</string>
+		</localized-name>
+		<version>100</version>
+		<version-string>Version 1.0, Pachyderm 3.0, 2014-Dec-19</version-string>
+		<component-identifier>pachyderm.slider.media_item</component-identifier>
+		<conforming-identifiers>
+			<identifier>pachyderm.abstract.item</identifier>
+		</conforming-identifiers>
+	</identification>
+	<binding-list>
+		<binding type="attribute" container="none">
+			<binding-key>title</binding-key>
+			<localized-name>
+				<string lang="en">Slider Title</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.text</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Enter your slider title as you wish it displayed.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>image</binding-key>
+			<localized-name>
+				<string lang="en">Slider image</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.image</identifier>
+				<identifier>pachyderm.resource</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Slider image</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="public.image" strict="YES">
+					<key>min-size</key>
+					<size>{320, 240}</size>
+					<key>max-size</key>
+					<size>{320, 240}</size>
+				</limit>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>movie</binding-key>
+			<localized-name>
+				<string lang="en">Slider Movie</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.audiovisual-content</identifier>
+				<identifier>pachyderm.resource</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Enter your slider movie.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="public.audiovisual-content" strict="YES">
+					<key>min-size</key>
+					<size>{320, 240}</size>
+					<key>max-size</key>
+					<size>{320, 240}</size>
+				</limit>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>link</binding-key>
+			<localized-name>
+				<string lang="en">Link</string>
+			</localized-name>
+			<content-types>
+				<identifier>pachyderm.atomic.link</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Choose a screen, or a Web link to link to.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="pachyderm.atomic.link" strict="YES">
+				</limit>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>caption</binding-key>
+			<localized-name>
+				<string lang="en">Slider Image Caption</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.text</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Enter your image caption</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="public.text" strict="YES">
+					<key>max-length</key>
+					<integer>200</integer>
+				</limit>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>text</binding-key>
+			<localized-name>
+				<string lang="en">Slider Text</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.text</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Enter your slider text.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="public.text" strict="YES">
+					<key>max-length</key>
+					<integer>1500</integer>
+				</limit>
+			</limits>
+		</binding>
+	</binding-list>
+	<binding-validators>
+	</binding-validators>
+	<user-interface>
+		<preferred-binding-ordering>
+			<binding-key>title</binding-key>
+			<binding-key>image</binding-key>
+			<binding-key>movie</binding-key>
+			<binding-key>link</binding-key>
+			<binding-key>caption</binding-key>
+			<binding-key>text</binding-key>
+		</preferred-binding-ordering>
+	</user-interface>
+	<environment-support>
+		<environment>
+			<identifier>pachyderm.flash-environment</identifier>
+			<min-size>{0.0, 0.0}</min-size>
+			<max-size>{0.0, 0.0}</max-size>
+			<auto-layout>NO</auto-layout>
+			<accepts-children>NO</accepts-children>
+			<resources>
+				<resource></resource>
+			</resources>
+		</environment>
+	</environment-support>
+</component-definition>

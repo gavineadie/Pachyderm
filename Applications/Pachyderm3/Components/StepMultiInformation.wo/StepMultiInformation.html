@@ -1,0 +1,43 @@
+<p class="h2">Add information unique to each uploaded file.</p>
+
+<wo:form action="[nextStep]" id="columnarForm" multipleSubmit="TRUE">
+  <p align="right"><wo:submit action="[nextStep]" value="Save All" class="blok tint edge"/></p>
+	<wo:repeat list="[pageInControl.uploadedItems]" item="[anUploadedItem]">
+		<div class="itemmetadataentry">
+			<div class="itemtitle"><wo:image src="[assetPreview]" alt="[anUploadedItem.title]" height="75" align="right" />
+			<h4 style="color:green;">Filename: <wo:string value="[anUploadedItem.title]" valueWhenEmpty="Enter metadata for item"/></h4></div>
+
+			<fieldset>
+				<p><label >Title:</label> <wo:textfield class="sititle" value="[anUploadedItem.title]"/></p>
+				<p><label >Accession Number:</label> <wo:textfield class="siidentifieruri" value="[anUploadedItem.identifierURI]"/></p>
+				<p><label >Description:</label> <wo:text value="[anUploadedItem.description]" class="sidescription" rows="4" cols="20"/></p>
+				<p><label >Alternative Text:</label> <wo:textfield value="[anUploadedItem.altText]" size="25"/></p>
+				<p><label >Rights:</label> <wo:textfield value="[anUploadedItem.rights]" class="sirights"/></p>
+				<p><label >Subject/Keywords:</label> <wo:textfield value="[anUploadedItem.subject]" class="sikeywords"/></p>
+				<p><label >Publisher:</label> <wo:textfield class="sipublisher" value="[anUploadedItem.publisher]"/></p>
+			</fieldset>
+			<fieldset>
+				<p><label >Contributor:</label> <wo:textfield value="[anUploadedItem.contributor]" class="sicontributor"/></p>
+				<p><label >Coverage:</label> <wo:textfield class="sicoverage" value="[anUploadedItem.coverage]"/></p>
+				<p><label >Relation:</label> <wo:textfield class="sirelation" value="[anUploadedItem.relation]"/></p>
+				<p><label >Source:</label> <wo:textfield class="sisource" value="[anUploadedItem.source]"/></p>
+				<p><label >Media Label:</label> <wo:text value="[anUploadedItem.mediaLabel]" class="simedialabel" rows="4" cols="20"/></p>
+
+				<table  border="0" cellspacing="0" cellpadding="2">
+                 <tr>
+                  <td colspan="2" valign="top">Assets are created "private" and viewable only by you.
+                      Making this asset public will allow all authors to use it in their presentations.
+                      Once an asset is marked public, it cannot be made private again because someone
+                      else might have included it in their presentation.<br/></td></tr>
+                 <tr>
+                  <td><label style="text-align:right;">Check to make asset public:</label></td>
+                  <td><wo:checkBox checked="[accessRights]" style="width:2em;" /></td></tr>
+                </table>
+
+        	</fieldset>
+
+		</div>
+        <div style="clear:both;"/>
+	</wo:repeat>
+  <p align="right"><wo:submit action="[nextStep]" value="Save All" class="blok tint edge"/></p>
+</wo:form>

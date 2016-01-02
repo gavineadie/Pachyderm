@@ -1,0 +1,75 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>iPad Pachyderm</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name='viewport' content='user-scalable=yes, width=1024' />
+  <meta name='apple-mobile-web-app-capable' content='yes' />
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <link rel="stylesheet" href="lib/css/style.css">
+  <link rel="stylesheet" href="lib/css/pachyderm-presentation.css">
+  <link rel="stylesheet" href="lib/mediaelement/mediaelementplayer.css">
+  <link rel="stylesheet" href="lib/css/custom-overrides.css">  <!-- Empty CSS file to override default pachyderm styles -->
+
+  <!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="lib/js/libs/modernizr.custom.js"></script>
+  <script src="swfobject.js" type="text/javascript"></script>
+</head>
+<body role="application">
+	<section id="pachyderm-wrapper">
+		<header id="navigation-wrapper" role="navigation"><a href="javascript:history.go(-1)" id="back">Back</a><a href="#" id="home">Home</a></header>
+		<footer id="pachyderm-controls" role="navigation"><a href="javascript:;" id="info">Screen Description Show / Hide</a><a href="javascript:;" id="contrast">Contrast</a><a href="javascript:;" id="help">Pachyderm Help Show / Hide</a></footer>
+		<section id="content-wrapper" aria-live="polite">
+			<div id="slide-wrapper"></div>
+			<div id="content-background"></div>
+		</section>
+		<div id="presentation-background"></div>
+	</section>
+
+	<!-- JavaScript at the bottom for fast page loading -->
+	<script src="lib/js/libs/jquery-1.7.2.min.js"></script>
+	<script src="lib/mediaelement/mediaelement-and-player.min.js"></script>
+	<script src="lib/js/libs/json2.js"></script>
+	<script src="lib/js/libs/underscore-min.js"></script>
+	<script src="lib/js/libs/backbone-0.5.3.min.js"></script>
+	<script src="lib/js/libs/iscroll-4.2.5.js"></script>
+	<script src="lib/js/libs/axzoomer.js"></script>
+	<script src="lib/js/libs/jquery.mousewheel.js"></script>
+	<script src="lib/js/libs/jquery.swipe.js"></script>
+	<script src="lib/js/libs/jquery-ui-1.8.18.custom.min.js"></script>
+	<script src="lib/js/libs/jquery.ui.touch-punch.min.js"></script>
+
+	<script src="lib/js/pachyderm/file-extensions.js"></script>
+	<script src="lib/js/pachyderm/app.js"></script>
+	<script src="lib/js/pachyderm/widget.preloader.js"></script>
+	<script src="lib/js/pachyderm/widget.mainMedia.js"></script>
+	<script src="lib/js/pachyderm/widget.thumbnail.js"></script>
+	<script src="lib/js/pachyderm/widget.scrollableText.js"></script>
+	<script src="lib/js/pachyderm/widget.title.js"></script>
+	<script src="lib/js/pachyderm/widget.popup.js"></script>
+	<script src="lib/js/pachyderm/screens.js"></script>
+	<script src="lib/js/pachyderm/shell.js"></script>
+	<script src="lib/js/pachyderm/screen.exploration_entry.js"></script>
+	<script src="lib/js/pachyderm/screen.commentary.js"></script>
+	<script src="lib/js/pachyderm/screen.enlargement.js"></script>
+	<script src="lib/js/pachyderm/screen.slider.js"></script>
+	<script src="lib/js/pachyderm/screen.fullscreen.js"></script>
+	<script src="lib/js/pachyderm/screen.layers.js"></script>
+	<script src="lib/js/pachyderm/screen.aspects.js"></script>
+	<script src="lib/js/pachyderm/screen.series.js"></script>
+	<script src="lib/js/pachyderm/screen.zoom.js"></script>
+	<script src="lib/js/pachyderm/screen.dual_comparison.js"></script>
+	<script src="lib/js/pachyderm/screen.media_focus.js"></script>
+	<script src="lib/js/pachyderm/screen.phonedial.js"></script>
+</body>
+</html>

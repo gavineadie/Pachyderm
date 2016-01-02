@@ -1,0 +1,67 @@
+<wo:switch WOComponentName="[pageWrapperName]" 
+                      css1="style/pachyderm.css">
+
+<h2>Find Screen to Link</h2>
+<div id="box-left">
+     Choose a screen from the alphabetized list below or search for a screen at right.
+  <b>Click the screen thumbnail to select it as the link target.</b>
+</div>
+
+<wo:form multipleSubmit="TRUE"> 
+
+<div id="box-right"> 
+ <p><strong>Search for a screen with title containing:</strong></p>
+ <wo:textfield value="[queryString]"/><wo:submit action="[searchAction]" value="Search" class="blok tint edge"/><br/><br/>
+ <p align="right" style="margin:0px; float:right;">View by: 
+  <wo:link action="[setIconAction]" disabled="[isIconDisplay]" class="blok tint edge">THUMBNAILS</wo:link> &harr;
+  <wo:link action="[setListAction]" disabled="[isListDisplay]" class="blok tint edge">LIST</wo:link></p>
+</div>
+
+<h2>Target Screens</h2>
+<div class="clearBoth"/>
+
+<div id="box-bottom">
+ <wo:if condition="[isIconDisplay]">								<!-- ICON VIEW -->
+  <wo:if condition="[displayGroup.hasMultipleBatches]">
+   <p>Page <wo:string value="[displayGroup.currentBatchIndex]"/> of 
+           <wo:string value="[displayGroup.batchCount]"/> 
+          (<wo:string value="[displayGroup.allObjects.count]"/> items found
+           <wo:if condition="[queryString]">for &quot;<wo:string value="[queryString]"/>&quot;</wo:if>).          
+      <wo:link action="[displayGroup.displayPreviousBatch]">Previous</wo:link> | 
+      <wo:link action="[displayGroup.displayNextBatch]">Next</wo:link></p>
+
+  <wo:else>
+
+   <wo:if condition="[queryString.length]">
+    <wo:MessageFormatter value="{0,choice,0#No items|1#One item|2≤{0,number,integer} items} found for ''{1}''." 
+                        param0="[objectCount]" 
+                        param1="[queryString]" />
+   <wo:else>
+    <wo:MessageFormatter value="{0,choice,0#No items|1#One item|2≤{0,number,integer} items} found." 
+                        param0="[objectCount]" />
+   </wo:else></wo:if>
+  <p></p>
+
+  </wo:else></wo:if>
+  
+  <wo:repeat item="[screen]" list="[displayGroup.displayedObjects]">
+   <b><wo:string value="[screen.title]" valueWhenEmpty="no screen title" /></b><br />
+      <wo:link action="[selectAction]"><wo:image src="[screenThumbnailFile]" height="137" width="199" /></wo:link>
+   <p>Modified: <wo:string value="[screen.dateModified]" dateformat="%b %d, %Y at %I:%M %p" /></p>    
+  </wo:repeat>
+   
+ <wo:else>														    <!-- TABLE VIEW -->
+  
+   <table>
+    <wo:repeat item="[screen]" list="[screens]"><tr>
+     <td width="200px"><wo:link action="[selectAction]"><wo:string value="[screen.title]" valueWhenEmpty="untitled" /></wo:link></td>
+     <td width="200px"><wo:string value="[screen.dateModified]" dateformat="%b %d, %Y at %I:%M %p" /></td></tr>
+    </wo:repeat></table>
+  </wo:else></wo:if>
+
+ <div class="clearBoth"/>
+
+ <wo:submit value="Cancel" action="[selectNothing]" class="blok tint edge" style="margin:0px; float:right;"/><br/><br/>
+</div>
+</wo:form>
+</wo:switch>

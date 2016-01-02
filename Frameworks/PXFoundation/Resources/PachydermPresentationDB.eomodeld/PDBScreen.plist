@@ -1,0 +1,110 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "DATE_CREATED"; 
+            externalType = datetime; 
+            name = dateCreated; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DATE_MODIFIED"; 
+            externalType = datetime; 
+            name = dateModified; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = IDENTIIFER; 
+            externalType = VARCHAR; 
+            name = identifier; 
+            valueClassName = NSString; 
+        }, 
+        {
+            adaptorValueConversionMethodName = archiveData; 
+            allowsNull = Y; 
+            columnName = "LOCALIZED_DESCRIPTION"; 
+            externalType = "LONG VARCHAR"; 
+            name = localizedDescription; 
+            valueClassName = "org.pachyderm.apollo.core.CXLocalizedValue"; 
+            valueFactoryMethodName = "objectWithArchiveData:"; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = METADATA; 
+            externalType = "LONG VARCHAR"; 
+            name = metadata; 
+            valueClassName = NSString; 
+            valueType = C; 
+        }, 
+        {
+            columnName = ID; 
+            externalType = INTEGER; 
+            name = pk; 
+            precision = 11; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PRESENTATION_ID"; 
+            externalType = INTEGER; 
+            name = presentationId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ROOT_COMPONENT_ID"; 
+            externalType = INTEGER; 
+            name = primeComponentId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = TITLE; 
+            externalType = varchar; 
+            name = title; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }
+    ); 
+    attributesUsedForLocking = (pk); 
+    className = "org.pachyderm.foundation.eof.PDBScreen"; 
+    classProperties = (
+        dateCreated, 
+        dateModified, 
+        identifier, 
+        localizedDescription, 
+        metadata, 
+        pk, 
+        presentation, 
+        primeComponent, 
+        primeComponentId, 
+        title
+    ); 
+    externalName = "SCREEN_2_1"; 
+    name = PDBScreen; 
+    primaryKeyAttributes = (pk); 
+    relationships = (
+        {
+            destination = PDBPresentation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = pk; sourceAttribute = presentationId; }); 
+            name = presentation; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PDBComponent; 
+            internalInfo = {"_nameInObjectStore" = rootComponent; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = pk; sourceAttribute = primeComponentId; }); 
+            name = primeComponent; 
+        }
+    ); 
+}

@@ -1,0 +1,345 @@
+<project name="pachyderm" default="build" basedir=".">
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                      woapplication ant task
+  classes
+    The nested classes element specifies a FileSet. All files included
+    in this fileset will end up in the Contents/Resources/Java/*.jar
+    file of the application.
+
+  resources
+    The nested resources element specifies a FileSet. All files included
+    in this fileset will end up in the Contents/Resources directory of
+    the application.
+
+  wsresources
+    The nested wsresources element specifies a FileSet. All files
+    included in this fileset will end up in the
+    Contents/WebServerResources directory of the application.
+
+  frameworks
+    The nested frameworks is a FrameworkSet structure that specifies the
+    names of the WebObjects Frameworks that this application is
+    dependant upon. The jar files from these frameworks will be
+    referenced in various platform-specific depoyment files (such as
+    CLASSPATH.TXT), and specified in the web.xml classpath if an
+    application is deployed as a servlet. When building a FileSet, path
+    should match up to the
+    "*.framework" directory (no need to match JAR files).
+
+  lib
+    The nested lib element specifies a FileSet. This should be a fileset
+    of jar libraries required by your application. All files in this
+    fileset will end up in the Resources/Java folder of the application,
+    and will be included on the application's classpath.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <taskdef name="woapplication"
+      classname="org.objectstyle.woproject.ant.WOApplication"/>
+  <taskdef name="wocompile"
+      classname="org.objectstyle.woproject.ant.WOCompile" />
+
+<!-- basic initializations  -->
+
+  <target name="build" depends="init.build,build.woapp,package" />
+
+  <target name="init.build" depends="init.properties">
+    <tstamp />
+    <property name="final.dir" value="Distribution" />
+    <property name="class.dir" value="/tmp/${user.name}/${PACHYNAME}/Classes" />
+  </target>
+
+  <target name="install" depends="init.install,build.woapp,package" />
+
+  <target name="init.install" depends="init.properties">
+    <tstamp />
+    <property name="final.dir" value="${wo.apps.root}" />
+    <property name="class.dir" value="/tmp/${user.name}/${PACHYNAME}/Classes" />
+  </target>
+
+<!-- CLEAN Task -->
+
+  <target name="clean">
+    <delete dir="${class.dir}" />
+    <delete dir="${final.dir}/${PACHYNAME}.woa" />
+  </target>
+
+<!-- property determination  -->
+
+  <target name="init.properties">
+    <property file="build.properties" />
+    <property name="wolips.properties"
+             value="${user.home}${file.separator}Library${file.separator}Application Support${file.separator}WOLips${file.separator}wolips.properties" />
+    <property file="${wolips.properties}" />
+
+    <condition property="wo.properties.check.failed">
+      <not>
+        <and>
+          <isset property="wo.system.frameworks" />
+          <isset property="wo.local.frameworks" />
+        </and>
+      </not>
+    </condition>
+
+    <fail if="wo.properties.check.failed"
+     message="The properties 'wo.system.frameworks' and 'wo.local.frameworks' must be set. Check that your ${wolips.properties} is correct." />
+
+  </target>
+
+<!-- WOPROJECT Tasks -->
+
+  <target name="build.woapp" depends="compile">
+
+    <tstamp><format property="timestamp" pattern="MMMdd/yy HH:mm" /></tstamp>
+
+    <exec executable="/usr/bin/svnversion"
+                 dir="."
+      outputproperty="svnversion.property"
+            logError="yes"/>
+
+    <touch file="./Resources/builder.Properties" />
+    <echo file="./Resources/builder.Properties"
+       message="pachy.buildTimeString = ${timestamp}${line.separator}pachy.svnVersion = ${svnversion.property}${line.separator}pachy.applicationName = ${PACHYNAME}${line.separator}" />
+
+    <woapplication destDir="${final.dir}"
+                      name="${PACHYNAME}"
+               javaVersion="${javaVersion}"
+           cfbundleversion="${cfbundleversion} ${timestamp}"
+      cfbundleshortversion="3.0.0"
+                cfbundleID="${cfBundleID}"
+    customInfoPListContent="${customInfoPListContent}"
+            principalClass="${principalClass}"
+         frameworksBaseURL="/WebObjects/${PACHYNAME}.woa/Frameworks"
+                    webXML="${webXML}"
+      webXML_CustomContent="${webXML_CustomContent}"
+            servletAdaptor="er.extensions.jspservlet.ERXServletAdaptor">
+
+      <classes dir="${class.dir}">
+        <includesfile name="woproject/classes.include.patternset" />
+        <excludesfile name="woproject/classes.exclude.patternset" />
+        <exclude if="javaClient" name="**/client/**/*.*"/>
+      </classes>
+
+      <resources dir=".">
+        <includesfile name="woproject/resources.include.patternset" />
+        <excludesfile name="woproject/resources.exclude.patternset" />
+        <exclude if="javaClient" name="**/client/**/*.*"/>
+      </resources>
+
+      <wsresources dir="WebServerResources">
+        <exclude if="javaClient" name="Java/*.jar" />
+        <includesfile name="woproject/wsresources.include.patternset" />
+        <excludesfile name="woproject/wsresources.exclude.patternset" />
+      </wsresources>
+
+<!--
+      <classes dir="${wo.local.frameworks}">
+        <exclude if="javaClient" name="**/WebServerResources/Java/**"/>
+      </classes>
+
+      <classes dir="${wo.system.frameworks}">
+        <exclude if="javaClient" name="**/WebServerResources/Java/**"/>
+      </classes>
+ -->
+
+<!-- add "OKIOSIDDBSupport" and/or "DerbyPlugIn" if necessary -->
+	  <frameworks dir="${wo.local.frameworks}" embed="true"
+              bundles="CoreServices/DataServices/AppServices/SimpleAuthenticationSupport/PXFoundation/AssetDBSupport/ERExtensions/JavaWOExtensions/ERJars/Ajax/MySQLPlugIn/ERJavaMail" />
+
+	  <frameworks dir="${wo.system.frameworks}" embed="true"
+              bundles="JavaFoundation/JavaWebObjects/JavaEOAccess/JavaEOControl/JavaEOProject/JavaJDBCAdaptor/JavaDirectToWeb/JavaDTWGeneration" />
+
+      <lib dir="Libraries">
+        <include name="*.jar" />
+      </lib>
+
+    </woapplication>
+  </target>
+
+  <target name="compile" depends="init.properties">
+    <mkdir dir="${class.dir}" />
+    <wocompile srcdir="Sources" destdir="${class.dir}" includeAntRuntime="no"
+                debug="TRUE" debuglevel="lines,vars,source">
+
+	  <frameworks dir="${wo.local.frameworks}"
+              bundles="CoreServices/DataServices/AppServices/SimpleAuthenticationSupport/PXFoundation/AssetDBSupport/ERExtensions/JavaWOExtensions/ERJars/Ajax/MySQLPlugIn/ERJavaMail" />
+
+	  <frameworks dir="${wo.system.frameworks}"
+              bundles="JavaFoundation/JavaWebObjects/JavaEOAccess/JavaEOControl/JavaDirectToWeb" />
+
+    </wocompile>
+  </target>
+
+
+  <target name="javaclientAdd" if="javaClient" depends="build.woapp">
+    <delete includeemptydirs="TRUE">
+      <fileset dir="${final.dir}/${PACHYNAME}.woa/Contents/Frameworks" includes="*.framework/Versions/**"/>
+    </delete>
+
+    <mkdir dir="${final.dir}/${PACHYNAME}.woa/Contents/WebServerResources/Java" />
+    <jar basedir="${class.dir}"
+      excludes="**/server/**/*.*, **/server/**/"
+        jarfile="${final.dir}/${PACHYNAME}.woa/Contents/WebServerResources/Java/${PACHYNAME}.jar"/>
+  </target>
+
+  <target name="javaclientSub" unless="javaClient" depends="build.woapp">
+    <delete includeemptydirs="TRUE">
+      <fileset dir="${final.dir}/${PACHYNAME}.woa/Contents/Frameworks" includes="*.framework/Versions/**"/>
+    </delete>
+
+    <delete includeemptydirs="TRUE">
+      <fileset dir="${final.dir}/${PACHYNAME}.woa/Contents/Frameworks" includes="*.framework/WebServerResources/Java/**"/>
+    </delete>
+
+    <delete includeemptydirs="TRUE">
+      <fileset dir="${final.dir}/${PACHYNAME}.woa/Contents/Frameworks" includes="*.framework/Resources/Java/*src.jar"/>
+      <fileset dir="${final.dir}/${PACHYNAME}.woa/Contents/Frameworks" includes="*.framework/Resources/Java/*-sources.jar"/>
+
+      <fileset dir="${final.dir}/${PACHYNAME}.woa/Contents/Frameworks" includes="*.framework/Resources/Java/dsn-1.4.2.jar"/>
+      <fileset dir="${final.dir}/${PACHYNAME}.woa/Contents/Frameworks" includes="*.framework/Resources/Java/imap-1.4.2.jar"/>
+      <fileset dir="${final.dir}/${PACHYNAME}.woa/Contents/Frameworks" includes="*.framework/Resources/Java/mockmail.jar"/>
+      <fileset dir="${final.dir}/${PACHYNAME}.woa/Contents/Frameworks" includes="*.framework/Resources/Java/pop3-1.4.2.jar"/>
+
+    </delete>
+  </target>
+
+<!-- PACKAGE Task -->
+
+  <target name="package" unless="${servletDeployment}"
+       depends="javaclientAdd,javaclientSub,ssdd,war,split">
+
+    <tar destfile="${final.dir}/${PACHYNAME}-Application.tar.gz"
+      compression="gzip"
+         longfile="gnu">
+      <tarfileset dir="${final.dir}" mode="750">
+        <include name="${PACHYNAME}.woa/${PACHYNAME}"/>
+      </tarfileset>
+      <tarfileset dir="${final.dir}">
+        <exclude name="${PACHYNAME}.woa/${PACHYNAME}"/>
+        <include name="${PACHYNAME}.woa/**"/>
+      </tarfileset>
+    </tar>
+
+    <tar destfile="${final.dir}/${PACHYNAME}-WebServerResources.tar.gz"
+      compression="gzip"
+          basedir="${wsdest.dir}/WebObjects"
+         longfile="gnu"
+         includes="${PACHYNAME}.woa/**">
+    </tar>
+
+  </target>
+
+
+  <target name="war" if="${servletDeployment}" depends="ssdd">
+    <war destfile="${final.dir}/${PACHYNAME}.war" webxml="${final.dir}/${PACHYNAME}/WEB-INF/web.xml">
+      <fileset dir="${final.dir}/${PACHYNAME}">
+        <include name="**" />
+      </fileset>
+    </war>
+  </target>
+
+  <!-- To use this target
+      1) create the LICENSE in your project directory (not required any more v5.4+)
+      2) add JavaWOJSPServlet in your WOFrameworks build path
+      3) set servlet deployment to true in WOLips Properties
+    -->
+  <target name="ssdd" if="${servletDeployment}" depends="build.woapp">
+
+    <copy todir="${final.dir}/${PACHYNAME}/WEB-INF/">                <!-- web.xml -->
+      <fileset dir="${final.dir}/${PACHYNAME}.woa/Contents/">
+        <include name="web.xml" />
+      </fileset>
+    </copy>
+
+    <copy todir="${final.dir}/${PACHYNAME}/WEB-INF/">                <!-- app.woa -->
+      <fileset dir="${final.dir}">
+        <include name="${PACHYNAME}.woa/**" />
+      </fileset>
+    </copy>
+
+    <copy todir="${final.dir}/${PACHYNAME}/WEB-INF/">                <!-- app/Lib -->
+      <fileset dir="${final.dir}/${PACHYNAME}.woa/Contents">
+        <include name="Library/**" />
+      </fileset>
+    </copy>
+
+    <copy todir="${final.dir}/${PACHYNAME}/WEB-INF/">                <!-- app/Rez -->
+      <fileset dir="${final.dir}/${PACHYNAME}.woa">
+        <include name="Resources/**" />
+      </fileset>
+    </copy>
+
+    <copy todir="${final.dir}/${PACHYNAME}/WEB-INF/lib/">            <!-- **/*jar -->
+      <fileset dir="${final.dir}/${PACHYNAME}/WEB-INF">
+        <include name="**/Resources/**/*.jar" />
+        <exclude name="**/Resources/**/junit-4.8.jar" />
+        <exclude name="**/Resources/**/ognl-2.6.7.jar" />
+      </fileset>
+      <mapper type="flatten" />
+    </copy>
+
+    <copy todir="${final.dir}/${PACHYNAME}/WEB-INF/lib">
+      <fileset dir="${wo.system.frameworks}/JavaWOJSPServlet.framework/WebServerResources/Java">
+        <include name="JavaWOJSPServlet_client.jar" />
+      </fileset>
+    </copy>
+
+    <mkdir  dir="${final.dir}/${PACHYNAME}/WEB-INF/tlds" />
+    <copy todir="${final.dir}/${PACHYNAME}/WEB-INF/tlds">
+      <fileset dir="${wo.system.frameworks}/JavaWOJSPServlet.framework/Resources/">
+        <include name="WOtaglib_1_0.tld" />
+      </fileset>
+    </copy>
+
+    <!-- the WebObject Extensions
+    <copy todir="${final.dir}/${PACHYNAME}/WEB-INF/lib">
+      <fileset dir="${wo.extensions}">
+        <include name="*.jar" />
+        <exclude name="servlet.jar" />
+      </fileset>
+      <mapper type="flatten" />
+    </copy>
+         we don't need to do this if we have the jars already ... -->
+
+    <!-- the Java Client Client-Side Classes    -->
+    <copy todir="${final.dir}/${PACHYNAME}/WEB-INF/${PACHYNAME}.woa/Contents/WebServerResources/Java">
+      <fileset dir="${wo.local.frameworks}">
+        <include if="javaClient" name="**/WebServerResources/Java/*.jar"/>
+      </fileset>
+      <mapper type="flatten"/>
+    </copy>
+
+    <!-- fix the Macos*ClassPath.txt files
+    <replaceregexp file="${final.dir}/${PACHYNAME}/WEB-INF/${PACHYNAME}.woa/Contents/MacOS/MacOSClassPath.txt"
+                  match="APPROOT/Resources/Java/${PACHYNAME}.jar" byline="true"
+                replace="APPROOT/${PACHYNAME}.woa/Contents/Resources/Java/${PACHYNAME}.jar" />
+    <replaceregexp file="${final.dir}/${PACHYNAME}/WEB-INF/${PACHYNAME}.woa/Contents/MacOS/MacOSXServerClassPath.txt"
+                  match="APPROOT/Resources/Java/${PACHYNAME}.jar" byline="true"
+                replace="APPROOT/${PACHYNAME}.woa/Contents/Resources/Java/${PACHYNAME}.jar"  />  -->
+
+    <!-- fix the web.xml file:  the app itself needs PACHYNAME/Contents -->
+    <replaceregexp file="${final.dir}/${PACHYNAME}/WEB-INF/web.xml" byline="true"
+                  match="WEBINFROOT/Resources/Java/"
+                replace="WEBINFROOT/${PACHYNAME}.woa/Contents/Resources/Java/" />
+
+    <!-- fix the web.xml file to remove the extra Frameworks/ directory level for the frameworks -->
+    <replaceregexp file="${final.dir}/${PACHYNAME}/WEB-INF/web.xml" byline="true"
+                  match="WEBINFROOT/Frameworks//"
+                replace="WEBINFROOT/" />
+  </target>
+
+  <!-- This copies webserver resources from app.woa's embedded frameworks into split install bundle -->
+  <target name="split" description="Adds embedded framework webserver resources to the split install bundle by copying from deployment build bundle" unless="${servletDeployment}">
+    <property name="wsdest.dir" value="${final.dir}/Split" />
+    <mkdir dir="${wsdest.dir}"/>
+    <copy todir="${wsdest.dir}/WebObjects/${PACHYNAME}.woa" verbose="true">
+      <fileset dir="${final.dir}/${PACHYNAME}.woa/Contents">
+        <include name="Frameworks/*.framework/WebServerResources/**"/>
+      </fileset>
+      <fileset dir="${final.dir}/${PACHYNAME}.woa">
+        <include name="Contents/WebServerResources/**"/>
+      </fileset>
+    </copy>
+  </target>
+
+</project>

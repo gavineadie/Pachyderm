@@ -1,0 +1,12 @@
+{
+	"ReportBugPage" = {
+		"ProblemTypes" = ("Unspecified", "Crash or Loss of Data", "A Problem with no Workaround", "A Problem but there is a Workaround", "Cosmetic Problem, doesn't look right", "Performance", "Other problem");
+		"ProblemReproducibilities" = ("Always", "Sometimes", "Rarely or Only Happened Once", "Unable", "I Didn't Try", "Not Applicable");
+		"MacOperatingSystems" = ("Mac OS X 10.7 (Lion)", "Mac OS X 10.6 (Snow Leopard)", "Mac OS X 10.5 (Leopard)", "Mac OS X 10.4 (Tiger)", "Mac OS X 10.3 (Panther)", "Mac OS X 10.2 (Jaguar)", "Mac OS X 10.1 (Puma)", "Mac OS X 10.0 (Cheetah)", "Mac OS 9 or earlier");
+		"WindowsOperatingSystems" = ("Windows 7", "Windows XP", "Windows ME", "Windows 2000", "Windows 98", "Windows 95", "Other Windows Version");
+		"LinuxOperatingSystems" = ("Other Linux Distribution");
+		"WebBrowsers" = ("Internet Explorer", "Safari", "Firefox", "Mozilla", "Netscape Navigator", "Camino", "Opera", "OmniWeb", "iCab", "Lynx", "Other Web Browser");
+		"NetworkConnections" = ("Local network (Ethernet)", "Local network (AirPort/Wireless)", "Cable Modem", "DSL Modem", "Dial-up Modem", "Cell phone (GPRS)", "Other or Don't Know");
+		"CompPrimaryUses" = ("Individual Workstation", "Shared/Lab Workstation", "Publicly Accessible Workstation", "Other Use");
+	};
+}

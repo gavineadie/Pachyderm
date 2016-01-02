@@ -1,0 +1,57 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = ACTIVATEDBY; 
+            externalType = INTEGER; 
+            name = activatedBy; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = CREATEDBY; 
+            externalType = INTEGER; 
+            name = createdBy; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = DATECREATED; 
+            externalType = TIMESTAMP; 
+            name = dateCreated; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            columnName = ID; 
+            externalType = INTEGER; 
+            name = id; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ISACTIVATED; 
+            externalType = INTEGER; 
+            name = isActivated; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = KEYSTRING; 
+            externalType = VARCHAR; 
+            name = key; 
+            valueClassName = NSString; 
+            width = 255; 
+        }
+    ); 
+    attributesUsedForLocking = (id, isActivated); 
+    className = "org.pachyderm.authoring.eof.Invitation"; 
+    classProperties = (key, dateCreated, createdBy, activatedBy, isActivated); 
+    externalName = invitation; 
+    fetchSpecificationDictionary = {}; 
+    name = Invitation; 
+    primaryKeyAttributes = (id); 
+}

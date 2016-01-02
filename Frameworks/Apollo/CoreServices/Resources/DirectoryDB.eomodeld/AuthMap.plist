@@ -1,0 +1,51 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "EXTERNAL_ID"; 
+            externalType = VARCHAR; 
+            name = externalId; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EXTERNAL_REALM"; 
+            externalType = VARCHAR; 
+            name = externalRealm; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            columnName = "MAP_ID"; 
+            externalType = INTEGER; 
+            name = mapid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PERSON_ID"; 
+            externalType = INTEGER; 
+            name = personid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (externalId, externalRealm, mapid, personid); 
+    className = "org.pachyderm.apollo.core.eof.CXAuthMapEO"; 
+    classProperties = (externalId, externalRealm, person); 
+    externalName = AUTHMAP; 
+    fetchSpecificationDictionary = {}; 
+    name = AuthMap; 
+    primaryKeyAttributes = (mapid); 
+    relationships = (
+        {
+            destination = APPerson; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = personid; sourceAttribute = personid; }); 
+            name = person; 
+        }
+    ); 
+}

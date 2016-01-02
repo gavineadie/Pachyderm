@@ -1,0 +1,12 @@
+(
+	"CoreServices", "DataServices", "AppServices",
+	"JavaOpenTM", "JavaOpenORB", "JavaEOGeneration", "JavaEOInterfaceSwing", 
+	"JavaEODistribution", "JavaDTWGeneration", "JavaEOCocoa", "JavaEOControl", 
+	"JavaWOJSPServlet", "JavaWOExtensions", "JavaWebObjects", "JavaWebServicesSupport", 
+	"JavaEORuleSystem", "JavaWebServicesClient", "JavaEOApplication", "JavaEOTool", 
+	"JavaWebServicesGeneration", "JavaPlot", "JavaOpenEJBActivation", "JavaOpenEJB", 
+	"JavaJDBCAdaptor", "JavaXML", "JavaWOSMIL", "JavaEOInterface", "JavaDirectToWeb", 
+	"JavaEOInterfaceCocoa", "JavaEmbedding", "JavaFoundation", "JavaEOAccess", 
+	"JavaJNDIAdaptor", "JavaVM", "JavaEOProject", "OKIOSIDDBSupport", 
+	"SimpleAuthenticationSupport", "AssetDBSupport"
+)

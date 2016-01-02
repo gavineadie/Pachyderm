@@ -1,0 +1,111 @@
+<wo:switch WOComponentName="[pageWrapperName]" 
+                      css1="style/pachyderm.css">
+
+<h2>Select Media</h2>
+
+<wo:form multipleSubmit="TRUE">
+<div style="float:left; width=400px;">
+  any text: <wo:FocusTextField value="[searchTerm]" 
+                               focus="TRUE"/> <wo:submit action="[mediaSearchAction]" value="Search" />
+  <wo:if condition="[session.userIsMrBig]" negate="TRUE"><b>Scope of Search:</b>
+  <wo:if condition="[publicChecked]"><wo:link action="[publicToggle]" class="blok tint edge">My Media</wo:link>
+         <wo:else><span class="butoff">My Media</span></wo:else></wo:if>&nbsp;&harr;&nbsp;
+  <wo:if condition="[publicChecked]"><span class="butoff">All Media</span>
+         <wo:else><wo:link action="[publicToggle]" class="blok tint edge">All Media</wo:link></wo:else></wo:if>
+  </wo:if><br/><br/>
+
+  <div><b>Filter Media:</b>
+  <wo:if condition="[totalChecked]"><span class="butoff">ALL</span>
+         <wo:else><wo:link action="[totalSelect]" class="blok tint edge">ALL</wo:link></wo:else></wo:if>&nbsp;&nbsp;&nbsp;
+  <wo:if condition="[imageChecked]"><span class="butoff">Images</span> <!-- (<wo:ERXListDisplay list="[imageArray]"/>) -->
+         <wo:else><wo:link action="[imageSelect]" class="blok tint edge">Images</wo:link></wo:else></wo:if>&nbsp;&nbsp;&nbsp;
+  <wo:if condition="[audioChecked]"><span class="butoff">Sounds</span> <!-- (<wo:ERXListDisplay list="[audioArray]"/>) -->
+         <wo:else><wo:link action="[audioSelect]" class="blok tint edge">Sounds</wo:link></wo:else></wo:if>&nbsp;&nbsp;&nbsp;
+  <wo:if condition="[movieChecked]"><span class="butoff">Movies</span> <!-- (<wo:ERXListDisplay list="[movieArray]"/>) -->
+         <wo:else><wo:link action="[movieSelect]" class="blok tint edge">Movies</wo:link></wo:else></wo:if>
+</div>
+  </div>
+<div style="float:right; align:right;">
+  <wo:link action="[addMedia]" class="blok tint edge">Add New Media</wo:link>&nbsp;&nbsp;<br/><br/><br/>
+  <wo:link action="[cancelAction]" class="blok tint edge">Cancel Selection</wo:link>
+</div>
+</wo:form>
+
+<div class="clearBoth"/>
+<p style="border-top:1pt dotted grey;clear:both;" />
+
+<!-- MEDIA DISPLAY HEADER (SAME AS FOOTER) -->
+
+      <wo:if condition="[mediaDisplayGroup.hasMultipleBatches]">                <!-- if there are more than 25 of them    -->
+        <p><wo:MessageFormatter value="Page {0} of {1} ({2}) items found"
+                               param0="[mediaDisplayGroup.currentBatchIndex]"
+                               param1="[mediaDisplayGroup.batchCount]"
+                               param2="[mediaDisplayGroup.allObjects.count]" />&nbsp;&nbsp;
+           <wo:link action="[mediaDisplayGroup.displayPreviousBatch]" class="blok tint edge">&lt;&lt; Previous</wo:link>&nbsp;&nbsp;
+           <wo:link action="[mediaDisplayGroup.displayNextBatch]" class="blok tint edge">Next &gt;&gt;</wo:link></p>
+	    <wo:else>
+	      <wo:if condition="[hasSearchResults]">
+	        <wo:string value="[objectCount]"/> results found.
+	          <wo:if condition="[searchTerm]"> for &quot;<wo:string value="[searchTerm]"/>&quot;.</wo:if>
+	      <wo:else>
+	        No Search Results Found<wo:if condition="[searchTerm]"> for &quot;<wo:string value="[searchTerm]"/>&quot;</wo:if>.
+	      </wo:else></wo:if><p></p>
+	    </wo:else></wo:if>
+<div class="clearBoth"/>
+	
+<!-- MEDIA DISPLAY BODY : REPEAT OVER EACH ASSET -->
+
+<wo:if condition="[hasSearchResults]">
+  <wo:repeat list="[displayedObjects]" item="[resource]">
+    <div class="Asset130" style="height:154px;">
+	  <wo:link action="[selectAction]">
+
+      <wo:if condition="[isImageAsset]">
+        <wo:if condition="[resourceOffline]"><wo:image filename="images/asset_missing.gif"/>
+        <wo:else><wo:image src="[imagePreviewLink]"/></wo:else></wo:if>
+      <wo:else><wo:image filename="[thumbLink]"/></wo:else></wo:if></wo:link><br/>
+	  <wo:string value="[resourceTitle]" valueWhenEmpty="No Title"/>
+
+      <wo:if condition="[resourceExists]" negate="TRUE"><br/>(asset inaccessible)</wo:if>
+
+      <table width="100%" cellpadding="2px">
+        <tr>
+	      <td align="right"><wo:link action="[inspectAction]" class="blok mini tint edge">Details</wo:link></td>
+	      <td><wo:link action="[selectAction]" class="blok mini tint edge">Select</wo:link></td></tr>
+        <tr>
+          <td align="right">
+             <wo:if condition="[isFlashAsset]">
+              <wo:ERXDataHyperlink pageName="FlashPreview" 
+                                previewPath="[assetLink]" 
+                             otherTagString="target='_blank'" 
+                                      class="blok mini tint edge">Preview</wo:ERXDataHyperlink>
+             <wo:else>
+              <wo:link href="[assetLink]" target="_blank" class="blok mini tint edge">Preview</wo:link></wo:else></wo:if></td>
+          <td>&nbsp;</td></tr>
+      </table>
+
+    </div>
+  </wo:repeat>
+</wo:if>
+	    
+<wo:if condition="[hasSearchResults]">
+<div class="clearBoth"/>
+      <wo:if condition="[mediaDisplayGroup.hasMultipleBatches]">
+        <p><wo:MessageFormatter value="Page {0} of {1} ({2}) items found"
+                               param0="[mediaDisplayGroup.currentBatchIndex]"
+                               param1="[mediaDisplayGroup.batchCount]"
+                               param2="[mediaDisplayGroup.allObjects.count]" />&nbsp;&nbsp;
+           <wo:link action="[mediaDisplayGroup.displayPreviousBatch]" class="blok tint edge">Previous</wo:link>&nbsp;&nbsp;
+           <wo:link action="[mediaDisplayGroup.displayNextBatch]" class="blok tint edge">Next</wo:link></p>
+        <wo:else>
+          <wo:if condition="[hasSearchResults]">
+            <wo:string value="[objectCount]"/> results found
+              <wo:if condition="[searchTerm]"> for &quot;<wo:string value="[searchTerm]"/>&quot;</wo:if>.
+          <wo:else>
+            No Search Results Found<wo:if condition="[searchTerm]"> for &quot;<wo:string value="[searchTerm]"/>&quot;</wo:if>.
+          </wo:else></wo:if><p></p>
+        </wo:else></wo:if>
+<div class="clearBoth"/>
+</wo:if>
+
+</wo:switch>

@@ -1,0 +1,132 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = ADDITIONALINFO; 
+            externalType = VARCHAR; 
+            name = additionalInformation; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = APPLICATIONSTATE; 
+            externalType = LONGTEXT; 
+            name = applicationState; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ASSISTIVEDEVICES; 
+            externalType = INTEGER; 
+            name = assistiveDevices; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = COMPPRIMARYUSE; 
+            externalType = VARCHAR; 
+            name = computerPrimaryUse; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = CONTRIBUTORIDENTITY; 
+            externalType = VARCHAR; 
+            name = contributorIdentity; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = DATECREATED; 
+            externalType = TIMESTAMP; 
+            name = dateCreated; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = NETWORKCONNECTION; 
+            externalType = VARCHAR; 
+            name = networkConnection; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = OPERATINGSYSTEM; 
+            externalType = VARCHAR; 
+            name = operatingSystem; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = TITLE; 
+            externalType = MEDIUMTEXT; 
+            name = problemReportTitle; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = REPRODUCIBILITY; 
+            externalType = VARCHAR; 
+            name = problemReproducibility; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = SUMMARY; 
+            externalType = LONGTEXT; 
+            name = problemSummary; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = TYPE; 
+            externalType = VARCHAR; 
+            name = problemType; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            columnName = RID; 
+            externalType = INTEGER; 
+            name = rid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = WEBBROWSER; 
+            externalType = VARCHAR; 
+            name = webBrowser; 
+            valueClassName = NSString; 
+            width = 255; 
+        }
+    ); 
+    attributesUsedForLocking = (rid); 
+    className = "org.pachyderm.authoring.eof.RDBugReport"; 
+    classProperties = (
+        additionalInformation, 
+        applicationState, 
+        assistiveDevices, 
+        computerPrimaryUse, 
+        contributorIdentity, 
+        dateCreated, 
+        networkConnection, 
+        operatingSystem, 
+        problemReportTitle, 
+        problemReproducibility, 
+        problemSummary, 
+        problemType, 
+        webBrowser
+    ); 
+    externalName = BUGREPORT; 
+    fetchSpecificationDictionary = {}; 
+    name = RDBugReport; 
+    primaryKeyAttributes = (rid); 
+}

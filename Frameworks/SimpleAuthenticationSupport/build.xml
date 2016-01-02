@@ -1,0 +1,154 @@
+<project name="SimpleAuthenticationSupport" default="build" basedir=".">
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                      woframework ant task
+  classes
+    The nested classes element specifies a FileSet.
+    All files included in this fileset will end up
+    in the Resources/Java/*.jar file of the framework.
+
+  resources
+    The nested resources element specifies a FileSet.
+    All files included in this fileset will end up in
+    the Resources directory of the framework.
+
+  wsresources
+    The nested wsresources element specifies a FileSet.
+    All files included in this fileset will end up in
+    the WebServerResources directory of the framework.
+
+  lib
+    The nested lib element specifies a FileSet. This
+    should be a fileset of jar libraries required by
+    your framework. All files in this fileset will end
+    up in the Resources/Java folder of the framework,
+    and will be included on the classpath for this framework.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <taskdef name="woframework"
+      classname="org.objectstyle.woproject.ant.WOFramework" />
+  <taskdef name="wocompile"
+      classname="org.objectstyle.woproject.ant.WOCompile" />
+
+<!-- basic initializations  -->
+
+  <target name="build" depends="init.build,package" />
+
+  <target name="init.build" depends="init.properties">
+    <tstamp />
+    <property name="final.dir" value="Distribution" />
+    <property name="class.dir" value="Classes" />
+  </target>
+
+  <target name="install" depends="init.install,build.woframework" />
+
+  <target name="init.install" depends="init.properties">
+    <tstamp />
+    <property name="final.dir" value="${wo.local.frameworks}" />
+    <property name="class.dir" value="/tmp/${user.name}/${ant.project.name}/Classes" />
+  </target>
+
+<!-- CLEAN Task -->
+
+  <target name="clean">
+    <delete dir="${class.dir}" />
+    <delete dir="${final.dir}/${ant.project.name}.framework" />
+  </target>
+
+<!-- property determination  -->
+
+  <target name="init.properties">
+    <property file="build.properties" />
+	<property name="wolips.properties"
+	         value="${user.home}${file.separator}Library${file.separator}Application Support${file.separator}WOLips${file.separator}wolips.properties" />
+	<property file="${wolips.properties}" />
+
+	<condition property="wo.properties.check.failed">
+	  <not>
+		<and>
+		  <isset property="wo.system.frameworks" />
+		  <isset property="wo.local.frameworks" />
+		</and>
+	  </not>
+	</condition>
+
+	<fail if="wo.properties.check.failed"
+		 message="The properties 'wo.system.frameworks' and 'wo.local.frameworks' must be set. Check that your ${wolips.properties} is correct." />
+
+  </target>
+
+<!-- WOPROJECT Tasks -->
+
+  <target name="build.woframework" depends="compile">
+
+    <woframework destDir="${final.dir}"
+                    name="${ant.project.name}"
+            javaVersion="${javaVersion}"
+        cfbundleversion="${cfBundleVersion}"
+    cfbundleshortversion="3.0.0"
+              cfbundleID="${cfBundleID}"
+  customInfoPListContent="${customInfoPListContent}"
+          principalClass="${principalClass}"
+      eoAdaptorClassName="${eoAdaptorClassName}">
+
+      <classes dir="${class.dir}">
+		<includesfile name="woproject/classes.include.patternset" />
+		<excludesfile name="woproject/classes.exclude.patternset" />
+		<exclude if="javaClient" name="**/client/**/*.*"/>
+	  </classes>
+
+	  <resources dir=".">
+		<includesfile name="woproject/resources.include.patternset" />
+		<excludesfile name="woproject/resources.exclude.patternset" />
+		<exclude if="javaClient" name="**/client/**/*.*"/>
+	  </resources>
+
+	  <wsresources dir=".">
+		<includesfile name="woproject/wsresources.include.patternset" />
+		<excludesfile name="woproject/wsresources.exclude.patternset" />
+	  </wsresources>
+    </woframework>
+  </target>
+
+  <target name="compile" depends="init.properties">
+    <mkdir dir="${class.dir}" />
+    <wocompile srcdir="Sources" destdir="${class.dir}" includeAntRuntime="no"
+                debug="TRUE" debuglevel="lines,vars,source">
+
+	  <frameworks dir="${wo.local.frameworks}"
+              bundles="CoreServices/ERExtensions/ERJars" />
+
+	  <frameworks dir="${wo.system.frameworks}"
+              bundles="JavaFoundation/JavaWebObjects/JavaEOAccess/JavaEOControl" />
+
+	  <classpath>
+		<fileset dir="${wo.extensions}">
+		  <include name="*.jar" />
+	    </fileset>
+	  </classpath>
+	</wocompile>
+  </target>
+
+
+  <target name="javaclient" if="javaClient" depends="build.woframework">
+    <mkdir dir="${final.dir}/${ant.project.name}.framework/WebServerResources/Java" />
+    <jar basedir="${class.dir}"
+        excludes="**/server/**/*.*, **/server/**/"
+         jarfile="${final.dir}/${ant.project.name}.framework/WebServerResources/Java/${ant.project.name}.jar"/>
+  </target>
+
+<!-- PACKAGE Task -->
+
+  <target name="package" depends="build.woframework,javaclient">
+
+    <tar destfile="${final.dir}/${ant.project.name}.tar.gz"
+      compression="gzip"
+         longfile="gnu">
+      <tarfileset dir="${final.dir}">
+        <include name="${ant.project.name}.framework/**"/>
+      </tarfileset>
+    </tar>
+
+  </target>
+
+</project>

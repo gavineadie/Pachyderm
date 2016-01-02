@@ -1,0 +1,29 @@
+<div class="beditc">
+ <p class="helptext"><wo:string value="[helpSummaryForCurrentBinding]" /></p>
+  <wo:if condition="[isValueNull]">
+  
+   <wo:link action="[browseImage]"><wo:image filename="images/icon-NoMediaSelected.gif"/></wo:link><br/>
+   <wo:submit action="[browseImage]" value="Browse" class="blok tint edge" />
+  
+  <wo:else>
+	
+	<wo:if condition="[isAudioType]"><wo:image filename="images/icon-AudioSelected.gif" /></wo:if>
+	<wo:if condition="[isVideoType]"><wo:image filename="images/icon-VideoSelected.jpg" /></wo:if>
+	<wo:if condition="[isImageType]">
+	  <wo:if condition="[imagePreviewLink]" negate="TRUE">
+	    <wo:image filename="images/icon-NoMediaFound.gif"/>
+	  <wo:else>
+	    <wo:image src="[imagePreviewLink]" height="59"/>
+	  </wo:else></wo:if></wo:if><br />
+   "<wo:string value="[title]" valueWhenEmpty="(Title Unknown)" />"<br />
+    <wo:submit action="[browseImage]" value="Browse" class="blok tint edge" />
+    <wo:if condition="[mayUserEditResource]">
+      <wo:submit action="[editMedia]" value="Edit Metadata" class="blok tint edge"/>
+	<wo:else>
+	  <wo:submit action="[viewMedia]" value="View Metadata" class="blok tint edge"/>
+    </wo:else></wo:if>
+	<wo:submit action="[removeValue]" value="Remove" class="blok tint edge"/>
+
+  </wo:else></wo:if>	
+	<wo:if condition="[componentDebug]"><div style="clear:both;" align="right"><b>InlineMediaAssetSelector</b></div></wo:if>
+</div>

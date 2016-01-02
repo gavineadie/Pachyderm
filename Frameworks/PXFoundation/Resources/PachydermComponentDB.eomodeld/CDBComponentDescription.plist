@@ -1,0 +1,31 @@
+{
+    attributes = (
+        {
+            columnName = "COMPONENT_IDENTIFIER"; 
+            externalType = VARCHAR; 
+            name = componentIdentifier; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = "CONFORMING_IDENTIFIERS"; 
+            externalType = VARCHAR; 
+            name = conformingIdentifiers; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = "DEFINITION_XML"; 
+            externalType = LONGBLOB; 
+            name = definitionXML; 
+            serverTimeZone = "Canada/Mountain"; 
+            valueClassName = NSData; 
+        }
+    ); 
+    cachesObjects = Y; 
+    className = EOGenericRecord; 
+    classProperties = (componentIdentifier, conformingIdentifiers, definitionXML); 
+    externalName = "COMPDESCRIPTION_2_1"; 
+    fetchSpecificationDictionary = {}; 
+    isReadOnly = Y; 
+    name = CDBComponentDescription; 
+    primaryKeyAttributes = (componentIdentifier); 
+}

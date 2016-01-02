@@ -1,0 +1,109 @@
+h1 {
+	text-transform: uppercase;
+	margin: 0 0 .75em 0;
+}
+
+.notuc { text-transform: none; }
+
+/* ListMediaPage */
+
+#guts #medarea a {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+ul#medact {
+	position: absolute;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 158px;
+}
+
+* html ul#medact {
+	left: 0;
+}
+
+div#meddesc {
+	width: 160px;
+	float: left;
+	border-right: 2px solid #ccc;
+}
+div.meddescp {
+	margin-bottom: 10px;
+	padding-right: 5px;
+}
+
+div#medarea {
+	margin-left: 160px;
+	border-left: 2px solid #999;
+	padding-left: 1em;
+	font-size: small;
+}
+
+p#mednote, p.fprompt { font-weight: bold; }
+p#mednote, form#medbrowse { display: none; }
+
+div.medres {
+	font-size: x-small;
+	border: 1px solid #ccc;
+	padding: 1px;
+	width: 130px;
+	height: 190px;
+	text-align: center;
+	float: left;
+	margin: 1px;
+	overflow: hidden;
+}
+
+div.medres img {
+	display: block;
+	background-image: url( /pachyderm_2_1/images/asset_mediaIcon.gif );
+}
+
+div.medres ul {
+	list-style: none;
+	padding: 0;
+}
+
+div.medres p, div.medres ul {
+	margin: .5em;
+}
+
+div.medres li {
+	display: inline;
+}
+
+/* 
+div.medres li::after {
+	content: " | ";
+}
+*/
+
+div.medres li:last-child::after {
+	content: "";
+}
+
+/* InspectMediaPage */
+
+div#medover {
+	position: absolute;
+	width: 158px;
+}
+
+* html div#medover {
+	left: 0;
+}
+
+div#medarea label {
+	display: block;
+	font-weight: bold;
+}
+
+.medsub {
+	font-size: 10px;
+}
+.medinputs {
+	color: #036;
+	font-size: 10px;
+}

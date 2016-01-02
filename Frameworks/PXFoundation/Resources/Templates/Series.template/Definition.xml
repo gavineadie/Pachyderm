@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<component-template>
+	<identification>
+		<localized-name>
+			<string lang="en">Series Screen Template</string>
+		</localized-name>
+		<version>100</version>
+		<version-string>Version 1.0, Pachyderm 3.0</version-string>
+		<template-identifier>pachyderm.template.series</template-identifier>
+		<people></people>
+	</identification>
+	<objects>
+		<component>
+			<identifier>1</identifier>
+			<description-identifier>pachyderm.series</description-identifier>
+			<binding-list>
+
+				<binding>
+					<binding-key>compoundTitle</binding-key>
+					<association>
+						<class>ConstantValueAssociation</class>
+						<parameters>
+							<key>CVAValue</key><string>cmpt:2</string>
+						</parameters>
+					</association>
+				</binding>
+
+				<binding>
+					<binding-key>midground_image</binding-key>
+					<association>
+						<class>ConstantValueAssociation</class>
+						<parameters>
+							<key>CVAValue</key><string>cmpt:5</string>
+						</parameters>
+					</association>
+				</binding>
+
+				<binding>
+					<binding-key>page</binding-key>
+					<array>
+						<association>
+							<class>ConstantValueAssociation</class>
+							<parameters>
+								<key>CVAValue</key><string>cmpt:3</string>
+							</parameters>
+						</association>
+					</array>
+				</binding>
+			</binding-list>
+
+			<subcomponents>
+				<component>
+					<identifier>2</identifier>
+					<description-identifier>pachyderm.general.compound_title</description-identifier>
+					<binding-list></binding-list>
+					<subcomponents></subcomponents>
+				</component>
+
+				<component>
+					<identifier>5</identifier>
+					<description-identifier>pachyderm.general.midground_image</description-identifier>
+					<binding-list></binding-list>
+					<subcomponents></subcomponents>
+				</component>
+
+				<component>
+					<identifier>3</identifier>
+					<description-identifier>pachyderm.series.page</description-identifier>
+					<binding-list>
+
+						<binding>
+							<binding-key>title</binding-key>
+							<association>
+								<class>ConstantValueAssociation</class>
+								<parameters>
+									<key>CVAValue</key><string></string>
+								</parameters>
+							</association>
+						</binding>
+
+						<binding>
+							<binding-key>imageItem</binding-key>
+								<association>
+									<class>ConstantValueAssociation</class>
+									<parameters>
+										<key>CVAValue</key><string>cmpt:4</string>
+									</parameters>
+								</association>
+						</binding>
+
+						<binding>
+							<binding-key>text</binding-key>
+							<association>
+								<class>ConstantValueAssociation</class>
+								<parameters>
+									<key>CVAValue</key><string></string>
+								</parameters>
+							</association>
+						</binding>
+					</binding-list>
+
+					<subcomponents>
+						<component>
+							<identifier>4</identifier>
+							<description-identifier>pachyderm.series.image_item</description-identifier>
+							<binding-list></binding-list>
+							<subcomponents></subcomponents>
+						</component>
+					</subcomponents>
+				</component>
+			</subcomponents>
+		</component>
+	</objects>
+</component-template>

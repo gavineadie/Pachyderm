@@ -1,0 +1,34 @@
+<ul style="margin:0; padding:0; list-style:none;">
+<wo:repeat list="[component.componentDescription.bindingKeys]" 
+           item="[bindingKey]" 
+          index="[bindingIndex]">
+  <li>
+  <wo:genericContainer elementName="div" class="[componentLevelString]">
+  <wo:if condition="[encloseSubeditorInTable]">
+
+	<wo:AjaxExpansion id="[displayedLabelValue]" class="inlineEditBody" linkClass="fill" onComplete="[toggleHeaderText]"
+	                 action="[toggleAction]" insertion="Effect.blind" insertionDuration="0.05" expanded="[expandedState]">
+
+      <wo:switch WOComponentName="[editorComponentName]" 
+                       component="[destinationComponent]" bindingKey="[bindingKey]"
+                    localContext="[extendedBindingContext]"/>
+
+      <wo:ERXWOTemplate templateName="label">
+      <div class="expando-head"><span class="shape"><wo:string value="[displayedLabelValue]"/></span>
+                                <span class="beside"><wo:string value="[bindingDescription.name]"/></span>
+                                <span class="right"><wo:if condition="[expandedState]">Collapse &#x25BC;<wo:else>Expand &#x25C0;</wo:else></wo:if></span></div>
+      </wo:ERXWOTemplate>
+
+    </wo:AjaxExpansion>
+
+  <wo:else>
+
+      <wo:switch WOComponentName="[editorComponentName]" 
+                       component="[destinationComponent]" bindingKey="[bindingKey]"
+                    localContext="[extendedBindingContext]"/>
+
+  </wo:else></wo:if>
+  </wo:genericContainer>
+  </li>
+</wo:repeat>
+</ul>

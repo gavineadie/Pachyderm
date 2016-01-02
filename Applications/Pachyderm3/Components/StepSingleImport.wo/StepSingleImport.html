@@ -1,0 +1,38 @@
+<p class="h2">Step 1: Import file</p>
+
+ <p>Choose a file to import from your computer. 
+    This instance of Pachyderm supports only the following file formats:</p>
+ <ul>
+  <li>Images (<wo:ERXListDisplay list="[imageArray]" />)</li>
+  <li>Videos (<wo:ERXListDisplay list="[movieArray]" />)<br/>
+      <i><b>Important</b>: Flash presentations require *.flv videos, HTML5 presentations require *.mp4 videos.</i></li>
+  <li>Audio (<wo:ERXListDisplay list="[audioArray]" />)</li>
+ </ul>
+
+ <wo:string value="[getMediaGuideLines]" escapeHTML="FALSE" />
+
+ <div id="progressActionInitiator">
+ <wo:form action="[submitAction]" enctype="multipart/form-data" multipleSubmit="TRUE">
+  <wo:fileUpload filePath="[candidateFileName]" 
+         streamToFilePath="[requestedFilePath]" 
+            finalFilePath="[deliveredFilePath]" mimeType="[deliveredMimeType]" />
+
+<!-- 
+  <wo:AjaxFlexibleFileUpload filePath="[candidateFileName]" 
+                     streamToFilePath="[requestedFilePath]"
+                        finalFilePath="[deliveredFilePath]" mimeType="[deliveredMimeType]"
+                        selectFileLabel="Choose File" />
+-->
+                 
+  <p><wo:string value="[messageText]" escapeHTML="FALSE" /></p>
+
+  <p>File Title (will use file name if not provided):</p>
+  <wo:textfield value="[title]" />
+  <p style="float:right"><wo:submit action="[cancelAction]" value="Cancel" class="blok tint edge"/>&nbsp;&nbsp;&nbsp;
+                         <wo:submit action="[submitAction]" value=" Next " class="blok tint edge"/></p>
+ </wo:form>
+ </div>
+
+<div id="progressDisplayDiv" style="display:none;">
+<h2>Uploading your image...</h2>
+<div align="center"><wo:image src="images/WorkingAnimation.gif" alt="Working..." /></div></div>

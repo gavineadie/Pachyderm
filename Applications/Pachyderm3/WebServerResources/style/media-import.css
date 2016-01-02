@@ -1,0 +1,91 @@
+.h2 {
+	text-align: center; font-size: small;
+	padding: 0.25em;
+	background-color: #aebecc;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+}
+
+#columnarForm div.itemmetadataentry div.itemtitle {
+	height: 75px;
+}
+
+#columnarForm h4 {
+	background-color: #ccc;
+	font-size:12px;
+	height: 1em; padding: 8px;
+}
+
+#columnarForm img {
+	border: 1px solid black;
+}
+
+#columnarForm p.clear {
+	clear: both;
+}
+
+#columnarForm fieldset {
+	display: block; float: left; width: 300px;
+	margin: 0 1em 1em 0;
+	padding: 0 1em 1em 1em;
+	border: 0;
+}
+
+#columnarForm div.itemmetadataentry fieldset {
+	margin-top: -50px;
+}
+
+#columnarForm fieldset.radio {
+	width: 15em;
+	margin: 1em 0 2em 0;
+}
+
+#columnarForm fieldset.radio input {
+	clear: both;
+	float: left;
+	width: auto;
+}
+
+#columnarForm fieldset.radio label {
+	font-weight: normal;
+}
+
+#columnarForm input {
+	display: block;
+	width: 15em;
+}
+
+#columnarForm label {
+	display: block;
+	margin-bottom: 2px;
+	margin-top: 5px;
+	font-weight: bold;
+}
+
+#columnarForm label.first {
+	padding-top: 1em;
+}
+
+#columnarForm select {
+	display: block;
+}
+
+div#oppri, div#opadd, div.oppri, div.opadd {
+	width: 48%;
+}
+
+div#oppri, div.oppri {
+	float: left;
+	clear: both;
+}
+
+div#opadd, div.opadd {
+	float: left;
+}
+
+div#oppri textarea, div#opadd input, div.oppri textaria, div.opadd input {
+	width: 85%;
+}

@@ -1,0 +1,17 @@
+{
+	"Dev1" = {
+		"TemplatesPath" = "";
+		"ResourcesPath" = "";
+		"DataPath" = "";
+		"IncludeHTMLIndex" = "YES";
+		"BuildMacOSXPackage" = "NO";
+	};
+	
+	"Dev2" = {
+		"TemplatesPath" = "Templates";
+		"ResourcesPath" = "Resources";
+		"DataPath" = "Data";
+		"IncludeHTMLIndex" = "YES";
+		"BuildMacOSXPackage" = "YES";
+	};
+}

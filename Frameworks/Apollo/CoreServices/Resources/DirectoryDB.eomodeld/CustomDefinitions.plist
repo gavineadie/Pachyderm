@@ -1,0 +1,34 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "CLASS_TYPE"; 
+            externalType = VARCHAR; 
+            name = classType; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            columnName = "DEF_ID"; 
+            externalType = INTEGER; 
+            name = defid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = DEFINITIONS; 
+            externalType = BLOB; 
+            name = definitions; 
+            valueClassName = NSData; 
+            width = 4095; 
+        }
+    ); 
+    attributesUsedForLocking = (classType, defid, definitions); 
+    className = EOGenericRecord; 
+    classProperties = (classType, definitions); 
+    externalName = "CUSTOM_DEFINITIONS"; 
+    fetchSpecificationDictionary = {}; 
+    name = CustomDefinitions; 
+    primaryKeyAttributes = (defid); 
+}

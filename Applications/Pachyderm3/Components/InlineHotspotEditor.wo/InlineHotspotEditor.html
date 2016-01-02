@@ -1,0 +1,44 @@
+<ul>
+	<wo:repeat list="[component.componentDescription.bindingKeys]" item="[bindingKey]">
+	<li>
+
+	<wo:if condition="[isBindingDetail]">
+	  <wo:if condition="[isDetailsEmpty]">
+	     <div class="beditc">
+	       <p><wo:submit action="[hotspotEditorAction]" value="Create Hotspots" class="input_button"/></p></div>
+	  <wo:else>
+	     <wo:switch WOComponentName="[editorComponentName]"
+	                   localContext="[extendedBindingContext]"
+	                     bindingKey="[bindingKey]" 
+	                      component="[destinationComponent]"/>
+	    <div class="beditc">
+	      <p><wo:submit action="[hotspotEditorAction]" value="Edit Hotspots" class="input_button"/></p></div>
+	  </wo:else></wo:if>
+	
+	<wo:else>
+			
+		<wo:if condition="[encloseSubeditorInTable]">		
+
+			<div class="beditor">
+			<p class="bstep">
+			<span class="bref"><span class="invisible">Step </span><wo:string value="[displayedLabelValue]"/></span>
+			<span class="invisible">:</span><wo:string value="[bindingDescription.name]"/></p>
+         <wo:switch WOComponentName="[editorComponentName]"
+                       localContext="[extendedBindingContext]"
+                         bindingKey="[bindingKey]" 
+                          component="[destinationComponent]"/>
+			</div>
+
+    <wo:else>
+
+         <wo:switch WOComponentName="[editorComponentName]"
+                       localContext="[extendedBindingContext]"
+                         bindingKey="[bindingKey]" 
+                          component="[destinationComponent]"/>
+
+		</wo:else></wo:if>
+	</wo:else></wo:if>
+
+	</li>
+	</wo:repeat>
+</ul>

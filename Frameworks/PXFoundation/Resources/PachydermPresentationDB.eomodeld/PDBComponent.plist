@@ -1,0 +1,120 @@
+{
+    attributes = (
+        {
+            adaptorValueConversionMethodName = archiveData; 
+            columnName = "BINDING_VALUES"; 
+            externalType = BLOB; 
+            name = bindingValues; 
+            valueClassName = "org.pachyderm.foundation.PXBindingValues"; 
+            valueFactoryMethodName = "objectWithArchiveData:"; 
+        }, 
+        {
+            columnName = "COMPONENT_DESCRIPTION_CLASS"; 
+            externalType = VARCHAR; 
+            name = componentDescriptionClass; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DATE_CREATED"; 
+            externalType = DATETIME; 
+            name = dateCreated; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DATE_MODIFIED"; 
+            externalType = DATETIME; 
+            name = dateModified; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = IDENTIIFER; 
+            externalType = VARCHAR; 
+            internalInfo = {"_nameInObjectStore" = IDENTIIFER; }; 
+            name = identifier; 
+            valueClassName = NSString; 
+        }, 
+        {
+            adaptorValueConversionMethodName = archiveData; 
+            allowsNull = Y; 
+            columnName = "LOCALIZED_DESCRIPTION"; 
+            externalType = "LONG VARCHAR"; 
+            name = localizedDescription; 
+            valueClassName = "org.pachyderm.apollo.core.CXLocalizedValue"; 
+            valueFactoryMethodName = "objectWithArchiveData:"; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = METADATA; 
+            externalType = "LONG VARCHAR"; 
+            name = metadata; 
+            valueClassName = NSString; 
+            valueType = C; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PARENT_COMPONENT_ID"; 
+            externalType = INTEGER; 
+            internalInfo = {"_nameInObjectStore" = ""; }; 
+            name = parentComponentID; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = ID; 
+            externalType = INTEGER; 
+            name = pk; 
+            precision = 11; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = TITLE; 
+            externalType = VARCHAR; 
+            name = title; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }
+    ); 
+    attributesUsedForLocking = (pk); 
+    className = "org.pachyderm.foundation.eof.PDBComponent"; 
+    classProperties = (
+        bindingValues, 
+        componentDescriptionClass, 
+        dateCreated, 
+        dateModified, 
+        identifier, 
+        innerComponents, 
+        outerComponent, 
+        parentComponentID, 
+        pk, 
+        title
+    ); 
+    externalName = "COMPONENT_2_1"; 
+    name = PDBComponent; 
+    primaryKeyAttributes = (pk); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PDBComponent; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = parentComponentID; sourceAttribute = pk; }); 
+            name = innerComponents; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PDBComponent; 
+            internalInfo = {"_nameInObjectStore" = parentComponent; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = pk; sourceAttribute = parentComponentID; }); 
+            name = outerComponent; 
+        }
+    ); 
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Sources"/>
+	<classpathentry kind="con" path="WOFramework/JavaWebObjects"/>
+	<classpathentry kind="con" path="WOFramework/JavaFoundation"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOAccess"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOControl"/>
+	<classpathentry kind="con" path="WOFramework/JavaJDBCAdaptor"/>
+	<classpathentry kind="lib" path="Libraries/OsidRegistry.jar"/>
+	<classpathentry kind="lib" path="Libraries/OsidProvider.jar"/>
+	<classpathentry kind="lib" path="Libraries/OSIDLoggingPlain-1.0.jar"/>
+	<classpathentry kind="lib" path="Libraries/OSIDIdNoPersist-1.0.jar"/>
+	<classpathentry kind="lib" path="Libraries/okiOSID-2.0a.jar"/>
+	<classpathentry kind="lib" path="Libraries/okiOSID-2.0.jar"/>
+	<classpathentry kind="lib" path="Libraries/MIT-OTS.jar"/>
+	<classpathentry kind="lib" path="Libraries/jsse.jar"/>
+	<classpathentry kind="lib" path="Libraries/jnet.jar"/>
+	<classpathentry kind="lib" path="Libraries/jhapi.jar"/>
+	<classpathentry kind="lib" path="Libraries/javatar.jar"/>
+	<classpathentry kind="lib" path="Libraries/HiveSupport-1.0.jar"/>
+	<classpathentry kind="lib" path="Libraries/HiveRepositoryRegistry-1.0.jar"/>
+	<classpathentry kind="lib" path="Libraries/HiveRepositoryPublish-1.0.jar"/>
+	<classpathentry kind="lib" path="Libraries/HiveAuthentication-1.0.jar"/>
+	<classpathentry kind="lib" path="Libraries/FederatedSearch-1.0.jar"/>
+	<classpathentry kind="lib" path="Libraries/commons-logging.jar"/>
+	<classpathentry kind="lib" path="Libraries/commons-httpclient-2.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CoreServices"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/DataServices"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ERJars"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

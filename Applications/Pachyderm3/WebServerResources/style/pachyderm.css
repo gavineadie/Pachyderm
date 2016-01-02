@@ -1,0 +1,296 @@
+div#container {
+  width: 924px; margin: 0 auto;
+  text-align:left;
+}
+
+body {
+  font-family:Arial,Helvetica,sans-serif; 
+  font-size:11px; 
+  margin:0px; padding:1em;
+}
+
+h1 {
+	text-transform: uppercase;
+	margin: 0 0 .75em 0;
+}
+
+p#copyright {
+  width: 900px;
+  text-align: right;
+  font-size: x-small;
+  margin: 0 auto; 
+  padding-right: 1em;
+  color: #999;
+}
+
+img { border: 0; }
+
+table { font-size:11px; }
+
+.invisible { display: none }
+.clearBoth { height: 1px; clear: both; }
+
+.W570 { width:570px; float:right; }
+.W545 { width:545px; float:left; padding-left:6px; border-left:2px solid lightgrey; }
+.W360 { width:360px; float:left; padding-left:20px; height:100%; }
+.W320 { width:320px; float:left; }
+.W300 { width:300px; float:left; padding:0px 0px; margin-left:20px; }
+.W160 { width:160px; float:left; padding-right:5px; }
+.W120 { width:120px; float:left; padding-right:5px; }
+
+/* ----------------------------------------------------------- styles under ListMediaPage --------- */
+div.Asset130 { width:130px; float:left; padding:1px; border:1px solid #ccc;
+               font-size: x-small; text-align: center; }
+
+div.Preso260 { width:260px; float:left; margin:2px; }
+div.Preso260 img {          float:left; margin-right:10px;}
+
+.L150 { width:150px; float:left; }
+
+.L700 { width:740px; float:left; padding:0 1em; }
+
+/*----------------------------------------------------------------
+     ID = MENU (operating on <UL><LI><A>.... )
+  ----------------------------------------------------------------*/ 
+
+#Menu {
+  width: 156px; float: left; padding: 16px 0px 0px;
+}
+
+  #Menu ul { 
+    list-style:none; margin:0; padding:0; 
+    width:158px; line-height:28px; 
+    font-family:Verdana, san-serif;
+  }
+
+    #Menu li {
+      display:block;
+      background-color:#888;
+      padding:3px; margin:2px;  
+      border-top-left-radius:15px; border-bottom-left-radius:15px;
+      -moz-border-top-left-radius:15px; -moz-border-bottom-left-radius:15px;
+    }
+
+    #Menu li:hover {
+      background-color:#444; 
+    }
+
+    #Menu li a { 
+      color:#eee;
+      text-decoration:none; 
+    }
+
+    #Menu li.active {
+      background-color:#088;
+    }
+
+.leftText { float:left; padding-left:10px; width:120px; }
+.rightRed { float:right; color:red; }
+
+
+/*----------------------------------------------------------------
+     CLASS = BREADCRUMBS (operating on <UL>)
+  ----------------------------------------------------------------*/
+ul#breadcrumbs {
+  list-style: none;
+  margin: 0; padding: 1px;
+}
+
+ul#breadcrumbs a {
+  color: grey;
+  text-decoration: none;
+}
+
+ul#breadcrumbs a:hover {
+  color: black;
+}
+
+/*----------------------------------------------------------------
+     CLASS = CTXNAV (operating on <UL>)
+  ----------------------------------------------------------------*/
+ul#ctxnav {
+  margin: 0; 
+  padding: 1px;
+  position: relative; top: -4px;
+  text-transform: uppercase;
+  width: 880px;
+  text-align: right;
+}
+
+ul#ctxnav a {
+  text-decoration: none;
+  color:white;
+  background-color: #888;
+  padding:6px 14px 6px 14px;  
+  border-top-left-radius:15px; border-top-right-radius:15px;
+  -moz-border-top-left-radius:15px; -moz-border-top-right-radius:15px;
+}
+
+ul#ctxnav a:hover {
+  color: black;
+}
+
+ul#ctxnav li { 
+  display: inline;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+
+.button {
+  color: #03c; background-color: #ffc; border: 1px solid #888;
+  text-decoration: none; text-align: center; padding: 2px; border-radius: 3px; -moz-border-radius: 3px;
+}
+
+.butoff {
+  color: white; background-color: #888; border: 1px solid #888; cursor:default;
+  text-decoration: none; text-align: center; padding: 2px; border-radius: 3px; -moz-border-radius: 3px;
+}
+
+a:hover.button { 
+    color:black; background-color:#ddd;
+}
+
+a:hover.butoff { 
+    color:black; 
+}
+
+.blok {
+  font-size:12px; text-align:center; text-decoration:none;
+  padding:3px; border-radius:3px; -moz-border-radius:3px;
+}
+
+.mini {
+  font-size:10px;
+  padding:1px; 
+}
+
+/* -------------------------------------------------------- from media.css/medit-edit.css --------- */
+
+div#mediaPanel {
+  float:left; width:545px;
+  padding-left:6px; font-size:small;
+}
+
+div#mediaPanel label {
+  display:block;
+  font-weight:bold;
+}
+
+div#mediaPanel li {
+  display:inline;
+  font-size:xx-small;
+}
+
+/*--- from media.cc & medit-edit.css ---*/
+
+ul#medact {
+	position: absolute;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 158px;
+}
+
+* html ul#medact {
+	left: 0;
+}
+
+/*Added for media Edit, Inspect and Delete screens 2009-02-20*/
+
+.media_dotted_bottom {
+  border-bottom:1px dotted #333;
+  margin:2px 0;
+}
+
+input.media_details{
+  margin-bottom:10px;
+}
+
+input.media_details, label.media_details, textarea.media_details, .media_details_explanation {
+/*  margin-left:20px; */
+  color:#333;
+}
+
+.media_details_text {
+  margin-bottom:5px;
+  margin-left:20px;
+  color:#333;
+  font-weight:normal;
+  text-indent:0;
+}
+
+.media_details_explanation{
+  font-size:11px;
+}
+
+h2.media_details label.media_details {
+  margin-left:0;
+}
+
+h2.media_details label.media_details {
+  color:#748EA7;
+}
+
+h2.media_details {
+  text-align:left;
+  color:#748EA7;
+  font-size:18px;
+}
+
+h2.media_details .media_details_explanation {
+  font-weight:normal;
+  text-indent:0;
+}
+
+/* ------------------------------------------------------ visual decoration for debugging --------- */
+
+.panelA {
+  background-color: #ffc;
+  margin: -1px; border: 1px dotted gray;
+}
+.panelB {
+  background-color: #cff;
+  margin: -1px; border: 1px dotted gray;
+}
+.panelC {
+  background-color: #fcf;
+  margin: 0px; border: 1px dotted gray;
+}
+.panelD {
+  background-color: #fcc;
+  margin: 0px; border: 1px dotted gray;
+}
+.panelE {
+  background-color: #cfc;
+  margin: 0px; border: 1px dotted gray;
+}
+.panelF {
+  background-color: #ccf;
+  margin: 0px; border: 1px dotted gray;
+}
+.panelZ {
+  margin: 0px; border: 1px dotted gray;
+}
+
+/**** overrides **** eric - jun 2012 ****/
+
+  #Menu li {
+    padding:6px;  
+    height:30px;
+  }
+
+    #Menu li:hover {
+      background-color:#444; 
+    }
+
+    #Menu li a { 
+      height:auto;
+    }
+
+    #Menu li.active {
+      background-color:#088;
+    }
+  
+/**** new styles **** eric - jun 2012 ****/
+
+#maincontentWrapper { float:left; width:725px; padding:0; margin:0; }

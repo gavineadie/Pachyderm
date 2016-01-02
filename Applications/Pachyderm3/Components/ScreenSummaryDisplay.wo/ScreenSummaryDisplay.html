@@ -1,0 +1,17 @@
+<wo:genericContainer elementName="div" 
+                           class="screen" 
+                              id="[^scrid]">
+
+<wo:link action="[^editAction]" id="big_edit_link">
+  <h4><wo:string value="[^screen.title]" valueWhenEmpty="Unknown Title" /></h4><br/>
+    <wo:image filename="[screenThumbnailFile]" alt="[^screen.title]" height="137" width="199" /></wo:link><br/>
+
+	<wo:if condition="[^showMakeHome]"><br/>
+	  <wo:link action="[^primaryAction]" class="blok tint edge">Make Home</wo:link>
+      <wo:link action="[^previewAction]" class="blok tint edge">Preview</wo:link>
+      <wo:link action="[^deleteAction]" class="blok tint edge">Delete</wo:link>
+	<wo:else>
+      <br/><wo:link action="[^previewAction]" class="blok tint edge">Preview</wo:link>
+	</wo:else></wo:if>
+  <p><br/>Modified:&nbsp;<wo:string value="[^screen.dateModified]" dateformat="%b %d, %Y at %I:%M %p" /></p>
+</wo:genericContainer>

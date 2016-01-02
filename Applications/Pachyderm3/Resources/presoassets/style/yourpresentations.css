@@ -1,0 +1,68 @@
+@import url('main.css');
+@import url('interior.css');
+@import url('forms.css');
+
+table {font-size:1em;}
+td {background-color:#fff;
+	font-size:1em;
+	padding:5px;}
+
+.links {
+	color:#006600;
+	font-style:italic;
+	}
+
+img.links {
+	border:1px solid #060;
+	}
+	
+.unlinked {
+	color:#900;
+	font-style:italic;
+	}
+	
+img.unlinked {
+	border:1px solid #900;
+	}		
+	
+#box-left {
+	display:block;
+	float:left;
+	width:150px;
+	background-color:#fff;
+	}
+#box-left ul {
+	padding:0;
+	margin:0;
+	margin-left:12px;
+	}
+#box-left p {
+	margin-bottom:0;
+	}
+
+#box-right {
+	display:block;
+	top:0;
+	margin-top:0;
+	margin-left:160px;
+	border-left:2px solid #999;
+	padding-left:10px;
+	background-color:#fff;
+	/* width:350px; */
+	} 
+
+#box-right p {
+	margin-top:0.3em;
+	}	
+
+.explanation {
+	margin-top:10px;
+	padding-left:5px;
+	padding-right:10px;
+	font-style:italic;
+	color:#060;
+	}
+
+img.explain {
+	border:2px solid #060;
+	}

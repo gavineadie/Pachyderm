@@ -1,0 +1,67 @@
+{
+    attributes = (
+        {
+            columnName = NAME; 
+            externalType = VARCHAR; 
+            name = name; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = OWNER; 
+            externalType = INTEGER; 
+            name = owner; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = PARENT; 
+            externalType = INTEGER; 
+            name = parentID; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = PROFILE; 
+            externalType = TEXT; 
+            name = profile; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = SETID; 
+            externalType = INTEGER; 
+            name = setID; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = TOMBSTONE; 
+            externalType = TEXT; 
+            name = tombstone; 
+            valueClassName = NSString; 
+        }
+    ); 
+    attributesUsedForLocking = (parentID, owner, name, setID, tombstone, profile); 
+    className = EOGenericRecord; 
+    classProperties = (parentID, owner, name, tombstone, profile, parent, children); 
+    externalName = SET; 
+    fetchSpecificationDictionary = {}; 
+    name = Set; 
+    primaryKeyAttributes = (setID); 
+    relationships = (
+        {
+            destination = Set; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = parentID; sourceAttribute = setID; }); 
+            name = children; 
+        }, 
+        {
+            destination = Set; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = setID; sourceAttribute = parentID; }); 
+            name = parent; 
+        }
+    ); 
+}

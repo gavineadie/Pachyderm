@@ -1,0 +1,45 @@
+<wo:switch WOComponentName="PXMinimalPageWrapper" 
+                      css1="style/pachyderm.css" logo="small">	
+
+<div style="float:right;"><h2>Administration &bull; Dump Presentations</h2>
+<wo:form><p style="text-align:right"><wo:submit action="[adminHomeAction]" value="Admin Home" class="blok tint edge"/>&nbsp;&nbsp;</p></wo:form></div>
+<p style="border-top:1pt dotted grey;clear:both;" />
+
+<table border="1" cellpadding="3">
+  <tr><th>preso</th><th>author</th><th>meta</th><th>Screens & Components</th></tr>
+
+  <wo:repeat list="[allThePresos]" 
+             item="[currentPreso]"><tr valign="top">
+    <td align="right">P#<wo:string value="[currentPreso.pk]" /></td>
+    <td align="right">A#<wo:string value="[currentPreso.author]" /></td>
+    <td align="right"><wo:string value="[currentPreso.metadata]" />...</td>
+    <td><wo:repeat list="[allTheScreens]" 
+                   item="[currentScreen]"
+                  index="[screenIndex]">
+       <span style="color:red;">S#<wo:string value="[currentScreen.pk]" />
+       <wo:if condition="[primeScreen]"> (primary screen)</wo:if></span>
+    <table border="1" cellpadding="3">
+      <tr><th>C#</th><th>C-up</th><th>Class</th><th>Description & Binding</th></tr>
+		<wo:repeat list="[currentScreen.allTheComponents]" 
+		           item="[currentElement]"><tr valign="top">
+
+<wo:if condition="[currentElement.primeComponent]">
+
+	<td><span style="color:red;">C#<wo:string value="[currentElement.pk]"/><br/>(main)</span></td>
+	<td>&nbsp;</td>
+	
+<wo:else>
+
+	<td>C#<wo:string value="[currentElement.pk]"/></td>
+	<td>C#<wo:string value="[currentElement.parentComponentID]"/></td>
+
+</wo:else></wo:if>
+
+             <td><wo:string value="[currentElement.componentDescriptionClass]"/></td>
+             <td><wo:string value="[currentElement.componentDescription.name]"/>:
+                 <wo:string value="[currentElement.componentDescription.bindingKeys]"/><br/><br/>
+                 <wo:string value="[currentElement.bindingValues]"/></td>
+             </tr></wo:repeat></table></wo:repeat></td>
+  </tr></wo:repeat>
+</table>
+</wo:switch>

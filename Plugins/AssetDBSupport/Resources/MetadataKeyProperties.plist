@@ -1,0 +1,72 @@
+{
+	"SupportedMetadataAttributes" = ("accessRights", "alternative", "altText", "audience", "contributor", "coverage", 
+		"creator", "location", "description", "educationLevel", "extent", "format", "identifieruri", 
+		"instructionalMethod", "language", "license", "longDesc", "mediaLabel", "mediator", "medium", "provenance", 
+		"publisher", "relation", "rights", "rightsHolder", "source", "spatial", "subject", "syncCaption", "temporal",
+		"title", "transcript", "type", "valid"
+	);
+	
+	"MetadataKeyMappings" = {
+		"accessRights" = "accessRights";
+		"alternative" = "alternative";
+		"altText" = "altText";
+		"audience" = "audience";
+		"AttributeChangeDate" = "dateModified";
+		"contributor" = "contributor";
+		"coverage" = "coverage";
+		"Coverage" = "coverage";
+		"created" = "created";
+		"creator" = "creator";
+		"Creator" = "creator";		
+		"Copyright" = "dateCopyrighted";
+		"date" = "date";
+		"dateAccepted" = "dateAccepted";
+		"dateCopyrighted" = "dateCopyrighted";
+		"dateIssued" = "dateIssued";
+		"WhereFroms" = "source";
+		"dateModified" = "dateModified";
+		"dateSubmitted" = "dateSubmitted";
+		"description" = "description";
+		"Description" = "description";
+		"educationLevel" = "educationLevel";
+		"extent" = "extent";
+		"format" = "format";
+		"identifier" = "identifier";
+		"Identifier" = "identifier";
+		"identifieruri" = "identifieruri";
+		"identifieruri" = "identifieruri";
+		"instructionalMethod" = "instructionalMethod";
+		"language" = "language";
+		"Languages" = "language";
+		"license" = "license";
+		"longDesc" = "longDesc";
+		"mediaLabel" = "mediaLabel";
+		"Tombstone" = "mediaLabel";
+		"mediator" = "mediator";
+		"medium" = "medium";
+		"provenance" = "provenance";
+		"publisher" = "publisher";
+		"Publishers" = "publisher";
+		"relation" = "relation";
+		"rights" = "rights";
+		"rightsHolder" = "rightsHolder";
+		"source" = "source";
+		"spatial" = "spatial";
+		"subject" = "subject";					
+		"Keywords" = "subjectTokens";
+		"syncCaption" = "syncCaption";
+		"temporal" = "temporal";
+		"title" = "title";
+		"Title" = "title";
+		"transcript" = "transcript";
+		"type" = "type";
+		"valid" = "valid";
+	
+		"CXKeyMappingExpandedKeys" = ("accessRights", "alternative", "altText", "audience",  "contributor", "coverage",  
+			"creator", "location", "description", "educationLevel", "extent", "format", "identifieruri", 
+			"instructionalMethod", "language", "license", "longDesc", "mediaLabel", "mediator", "medium", "provenance", 
+			"publisher", "relation", "rights", "rightsHolder", "source", "spatial", "subject", "syncCaption", 
+			"temporal", "title", "transcript", "type", "valid"
+		);
+	};
+}

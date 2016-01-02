@@ -1,0 +1,1 @@
+var fileExtensions = ['.pdf','.doc', '.xls','.ppt','.rtf','.docx','.xlsx','.pptx']

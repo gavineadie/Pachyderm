@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Sources"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/AppServices"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CoreServices"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/DataServices"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/AssetDBSupport"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/PXFoundation"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/SimpleAuthenticationSupport"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ERExtensions"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ERJars"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Ajax"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MySQLPlugIn"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ERJavaMail"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/JavaWOExtensions"/>
+	<classpathentry kind="lib" path="/Users/gavin/Development/Pachyderm/Applications/Pachyderm3/Libraries/mysql-connector-java-5.1.34-bin.jar"/>
+	<classpathentry kind="con" path="WOFramework/JavaFoundation"/>
+	<classpathentry kind="con" path="WOFramework/JavaWebObjects"/>
+	<classpathentry kind="con" path="WOFramework/JavaJDBCAdaptor"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOAccess"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOControl"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOProject"/>
+	<classpathentry kind="con" path="WOFramework/JavaDirectToWeb"/>
+	<classpathentry kind="con" path="WOFramework/JavaDTWGeneration"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

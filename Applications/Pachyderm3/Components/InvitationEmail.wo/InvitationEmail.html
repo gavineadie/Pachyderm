@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Pachyderm 3.0</title>
+<style type="text/css" media="screen">
+  body {
+    font-family:Arial,Helvetica,sans-serif; 
+    font-size:11px; margin:0px; padding:1em;
+    background-color:<wo:string value="[bodyGroundColor]"/>; 
+    border-top:5px solid <wo:string value="[bodyTopBarColor]"/>;
+  }
+  .panelWhite {
+    margin:0 auto; border-radius:12px; -moz-border-radius:12px;
+    background-color:<wo:string value="[panelGroundColor]"/>;
+    border:solid <wo:string value="[panelEdgeColor]"/> 2px; 
+  }
+  p.copyright {
+    margin-top: 0; padding-right: 2em; text-align: right; color: #999;
+  }
+  #wrapper { position: relative; margin-left: 180px; height: 60px; }
+  #wrapper span { float: left; width: 50%; }
+  #wrapper span img { float: right; }
+</style>
+</head>
+<body>
+
+<div style="overflow:hidden;position:relative;height:200px;width:600px;" class="panelWhite">
+ <div style="position:absolute;top:20px;left:60px;right:60px">
+  <h2>Welcome to Pachyderm <wo:string value="[application.titleDisplay]"/></h2>
+
+  <p>You have been invited by <wo:string value="[institutionName]" valueWhenEmpty="..."/> to create a 
+     Pachyderm authoring account. To activate your account, click on the following link, and provide the
+     information requested:</p><wo:link href="[invitationActionURL]">Accept Pachyderm Invitation</wo:link>
+     
+  <p>Once you have completed that activation, you can begin authoring presentations in Pachyderm at:</p>
+     <wo:link href="[applicationStartURL]">Pachyderm <wo:string value="[application.releaseVersion]"/></wo:link>
+ </div>
+</div>
+
+</body></html>

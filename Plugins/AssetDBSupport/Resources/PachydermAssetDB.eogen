@@ -1,0 +1,10 @@
+ -destination Sources \
+ -extension java \
+ -java \
+ -javaTemplate _WonderEntity.java \
+ -model Resources/PachydermAssetDB.eomodeld \
+ -packagedirs \
+ -subclassDestination Sources \
+ -subclassJavaTemplate WonderEntity.java \
+ -verbose \
+ -loadModelGroup

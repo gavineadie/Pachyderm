@@ -1,0 +1,42 @@
+<p class="h2">Step 1: Import files</p>
+
+<wo:form action="[nextStep]" enctype="multipart/form-data" multipleSubmit="TRUE">
+
+<h2>Please choose the file to import from your computer:</h2>
+<p>Note that Pachyderm currently supports the following file formats:</p>
+<ul>
+  <li>Images (<wo:ERXListDisplay list="[imageArray]" />)</li>
+  <li>Videos (<wo:ERXListDisplay list="[movieArray]" />)</li>
+  <li>Audio  (<wo:ERXListDisplay list="[audioArray]" />)</li>
+</ul>
+
+<wo:string value="[getMediaGuideLines]" escapeHTML="FALSE" />
+
+<div id="progressActionInitiator">
+
+  <div id="zipUploadWidget">
+	<h4>Upload a group of assets in a .zip archive format:</h4>
+	<p><wo:fileUpload filePath="[candidateFileName]" 
+	          streamToFilePath="[requestedFilePath]" 
+	             finalFilePath="[deliveredFilePath]" mimeType="[deliveredMimeType]" />&nbsp;
+	             <wo:string value="[messageText]" escapeHTML="FALSE"/></p>
+  </div>
+  <div id="multiFileUploadWidgets">
+	<h4>Upload up to 5 individual files:</h4>
+      <p><wo:AddMediaUploadWidget /></p>
+      <p><wo:AddMediaUploadWidget /></p>
+      <p><wo:AddMediaUploadWidget /></p>
+      <p><wo:AddMediaUploadWidget /></p>
+      <p><wo:AddMediaUploadWidget /></p>
+	</div>
+</div>
+
+<div id="progressDisplayDiv" style="display:none;">
+		<h2>Uploading your images ...</h2>
+		<div align="center"><wo:image src="images/WorkingAnimation.gif" alt="Working ..." /></div>
+</div>
+	
+	<p style="float:right"><wo:submit action="[cancelAction]" value="Cancel" class="blok tint edge"/>&nbsp;&nbsp;&nbsp;
+	                       <input type="submit" name="Next" value="Next" onclick="return click_button();" class="blok tint edge"/></p>
+	
+</wo:form>

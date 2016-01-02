@@ -1,0 +1,167 @@
+<p class="h2">Step 2: Review Import Summary</p>
+
+<p style="color:green;">Import of <wo:string value="[pageInControl.displayName]"/> successful!</p>
+
+<h2>Optional File Information</h2>
+<wo:form multipleSubmit="TRUE">
+  <table>
+    <tr>
+        <td width="50%" valign="top">
+            <p>Would you like to add additional information about this media file?<br />
+            (Doing so may make it easier for you to find this file in a future search.)</p>
+        </td>
+        <td align="right"><wo:submit action="[cancelAction]" value="Cancel" class="blok tint edge"/>&nbsp;&nbsp;&nbsp;
+                          <wo:submit action="[submitAction]" value=" Done " class="blok tint edge"/>&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="50%" valign="top"><h2  class="media_details">Basic Search Information:</h2>
+        <label  class="media_details" for="sititle">Title <sup>(+)</sup>:</label>
+        <div class="media_details_text"><wo:string value="[pageInControl.displayName]"/></div> 
+        <br />
+        <label  class="media_details" for="siidentifieruri">Unique Identifier / Accession # <sup>(+)</sup>:</label>
+        <div class="media_details_explanation">a sequential number given to an item.</div>
+        <wo:textfield value="[newAsset.identifierURI]" id="siidentifieruri" size="25" class="media_details"/>
+        <br />
+        <label  class="media_details" for="sidesc">Description <sup>(+)</sup>:</label>
+        <wo:text id="sidesc" value="[newAsset.description]" rows="5" cols="25" class="media_details"/>
+        <br />
+        <label  class="media_details" for="sikeyw">Subject / Keywords <sup>(+)</sup>:</label>
+        <wo:text id="sikeyw" value="[newAsset.subject]" rows="5" cols="25" class="media_details"/>
+        <br />              
+        <h2  class="media_details">
+          <label  class="media_details" for="sismedialabel">Media Label:</label>
+          <div class="media_details_explanation">displayed in your presentation when the &quot;i&quot; button is clicked.</div>
+        </h2>
+        <wo:text value="[newAsset.mediaLabel]" id="sismedialabel" rows="5" cols="25" class="media_details"/>
+        <br />
+        <h2 class="media_details"><label class="media_details">Share with Others?</label></h2>
+        <table width="89%" border="0" cellspacing="0" cellpadding="2">
+          <tr>
+            <td colspan="2" valign="top">Assets are created "private" and viewable only by you.<br/> 
+                   Making this asset public will allow all authors to use it in their presentations. 
+                   Once an asset is marked public, it cannot be made private again because someone
+                   else might have included it in their presentation.<br/></td></tr>
+          <tr>
+            <td><label for="sipublic" style="text-align:right;">Check to make asset public:</label></td>
+            <td><wo:checkBox id="sipublic" checked="[newAsset.public]" style="display:inline;"/></td>
+          </tr>
+        </table></td>
+      <td width="50%" valign="top">
+        <wo:if condition="[canHaveAltText]">
+            <h2  class="media_details">Accessibility:</h2>
+            <label for="sialttext" class="media_details">Alternative Text:</label>
+            <div class="media_details_explanation">read by screen readers in place of images; text should be short.</div>
+            <wo:textfield value="[newAsset.altText]" size="25" class="media_details"/>
+            <label for="silongdesc" class="media_details">Long Description:</label>
+            <div class="media_details_explanation">read by screen readers to explain images in greater detail. </div>
+            <wo:text value="[newAsset.longDesc]" rows="5" cols="25" class="media_details"/>
+        </wo:if>
+        <h2  class="media_details">Copyright Information:</h2>
+        <label for="sipubl" class="media_details">Publisher <sup>(+)</sup>:</label>
+        <wo:textfield id="sipubl" value="[newAsset.publisher]" size="25" class="media_details"/> 
+        <wo:textfield value="[newAsset.creator]" size="25" class="media_details"/>
+        <br />
+        <label for="silicense" class="media_details">License:</label>
+        <wo:textfield value="[newAsset.license]" size="25" class="media_details"/>
+        <br />
+        <label for="sidatecopy" class="media_details">Date Copyrighted:</label>
+        <wo:textfield value="[newAsset.dateCopyrighted]" size="25" class="media_details"/>
+        <br />
+        <label for="sicreator" class="media_details">Creator <sup>(+)</sup>:</label>
+        <wo:textField value="[newAsset.creator]" size="25" class="media_details"/>
+        <br />
+      </td>
+    </tr>
+  </table>
+
+<wo:AjaxExpansion action="[toggleAction]" insertion="Effect.blind" insertionDuration="0.5" expanded="[expandedState]">
+
+  <div class="media_dotted_bottom"/>
+
+  <table width="100%">
+    <tr>
+      <td valign="top"><h2  class="media_details">Extended Cataloging / Search Metadata:</h2>
+        <label for="sialttitle" class="media_details">Alternative Title:</label>
+        <wo:textfield value="[newAsset.alternative]" size="25" class="media_details"/>
+        <br />
+        <label for="silanguage" class="media_details">Language <sup>(+)</sup>:</label>
+        <wo:textfield value="[newAsset.language]" size="25" class="media_details"/>
+        <br />
+        <label for="sirel" class="media_details">Relation <sup>(+)</sup>:</label>
+        <wo:textfield id="sirel" value="[newAsset.relation]" size="25" class="media_details"/>
+        <br />
+        <label for="sicover" class="media_details">Coverage <sup>(+)</sup>:</label>
+        <wo:textfield id="siconver" value="[newAsset.coverage]" size="25" class="media_details"/>
+        <br />
+        <label for="sisrc" class="media_details">Source <sup>(+)</sup>:</label>
+        <wo:textfield id="sisrc" value="[newAsset.source]" size="25" class="media_details"/>
+        <br />
+        <label for="siright" class="media_details">Rights <sup>(+)</sup>:</label>
+        <wo:textfield value="[newAsset.rights]" size="25" class="media_details"/>
+        <br />
+        <label for="simediator" class="media_details">Mediator:</label>
+        <wo:textfield value="[newAsset.mediator]" size="25" class="media_details"/>
+        <br />
+        <label for="sidateaccep" class="media_details">Date Accepted:</label>
+        <wo:textfield value="[newAsset.dateAccepted]" size="25" class="media_details"/>
+        <br />
+        <label for="sidateissue" class="media_details">Date Issued:</label>
+        <wo:textfield value="[newAsset.dateIssued]" size="25" class="media_details"/>
+        <br />
+        <label for="sidatecreat" class="media_details">Date Created:</label>
+        <wo:textfield value="[newAsset.created]" size="25" class="media_details"/>
+        <br />
+        <label for="sidateassoc" class="media_details">Date Associated <sup>(+)</sup>:</label>
+        <wo:textfield value="[newAsset.date]" size="25" class="media_details"/>
+        <br />
+      </td>
+      <td valign="top"><h2  class="media_details">Technical Information:</h2>
+        <label for="simedium" class="media_details">Medium:</label>
+        <wo:textfield value="[newAsset.medium]" size="25" class="media_details"/>
+        <br />
+        <label for="siextent" class="media_details">Extent:</label>
+        <wo:textfield value="[newAsset.extent]" size="25" class="media_details"/>
+        <br />
+        <label for="siaud" class="media_details">Audience:</label>
+        <wo:textfield size="25" class="media_details" value="[newAsset.audience]"/>
+        <br />
+        <label for="siedulevel" class="media_details">Education Level:</label>
+        <wo:textfield value="[newAsset.educationLevel]" size="25" class="media_details"/>
+        <br />
+        <label for="sicontrib" class="media_details">Contributor <sup>(+)</sup>:</label>
+        <wo:textfield id="sicontrib" value="[newAsset.contributor]" size="25" class="media_details"/>
+        <br />
+        <label for="siinstruct" class="media_details">Instructional Method:</label>
+        <wo:textfield value="[newAsset.instructionalMethod]" size="25" class="media_details"/>
+        <br />
+        <label for="sispatial" class="media_details">Spatial:</label>
+        <wo:textfield value="[newAsset.spatial]" size="25" class="media_details"/>
+        <br />
+        <label for="sitemporal" class="media_details">Temporal:</label>
+        <wo:textfield value="[newAsset.temporal]" size="25" class="media_details"/>
+        <br />
+        <label for="siprovenance" class="media_details">Provenance:</label>
+        <wo:textfield value="[newAsset.provenance]" size="25" class="media_details"/>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><sup>(+)</sup> Dublin Core element</td>
+    </tr>
+    <tr>
+      <td></td>
+        <td align="right"><wo:submit action="[cancelAction]" value="Cancel" class="blok tint edge"/>&nbsp;&nbsp;&nbsp;
+                          <wo:submit action="[submitAction]" value=" Done " class="blok tint edge"/>&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+  </table>
+
+<wo:ERXWOTemplate templateName="label">
+ <span style="font-size:14px;"><wo:link action="[toggleAction]" class="blok tint edge">
+ <wo:if condition="[expandedState]">Show Less &#x25BC;<wo:else>Show more &#x25BA;</wo:else></wo:if>
+ </wo:link></span>
+</wo:ERXWOTemplate>
+
+</wo:AjaxExpansion>
+<br/>
+
+</wo:form>

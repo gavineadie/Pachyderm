@@ -1,0 +1,110 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = AUTHOR; 
+            externalType = VARCHAR; 
+            name = author; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DATE_CREATED"; 
+            externalType = datetime; 
+            name = dateCreated; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DATE_MODIFIED"; 
+            externalType = datetime; 
+            name = dateModified; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = IDENTIIFER; 
+            externalType = VARCHAR; 
+            name = identifier; 
+            valueClassName = NSString; 
+        }, 
+        {
+            adaptorValueConversionMethodName = archiveData; 
+            allowsNull = Y; 
+            columnName = "LOCALIZED_DESCRIPTION"; 
+            externalType = "LONG VARCHAR"; 
+            name = localizedDescription; 
+            valueClassName = "org.pachyderm.apollo.core.CXLocalizedValue"; 
+            valueFactoryMethodName = "objectWithArchiveData:"; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = METADATA; 
+            externalType = "LONG VARCHAR"; 
+            name = metadata; 
+            valueClassName = NSString; 
+            valueType = C; 
+        }, 
+        {
+            columnName = ID; 
+            externalType = INTEGER; 
+            name = pk; 
+            precision = 11; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PRIMARY_SCREEN_ID"; 
+            externalType = INTEGER; 
+            name = primaryScreenId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = TITLE; 
+            externalType = varchar; 
+            name = title; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }
+    ); 
+    attributesUsedForLocking = (pk); 
+    className = "org.pachyderm.foundation.eof.PDBPresentation"; 
+    classProperties = (
+        author, 
+        dateCreated, 
+        dateModified, 
+        identifier, 
+        localizedDescription, 
+        metadata, 
+        pk, 
+        everyScreen, 
+        primeScreen,
+        title
+    ); 
+    externalName = "PRESENTATION_2_1"; 
+    name = PDBPresentation; 
+    primaryKeyAttributes = (pk); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PDBScreen; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = pk; sourceAttribute = primaryScreenId; }); 
+            name = primeScreen; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PDBScreen; 
+            internalInfo = {"_nameInObjectStore" = screens; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = presentationId; sourceAttribute = pk; }); 
+            name = everyScreen; 
+        }
+    ); 
+}

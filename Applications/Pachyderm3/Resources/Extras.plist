@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>CFBundleDevelopmentRegion</key>
+		<string>English</string>
+		<key>CFBundleDocumentTypes</key>
+		<array>
+			<dict>
+				<key>CFBundleTypeName</key>		<string>PDBPresentation</string>
+				<key>CFBundleTypeRole</key>		<string>Editor</string>
+				<key>NSDocumentClass</key>		<string>org.pachyderm.authoring.PXDocument</string>
+			</dict>
+		</array>
+		<key>CFBundleGetInfoString</key>	<string>3.0.0</string>
+		<key>CFBundleVersion</key>			<string>0.0.1d1</string>
+		<key>Java</key>
+		<dict>
+			<key>JVMVersion</key>
+			<string>1.5+</string>
+		</dict>
+		<key>NSJavaClientRoot</key>			<string>Contents/WebServerResources/Java</string>
+
+		<key>UTImportedTypeDeclarations</key>
+		<array>
+			<dict>
+				<key>UTTypeConformsTo</key>		<string>public.movie</string>
+				<key>UTTypeDescription</key>	<string>Flash video</string>
+				<key>UTTypeIdentifier</key>		<string>com.macromedia.flash.flv</string>
+				<key>UTTypeTagSpecification</key>
+				<dict>
+					<key>com.apple.ostype</key>
+					<string>MFLV</string>
+					<key>public.filename-extension</key>
+					<string>flv</string>
+					<key>public.mime-type</key>
+					<string>flv-application/octet-stream</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>UTTypeConformsTo</key>
+				<array>
+					<string>public.data</string>
+					<string>public.composite-content</string>
+				</array>
+				<key>UTTypeDescription</key>	<string>Flash project</string>
+				<key>UTTypeIdentifier</key>		<string>com.macromedia.flash.fla</string>
+				<key>UTTypeTagSpecification</key>
+				<dict>
+					<key>com.apple.ostype</key>
+					<array>
+						<string>SPA</string>
+						<string>SSK</string>
+					</array>
+					<key>public.filename-extension</key>
+					<array>
+						<string>fla</string>
+						<string>spa</string>
+						<string>ssk</string>
+					</array>
+				</dict>
+			</dict>
+			<dict>
+				<key>UTTypeConformsTo</key>
+				<string>public.movie</string>
+				<key>UTTypeDescription</key>
+				<string>Flash movie</string>
+				<key>UTTypeIdentifier</key>
+				<string>com.macromedia.flash.swf</string>
+				<key>UTTypeTagSpecification</key>
+				<dict>
+					<key>com.apple.ostype</key>
+					<string>SWFL</string>
+					<key>public.filename-extension</key>
+					<array>
+						<string>swf</string>
+						<string>spl</string>
+					</array>
+					<key>public.mime-type</key>
+					<array>
+						<string>application/x-shockwave-flash</string>
+						<string>application/futuresplash</string>
+						<string>application/x-shockwave-flash2-preview</string>
+						<string>image/vnd.rn-realflash</string>
+					</array>
+				</dict>
+			</dict>
+		</array>
+	</dict>
+</plist>

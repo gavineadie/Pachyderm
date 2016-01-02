@@ -1,0 +1,74 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "CUSTOM_PROPERTIES"; 
+            externalType = BLOB; 
+            name = customProperties; 
+            valueClassName = NSData; 
+            width = 8191; 
+        }, 
+        {
+            columnName = "GROUP_ID"; 
+            externalType = INTEGER; 
+            name = groupid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = NAME; 
+            externalType = VARCHAR; 
+            name = name; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = NOTE; 
+            externalType = VARCHAR; 
+            name = note; 
+            valueClassName = NSString; 
+            width = 255; 
+        }
+    ); 
+    attributesUsedForLocking = (groupid, name); 
+    className = "org.pachyderm.apollo.core.eof.CXDirectoryGroupEO"; 
+    classProperties = (groupid, members, name, parentGroups, subgroups); 
+    externalName = APGROUP; 
+    fetchSpecificationDictionary = {}; 
+    name = APGroup; 
+    primaryKeyAttributes = (groupid); 
+    relationships = (
+        {definition = "membersJoin.person"; name = members; }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GroupPersonJoin; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupid; sourceAttribute = groupid; }); 
+            name = membersJoin; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {definition = "parentgroupsJoin.parentgroup"; name = parentGroups; }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GroupGroupJoin; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = parentid; sourceAttribute = groupid; }); 
+            name = parentgroupsJoin; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {definition = "subgroupsJoin.subgroup"; name = subgroups; }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GroupGroupJoin; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = subid; sourceAttribute = groupid; }); 
+            name = subgroupsJoin; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+}

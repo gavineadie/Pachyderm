@@ -1,0 +1,20 @@
+<wo:switch WOComponentName="PXMinimalPageWrapper"
+                      css1="style/pachyderm.css" logo="small">
+
+<wo:form>
+<h2>Pachyderm Application Settings</h2>
+<div style="text-align:right; float:right;">
+   <wo:submit action="[cancelAction]"
+                                             value="Admin Home"
+                                             class="blok tint edge"/>&nbsp;&nbsp;
+</div>
+
+<div>
+    Message of the Day: <wo:textfield value="[application.messageOfTheDay]" size="80"/>
+                        <wo:submit action="[submitAction]"
+                                    value="Post"
+                                    class="blok tint edge"/>
+</div>
+
+</wo:form>
+</wo:switch>

@@ -1,0 +1,19 @@
+<wo:switch WOComponentName="PXMinimalPageWrapper"
+                      css1="style/pachyderm.css" logo="small">
+
+<div style="height:230px;">
+ <div class="W300">
+  <h3>Email a Pachyderm Account Invitation</h3>
+
+  <wo:if condition="[success]"><p style="color:green"><wo:string value="[message]" escapeHTML="FALSE"/></p>
+                      <wo:else><p style="color:red"><wo:string value="[message]" escapeHTML="FALSE"/></p></wo:else></wo:if>
+
+	<br/>
+	<wo:form name="authform">
+	  User's email address: <wo:textfield value="[invitationRecipient]" size="32"/><br/><br/><br/>
+	       <p align="right"><wo:submit action="[adminHomeAction]" value="Admin Home" class="blok tint edge"/>&nbsp;&nbsp;&nbsp;&nbsp;
+	                        <wo:submit action="[submitAction]" class="blok tint edge"/></p></wo:form>
+ </div>
+ <div class="W360 BL1S"><wo:string value="[pachyLicense]" escapeHTML="FALSE" /></div>
+</div>
+</wo:switch>

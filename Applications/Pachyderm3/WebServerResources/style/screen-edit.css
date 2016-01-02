@@ -1,0 +1,185 @@
+/* Inline Editors */
+
+div.beditor {
+  width: 520px;
+  margin-bottom: 6px;
+}
+
+div.beditor_head {
+  width: 516px;
+  background-color: #ccc;
+  border: 1px solid #999;
+  padding: 2px;
+}
+
+div.inlineEditBody {
+  padding: 1px 4px 1px 15px;/*eric 7-28-2011*/
+  border: 2px solid #ccc; 
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  overflow:hidden;/*eric 7-28-2011*/
+}
+
+div.beditor_body {
+  width: 500px;
+  border: 1px solid #048; border-top: 0px solid #000;
+  padding-top: 5px; padding-bottom: 5px;
+  padding-left: 10px; padding-right: 10px;
+}
+
+div.beditor div.beditor {
+  border-bottom: 1px solid #048;
+  margin-bottom: 5px;
+  margin-left: -10px; margin-right: -10px;
+}
+
+div.beditor div.beditor div.beditor_head {
+  background-color: #fff;
+  border: 0px solid #000;
+  padding-left: 10px;
+  width: 498px;
+}
+
+div.beditor div.beditor div.beditor_body {
+  border: 0px solid #000;
+}
+
+a.collapser {
+  float: right;
+}
+
+div.beditor input {
+  width: 80%;
+}
+
+div.beditor textarea {
+  width: 280px;
+}
+
+p.bord input { width: auto; }
+
+
+div.bstep {
+  height: 24px;
+  line-height: 24px; font-weight: bold;
+}
+
+span.bref {
+  display: block;
+  float: left;
+  width: 24px; height: 24px;
+  text-align: center; font-weight: bold; color: white;
+  background: transparent url(../images/Dot24.gif) no-repeat 0 0;
+  margin-right: 0.5em;
+}
+
+div.beditor div.beditor span.bref {
+  background-image: none;
+  background-color: #048;
+}
+
+div.bord {
+  float: right
+}
+
+div.bord ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+div.bord li {
+  float: left;
+  width: 9px; height: 8px;
+  overflow: none;
+  text-indent: -2000px;
+}
+
+div.bord a { display: block; }
+
+div.bord li.dirup          { background: transparent url(../images/arrowUp.gif) no-repeat 0 0; }
+div.bord li.dirdn          { background: transparent url(../images/arrowDown.gif) no-repeat 0 0; }
+ol li:first-child li.dirup { background-image: url(../images/arrowUp-gray.gif); }
+ol li:last-child li.dirdn  { background-image: url(../images/arrowDown-gray.gif); }
+
+div.beditc p {
+  margin-right: 200px;
+}
+
+div.beditc p.helptext {
+  float: right;
+  width: 200px;
+  font-style: italic;
+  margin-right: 0;
+  clear: right;
+}
+
+div.beditc label {
+  display: block;
+  font-weight: bold;
+}
+
+/* -------------------------------------------------------------- for expando/collapso ------------ */
+
+.expando-head {
+    background-color: lightgray;
+    padding: 2px;
+}
+
+div.level1 span.shape {
+  display: inline-block;
+  font-size: 20px;
+  color: white;
+  width: 22px; height: 22px;
+  background: #333;
+  border-radius: 11px; -moz-border-radius: 11px;
+  text-align: center;
+}
+
+div.level1 span.beside {
+  display: inline-block;
+  font-size: 12px;
+  color: black;
+  width:460px;
+  position: relative;
+  left: 8px; 
+  line-height: 18pt;
+}
+
+div.level1 span.right {
+  display: inline-block;
+  font-size: 12px;
+  color: black;
+  right: 52px;
+  line-height: 18pt;
+}
+
+div.level2 span.shape {
+  font-size:15px;
+  color:#333; 
+  width: 30px;
+  border-radius: 0px; -moz-border-radius: 0px;
+  background:#fff;                  /* eric 7-28-2011 */
+  border:1px solid #333;
+}
+
+div.level2 span.beside {
+    left: 8px; width:420px;
+}
+
+div.level2 span.right {
+  display: inline-block;
+  font-size: 12px;
+  right: 58px;
+  line-height: 18pt;
+}
+
+div.level1 a.fill {
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+}
+
+/**** new styles **** eric - jun 2012 ****/
+
+div.level2 img { padding:5px 0; margin:5px 0; }

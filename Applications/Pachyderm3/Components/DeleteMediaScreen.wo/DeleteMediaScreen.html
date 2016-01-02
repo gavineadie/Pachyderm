@@ -1,0 +1,35 @@
+<wo:switch WOComponentName="[pageWrapperName]"
+                      css1="style/pachyderm.css">
+
+<h2>Confirm Media Deletion</h2>
+
+<div class="W160">
+ <wo:if condition="[isImageAsset]">
+  <wo:if condition="[resourceOffline]"><wo:image filename="images/asset_missing.gif"/>
+  <wo:else><wo:image src="[imagePreviewLink]"/></wo:else></wo:if>
+ <wo:else>
+  <wo:image filename="[thumbLink]"/></wo:else></wo:if>
+</div>
+
+<div style="float:left">
+ <div style="margin:10 0">
+  <wo:if condition="[isFlashAsset]">
+	<wo:ERXDataHyperlink pageName="FlashPreview"
+					  previewPath="[assetLink]"
+				   otherTagString="target='_blank'"
+							class="blok tint edge">Preview Medium</wo:ERXDataHyperlink>
+  <wo:else>
+                    <wo:link href="[assetLink]" target="_blank" class="blok tint edge">Preview</wo:link>
+  </wo:else></wo:if>
+ 	&nbsp;&nbsp;&nbsp;&nbsp;<wo:link action="[cancelAction]" class="blok tint edge">Cancel</wo:link>
+    &nbsp;&nbsp;&nbsp;&nbsp;<wo:link action="[deleteAction]" class="blok tint edge">Delete</wo:link>
+ </div>
+
+ <div style="margin:30 0">
+     Submitted: <wo:string value="[dateSubmitted]" dateformat="%b %d, %Y at %I:%M %p"/><br />
+     Modified: <wo:string value="[dateModified]" dateformat="%b %d, %Y at %I:%M %p"/>
+ </div>
+</div>
+
+<br clear="all" />
+</wo:switch>

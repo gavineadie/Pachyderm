@@ -1,0 +1,27 @@
+<wo:switch WOComponentName="[pageWrapperName]" 
+                      css1="style/pachyderm.css">   	
+
+<h2>Confirm Presentation Deletion</h2>
+
+<div class="W160">
+  <wo:image filename="images/presentation_mini.jpg"/>
+</div>
+
+<div style="float:left">
+ <div style="margin:10 0">
+	                        <wo:link action="[cancelDeleteAction]" class="blok tint edge">Cancel</wo:link>
+	&nbsp;&nbsp;&nbsp;&nbsp;<wo:link action="[deletePresentation]" class="blok tint edge">Delete</wo:link>		
+ </div>
+
+ <div style="margin:20 0">
+   Presentation: &quot;<wo:string value="[presentation.displayName]"/>&quot;<br/>
+   Screens: <wo:string value="[presentation.screenModel.numberOfScreens]" 
+              valueWhenEmpty="0"/><br />
+   Modified: <wo:string value="[presentation.infoModel.modificationDate]"
+                   dateformat="%b %d, %Y at %I:%M %p" 
+               valueWhenEmpty="Unknown"/>
+ </div>
+</div>
+<br clear="all" />
+<br clear="all" />
+</wo:switch>

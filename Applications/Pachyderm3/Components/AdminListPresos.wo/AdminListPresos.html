@@ -1,0 +1,40 @@
+<wo:switch WOComponentName="PXMinimalPageWrapper" 
+                      css1="style/pachyderm.css" logo="small">	
+
+<wo:form>
+<div style="float:right;"><h2>Administration &bull; List All Presentations&nbsp;&nbsp;&nbsp;</h2>
+
+  <p style="text-align:right">
+    <wo:submit action="[adminHomeAction]" 
+                value="Admin Home" 
+                class="blok tint edge"/>&nbsp;&nbsp;</p></div>
+
+<table border="1" cellpadding="3" width="95%" align="center">
+  <tr><th>author</th><th>key</th><th>title</th><th>description</th><th>created</th><th>modified</th></tr>
+  <wo:repeat list="[presos]" item="[preso]"><tr valign="middle">
+  
+    <td><wo:if condition="[presoAuthor]"><wo:string value="[presoAuthor]" />
+    	<wo:else><span style="color:red;">NO AUTHOR</span><br/>
+    	   <wo:submit action="[deletePresoAction]"
+                       value="Remove Presentation" 
+                       class="blok mini tint edge"/>&nbsp;&nbsp;
+        </wo:else></wo:if></td>
+    <td><wo:string value="[preso.pk]"/></td>
+    <td><wo:string value="[preso.title]" valueWhenEmpty="-- none --" /></td>
+    <td>&nbsp;</td>
+    <td><wo:string value="[preso.dateCreated]" 
+              dateformat="%b %d, %Y at %I:%M %p" 
+          valueWhenEmpty="-- no date --" /></td>
+    <td><wo:string value="[preso.dateModified]" 
+              dateformat="%b %d, %Y at %I:%M %p" 
+          valueWhenEmpty="-- no date --" /></td></tr>
+  </wo:repeat>
+</table>
+<wo:if condition="[isSuperAdmin]">
+    <p style="text-align:right">
+      <wo:submit action="[adminHomeAction]" 
+                  value="Admin Home" 
+                  class="blok tint edge"/>&nbsp;&nbsp;</p>
+</wo:if>
+</wo:form>
+</wo:switch>

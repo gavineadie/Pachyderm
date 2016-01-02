@@ -1,0 +1,27 @@
+{
+    allPresentations = {
+        class = EOFetchSpecification; 
+        entityName = PDBPresentation; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = pk; 
+            selectorName = "isGreaterThan:"; 
+            value = {class = NSNumber; value = 0; }; 
+        }; 
+    }; 
+    presentationNamesAndIdentities = {
+        class = EOFetchSpecification; 
+        entityName = PDBPresentation; 
+        fetchLimit = 0; 
+        prefetchingRelationshipKeyPaths = (everyScreen); 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = author; 
+            selectorName = "isEqualTo:"; 
+            value = {"_key" = author; class = EOQualifierVariable; }; 
+        }; 
+        refreshesRefetchedObjects = YES; 
+        sortOrderings = ({class = EOSortOrdering; key = title; selectorName = "compareAscending:"; }); 
+    }; 
+}

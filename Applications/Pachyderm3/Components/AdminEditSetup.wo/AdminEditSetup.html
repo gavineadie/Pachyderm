@@ -1,0 +1,75 @@
+<wo:switch WOComponentName="PageWrapFirstUse"
+                    logout="FALSE" credits="FALSE" logo="small">
+
+<h2>Pachyderm Initial Settings</h2>
+
+  <wo:form>
+    <table cellpadding="2px" style="font-size:small;">
+    
+    <tr><td colspan="2" style="padding:10 0 5 40px;"><b>Web Server Access Properties</b></td></tr>
+    
+    <tr><td width="200px" align="right"><wo:string value="[k_web_protocol]"/></td>
+        <td width="720px"><wo:textfield value="[v_web_protocol]" size="60"/> web server protocol (http, https)</td></tr>
+
+    <tr><td width="200px" align="right"><wo:string value="[k_web_hostname]"/></td>
+        <td width="720px"><wo:textfield value="[v_web_hostname]" size="60"/> web server host name</td></tr>
+
+    <tr><td width="200px" align="right"><wo:string value="[k_web_hostport]"/></td>
+        <td width="720px"><wo:textfield value="[v_web_hostport]" size="60"/> web server tcp port number (80, 8080, ..)</td></tr>
+
+    <tr><td width="200px" align="right">&nbsp;</td>
+        <td width="720px"><wo:textfield value="[v_file_docroot]" size="60"/> web server document root</td></tr>
+
+    <tr><td width="200px" align="right"><wo:string value="[k_web_pachydir]"/></td>
+        <td width="720px"><wo:textfield value="[v_web_pachydir]" size="60"/> web server pachyderm "doc root"</td></tr>
+
+    <tr><td width="200px" align="right">link.docroot</td>
+        <td width="720px"><b><wo:string value="[v_web_protocol]"/>://<wo:string value="[v_web_hostname]"/>:<wo:string value="[v_web_hostport]"/>/<wo:string value="[v_web_pachydir]"/></b></td></tr>
+
+    <tr><td width="200px" align="right">file.docroot</td>
+        <td width="720px"><b><wo:string value="[v_file_docroot]"/>/<wo:string value="[v_web_pachydir]"/></b></td></tr>
+
+
+    <tr><td colspan="2" style="padding:20 0 5 40px;"><b>Database Properties</b></td></tr>
+
+    <tr><td width="200px" align="right"><wo:string value="[k_sql_username]"/></td>
+        <td width="720px"><wo:textfield value="[v_sql_username]" size="60"/> Pachyderm database login</td></tr>
+
+    <tr><td width="200px" align="right"><wo:string value="[k_sql_password]"/></td>
+        <td width="720px"><wo:passwordField value="[v_sql_password]" size="60"/> Pachyderm database password</td></tr>
+
+    <tr><td width="200px" align="right"><wo:string value="[k_sql_datahost]"/></td>
+        <td width="720px"><wo:textfield value="[k_sql_datahost]" size="60"/> Pachyderm database name</td></tr>
+
+    <tr><td width="200px" align="right"><wo:string value="[k_sql_dataname]"/></td>
+        <td width="720px"><wo:textfield value="[k_sql_dataname]" size="60"/> Pachyderm database name</td></tr>
+
+    <tr><td width="200px" align="right">&nbsp;</td>
+        <td width="720px"><b>jdbc:mysql://<wo:string value="[v_web_hostname]"/>/<wo:string value="[v_sql_database]"/></b></td></tr>
+
+    </table>
+    
+    <div align="right">
+        <wo:submit action="[cancelAction]" 
+                    value="Cancel" 
+                    class="blok tint edge"/>&nbsp;&nbsp;&nbsp;&nbsp;
+
+		<wo:submit action="[cancelAction]" 
+                    value="Create Database" 
+                    class="blok tint edge"/>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    
+	<wo:text value="[resultingProperties]" disabled="true" style="margin-left:100px;" rows="10" cols="80"/>
+
+    <div align="right">
+        <wo:submit action="[cancelAction]" 
+                    value="Cancel" 
+                    class="blok tint edge"/>&nbsp;&nbsp;&nbsp;&nbsp;
+          
+        <wo:submit action="[submitAction]" 
+                    value="Show Properties" 
+                    class="blok tint edge"/>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+  </wo:form>
+
+</wo:switch>

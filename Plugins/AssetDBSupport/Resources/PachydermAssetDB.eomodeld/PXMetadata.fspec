@@ -1,0 +1,181 @@
+{
+    allAssets = {
+        class = EOFetchSpecification; 
+        entityName = PXMetadata; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = identifier; 
+            selectorName = "isGreaterThan:"; 
+            value = {class = NSNumber; value = 0; }; 
+        }; 
+    }; 
+    simplesearch = {
+        class = EOFetchSpecification; 
+        entityName = PXMetadata; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOOrQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = alternative; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = alttext; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = audience; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = contributor; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = coverage; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = creator; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = description; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = format; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = identifieruri; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = instructionalmethod; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = language; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = license; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = location; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = medialabel; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = mediator; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = medium; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = provenance; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = publisher; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = relation; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = rights; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = rightsholder; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = source; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = subject; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = title; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = type; 
+                    selectorName = "isCaseInsensitiveLike:"; 
+                    value = {"_key" = term; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = valid; 
+                    selectorName = "isNotEqualTo:"; 
+                    value = {class = NSNumber; value = 1; }; 
+                }
+            ); 
+        }; 
+        sortOrderings = ({class = EOSortOrdering; key = title; selectorName = compareAscending; }); 
+    }; 
+}

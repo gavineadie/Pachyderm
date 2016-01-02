@@ -1,0 +1,31 @@
+<p class="h2">Step 2: Enter Common Metadata</p>
+
+<wo:form action="[nextStep]" id="columnarForm" multipleSubmit="TRUE">
+  <wo:if condition="[pageInControl.failedItems.count]">
+  <span style="color:red;"><em>WARNING: The following <wo:MessageFormatter value="{0,choice,1#file was not imported because it is not a supported file type:|2≤files were not imported because they are not supported file types:}" 
+                                                                 param0="[pageInControl.failedItems.count]" /><br/><br/>
+                               <wo:repeat list="[pageInControl.failedItems]" item="[failedItem]"><wo:string value="[failedItem.filename]"/><br/></wo:repeat><br/>
+                               Supported file types are JPG, GIF, PNG, FLV, MOV, MP4, SWF and MP3</em></span></wo:if>	
+  <p>Enter information <wo:MessageFormatter value="{0,choice,1#for the one uploaded file|2≤common to the {0,number,integer} uploaded files}" 
+                                                         param0="[pageInControl.uploadedItems.count]" />:</p>
+	<fieldset>
+		<p><label for="sititle">Title:</label> <input type="text" name="commonTitlePlaceholder" value="Assigned individually in next step" disabled="disabled" /></p>
+		<p><label for="siidentifieruri">Accession Number:</label> <input type="text" name="commonIdentifierURIPlaceholder" value="Assigned individually in next step" disabled="disabled" /></p>
+		<p><label for="sidescription">Description:</label> <wo:text value="[commonMetadata.description]" id="sidescription" rows="4" cols="20"/></p>
+		<p><label for="sialttext">Alternative Text:</label> <input type="text" name="commonAltTextPlaceholder" value="Assigned individually in next step" disabled="disabled" /></p>
+		<p><label for="sirights">Rights:</label> <wo:textfield value="[commonMetadata.rights]" id="sirights" /></p>
+		<p><label for="sikeywords">Subject/Keywords:</label> <wo:textfield value="[commonMetadata.subject]" id="sikeywords" /></p>
+		<p><label for="sipublisher">Publisher:</label> <wo:textfield value="[commonMetadata.publisher]" id="sipublisher" /></p>
+	</fieldset>
+	
+	<fieldset>
+		<p><label for="sicontributor">Contributor:</label> <wo:textfield value="[commonMetadata.contributor]" id="sicontributor" /></p>
+		<p><label for="sicoverage">Coverage:</label> <wo:textfield value="[commonMetadata.coverage]" id="sicoverage" /></p>
+		<p><label for="sirelation">Relation:</label> <wo:textfield value="[commonMetadata.relation]" id="sirelation" /></p>
+		<p><label for="sisource">Source:</label> <wo:textfield value="[commonMetadata.source]" id="sisource" /></p>
+		<p><label for="simedialabel">Media Label:</label> <wo:text value="[commonMetadata.mediaLabel]" id="simedialabel" rows="4" cols="20" /></p>
+	</fieldset>
+
+  <p style="float:right"><wo:submit action="[cancelAction]" value="Cancel" class="blok tint edge"/>&nbsp;&nbsp;&nbsp;
+                         <wo:submit action="[nextStep]" value=" Next " class="blok tint edge"/></p>
+</wo:form>

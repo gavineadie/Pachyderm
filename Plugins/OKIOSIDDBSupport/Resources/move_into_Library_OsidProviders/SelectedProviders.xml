@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<providers>
+<!--	<provider>
+		<providerIdString>940</providerIdString>
+		<selected>true</selected>
+	</provider>
+	<provider>
+		<providerIdString>1032</providerIdString>
+		<selected>true</selected>
+	</provider>
+-->	<provider>
+		<providerIdString>1484</providerIdString>
+		<selected>true</selected>
+		<propertyEntry key="gallerySystemsAddress" value="http://webkiosk.gallerysystems.com"/>
+		<propertyEntry key="gallerySystemsDisplayName" value="WebKisok"/>
+		<propertyEntry key="gallerySystemsDebug" value="true"/>
+	</provider>
+</providers>

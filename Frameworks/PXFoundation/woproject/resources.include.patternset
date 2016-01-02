@@ -1,0 +1,9 @@
+**/Properties
+**/*.component/
+**/*.template/
+**/*.eomodeld/
+**/*.d2wmodel
+**/*.wo/
+**/*.api
+**/*.strings
+**/*.plist

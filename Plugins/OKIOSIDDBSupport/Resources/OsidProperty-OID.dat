@@ -1,0 +1,394 @@
+#
+# MIB Auxiliary Data File
+#
+#     generated at Thu Sep 15 16:56:01 2005 by pybble
+#
+#
+# CVS $Id: OsidProperty-OID.dat,v 1.1 2005/09/15 21:11:42 tom Exp $
+#
+
+#
+# MIB identity (value) objects
+#
+
+oid.1.3.6.1.4.1.22316.1.1.1.2.2.1@osid.org:objectIdGroup:::::Contains objects relating to an object Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1@osid.org:agentIdentityGroup:::::Contains objects describing an agent's identity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2@osid.org:agentAddressGroup:::::Contains objects describing an agent's address.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.3@osid.org:agentContactGroup:::::Contains objects describing an agent contact.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4@osid.org:agentRoleGroup:::::Contains objects describing various agent roles.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5@osid.org:agentActivityGroup:::::Contains objects describing an agent's activities.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1@osid.org:agentNameGroup:::::Contains objects describing an agent's name.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.2@osid.org:agentImageGroup:::::Contains objects describing an agent's image.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.3@osid.org:agentPrincipalGroup:::::Contains objects describing an agent's principal.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1@osid.org:agentRoleStudentGroup:::::Contains objects pertaining to an agent's student role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1@osid.org:agentStudentGroup:::::Contains objects pertaining to an agent's student role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2@osid.org:agentStudentAcademicGroup:::::Contains objects pertaining to the academic career of a student.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3@osid.org:agentStudentLifeGroup:::::Contains objects pertaining to a student's life.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.1@osid.org:agentStudentLGGroup:::::Contains objects pertaining to a student's living group.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.2@osid.org:agentStudentLGMemberGroup:::::Contains objects pertaining to any living group the student may belong.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.3@osid.org:agentStudentActivityGroup:::::Contains objects pertaining to a student's activities.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2@osid.org:agentRolePreStudentGroup:::::Contains objects pertaining to a pre-student.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.1@osid.org:agentPreStudentGroup:::::Contains objects pertaining to a pre-student.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2@osid.org:agentPreStudentIntendedCourseGroup:::::Contains objects pertaining to a pre-students intended course.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3@osid.org:agentRoleAlumGroup:::::Contains objects pertaining to an alum.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.1@osid.org:agentAlumGroup:::::Contains objects pertaining to an alum.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2@osid.org:agentAlumDegreeGroup:::::Contains objects pertaining to an alum's degree.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3@osid.org:agentAlumStudentLifeGroup:::::Contains objects pertaining to an alum's former student life.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.1@osid.org:agentAlumLGGroup:::::Contains objects pertaining to an alum's living group affilitaions.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.2@osid.org:agentAlumActivityGroup:::::Contains objects pertaining to an alum's student activities.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4@osid.org:agentRoleEmployeeGroup:::::Contains objects pertaining to an agent's employee role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1@osid.org:agentEmployeeGroup:::::Contains objects pertaining to an agent's employee role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2@osid.org:agentEmployeeApptGroup:::::Contains objects pertaining to an employee's job appointment.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5@osid.org:agentRoleFacultyGroup:::::Contains objects pertaining to an agent's faculty role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.1@osid.org:agentFacultyGroup:::::Contains objects pertaining to an agent's faculty role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2@osid.org:agentFacultyClassGroup:::::Contains objects pertaining to a faculty's class.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.3@osid.org:agentFacultyProjectGroup:::::Contains objects pertaining to faculty project.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.1@osid.org:agentActivityMembershipGroup:::::Contains objects pertaining to an agent's activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.2@osid.org:agentActivityInterestGroup:::::Contains objects pertaining to an agent's interests.
+
+
+#
+# MIB attribute objects
+#
+
+oid.1.3.6.1.4.1.22316.1.1.1.2.2.1.1@osid.org:objectIdDomain:::read-create::The domain Id for this object as defined by the OSIDs.
+oid.1.3.6.1.4.1.22316.1.1.1.2.2.1.2@osid.org:objectIdDomainLabel:::read-create::The label of the domain Id for this object as defined by the OSIDs.
+oid.1.3.6.1.4.1.22316.1.1.1.2.2.1.3@osid.org:objectId:::read-create::The object Id for this object as defined by the OSIDs.
+oid.1.3.6.1.4.1.22316.1.1.1.2.2.1.4@osid.org:objectIdAuthority:::read-create::The issuing authority for this Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.2.1.5@osid.org:objectIdAuthorityName:::read-only::The name of the issuing authority for this Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.2.1.6@osid.org:objectIdAuthorityLabel:::read-only::The short name of the issuing authority for this Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.2.1.7@osid.org:objectIdAuthorityContact:::read-only::The contact string for this issuing authority.
+oid.1.3.6.1.4.1.22316.1.1.1.2.2.1.8@osid.org:objectIdAuthorityUrl:::read-only::The primary url for this issuing authority.
+oid.1.3.6.1.4.1.22316.1.1.1.2.2.2@osid.org:objectType:::read-write::The Type of Object.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1.1@osid.org:agentNamePreferred:Preferred Name:name:read-write::The preferred display of the agents full name. It may include a nickname in lieu of a firstname or omit the middle initial.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1.2@osid.org:agentNameFull:Full Name:full name:read-write::The full official name of this agent.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1.3@osid.org:agentNameGiven:Given Name:given name:read-write::The given name of this agent
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1.4@osid.org:agentNameMiddle:Middle Name:middle name:read-write::The middle name or initial of this agent.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1.5@osid.org:agentNameFamily:Family Name:family name:read-write::The surname of this agent.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1.6@osid.org:agentNameSalutation:Salutation:salutation:read-write::The title of this agent (Rev., Ms., Dr., etc).
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1.7@osid.org:agentNameSuffix:Name Suffix:suffix:read-write::The suffix of this agent's name (Sr., III, etc.).
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1.8@osid.org:agentNameAppellative:Nickname:nickname:read-write::The nickname of initial of this agent.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1.9@osid.org:agentNameInitials:Initials:initials:read-write::The initials of this agent's name, FML, as derived by First, Middle, and Last name.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1.10.1.1@osid.org:agentNameAliasIndex:NameAlias Index:index:read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1.10.1.2@osid.org:agentNameAliasType:Alias Type Identifier:alias type:read-write::The type of this alias.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1.10.1.3@osid.org:agentNameAliasTypeLabel:Alias Type Label:alias type:read-only::The type of this alias as a DisplayString. It may contain values such as 'maiden', 'aka' or 'witness protection program'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1.10.1.4@osid.org:agentNameAliasAdvertise:Advertise Alias?:advertise alias?:read-write::Whether or not this entry should be visible.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.1.10.1.5@osid.org:agentNameAlias:Name Alias:aka:read-write::The full display name of this alias.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.2.1.1.1@osid.org:agentImageIndex:Image Index:index:read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.2.1.1.2@osid.org:agentImageFormat:Image Format Identifier:format:read-write::The format of the image data.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.2.1.1.3@osid.org:agentImageFormatLabel:Image Format Label:format:read-only::The name of the format of the image data.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.2.1.1.4@osid.org:agentImageDescription:Image Format Description:description:read-write::The description of this image.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.2.1.1.5@osid.org:agentImageSize:Image Size:size:read-write:bytes:The size of this image.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.2.1.1.6@osid.org:agentImageHeight:Image Height:height:read-write:pixels:The height of this image.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.2.1.1.7@osid.org:agentImageWidth:Image Width:width:read-write:pixels:The width of this image.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.2.1.1.8@osid.org:agentImage:Image Data:image:read-write::The image data.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.3.1.1.1@osid.org:agentPrincipalIndex:Principal Index:index:read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.3.1.1.2@osid.org:agentPrincipalName:Principal Name:principal:read-write::The name of this principal.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.3.1.1.3@osid.org:agentPrincipalDescription:Principal Description:description:read-write::The description of the usage of this principal.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.3.1.1.4@osid.org:agentPrincipalIsActive:Principal Active?:active?:read-write::Whether or not this principal is still valid.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.3.1.1.5@osid.org:agentPrincipalCreated:Principal Created:created:read-write::When this principal was created or registered.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.1.3.1.1.6@osid.org:agentPrincipalExpired:Principal Expired:expired:read-write::When this principal became invalid.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.1@osid.org:agentAddressIndex:Address Index:index:read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.2@osid.org:agentAddressType:Address Type Identifier:type:read-write::The type of address of this agent. Examples may be OIDs representing 'work', 'home' or 'office mailstop'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.3@osid.org:agentAddressTypeLabel:Address Type Label:type:read-only::The type of address of this agent as a display string.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.4@osid.org:agentAddressDescription:Address Description:description:read-write::A description of this address. 'Summer vacation home'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.5@osid.org:agentAddressAdvertise:Advertise Address?:advertise?:read-write::Whether or not this address should be made visible.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.6@osid.org:agentAddressFull:Mailing Address:address:read-write::The complete address as would appear on a mailing label.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.7@osid.org:agentAddressCareOf:Address Care Of:c/o:read-write::c/o
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.8@osid.org:agentAddressMailstopDist:Address Mailstop District:mailstop district:read-write::A label identifying the mailstop 'district'. Room E40-342 would have a label of MIT, such that internal mail routing can be performed without the use of the other attributes. This does not appear in the complete address string.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.9@osid.org:agentAddressMailstopLabel:Address Mailstop Label:mailstop label:read-write::A label that is prefixed to the mailstop. Room, Office, etc.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.10@osid.org:agentAddressMailstop:Address Mailstop:mailstop:read-write::The mailstop itself.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.11@osid.org:agentAddressStreet:Street Address:street:read-write::The street component of the address.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.12@osid.org:agentAddressLocality:Address Locality:locality:read-write::The city, town component of the address.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.13@osid.org:agentAddressStateProvince:Address State or Province:state/province:read-write::The state or province component of this address.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.14@osid.org:agentAddressSPAbbrev:Address State or Province Abbreviation:st/pr:read-write::An abbreviation for the state or province.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.15@osid.org:agentAddressPostalCode:Address Postal Code:postal code:read-write::The postal code.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.16@osid.org:agentAddressCountry:Address Country:country:read-write::The country name.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.17@osid.org:agentAddressCountryAbbrev:Address Country Abbreviation:country:read-write::2 letter country code.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.18@osid.org:agentAddressContinent:Address Continent:continent:read-write::The continent on which this country resides.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.19@osid.org:agentAddressPlanet:Address Planet:planet:read-write::The planet containing this continent.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.2.1.1.20@osid.org:agentAddressGalaxy:Address Galaxy:galaxy:read-write::The galactic address of this planet.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.3.1.1.1@osid.org:agentContactIndex:Contact Index:index:read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.3.1.1.2@osid.org:agentContactType:Contact Type Identifier:type:read-write::The type of contact of this agent. Examples may be OIDs representing 'phone', 'aim'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.3.1.1.3@osid.org:agentContactTypeLabel:Contact Type Label:type:read-only::The type of contact of this agent as a display string.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.3.1.1.4@osid.org:agentContactLocation:Contact Location:location:read-write::A label indicating the location, if applicable, of this contact entry. 'Work' or 'home'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.3.1.1.5@osid.org:agentContactLocationLabel:::read-write::A label indicating the location, if applicable, of this contact entry. 'Work' or 'home'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.3.1.1.6@osid.org:agentContactDescription:Contact Description:description:read-write::A description of this contact.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.3.1.1.7@osid.org:agentContactAdvertise:Advertise Contact?:advertise?:read-write::Whether this contact should be visible.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.3.1.1.8@osid.org:agentContactAddress:Contact Address:address:read-write::The address of this contact.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.3.1.1.9@osid.org:agentContactGMTOffset:Contact Location GMT Offset:offset:read-write:minutes:The offset from GMT where this contact resides.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.3.1.1.10@osid.org:agentContactTemperature:Contact Location Temperature:temp:read-only:degreesF:The degrees in Fahrenheit of the temperature at the site of the contact.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.1@osid.org:agentStudentID:::read-write::The student ID as would be issued by the registrar. This should be used for linking and not for agent identification.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.2@osid.org:agentStudentInstObjectType:Student's Institution Id Domain Identifier :domain:read-write::The type of the Object representing the institution or regsiterant of this student role, as identified by an Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.3@osid.org:agentStudentInstIdDomain:::read-write::The domain of the Id identifying the institution or regsiterant of this student role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.4@osid.org:agentStudentInstId:Student's Institution Id:id:read-write::The institution or regsiterant of this student role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.5@osid.org:agentStudentInstName:Student's Institution Name:institution:read-only::The institution or regsiterant of this student role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.6@osid.org:agentStudentInstLabel:Student's Institution Label:institution:read-only::The short name of the institution or regsiterant of this student role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.7@osid.org:agentStudentInstContact:Student's Institution Contact:contact:read-only::The contact string of the institution or regsiterant of this student role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.8@osid.org:agentStudentInstUrl:Student's Institution URL:url:read-only::The URL of the institution or regsiterant of this student role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.9@osid.org:agentStudentClass:Student Class Year:class:read-write::The class year of the student, if applicable. This is generally the graduating year of an incoming class but may not exist for all degree programs.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.10@osid.org:agentStudentYear:Student Year:year:read-write::A display string indicating the current class year of a student. This may be '2' or 'sophomore' for an undergraduate or 'G' for a graduate student.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.11@osid.org:agentStudentPrimaryAdbisorObjectType:::read-write::The type of the Object representing the advisor as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.12@osid.org:agentStudentPrimaryAdbisorIdDomain:::read-write::The domain Id for this agent as defined by the OSIDs.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.13@osid.org:agentStudentPrimaryAdvisorId:Student's Primary Advisor Id:advisor:read-write::The student's promary advisor.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.14@osid.org:agentStudentPrimaryAdvisorName:Student's Primary Advisor Name:advisor:read-only::The name of the student's promary advisor.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.1.15@osid.org:agentStudentPrimaryAdvisorContact:Student's Primary Advisor Contact:contact:read-only::The contact info for the student's promary advisor.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.1@osid.org:agentStudentCourseIndex:Student Course Index:index:read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.2@osid.org:agentStudentCourseType:Student's Course Type Identifier:course type:read-write::The type of degree program for this student.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.3@osid.org:agentStudentCourseTypeLabel:Student's Course Type Label:course type:read-only::The label of the type of degree program for this student. Examples might be 'major', 'minor', etc.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.4@osid.org:agentStudentCourseObjectType:Student's Course Object Type Identifier:object type:read-write::The type of Object representing this course as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.5@osid.org:agentStudentCourseIdDomain:Student's Course Id Domain Identifier:domain:read-write::The domain of the Id used to identify this course.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.6@osid.org:agentStudentCourseId:Student's Course Id:course:read-write::The degree program.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.7@osid.org:agentStudentCourseName:Student's Course Name:course:read-only::The full name of the degree program, if applicable.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.8@osid.org:agentStudentCourseLabel:Student's Course Label:course:read-only::The label of the degree program, if applicable, such as '16A'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.9@osid.org:agentStudentCourseContact:Student's Course Contact:contact:read-only::The contact string for this degree program.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.10@osid.org:agentStudentCourseUrl:Student's Course URL:url:read-only::The url for this degree program.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.11@osid.org:agentStudentCourseDeptObjectType:Student's Course Department Object Type Identifier:object type:read-write::The type of Object representing this Department as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.12@osid.org:agentStudentCourseDeptIdDomain:Student's Course Department Id Domain Identifier:domain:read-write::The domain of the Id used to identify this department.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.13@osid.org:agentStudentCourseDeptId:Student's Course Department Id:department:read-write::The department in which this degree program is provided.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.14@osid.org:agentStudentCourseDeptName:Student's Course Department Name:department:read-only::The full name label of the department in which this degree program is provided (Department of Aeronautics and Astronautics).
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.15@osid.org:agentStudentCourseDeptLabel:Student's Course Department Label:department:read-only::The short name of the department in which this degree program is provided (Aero/Astro).
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.16@osid.org:agentStudentCourseDeptCode:Student's Course Department Code:department:read-only::The internal code of the department in which this degree program is provided.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.17@osid.org:agentStudentCourseDeptContact:Student's Course Department Contact:contact:read-only::The contact string for this department.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.18@osid.org:agentStudentCourseDeptUrl:Student's Course Department URL:url:read-only::The url for this department.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.19@osid.org:agentStudentCourseSchoolObjectType:Student's Course School Object Type Identifier:object type:read-write::The type of Object repsenting this school as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.20@osid.org:agentStudentCourseSchoolIdDomain:Student's Course School Id Domain Identifier:domain:read-write::The domain of the Id used to identify this school.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.21@osid.org:agentStudentCourseSchoolId:Student's Course School Id:school:read-write::The school in which this department resides, if applicable, such as 'School of Engineering'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.22@osid.org:agentStudentCourseSchoolName:Student's Course School Name:school:read-only::The school in which this department resides, if applicable, such as 'School of Engineering'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.23@osid.org:agentStudentCourseSchoolLabel:Student's Course School Label:school:read-only::The short name for the school in which this department resides, if applicable, such as 'engineering'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.24@osid.org:agentStudentCourseSchoolContact:Student's Course School Contact:contact:read-only::The contact string for this school.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.25@osid.org:agentStudentCourseSchoolUrl:Student's Course School URL:url:read-only::The url for this school.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.26@osid.org:agentStudentCourseInstObjectType:Student's Course Institution Object Type Identifier:object type:read-write::The type of Object representing this Institution as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.27@osid.org:agentStudentCourseInstIdDomain:Student's Course Institution Id Domain Identifier:domain:read-write::The domain of the Id used to identify this Institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.28@osid.org:agentStudentCourseInstId:Student's Course Institution Id:institution:read-write::The institution in which this department resides, such as 'Boston University'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.29@osid.org:agentStudentCourseInstName:Student's Course Institution Name:institution:read-only::The institution in which this department resides, such as 'Massachusetts Institute of Technology.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.30@osid.org:agentStudentCourseInstLabel:Student's Course Institution Label:institution:read-only::The short name of the institution in which this department resides, such as 'MIT'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.31@osid.org:agentStudentCourseInstContact:Student's Course Institution Contact:contact:read-only::The contact string for this institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.32@osid.org:agentStudentCourseInstUrl:Student's Course Institution URL:url:read-only::The url for this institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.33@osid.org:agentStudentCourseAdvisorObjectType:Student's Course Advisor Object Type Identifier:object type:read-write::The type of Object representing this Advisor as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.34@osid.org:agentStudentCourseAdvisorIdDomain:Student's Course Advisor Id Domain Identifier:domain:read-write::The domain of the Id used to identify this advisor.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.35@osid.org:agentStudentCourseAdvisorId:Student's Course Advisor Id:advisor:read-write::The student's promary advisor.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.36@osid.org:agentStudentCourseAdvisorName:Student's Course Advisor Name:advisor:read-only::The name of the student's promary advisor.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.2.1.1.37@osid.org:agentStudentCourseAdvisorContact:Student's Course Advisor Contact:contact:read-only::The contact info of the student's promary advisor.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.1.1@osid.org:agentStudentLGResides:Campus Residence?:campus residence?:read-write::Whether or not this student resides in campus resdidential system.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.1.2@osid.org:agentStudentLGResidenceObjectType:Student's Living Group Object Type Identifier:object type:read-write::The type of Object representing this reseidence as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.1.3@osid.org:agentStudentLGResidenceIdDomain:Student's Living Group Id Domain Identifier:domain:read-write::The domain of the Id used to identify this living group.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.1.4@osid.org:agentStudentLGResidenceId:Student's Living Group Id:id:read-write::The living group this student resides.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.1.5@osid.org:agentStudentLGResidenceType:Student's Living Group Type Identifier:residence type:read-write::The type of the living group this student resides.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.1.6@osid.org:agentStudentLGResidenceTypeLabel:Student's Living Group Type Label:residence type:read-only::The type of the living group this student resides.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.1.7@osid.org:agentStudentLGResidenceName:Student's Living Group Name:residence:read-only::The name of the living group this student resides.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.1.8@osid.org:agentStudentLGResidenceLabel:Student's Living Group Label:residence:read-only::The short name of the living group this student resides.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.1.9@osid.org:agentStudentLGResidenceContact:Student's Living Group Contact:contact:read-only::The contact string for this living group.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.1.10@osid.org:agentStudentLGResidenceUrl:Student's Living Group URL:url:read-only::The url for this living group.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.2.1.1.1@osid.org:agentStudentLGMemberIndex:Student's Living Group Index:index:read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.2.1.1.2@osid.org:agentStudentLGMemberOrgObjectType:Student's Living Group Object Type Identifier:object type:read-write::The type of Object representing this organization as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.2.1.1.3@osid.org:agentStudentLGMemberOrgIdDomain:Student's Living Group Id Domain Identifier:domain:read-write::The domain of the Id used to identify this living group.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.2.1.1.4@osid.org:agentStudentLGMemberOrgId:Student's Living Group Id:living group:read-write::The living group where this student is a member.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.2.1.1.5@osid.org:agentStudentLGMemberOrgType:Student's Living Group Type Identifier:type:read-write::The type of the living group where this student is a member.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.2.1.1.6@osid.org:agentStudentLGMemberOrgTypeLabel:Student's Living Group Type Label:type:read-only::The type of the living group where this student is a member.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.2.1.1.7@osid.org:agentStudentLGMemberOrgName:Student's Living Group Name:living group:read-only::The name of the living group where this student is a member.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.2.1.1.8@osid.org:agentStudentLGMemberOrgLabel:Student's Living Group Label:living group:read-only::The short name of the living group where this student is a member.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.2.1.1.9@osid.org:agentStudentLGMemberOrgContact:Student's Living Group Contact:Contact:read-only::The contact string for this living group.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.2.1.1.10@osid.org:agentStudentLGMemberOrgUrl:Student's Living Group URL:url:read-only::The web address of the living group where this student is a member.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.3.1.1.1@osid.org:agentStudentActivityIndex:Student's Activity Index:index:read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.3.1.1.2@osid.org:agentStudentActivityObjectType:Student's Activity Type Identifier:type:read-write::The type of Object representing this activity as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.3.1.1.3@osid.org:agentStudentActivityIdDomain:Student's Activity Id Domain Identifier:domain:read-write::The domain of the Id used to identify this activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.3.1.1.4@osid.org:agentStudentActivityId:Student's Activity Id:id:read-write::The Id for this activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.3.1.1.5@osid.org:agentStudentActivityType:::read-write::The type of activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.3.1.1.6@osid.org:agentStudentActivityTypeLabel:::read-only::The type of activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.3.1.1.7@osid.org:agentStudentActivityName:Student's Activity Name:activity:read-only::The name of this this activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.3.1.1.8@osid.org:agentStudentActivityLabel:Student's Activity Label:activity:read-only::The short name of this activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.3.1.1.9@osid.org:agentStudentActivityDescription:::read-only::The description of this activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.3.1.1.10@osid.org:agentStudentActivityContact:Student's Activity Contact:url:read-only::The URL of this activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.3.1.1.11@osid.org:agentStudentActivityUrl:Student's Activity URL:url:read-only::The URL of this activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.1.3.3.1.1.12@osid.org:agentStudentActivityPosition:Student's Position in Activity :position:read-write::The position held by the student in this activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.1.1@osid.org:agentPreStudentID:Pre-Student's ID:studentID:read-write::The student ID as would be issued by the registrar or application process. This should be used for linking and not for agent identification.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.1.2@osid.org:agentPreStudentEntryYear:Pre-Student's Entry  Year:entry:read-write::The year this student will be entering.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.1.3@osid.org:agentPreStudentEntryTerm:Pre-Student's Entry Term Identifier:term:read-write::The term this student will be entering.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.1.4@osid.org:agentPreStudentEntryTermLabel:Pre-Student's Entry Term Label:term:read-write::The term this student will be entering.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.1.5@osid.org:agentPreStudentIncomingYear:Pre-Student Entering Into:year as:read-write::The year this student will be entering. See agentStudentYear.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.1@osid.org:agentIntendedCourseIndex:::read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.2@osid.org:agentIntendedCourseType:::read-write::The type of degree program for this student.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.3@osid.org:agentIntendedCourseTypeLabel:::read-only::The label of the type of degree program for this student. Examples might be 'major', 'minor', etc.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.4@osid.org:agentIntendedCourseObjectType:::read-write::The type of Object representing this course as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.5@osid.org:agentIntendedCourseIdDomain:::read-write::The domain of the Id used to identify this course.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.6@osid.org:agentIntendedCourseId:::read-write::The degree program.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.7@osid.org:agentIntendedCourseName:::read-only::The name of the degree program, if applicable.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.8@osid.org:agentIntendedCourseLabel:::read-only::The label of the degree program, if applicable, such as '16A'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.9@osid.org:agentIntendedCourseContact:::read-only::The contact string for this degree program.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.10@osid.org:agentIntendedCourseUrl:::read-only::The url for this degree program.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.11@osid.org:agentIntendedCourseDeptObjectType:::read-write::The type of Object representing this Department as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.12@osid.org:agentIntendedCourseDeptIdDomain:::read-write::The domain of the Id used to identify this department.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.13@osid.org:agentIntendedCourseDeptId:::read-write::The department in which this degree program is provided.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.14@osid.org:agentIntendedCourseDeptName:::read-only::The name of the department in which this degree program is provided.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.15@osid.org:agentIntendedCourseDeptLabel:::read-only::The short name of the department in which this degree program is provided.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.16@osid.org:agentIntendedCourseDeptCode:::read-only::The internal code of the department in which this degree program is provided.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.17@osid.org:agentIntendedCourseDeptContact:::read-only::The contact for this department.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.18@osid.org:agentIntendedCourseDeptUrl:::read-only::The url for this department.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.19@osid.org:agentIntendedCourseSchoolObjectType:::read-write::The type of Object repsenting this school as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.20@osid.org:agentIntendedCourseSchoolIdDomain:::read-write::The domain of the Id used to identify this school.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.21@osid.org:agentIntendedCourseSchoolId:::read-write::The school in which this department resides, if applicable, such as 'School of Engineering'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.22@osid.org:agentIntendedCourseSchoolName:::read-only::Thename of the school in which this department resides, if applicable, such as 'School of Engineering'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.23@osid.org:agentIntendedCourseSchoolLabel:::read-only::The short name of the school in which this department resides, if applicable, such as 'engineering'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.24@osid.org:agentIntendedCourseSchoolContact:::read-only::The contact for this school.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.25@osid.org:agentIntendedCourseSchoolUrl:::read-only::The url for this school.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.26@osid.org:agentIntendedCourseInstObjectType:::read-write::The type of Object representing this Institution as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.27@osid.org:agentIntendedCourseInstIdDomain:::read-write::The domain of the Id used to identify this Institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.28@osid.org:agentIntendedCourseInstId:::read-write::The institution in which this department resides, such as 'Boston University'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.29@osid.org:agentIntendedCourseInstName:::read-only::The name of the institution in which this department resides, such as 'Boston University'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.30@osid.org:agentIntendedCourseInstLabel:::read-only::The short name of the institution in which this department resides, such as 'BU'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.31@osid.org:agentIntendedCourseInstContact:::read-only::The contact for this institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.2.2.1.1.32@osid.org:agentIntendedCourseInstUrl:::read-only::The url for this institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.1.1@osid.org:agentAlumID:Alum's ID:alumID:read-write::The alumni id. This should be used for linking and not for agent identification.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.1.2@osid.org:agentAlumInstObjectType:Alum's Institution Object Type Identifier:object type:read-write::The type of the Object representing the institution or regsiterant of this alumni role, as identified by an Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.1.3@osid.org:agentAlumInstIdDomain:Alum's Institution Id Domain Identifier:domain:read-write::The domain of the Id identifying the institution or regsiterant of this student role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.1.4@osid.org:agentAlumInstId:Alum's Institution Id:institution:read-write::The institution or regsiterant of this alum role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.1.5@osid.org:agentAlumInstName:Alum's Institution Name:institution:read-only::The institution or regsiterant of this alum role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.1.6@osid.org:agentAlumInstLabel:Alum's Institution Label:institution:read-only::The short name of the institution or regsiterant of this student role.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.1.7@osid.org:agentAlumInstContact:Alum's Institution Contact:contact:read-only::The contact string for this institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.1.8@osid.org:agentAlumInstUrl:Alum's Institution URL:url:read-only::The url for this institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.1.9@osid.org:agentAlumClassYear:::read-only::The class year to which this alum belongs, if applicable. This may be different than the year in which a degree was earned.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.1@osid.org:agentAlumDegreeIndex:Alum's Degree Index:index:read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.2@osid.org:agentAlumDegreeType:Alum's Degree Type Identifier:degree type:read-write::The type of degree for this alum (BS, Scd, etc).
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.3@osid.org:agentAlumDegreeTypeLabel:Alum's Degree Type Label:degree type:read-only::The label of the type of degree for this alum.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.4@osid.org:agentAlumDegreeProgramObjectType:Alum's Degree Program Object Type Identifier:object type:read-write::The type of Object representing this degree program as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.5@osid.org:agentAlumDegreeProgramIdDomain:Alum's Degree Program Id Domain Identifier:domain:read-write::The domain of the Id used to identify this degree program.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.6@osid.org:agentAlumDegreeProgramId:Alum's Degree Program Id:course:read-write::The degree program.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.7@osid.org:agentAlumDegreeProgramName:Alum's Degree Program Name:course:read-only::The full name of the degree program, if applicable.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.8@osid.org:agentAlumDegreeProgramLabel:Alum's Degree Program Label:course:read-only::The label of the degree program, if applicable, such as '16A'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.9@osid.org:agentAlumDegreeDeptObjectType:Alum's Degree Department Object Type Identifier:object type:read-write::The type of Object representing this Department as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.10@osid.org:agentAlumDegreeDeptIdDomain:Alum's Degree Department Id Domain Identifier:domain:read-write::The domain of the Id used to identify this department.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.11@osid.org:agentAlumDegreeDeptId:Alum's Degree Department Id:department:read-write::The department in which this degree program is provided.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.12@osid.org:agentAlumDegreeDeptName:Alum's Degree Department Name:department:read-only::The full name label of the department in which this degree program is provided (Department of Aeronautics and Astronautics).
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.13@osid.org:agentAlumDegreeDeptLabel:Alum's Degree Department Label:department:read-only::The short name of the department in which this degree program is provided (Aero/Astro).
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.14@osid.org:agentAlumDegreeDeptCode:Alum's Degree Department Code:department:read-only::The internal code of the department in which this degree program is provided.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.15@osid.org:agentAlumDegreeSchoolObjectType:Alum's Degree School Object Type Identifier:object type:read-write::The type of Object repsenting this school as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.16@osid.org:agentAlumDegreeSchoolIdDomain:Alum's Degree School Id Domain Identifier:domain:read-write::The domain of the Id used to identify this school.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.17@osid.org:agentAlumDegreeSchoolId:Alum's Degree School Id:school:read-write::The school in which this department resides, if applicable, such as 'School of Engineering'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.18@osid.org:agentAlumDegreeSchoolName:Alum's Degree School Name:school:read-only::The school in which this department resides, if applicable, such as 'School of Engineering'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.19@osid.org:agentAlumDegreeSchoolLabel:Alum's Degree School Label:school:read-only::The short nameschool in which this department resides, if applicable, such as 'engineering'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.20@osid.org:agentAlumDegreeInstObjectType:Alum's Degree Institution Object Type Identifier:object type:read-write::The type of Object representing this Institution as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.21@osid.org:agentAlumDegreeInstIdDomain:Alum's Degree Institution Id Domain Identifier:domain:read-write::The domain of the Id used to identify this Institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.22@osid.org:agentAlumDegreeInstId:Alum's Degree Institution Id:institution:read-write::The institution in which this department resides, such as 'Boston University'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.23@osid.org:agentAlumDegreeInstName:Alum's Degree Institution Name:institution:read-only::The institution in which this department resides, such as 'Massachusetts Institute of Technology.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.24@osid.org:agentAlumDegreeInstLabel:Alum's Degree Institution Label:institution:read-only::The short name of the institution in which this department resides, such as 'MIT'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.2.1.1.25@osid.org:agentAlumDegreeYear:Alum's Degree Year:year:read-write::The year in which this degree was earned.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.1.1.1.1@osid.org:agentAlumLGIndex:Alum's Living Group Index:index:read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.1.1.1.2@osid.org:agentAlumLGObjectType:Alum's Living Group Object Type Identifier:object type:read-write::The type of Object representing this living group as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.1.3@osid.org:agentAlumLGIdDomain:Alum's Living Group Id Domain Identifier:domain:read-write::The domain of the Id used to identify this living group.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.1.4@osid.org:agentAlumLGId:Alum's Living Group Id:living group:read-write::The living group Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.1.5@osid.org:agentAlumLGType:Alum's Living Group Type Identifier:type:read-write::The type of the living group.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.1.6@osid.org:agentAlumLGTypeLabel:::read-only::The type of the living group.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.1.7@osid.org:agentAlumLGName:Alum's Living Group Name:living group:read-only::The name of the living group.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.1.8@osid.org:agentAlumLGLabel:Alum's Living Group Label:living group:read-only::The short name of the living group.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.1.9@osid.org:agentAlumLGYearStart:Alum's Start Year in Living Group:start:read-write::The year in which this affiliation began.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.1.10@osid.org:agentAlumLGYearEnd:Alum's End Year in Living Group:end:read-write::The year in which this affiliation ended.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.2.1.1.1@osid.org:agentAlumActivityIndex:Alum's Activity Index:index:read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.2.1.1.2@osid.org:agentAlumActivityObjectType:Alum's Activity Type Identifier:type:read-write::The type of Object representing this activity as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.2.1.1.3@osid.org:agentAlumActivityIdDomain:Alum's Activity Id Domain Identifier:domain:read-write::The domain of the Id used to identify this activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.2.1.1.4@osid.org:agentAlumActivityId:Alum's Activity Id:id:read-write::The Id for this activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.2.1.1.5@osid.org:agentAlumActivityType:::read-write::The type of activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.2.1.1.6@osid.org:agentAlumActivityTypeLabel:::read-only::The type of activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.2.1.1.7@osid.org:agentAlumActivityName:Alum's Activity Name:activity:read-only::The name of this this activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.2.1.1.8@osid.org:agentAlumActivityLabel:Alum's Activity Label:activity:read-only::The short name of this activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.2.1.1.9@osid.org:agentAlumActivityDescription:Alum's Activity Description:description:read-only::The description of this activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.2.1.1.10@osid.org:agentAlumActivityYearStart:Alum's Activity Start Year:start:read-write::The year in which particpation in this activity began.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.2.1.1.11@osid.org:agentAlumActivityYearEnd:Alum's Activity End Year:end:read-write::The year in which particpation in this activity ended.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.3.3.2.1.1.12@osid.org:agentAlumActivityPosition:Alum's Position in Activity :position:read-write::The position held in this activity.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1.1@osid.org:agentEmployeeID:Employee's ID:empID:read-write::The student ID as would be issued by a personnel department. This should be used for linking and not for agent identification or proper dental hygeine.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1.2@osid.org:agentEmployeeInstObjectType:Employee's Institution Object Type Identifier:object type:read-write::The type of the Object representing the institution or regsiterant of this employee, as identified by an Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1.3@osid.org:agentEmployeeInstIdDomain:Employee's Institution Id Domain Identifier:domain:read-write::The domain of the Id identifying the institution or regsiterant of this employee.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1.4@osid.org:agentEmployeeInstId:Employee's Institution Id:institution:read-write::The institution or regsiterant of this employee.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1.5@osid.org:agentEmployeeInstName:Employee's Institution Name:institution:read-only::The name of the institution or regsiterant of this employee.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1.6@osid.org:agentEmployeeInstLabel:Employee's Institution Label:institution:read-only::The short name of the institution or regsiterant of this employee.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1.7@osid.org:agentEmployeeInstContact:Employee's Institution Contact:contact:read-only::The contact string for this institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1.8@osid.org:agentEmployeeInstUrl:Employee's Institution URL:url:read-only::The url for this institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1.9@osid.org:agentEmployeePreferredTitle:Employee's Preferred Title:title:read-write::The preferred display title for this employee. This may be populated by a single row of the Appointment group.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1.10@osid.org:agentEmployeePreferredGroup:Employee's Preferred Group:department:read-write::The preferred display title for this employee's group or department.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1.11@osid.org:agentEmployeeStart:::read-write::The date this employee is considered to have begun.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1.12@osid.org:agentEmployeeEnd:::read-write::The date this employee is considered to have ended their association/employment.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1.13@osid.org:agentEmployeeStatus:::read-write::The current status of this employee.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.1.14@osid.org:agentEmployeeStatusLabel:::read-only::The current status of this employee.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.1@osid.org:agentEmployeeApptIndex:Employee's Appointment Index:index:read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.2@osid.org:agentEmployeeApptType:Employee's Appointment Type Identifier:type:read-write::The type of appointment for this employee.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.3@osid.org:agentEmployeeApptTypeLabel:::read-only::The type of appointment for this employee.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.4@osid.org:agentEmployeeApptStatus:Employee's Appointment Status Identifier:status:read-write::The status of this appointment.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.5@osid.org:agentEmployeeApptStatusLabel:Employee's Appointment Status Label:status:read-only::The status of this appointment.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.6@osid.org:agentEmployeeApptPeriodWeeks:::read-only:weeks:The period of this appointment.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.7@osid.org:agentEmployeeApptPeriodMonths:::read-only:months:The period of this appointment.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.8@osid.org:agentEmployeeApptStart:Employee's Appointment Start Date:start:read-write::When this appointment began.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.9@osid.org:agentEmployeeApptEnd:Employee's Appointment End Date:end:read-write::When this appointment ended.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.10@osid.org:agentEmployeeApptAdvertise:Advertise Employee's Appointment?:advertise?:read-write::If this appointment should be visible.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.11@osid.org:agentEmployeeApptTitle:Employee's Appointment Title:title:read-write::The title corresponding to this appointment.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.12@osid.org:agentEmployeeApptDeptObjectType:Employee's Appointment Department Object Type Identifier:object type:read-write::The type of Object representing this Department as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.13@osid.org:agentEmployeeApptDeptIdDomain:Employee's Appointment Department Id Domain Identifier:domain:read-write::The domain of the Id used to identify this department.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.14@osid.org:agentEmployeeApptDeptId:Employee's Appointment Department Id:department:read-write::The department in which this appointment exists.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.15@osid.org:agentEmployeeApptDeptName:Employee's Appointment Department Name:department:read-only::The name of the department in which appointment exists.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.16@osid.org:agentEmployeeApptDeptLabel:Employee's Appointment Department Label:department:read-only::The short name of the department in which appointment exists.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.17@osid.org:agentEmployeeApptDeptCode:Employee's Appointment Department Code:department:read-only::The internal code of the department in which this appointment exists.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.18@osid.org:agentEmployeeApptDeptContact:Employee's Appointment Department Contact:contact:read-only::The contact for this department.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.19@osid.org:agentEmployeeApptDeptUrl:Employee's Appointment Department URL:url:read-only::The url for this department.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.20@osid.org:agentEmployeeApptDivisionObjectType:Employee's Appointment Division Object Type Identifier:object type:read-write::The type of Object repsenting this division as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.21@osid.org:agentEmployeeApptDivisionIdDomain:Employee's Appointment Division Id Domain Identifier:domain:read-write::The domain of the Id used to identify this school.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.22@osid.org:agentEmployeeApptDivisionId:Employee's Appointment Division Id:school:read-write::The division in which this department resides, if applicable.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.23@osid.org:agentEmployeeApptDivisionName:Employee's Appointment Division Name:school:read-only::The nameof the division in which this department resides, if applicable.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.24@osid.org:agentEmployeeApptDivisionLabel:Employee's Appointment Division Label:school:read-only::The short name of the division in which this department resides, if applicable.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.25@osid.org:agentEmployeeApptDivisionContact:Employee's Appointment Division Contact:contact:read-only::The contact for this division.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.26@osid.org:agentEmployeeApptDivisionUrl:Employee's Appointment Division Url:url:read-only::The url for this division.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.27@osid.org:agentEmployeeApptInstObjectType:Employee's Appointment Institution Object Type Identifier:object type:read-write::The type of Object representing this Institution as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.28@osid.org:agentEmployeeApptInstIdDomain:Employee's Appointment Institution Id Domain Identifier:domain:read-write::The domain of the Id used to identify this Institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.29@osid.org:agentEmployeeApptInstId:Employee's Appointment Institution Id:institution:read-write::The institution/company in which this department resides, such as 'Enterasys Networks'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.30@osid.org:agentEmployeeApptInstName:Employee's Appointment Institution Name:institution:read-only::The name of the institution in which this department resides.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.31@osid.org:agentEmployeeApptInstLabel:Employee's Appointment Institution Label:institution:read-only::The short name of the institution in which this department resides.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.32@osid.org:agentEmployeeApptInstContact:Employee's Appointment Institution Contact:contact:read-only::The contact string for this institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.4.2.1.1.33@osid.org:agentEmployeeApptInstUrl:Employee's Appointment Institution Url:url:read-only::Url for this institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.1@osid.org:agentFacultyClassIndex:Faculty's Class Index:index:read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.2@osid.org:agentFacultyClassObjectType:Faculty's Class Object Type Identifier:object type:read-write::The type of Object representing this class as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.3@osid.org:agentFacultyClassIdDomain:Faculty's Class Id Domain Identifier:domain:read-write::The domain of the Id used to identify this class.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.4@osid.org:agentFacultyClassId:Faculty's Class Id:class:read-write::The class itself.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.5@osid.org:agentFacultyClassName:Faculty's Class Name:class:read-only::The name of the class.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.6@osid.org:agentFacultyClassLabel:Faculty's Class Label:class:read-only::The short name of the class (16.30).
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.7@osid.org:agentFacultyClassContact:Faculty's Class Contact:contact:read-only::The contact string for this class.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.8@osid.org:agentFacultyClassUrl:Faculty's Class URL:url:read-only::The url for this class.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.9@osid.org:agentFacultyClassDescription:::read-only::The description of this class.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.10@osid.org:agentFacultyClassDeptObjectType:Faculty's Class Department Object Type Identifier:object type:read-write::The type of Object representing this Department as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.11@osid.org:agentFacultyClassDeptIdDomain:Faculty's Class Department Id Domain Identifier:domain:read-write::The domain of the Id used to identify this department.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.12@osid.org:agentFacultyClassDeptId:Faculty's Class Department Id:department:read-write::The department in which this degree program is provided.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.13@osid.org:agentFacultyClassDeptName:Faculty's Class Department Name:department:read-only::The full name label of the department in which this degree program is provided (Department of Aeronautics and Astronautics).
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.14@osid.org:agentFacultyClassDeptLabel:Faculty's Class Department Label:department:read-only::The short name of the department in which this degree program is provided (Aero/Astro).
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.15@osid.org:agentFacultyClassDeptCode:Faculty's Class Department Code:department:read-only::The internal code of the department in which this degree program is provided.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.16@osid.org:agentFacultyClassDeptContact:Faculty's Class Department Contact:contact:read-only::The contact string for this department.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.17@osid.org:agentFacultyClassDeptUrl:Faculty's Class Department URL:url:read-only::The url for this department.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.18@osid.org:agentFacultyClassSchoolObjectType:Faculty's Class School Object Type Identifier:object type:read-write::The type of Object repsenting this school as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.19@osid.org:agentFacultyClassSchoolIdDomain:Faculty's Class School Id Domain Identifier:domain:read-write::The domain of the Id used to identify this school.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.20@osid.org:agentFacultyClassSchoolId:Faculty's Class School Id:school:read-write::The school in which this department resides, if applicable, such as 'School of Engineering'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.21@osid.org:agentFacultyClassSchoolName:Faculty's Class School Name:school:read-only::The school in which this department resides, if applicable, such as 'School of Engineering'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.22@osid.org:agentFacultyClassSchoolLabel:Faculty's Class School Label:school:read-only::The short name for the school in which this department resides, if applicable, such as 'engineering'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.23@osid.org:agentFacultyClassSchoolContact:Faculty's Class School Contact:contact:read-only::The contact string for this school.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.24@osid.org:agentFacultyClassSchoolUrl:Faculty's Class School URL:url:read-only::The url for this school.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.25@osid.org:agentFacultyClassInstObjectType:Faculty's Class Institution Object Type Identifier:object type:read-write::The type of Object representing this Institution as identified by the Id.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.26@osid.org:agentFacultyClassInstIdDomain:Faculty's Class Institution Id Domain Identifier:domain:read-write::The domain of the Id used to identify this Institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.27@osid.org:agentFacultyClassInstId:Faculty's Class Institution Id:institution:read-write::The institution in which this department resides, such as 'Boston University'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.28@osid.org:agentFacultyClassInstName:Faculty's Class Institution Name:institution:read-only::The institution in which this department resides, such as 'Massachusetts Institute of Technology.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.29@osid.org:agentFacultyClassInstLabel:Faculty's Class Institution Label:institution:read-only::The short name of the institution in which this department resides, such as 'MIT'.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.30@osid.org:agentFacultyClassInstContact:Faculty's Class Institution Contact:contact:read-only::The contact string for this institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.2.1.1.31@osid.org:agentFacultyClassInstUrl:Faculty's Class Institution URL:url:read-only::The url for this institution.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.3.1.1.1@osid.org:agentFacultyProjectIndex:::read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.3.1.1.2@osid.org:agentFacultyProjectName:::read-write::A name for this project.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.3.1.1.3@osid.org:agentFacultyProjectDescription:::read-write::A description for this project.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.3.1.1.4@osid.org:agentFacultyProjectContact:::read-write::A contact string for this project.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.4.5.3.1.1.5@osid.org:agentFacultyProjectUrl:::read-write::A url for this project.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.1.1.1.1@osid.org:agentMembershipIndex:Agent's Membership Index:index:read-create::The index for this row. There is one row for each membership,position,year block.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.1.1.1.2@osid.org:agentMembershipOrgName:Agent's Organization Name:organization:read-write::The name of the organization this agent belongs.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.1.1.1.3@osid.org:agentMembershipOrgLabel:Agent's Organization Label:organization:read-write::The short name of the organization this agent belongs.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.1.1.1.4@osid.org:agentMembershipOrgContact:Agent's Organization Contact:contact:read-write::The contact string for this organization.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.1.1.1.4@osid.org:agentMembershipOrgUrl:Agent's Organization URL:url:read-write::The url string for this organization.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.1.1.1.5@osid.org:agentMembershipOrgDescription:Agent's Organization Description:description:read-write::The description of this organization.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.1.1.1.6@osid.org:agentMembershipProfessional:::read-write::If this is a professional (career-related) organization.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.1.1.1.7@osid.org:agentMembershipYearStart:::read-write::The year this membership began.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.1.1.1.8@osid.org:agentMembershipYearEnd:::read-write::The year this membership ended.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.1.1.1.9@osid.org:agentMembershipPosition:::read-write::The position held in this organization.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.2.1.1.1@osid.org:agentInterestIndex:Agent's Interest Index:index:read-create::The index for this row.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.2.1.1.2@osid.org:agentInterestName:Agent's Interest Name:interest:read-write::A name for this interest.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.2.1.1.3@osid.org:agentInterestDescription:Agent's Interest Description:description:read-write::A description for this interest.
+oid.1.3.6.1.4.1.22316.1.1.1.2.3.5.2.1.1.4@osid.org:agentInterestUrl:Agent's Interest URL:url:read-write::A url for this interest.

@@ -1,0 +1,16 @@
+<div class="beditc">
+  <p class="helptext"><wo:string value="[helpSummaryForCurrentBinding]" /></p>
+  <p><label><wo:string value="[bindingDescription.name]" valueWhenEmpty="NULL"/></label>
+   <wo:image filename="[linkSlugFile]" width="83px" height="57px" alt="Resource Preview"/><br />
+   <wo:if condition="[valueTypeIsScreen]"><wo:string value="[title]"
+                                             valueWhenEmpty="(Screen Title Unknown)"/><br /></wo:if>
+   <wo:submit action="[selectScreen]" value="Browse" class="blok tint edge"/>
+  </p>
+  <p><label>OR, link to a Web page (URL)</label>
+   <wo:AjaxObserveField action="[observerAction]"
+                   fullSubmit="TRUE"><wo:textfield value="[urlFieldValue]"
+                                                    size="50"/></wo:AjaxObserveField>
+  </p>
+  <p><wo:if condition="[evaluatedValue]"><wo:submit action="[unlinkAction]" value="Unlink"/></wo:if></p>
+		<wo:if condition="[componentDebug]"><div style="clear:both;" align="right"><b>InlineLinkSelector</b></div></wo:if>
+</div>

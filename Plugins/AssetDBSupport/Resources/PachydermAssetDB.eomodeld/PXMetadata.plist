@@ -1,0 +1,391 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = dctermsaccessrights; 
+            externalType = TEXT; 
+            name = accessRights; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = accalttext; 
+            externalType = TEXT; 
+            name = altText; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsalternative; 
+            externalType = TEXT; 
+            name = alternative; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsaudience; 
+            externalType = TEXT; 
+            name = audience; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dccontributor; 
+            externalType = TEXT; 
+            name = contributor; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dccoverage; 
+            externalType = TEXT; 
+            name = coverage; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermscreated; 
+            externalType = TEXT; 
+            name = created; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dccreator; 
+            externalType = TEXT; 
+            name = creator; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dcdate; 
+            externalType = TEXT; 
+            name = date; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsdateaccepted; 
+            externalType = TEXT; 
+            name = dateAccepted; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsdatecopyrighted; 
+            externalType = TEXT; 
+            name = dateCopyrighted; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsissued; 
+            externalType = TEXT; 
+            name = dateIssued; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsmodified; 
+            externalType = DATETIME; 
+            name = dateModified; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsdatesubmitted; 
+            externalType = DATETIME; 
+            name = dateSubmitted; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dcdescription; 
+            externalType = TEXT; 
+            name = description; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermseducationlevel; 
+            externalType = TEXT; 
+            name = educationLevel; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsextent; 
+            externalType = TEXT; 
+            name = extent; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = dcformat; 
+            externalType = TEXT; 
+            name = format; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = dcidentifier; 
+            externalType = INTEGER; 
+            name = identifier; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsinstructionalmethod; 
+            externalType = TEXT; 
+            name = instructionalMethod; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dclanguage; 
+            externalType = TEXT; 
+            name = language; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermslicense; 
+            externalType = TEXT; 
+            name = license; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dcidentifierurl; 
+            externalType = TEXT; 
+            name = location; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = acclongdesc; 
+            externalType = TEXT; 
+            name = longDesc; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = medialabel; 
+            externalType = TEXT; 
+            name = mediaLabel; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsmediator; 
+            externalType = TEXT; 
+            name = mediator; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsmedium; 
+            externalType = TEXT; 
+            name = medium; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsprovenance; 
+            externalType = TEXT; 
+            name = provenance; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dcpublisher; 
+            externalType = TEXT; 
+            name = publisher; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dcrelation; 
+            externalType = TEXT; 
+            name = relation; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dcrights; 
+            externalType = TEXT; 
+            name = rights; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsrightsholder; 
+            externalType = TEXT; 
+            name = rightsHolder; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dcsource; 
+            externalType = TEXT; 
+            name = source; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsspatial; 
+            externalType = TEXT; 
+            name = spatial; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dcsubject; 
+            externalType = TEXT; 
+            name = subject; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = accsynccaption; 
+            externalType = TEXT; 
+            name = syncCaption; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermstemporal; 
+            externalType = TEXT; 
+            name = temporal; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctitle; 
+            externalType = TEXT; 
+            name = title; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = acctranscript; 
+            externalType = TEXT; 
+            name = transcript; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctype; 
+            externalType = TEXT; 
+            name = type; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dctermsvalid; 
+            externalType = TEXT; 
+            name = valid; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dcidentifieruri; 
+            externalType = TEXT; 
+            isReadOnly = N; 
+            name = identifieruri; 
+            valueClassName = NSString; 
+        }
+    ); 
+    attributesUsedForLocking = (identifier); 
+    className = "org.pachyderm.assetdb.eof.AssetDBRecord"; 
+    classProperties = (
+        accessRights, 
+        altText, 
+        alternative, 
+        audience, 
+        contributor, 
+        coverage, 
+        created, 
+        creator, 
+        date, 
+        dateAccepted, 
+        dateCopyrighted, 
+        dateIssued, 
+        dateModified, 
+        dateSubmitted, 
+        description, 
+        educationLevel, 
+        extent, 
+        format, 
+        identifieruri, 
+        instructionalMethod, 
+        language, 
+        license, 
+        location, 
+        longDesc, 
+        mediaLabel, 
+        mediator, 
+        medium, 
+        provenance, 
+        publisher, 
+        relation, 
+        rights, 
+        rightsHolder, 
+        source, 
+        spatial, 
+        subject, 
+        syncCaption, 
+        temporal, 
+        title, 
+        transcript, 
+        type, 
+        valid
+    ); 
+    externalName = metadata2; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            accessRights, 
+            altText, 
+            alternative, 
+            audience, 
+            contributor, 
+            coverage, 
+            created, 
+            creator, 
+            date, 
+            dateAccepted, 
+            dateCopyrighted, 
+            dateIssued, 
+            dateModified, 
+            dateSubmitted, 
+            description, 
+            educationLevel, 
+            extent, 
+            format, 
+            identifieruri, 
+            instructionalMethod, 
+            language, 
+            license, 
+            location, 
+            longDesc, 
+            mediaLabel, 
+            mediator, 
+            medium, 
+            provenance, 
+            publisher, 
+            relation, 
+            rights, 
+            rightsHolder, 
+            source, 
+            spatial, 
+            subject, 
+            syncCaption, 
+            temporal, 
+            title, 
+            transcript, 
+            type, 
+            valid
+        ); 
+    }; 
+    name = PXMetadata; 
+    primaryKeyAttributes = (identifier); 
+}

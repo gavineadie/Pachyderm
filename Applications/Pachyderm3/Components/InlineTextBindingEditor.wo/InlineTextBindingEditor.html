@@ -1,0 +1,19 @@
+<div class="beditc">
+  <p class="helptext"><wo:string value="[helpSummaryForCurrentBinding]" />
+	<wo:if condition="[maxLengthSet]"> (Limited to <wo:string value="[maxLengthLimit]"/> characters including HTML tags)</wo:if>
+  </p>
+
+  <p>
+	<wo:if condition="[localContext.ComponentIsComplex]" negate="TRUE">
+	  <label><wo:string value="[bindingDescription.name]" valueWhenEmpty="* null *" /></label></wo:if>
+<wo:AjaxObserveField action="[observerAction]" fullSubmit="TRUE">
+	<wo:if condition="[editorShouldUseTextField]">
+	  <wo:textfield value="[evaluatedValue]" 
+	            maxlength="[maxLengthLimit]" size="40"/>
+	<wo:else>
+	  <wo:text      value="[evaluatedValue]" 
+	                 rows="[numberOfTextAreaLines]" cols="40"/></wo:else></wo:if>
+</wo:AjaxObserveField>
+  </p>
+		<wo:if condition="[componentDebug]"><div style="clear:both;" align="right"><b>InlineTextBindingEditor</b></div></wo:if>
+</div>

@@ -1,0 +1,4 @@
+**/*.woa/**
+**/WebServerResources/Java/*
+**/*.framework/**
+**/*.eomodeld~/**

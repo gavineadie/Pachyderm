@@ -1,0 +1,75 @@
+{
+  UTExportedTypeDeclarations = (
+	{
+		UTTypeTagSpecification = {
+			public.filename-extension = ("jpeg", "jpg"); 
+			public.mime-type = "image/jpeg";
+		}; 
+		UTTypeIdentifier = "public.jpeg"; 
+		UTTypeConformsTo = "public.image";
+	},
+	
+	{
+		UTTypeTagSpecification = {
+			public.filename-extension = "png"; 
+			public.mime-type = "image/png"; 
+		}; 
+		UTTypeIdentifier = "public.png"; 
+		UTTypeConformsTo = "public.image"; 
+	},
+	
+	{
+		UTTypeTagSpecification = {
+			public.filename-extension = "gif"; 
+			public.mime-type = "image/gif"; 
+		}; 
+		UTTypeIdentifier = "com.compuserve.gif"; 
+		UTTypeConformsTo = "public.image"; 
+	},
+	
+	{
+		UTTypeTagSpecification = {
+			public.filename-extension = "mp3";
+			public.mime-type = ("audio/mpeg", "audio/mpeg3", "audio/mpg", "audio/mp3"); 
+		}; 
+		UTTypeIdentifier = "public.mp3"; 
+		UTTypeConformsTo = "public.audio"; 
+	},
+	
+	{
+		UTTypeTagSpecification = {
+			public.filename-extension = "flv"; 
+			public.mime-type = ("video/x-flv"); 
+		}; 
+		UTTypeIdentifier = "com.macromedia.flash-movie"; 
+		UTTypeConformsTo = "public.movie"; 
+	},
+	
+	{
+		UTTypeTagSpecification = {
+			public.filename-extension = "mov"; 
+			public.mime-type = "video/quicktime"; 
+		}; 
+		UTTypeIdentifier = "com.apple.quicktime-movie"; 
+		UTTypeConformsTo = "public.movie"; 
+	},
+	
+	{
+		UTTypeTagSpecification = {
+			public.filename-extension = "mp4"; 
+			public.mime-type = ("video/mp4", "video/mp4v-es"); 
+		}; 
+		UTTypeIdentifier = "public.mpeg-4"; 
+		UTTypeConformsTo = "public.movie"; 
+	},
+	
+	{
+		UTTypeTagSpecification = {
+			public.filename-extension = "swf"; 
+			public.mime-type = ("application/x-shockwave-flash", "image/vnd.rn-realflash"); 
+		};
+		UTTypeIdentifier = "com.macromedia.shockwave-movie"; 
+		UTTypeConformsTo = "public.movie"; 
+	}
+  );
+}

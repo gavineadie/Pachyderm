@@ -1,0 +1,35 @@
+<html>
+ <head>
+  <title>Pachyderm 3.0</title>
+  <wo:ERXStyleSheet filename="[^css1]" /><wo:if condition="[^css2]"><wo:ERXStyleSheet filename="[^css2]" /></wo:if>
+<style type="text/css" media="screen">
+  body {
+    font-family:Arial,Helvetica,sans-serif; 
+    font-size:11px; margin:0px; padding:1em;
+    background-color:<wo:string value="[bodyGroundColor]"/>; 
+    border-top:5px solid <wo:string value="[bodyTopBarColor]"/>;
+  }
+  .blok { font-size:12px; text-align:center; text-decoration:none;
+          padding:3px; border-radius:3px; -moz-border-radius:3px; }
+  .TINT { background-color:<wo:string value="[blokBackColor]"/>; 
+                     color:<wo:string value="[blokTextColor]"/>; }
+      a:hover.blok { color:<wo:string value="[blokTextHover]"/>;
+          background-color:<wo:string value="[blokBackHover]"/>; }
+  input[type="submit"]:hover { color:<wo:string value="[blokTextHover]"/>;
+                    background-color:<wo:string value="[blokBackHover]"/>; }
+  .EDGE { border:1px solid <wo:string value="[blokEdgeColor]"/>; }
+  .HIDE { font-size:x-small; color:<wo:string value="[bodyGroundColor]"/>; }
+</style>
+  <wo:ERXJavaScript filename="script/pachyderm.js" />
+</head>
+<body>
+  <div style="margin:0 auto; width:1048px;" align="center">
+
+    <wo:ERXIFrame src="[presentationRootURL]" width="1024" height="748"/>
+    <div style="position:absolute; top:40px; left:398px;">
+      <wo:link action="[nextPage]" class="blok tint edge">Resume Authoring</wo:link><br/><br/>
+      (Preview shows this screen only -- links will not bring up other screens.)</div>
+
+</div>
+</body>
+</html>

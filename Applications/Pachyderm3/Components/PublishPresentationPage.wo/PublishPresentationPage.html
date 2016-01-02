@@ -1,0 +1,124 @@
+<wo:switch WOComponentName="[pageWrapperName]" 
+                      css1="style/pachyderm.css"
+                      css2="style/presentations.css">   	
+
+<style>
+table.progressBarContainer {
+	width: 100%;
+	border-spacing: 0px;
+}
+
+table.progressBarContainer td {
+	font-family: Helvetica;
+	font-size: 8pt;
+	padding: 2px;
+	color: rgb(100, 100, 100);
+}
+
+table.progressBarContainer td.progressValue {
+	white-space: nowrap;
+}
+
+table.progressBar {
+	border: 2px solid white;
+}
+
+table.progressBar td.percentageUnfinished {
+	background: white;
+}
+
+table.progressBar td.percentageFinished {
+	background: <wo:string value="[bodyTopBarColor]"/>;
+}
+
+table.progressBar td.percentageFinished.done {
+	background: darkgrey;
+}
+
+table.progressBarContainer td.progressMaximum {
+	white-space: nowrap;
+}
+</style>
+
+<h2>Presentation: <wo:string value="[document.displayName]"/></h2>
+<div class="W120"><wo:image src="images/presentation_mini.jpg" style="padding-bottom:20px;"/></div>
+
+<wo:if condition="[waitingToPublish]">
+
+ <div class="W570">
+  <h2 style="display:inline;">Publish the <wo:if condition="[flash]">Flash<wo:else>HTML5</wo:else></wo:if> Presentation?</h2>
+
+  <wo:link action="[publishAction]" style="margin-left:10px;" 
+                                    class="blok tint edge">Publish Now</wo:link> 
+
+  <wo:link action="[editAction]" style="margin-right:10px; float:right; text-align:right;"
+                                 class="blok tint edge">Edit Presentation</wo:link>
+
+  <div style="width:560px; float:left;">
+   <wo:repeat list="[preflightErrorList]"
+              item="[preflightErrorItem]"><wo:ERXEqualConditional value1="[preflightErrorItem.domain]" 
+                                                                  value2="PXPreflightAssets">
+    <wo:if condition="[preflightErrorItem.codeNegative]">
+     <br/><span style="color:red;">Warning: <wo:string value="[preflightErrorItem.localizedDescription]" /></span>
+    </wo:if></wo:ERXEqualConditional>
+   </wo:repeat><br/>   
+
+  <h3>Presentation Screen and Asset Summary:</h3>
+ 
+   <table>
+   <tr><th>Screen</th><th>Asset</th></tr>
+   <wo:repeat list="[preflightErrorList]"
+              item="[preflightErrorItem]"><wo:ERXEqualConditional value1="[preflightErrorItem.domain]" 
+                                                                  value2="PXPrepareManifest">
+    <wo:if condition="[preflightErrorItem.codePositive]">
+     <tr><td><wo:string value="[preflightErrorItem.userInfo.screenTitle]" /></td> 
+         <td><wo:string value="[preflightErrorItem.localizedDescription]" /></td></tr>
+    </wo:if>
+
+    <wo:if condition="[preflightErrorItem.codeNegative]">
+     <tr bgcolor="pink"><td><wo:string value="[preflightErrorItem.userInfo.screenTitle]" /></td> 
+                        <td><wo:string value="[preflightErrorItem.localizedDescription]" /></td></tr>
+    </wo:if>
+    </wo:ERXEqualConditional></wo:repeat>
+   </table><br/>   
+  </div>
+ </div>
+
+<wo:else>
+
+ <wo:if condition="[progressBarActive]">
+
+  <div style="width:540px; height:80px; float:left;">
+   
+   <wo:AjaxProgressBar progress="[progressScreenCounter]" refreshTime="200"
+             visibleBeforeStart="TRUE" visibleAfterDone="TRUE" 
+                 finishedAction="[finishedAction]" 
+               finishedFunction="document.location.reload(false)">
+    <b><wo:string value="[progressBarMessage]"/></b><br/></wo:AjaxProgressBar>
+  </div>
+  
+  <!-- <wo:link style="float:right;" action="[abortAction]" class="blok tint edge">Cancel</wo:link> -->
+
+ <wo:else>
+
+  <b>Presentation publish completed (with .zip file) in <wo:string value="[timeDifference]"/> seconds on
+          <wo:string value="[buildEndTime]" dateformat="%b %d, %Y at %I:%M %p"/>.</b><br/><br/>
+
+  <div style="width:500px; float:right; text-align:right;">
+   <wo:if condition="[flash]">
+    <wo:link href="[presentationURL]" class="blok tint edge"
+          onclick="window.open(this.href);return false;">View Flash Presentation</wo:link>&nbsp;&nbsp;&nbsp;
+   </wo:if>
+   <wo:if condition="[Html5]">
+    <wo:link href="[presentationURL]" class="blok tint edge"
+          onclick="window.open(this.href);return false;">View HTML5 Presentation</wo:link>&nbsp;&nbsp;&nbsp;
+   </wo:if>
+   <wo:link href="[zipURL]" class="blok tint edge">Download Presentation</wo:link>&nbsp;&nbsp;&nbsp;
+   <wo:link action="[editAction]" class="blok tint edge">Edit Presentation</wo:link><br/><br/>
+  </div>
+
+ </wo:else></wo:if>
+
+</wo:else></wo:if>
+
+</wo:switch>

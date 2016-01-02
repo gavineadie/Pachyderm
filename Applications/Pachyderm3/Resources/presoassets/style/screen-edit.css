@@ -1,0 +1,174 @@
+div#guts {
+	height: 465px;
+	overflow: auto;
+	margin-right: 2px;
+}
+
+div#scrovr label {
+	display: block;
+}
+
+/* Inline Editors */
+
+div#guts ul, div#guts ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+div.beditor {
+	width: 520px;
+	margin-bottom: 20px;
+}
+
+div.beditor_head {
+	width: 516px;
+	background-color: #ccc;
+	border: 1px solid #999;
+	padding: 2px;
+}
+
+div.beditor_body {
+	width: 500px;
+	border: 1px solid #048;
+	border-top: 0px solid #000;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+div.beditor div.beditor {
+	border-bottom: 1px solid #048;
+	margin-bottom: 5px;
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+div.beditor div.beditor div.beditor_head {
+	background-color: #fff;
+	border: 0px solid #000;
+	padding-left: 10px;
+	width: 498px;
+}
+
+div.beditor div.beditor div.beditor_body {
+	border: 0px solid #000;
+}
+
+a.collapser {
+	float: right;
+}
+
+
+div.beditor input {
+	width: 80%;
+}
+
+div.beditor textarea {
+	width: 280px;
+}
+
+p.bord input { width: auto; }
+
+div.beditor .input_button { width: auto; }
+
+div.bstep {
+	line-height: 24px;
+	height: 24px;
+	font-weight: bold;
+}
+
+span.bref {
+	width: 24px;
+	height: 24px;
+	text-align: center;
+	background: transparent url(/pachyderm_2_1/images/Dot24.gif) no-repeat 0 0;
+	font-weight: bold;
+	color: white;
+	display: block;
+	float: left;
+	margin-right: 0.5em;
+}
+
+div.beditor div.beditor span.bref {
+	background-image: none;
+	background-color: #048;
+}
+
+div.bord {
+	float: right
+}
+
+div.bord ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+div.bord li {
+	float: left;
+	width: 9px;
+	height: 8px;
+	overflow: none;
+	text-indent: -2000px;
+}
+
+div.bord a { display: block; }
+
+div.bord_up {
+	position: relative;
+	top: -8px;
+	left: 250px;
+	width: 10px;
+}
+
+div.bord_down {
+	position: relative;
+	left: 260px;
+	width: 10px;
+}
+
+div.beditc p {
+	margin-right: 200px;
+}
+
+div.beditc p.exptext {
+	float: right;
+	width: 200px;
+	font-style: italic;
+	margin-right: 0;
+	clear: right;
+}
+
+div.beditc label {
+	display: block;
+	font-weight: bold;
+}
+
+div#collapse_all {
+	color: #048;
+	cursor: pointer;
+	text-align: right;
+	margin: 2px;
+	margin-right: 10px;
+	font-size: 150%;
+	font-weight: bold;
+}
+
+span#collapse_all_separater {
+	color: #000;
+	cursor: inherit;
+	font-weight: normal;
+}
+
+.float_killer {
+	clear: both;
+}
+/*
+div.level1 { border: 1px solid green; }
+div.level2 { border: 1px solid orange; }
+div.level3 { border: 1px solid purple; }
+
+div.level1, div.level2, div.level3 { margin: 0.5em; padding: 0.5em; }
+*/

@@ -1,0 +1,7 @@
+#
+# MIB Auxiliary Data File for junit tests
+#
+# CVS $Id: OsidProperty-Junit.dat,v 1.1 2005/09/28 13:32:38 tom Exp $
+#
+
+hello/hello property@junit.osid.org:helloProperty:hello:hi:String:read-only:bushels:The property.

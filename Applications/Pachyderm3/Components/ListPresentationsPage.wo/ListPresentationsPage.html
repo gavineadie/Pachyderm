@@ -1,0 +1,71 @@
+<wo:switch WOComponentName="[pageWrapperName]"
+                      css1="style/pachyderm.css"
+                      css2="style/presentations.css">
+
+<h2>Welcome to the Pachyderm Presentations Manager</h2>
+<h4>From this screen, you can create a new presentation or select an existing presentation to work on.</h4>
+
+<div class="W160">
+ <div style="margin-bottom:10px;">
+  <h4 style="margin:0px;">&nbsp;</h4><br/>
+  <wo:link action="[makePresentation]" class="blok tint edge">Make New Presentation</wo:link>
+ </div>
+</div>
+
+<div class="W545">
+ <h4 style="margin:0px; float:left;">&nbsp;</h4>
+
+ <p align="right" style="margin:0px; float:right;">View by:
+ <wo:link action="[iconDisplayMode]" disabled="[isIconDisplayMode]" class="blok tint edge">THUMBNAILS</wo:link> &harr;
+ <wo:link action="[listDisplayMode]" disabled="[isListDisplayMode]" class="blok tint edge">LIST</wo:link></p>
+
+<br/><p style="margin-top:12px;border-top:1pt dotted grey;clear:both;" />
+
+<!-- PRESENTATION DISPLAY : REPEAT OVER EACH PRESO -->
+
+<wo:if condition="[isIconDisplayMode]">
+  <wo:repeat list="[sortedPresentations]" item="[presentation]">
+    <div class="Preso260">
+      <wo:link action="[openPresentation]"><wo:image src="images/presentation_mini.jpg" /></wo:link>
+<div style="margin:0 0 0 120px">
+      <h4 style="margin:0 auto;"><wo:string value="[presentation.title]" /></h4>
+      <wo:string value="[presentation.screens.count]" valueWhenEmpty="Unknown" /> screens<br/>
+      <wo:string dateformat="%b %d, %Y at %I:%M %p"
+                      value="[presentation.dateModified]" valueWhenEmpty="Unknown" /><br/>
+      <wo:if condition="[isPresentationPublished]"><br/>
+        <wo:link href="[presentationURL]" target="_blank"
+                class="blok mini tint edge">View</wo:link>&nbsp;&nbsp;&nbsp;
+      <wo:else>Not Published<br/><br/></wo:else></wo:if>
+      <wo:link action="[openPresentation]" class="blok mini tint edge"> Edit </wo:link>&nbsp;&nbsp;&nbsp;
+      <wo:link action="[killPresentation]" class="blok mini tint edge">Delete</wo:link>
+</div>
+    </div>
+  </wo:repeat>
+<wo:else>
+    <table cols="6" cellpadding="8em" border="1">
+    <tr><th width="120em">Presentation<br/>Title</th><th width="120em">Date last<br/>Modified</th><th width="40em">Screen<br/>Count</th>
+        <th width="40em">View</th><th width="40em">Edit</th><th width="40em">Delete</th></tr>
+    <wo:repeat list="[sortedPresentations]" item="[presentation]"><tr>
+        <td><wo:string value="[presentation.title]" valueWhenEmpty="- none -"/></td>
+          <td><wo:string dateformat="%b %d, %Y at %I:%M %p"
+                              value="[presentation.dateModified]"
+                     valueWhenEmpty="Unknown" /></td>
+          <td><wo:string value="[presentation.screens.count]" valueWhenEmpty="Unknown" /></td>
+
+        <td align="center"><wo:if condition="[isPresentationPublished]">
+          <wo:link href="[presentationURL]"
+                onclick="window.open(this.href); return false;"
+                  class="blok mini tint edge" >View</wo:link>
+            <wo:else><span class="blok mini edge">not pub</span></wo:else></wo:if></td>
+          <td align="center"><wo:link action="[openPresentation]"
+                                       class="blok mini tint edge">Edit</wo:link></td>
+          <td align="center"><wo:link action="[killPresentation]"
+                                       class="blok mini tint edge">Delete</wo:link></td>
+      </tr>
+    </wo:repeat>
+    </table><br/>
+</wo:else></wo:if>
+<br clear="all" />
+</div>
+
+</wo:switch>

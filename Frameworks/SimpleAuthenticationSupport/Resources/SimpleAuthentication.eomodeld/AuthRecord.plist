@@ -1,0 +1,38 @@
+{
+    attributes = (
+        {
+            columnName = PASSWORD; 
+            externalType = BLOB; 
+            name = password; 
+            valueClassName = NSData; 
+        }, 
+        {
+            columnName = REALM; 
+            externalType = VARCHAR; 
+            name = realm; 
+            valueClassName = NSString; 
+            width = 127; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEMP_PASSWORD"; 
+            externalType = BLOB; 
+            name = temppassword; 
+            valueClassName = NSData; 
+        }, 
+        {
+            columnName = USERNAME; 
+            externalType = VARCHAR; 
+            name = username; 
+            valueClassName = NSString; 
+            width = 127; 
+        }
+    ); 
+    attributesUsedForLocking = (username, password); 
+    className = "org.pachyderm.apollo.authentication.simple.eof.AuthRecordEO"; 
+    classProperties = (username, temppassword, password, realm); 
+    externalName = AUTHRECORD; 
+    fetchSpecificationDictionary = {}; 
+    name = AuthRecord; 
+    primaryKeyAttributes = (username); 
+}

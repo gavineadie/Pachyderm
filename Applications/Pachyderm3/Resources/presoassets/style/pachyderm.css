@@ -1,0 +1,33 @@
+body {
+	font: 11px/1.2 Arial, Helvetica, sans-serif;
+	color: black;
+	background: white url(/pachyderm_2_1/images/background.jpg) repeat-x top left;
+	text-align:center;
+	margin: 1em;
+	padding: 0;
+}
+
+img { border: 0; }
+.access { display: none }
+.clearf { height: 1px; clear: both; }
+
+div#container {
+	position: relative;
+	display: block;
+	width: 900px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+p#copyright {
+	width: 900px;
+	margin: 0 auto;
+	text-align: right;
+	font-size: x-small;
+	padding-right: 32px;
+	color: #666;
+}
+
+p#copyright a{
+	color:#036;
+}

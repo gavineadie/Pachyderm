@@ -1,0 +1,22 @@
+<wo:switch WOComponentName="[pageWrapperName]" 
+                      css1="style/pachyderm.css">  
+<h2>Edit A Pachyderm Account</h2>
+  
+<div style="color:red"><wo:if condition="[message]"><wo:string value="[message]" /></wo:if></div>
+  <wo:form multipleSubmit="TRUE">
+		<table border="0px" cellspacing="5">
+			<tr><td width="80px" align="right">Username:</td><td><wo:string value="[username]" /></td></tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr><td align="right">First Name: </td><td><wo:textfield value="[firstName]" /></td></tr>
+			<tr><td align="right">Last Name:</td><td><wo:textfield value="[lastName]" /></td></tr>
+			<tr><td align="right">Email:</td><td><wo:textfield value="[workMail]" style="width:220px;"/></td></tr>
+			<tr><td colspan="2">To keep the current password, leave these password fields blank.
+	                   <br/>To change the password, type the new password into both password fields.</td></tr>
+			<tr><td align="right">Password:</td><td><wo:WOPasswordField value="[password1]" /></td></tr>
+			<tr><td align="right">Password (confirm):</td><td><wo:WOPasswordField value="[password2]" /></td></tr>
+  <tr><td align="right" colspan="2"><wo:submit action="[updateAction]" value="Update" class="blok tint edge"/>
+                  &nbsp;&nbsp;&nbsp;<wo:submit action="[cancelAction]" value="Cancel" class="blok tint edge"/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+		</table>
+  </wo:form>
+</wo:switch>

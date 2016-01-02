@@ -1,0 +1,81 @@
+h1 {
+	text-transform: uppercase;
+	margin: 0 0 .75em 0;
+}
+
+.notuc { text-transform: none; }
+
+/* PublishPresentationsPage */
+
+div#pressummary {
+	width: 158px;
+	float: left;
+}
+
+div#pressummary p {
+	font-weight: bold;
+}
+
+div#pressummary ul {
+	margin: 0;
+	padding: 0 0 0 2em;
+}
+
+div#publopts {
+	margin-left: 160px;
+	border-left: 2px solid #999;
+	padding-left: 1em;
+}
+
+#output_details_list {
+	display: none;
+}
+
+p.status {
+	font-size: 125%;
+}
+
+h3, p {
+	margin: 0px;
+}
+
+
+div#main_links {
+	height: 125px;
+	margin-left: 100px;
+	float: right;
+	text-align: right;
+	margin-right: 10px;
+}
+
+div#main_links a#publish_presentation_link {
+	display: block;
+	width: 150px;
+	height: 25px;
+	text-align: center;
+	background-color: #357;
+	text-decoration: none;
+	color: #fff;
+	font-size: 12px;
+	line-height: 25px;
+	margin-left: auto;
+	margin-bottom: 5px;
+}
+
+div#main_links a#view_presentation_link {
+	display: block;
+	width: 150px;
+	height: 25px;
+	text-align: center;
+	background-color: #78a;
+	text-decoration: none;
+	color: #fff;
+	font-size: 12px;
+	line-height: 25px;
+	margin-left: auto;
+	margin-bottom: 5px;
+}
+
+div#main_links div#view_by {
+	margin-top: 25px;
+}

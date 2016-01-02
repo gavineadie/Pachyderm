@@ -1,0 +1,29 @@
+<wo:switch WOComponentName="[pageWrapperName]" 
+                      css1="style/pachyderm.css"
+                      css2="style/presentations.css">   	
+
+<h2>Add New Presentation</h2>
+ <wo:form multipleSubmit="TRUE">
+  <div style="width:360px; margin-right:10px; float:left;">
+   <strong>Presentation Name/Title:</strong>
+    <wo:textfield value="[title]" maxlength="100" size="50" />
+  <br/><br/>
+   <strong>Description:</strong><br/>
+    <wo:text value="[description]" cols="48" rows="3" /></div>
+    
+  <div style="width:340px; margin-left:20px; float:left;">
+   <br/><strong>Presentation Format:</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+    Flash <wo:radioButton checked="[flash]" name="style" class="blok"/>&nbsp;&nbsp;&nbsp;&nbsp;
+    HTML5 <wo:radioButton checked="[html5]" name="style" class="blok"/>
+   <br/><br/>
+    Pachyderm 3 publishes presentations in Flash or HTML5.
+   <br/><br/>
+    Flash requires .flv files for video,<br/>HTML5 requires .mp4 for videos.<br/>
+    </div>
+
+  <div style="float:right; margin-top:10px;">
+     <wo:submit value=" Next " action="[screenTemplateSelector]" class="blok tint edge" />&nbsp;&nbsp;&nbsp;
+                      <wo:submit value="Cancel" action="[cancelAction]" class="blok tint edge" /><br/><br/></div>
+
+ </wo:form>
+</wo:switch>

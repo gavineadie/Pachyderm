@@ -1,0 +1,40 @@
+{
+    attributes = (
+        {
+            columnName = "PARENT_ID"; 
+            externalType = INTEGER; 
+            name = parentid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "SUB_ID"; 
+            externalType = INTEGER; 
+            name = subid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (parentid, subid); 
+    className = EOGenericRecord; 
+    externalName = GROUPGROUPJOIN; 
+    fetchSpecificationDictionary = {}; 
+    name = GroupGroupJoin; 
+    primaryKeyAttributes = (parentid, subid); 
+    relationships = (
+        {
+            destination = APGroup; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupid; sourceAttribute = parentid; }); 
+            name = parentgroup; 
+        }, 
+        {
+            destination = APGroup; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupid; sourceAttribute = subid; }); 
+            name = subgroup; 
+        }
+    ); 
+}

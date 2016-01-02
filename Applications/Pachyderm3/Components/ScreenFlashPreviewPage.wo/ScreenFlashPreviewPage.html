@@ -1,0 +1,22 @@
+<wo:switch WOComponentName="PXMinimalPageWrapper" credits="FALSE"
+           css1="style/pachyderm.css">
+<!--edited style -->  <div style="text-align:center;">
+    <object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" 
+            classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="790" height="540" id="root" align="middle">
+      <param name="allowScriptAccess" value="sameDomain" />
+      <wo:genericElement name="base" elementName="param" value="[presentationRootURL]" />
+      <wo:genericElement name="movie" elementName="param" value="[rootMovieURL]" />
+      <param name="quality" value="high" />
+      <param name="bgcolor" value="#ffffff" />
+<!--new param -->      <param name="wmode" value="transparent" />
+      <wo:genericElement elementName="embed" src="[rootMovieURL]" base="[presentationRootURL]" quality="high" 
+                         bgcolor="#ffffff" width="790" height="540" name="root" align="middle"
+                         allowscriptaccess="sameDomain" type="application/x-shockwave-flash"
+                         pluginspage="http://www.macromedia.com/go/getflashplayer" />
+    </object>
+<!--edited style -->  	<div style="position:absolute;top:30px;left:50%;margin-left:-150px;">
+    <p>(Preview shows this screen only -- links will not bring up other screens.)<br/><br/>
+       <wo:link action="[nextPage]" class="blok tint edge">Resume Authoring</wo:link></p>
+<!--edited style -->   </div>
+  </div>
+</wo:switch>

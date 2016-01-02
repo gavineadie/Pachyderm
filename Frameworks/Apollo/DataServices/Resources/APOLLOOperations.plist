@@ -1,0 +1,24 @@
+(
+	{
+		"Name" = "Test Operation";
+		"Identifier" = "apollo.test";
+		"Categories" = (
+			"cat a", "cat b"
+		);
+		"DefaultParameters" = {
+		
+		};
+		"DelegateClassName" = "org.pachyderm.apollo.data.operation.CXTestOperation";
+	},
+	{
+		"Name" = "Image for Object";
+		"Identifier" = "apollo.image-for-object";
+		"Categories" = (
+			"cat a", "cat b"
+		);
+		"DefaultParameters" = {
+		
+		};
+		"DelegateClassName" = "org.pachyderm.apollo.data.operations.ImageForObjectProc";
+	}
+)

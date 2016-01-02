@@ -1,0 +1,33 @@
+<wo:switch WOComponentName="[pageWrapperName]"
+                      css1="style/pachyderm.css">
+
+<h2>Edit Media Transcript</h2>
+
+<div class="W160">
+  <p><wo:image filename="[thumbLink]"/><br /><br />
+     <wo:link href="[assetLink]" target="_blank" class="blok tint edge">Preview Medium</wo:link></p>
+  Submitted:<br/><wo:string value="[dateSubmitted]" dateformat="%b %d, %Y at %I:%M %p"/><br /><br />
+   Modified:<br/><wo:string value="[dateModified]"  dateformat="%b %d, %Y at %I:%M %p"/>
+</div>
+
+<div id="mediaPanel">
+    <h3>Type or Upload Audio/Video Transcript:</h3>
+
+  <wo:form multipleSubmit="TRUE">
+	<div class="transcriptArea">
+	  <wo:text value="[transcript]" rows="20" cols="60"/><br/>
+	  <wo:link action="[cancelAction]" class="blok tint edge">Cancel and Return to Metadata</wo:link>&nbsp;
+	  <wo:submit action="[submitAction]" value="Save" class="blok tint edge"/>
+	</div>
+  </wo:form>
+
+  <wo:form action="[uploadAction]" enctype="multipart/form-data">
+  <p><h2><label>Upload Transcript </label></h2>
+     <wo:fileUpload data="[transcriptData]"
+	            filePath="[transcriptFileName]"        
+	            mimeType="[transcriptMimeType]"/>&nbsp;
+	 <wo:submit action="[uploadAction]" value="Upload" class="blok tint edge"/></p>
+  </wo:form>
+
+</div>
+</wo:switch>

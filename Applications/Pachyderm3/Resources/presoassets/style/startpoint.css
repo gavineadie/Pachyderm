@@ -1,0 +1,60 @@
+div#container {
+	overflow: hidden;
+}
+
+#guts {
+	height: 300px;
+	overflow: auto;
+}
+
+img#pachydermlogo {
+	position: absolute;
+	top: 0px;
+	left: 40px;
+}
+
+#main_links {
+	position: absolute;
+	top: 0px;
+	left: 200px;
+	height: 100%;
+}
+
+#main_links #edit_link a {
+	font-size: 9px;
+}
+
+#main_links p {
+	font-weight: bold;
+}
+
+#main_links h2 {
+	margin: 0px;
+	color: #036;
+}
+
+#main_links .image_link {
+	float: left;
+	width: 150px;
+}
+
+#other_links {
+	position: absolute;
+	top: 0px;
+	left: 550px;
+	height: 100%;
+	
+	border-left: 1px solid #444;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+div#credits {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	display: block;
+	width: 900px;
+	color: #666;
+	font-size: 10px;
+}

@@ -1,0 +1,136 @@
+{
+    attributes = (
+        {
+            columnName = BINDINGS; 
+            externalType = LONGBLOB; 
+            name = bindings; 
+            valueClassName = NSData; 
+        }, 
+        {
+            columnName = "CLASS_NAME"; 
+            externalType = VARCHAR; 
+            name = className; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = "COMPONENT_THUMBNAIL"; 
+            externalType = "LONG VARCHAR"; 
+            name = componentThumbnail; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = "CONFORMS_TO"; 
+            externalType = VARCHAR; 
+            name = conformingName; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = DESCRIPTION; 
+            externalType = "LONG VARCHAR"; 
+            name = descriptionText; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = INTERFACE; 
+            externalType = LONGBLOB; 
+            name = interfaceDefinitions; 
+            valueClassName = NSData; 
+        }, 
+        {
+            columnName = "LAST_MODIFIED"; 
+            externalType = DATETIME; 
+            name = lastModified; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            columnName = "LEGEND_IMAGE"; 
+            externalType = "LONG VARCHAR"; 
+            name = legendImage; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = NAME; 
+            externalType = VARCHAR; 
+            name = name; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = NOTES; 
+            externalType = VARCHAR; 
+            name = notes; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = "PROXY_IMAGE"; 
+            externalType = "LONG VARCHAR"; 
+            name = proxyImage; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = PUBLISH; 
+            externalType = "LONG VARCHAR"; 
+            name = publish; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = VERSION; 
+            externalType = VARCHAR; 
+            name = version; 
+            valueClassName = NSString; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        interfaceDefinitions, 
+        publish, 
+        proxyImage, 
+        bindings, 
+        conformingName, 
+        version, 
+        componentThumbnail, 
+        lastModified, 
+        className, 
+        legendImage, 
+        name, 
+        descriptionText, 
+        notes
+    ); 
+    className = EOGenericRecord; 
+    classProperties = (
+        interfaceDefinitions, 
+        publish, 
+        proxyImage, 
+        bindings, 
+        conformingName, 
+        version, 
+        componentThumbnail, 
+        lastModified, 
+        className, 
+        legendImage, 
+        name, 
+        descriptionText, 
+        notes, 
+        conformsTo, 
+        extendedBy
+    ); 
+    externalName = "COMPONENT_DESCRIPTION"; 
+    fetchSpecificationDictionary = {}; 
+    name = ComponentDescription; 
+    primaryKeyAttributes = (className); 
+    relationships = (
+        {
+            destination = ComponentDescription; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = className; sourceAttribute = conformingName; }); 
+            name = conformsTo; 
+        }, 
+        {
+            destination = ComponentDescription; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = conformingName; sourceAttribute = className; }); 
+            name = extendedBy; 
+        }
+    ); 
+}

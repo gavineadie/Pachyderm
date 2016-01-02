@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<component-definition>
+	<identification>
+		<localized-name>
+			<string lang="en">Phone Dial Digit</string>
+		</localized-name>
+		<version>100</version>
+		<version-string>Version 1.0, Pachyderm 3.0, 2014-Dec-19</version-string>
+		<component-identifier>pachyderm.phonedial.phonedial_item</component-identifier>
+		<conforming-identifiers>
+			<identifier>pachyderm.abstract.item</identifier>
+		</conforming-identifiers>
+	</identification>
+	<binding-list>
+		<binding type="attribute" container="none">
+			<binding-key>thumbnail</binding-key>
+			<localized-name>
+				<string lang="en">digit thumbnail</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.image</identifier>
+				<identifier>pachyderm.resource</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Choose the image for the phone dial circular digit.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="public.image" strict="YES">
+					<key>min-size</key>		<size>{100,100}</size>
+					<key>max-size</key>		<size>{120,120}</size>
+ 				</limit>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>rollover</binding-key>
+			<localized-name>
+				<string lang="en">digit rollover</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.image</identifier>
+				<identifier>pachyderm.resource</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Choose the image for the central rollover.</x-help-text>
+			<editable>YES</editable>
+			<default-association>
+				<association><!-- insert serialized association here --></association>
+			</default-association>
+			<limits>
+				<limit for="public.image" strict="YES">
+					<key>min-size</key>
+					<size>{250,250}</size>
+					<key>max-size</key>
+					<size>{250,250}</size>
+ 				</limit>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>caption</binding-key>
+			<localized-name>
+				<string lang="en">phone digit caption</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.text</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Choose the caption for the phone dial circular digit.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="public.text" strict="YES">
+					<key>max-length</key>
+					<integer>60</integer>
+ 				</limit>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>link</binding-key>
+			<localized-name>
+				<string lang="en">digit link</string>
+			</localized-name>
+			<content-types>
+				<identifier>pachyderm.atomic.link</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Choose the screen or URL for the phone dial circular digit.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+			</limits>
+		</binding>
+	</binding-list>
+	<binding-validators>
+	</binding-validators>
+	<user-interface>
+		<preferred-binding-ordering>
+			<binding-key>thumbnail</binding-key>
+			<binding-key>rollover</binding-key>
+			<binding-key>caption</binding-key>
+			<binding-key>link</binding-key>
+		</preferred-binding-ordering>
+	</user-interface>
+	<environment-support>
+		<environment>
+			<identifier>pachyderm.flash-environment</identifier>
+			<min-size>{0.0, 0.0}</min-size>
+			<max-size>{0.0, 0.0}</max-size>
+			<auto-layout>NO</auto-layout>
+			<accepts-children>NO</accepts-children>
+			<resources>
+				<resource></resource>
+			</resources>
+		</environment>
+	</environment-support>
+</component-definition>

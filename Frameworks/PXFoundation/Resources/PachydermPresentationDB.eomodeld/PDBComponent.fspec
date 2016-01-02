@@ -1,0 +1,13 @@
+{
+    allComponents = {
+        class = EOFetchSpecification; 
+        entityName = PDBComponent; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = pk; 
+            selectorName = "isGreaterThan:"; 
+            value = {class = NSNumber; value = 0; }; 
+        }; 
+    }; 
+}

@@ -1,0 +1,32 @@
+<wo:switch WOComponentName="PXMinimalPageWrapper"
+                      css1="style/pachyderm.css" logo="small">
+
+<div>
+  <div style="position:relative;left:200px;">
+    <h2>Pachyderm Database Models, Records and Fields</h2>
+    <wo:repeat list="[dbModels]" item="[dbModel]">
+      <wo:string value="[dbModel.name]"/> ----
+      <wo:repeat list="[dbModel.entities]" item="[dbEntity]">
+        <wo:link action="[chooseEntity]"><wo:string value="[dbEntity.name]"/></wo:link> :
+      </wo:repeat><br/>
+    </wo:repeat>
+  </div>
+  <wo:form>
+  <p style="text-align:right"><wo:submit action="[cancelAction]"
+                                          value="Admin Home"
+                                          class="blok tint edge"/>&nbsp;&nbsp;&nbsp;</p></wo:form>
+
+  <div class="clearBoth"/><br/>
+</div>
+
+<p style="border-top:1pt dotted grey;"/>
+<strong><wo:string value="[chosenEntity.name]"/> (<wo:string value="[entityRecords.@count]"/> records)</strong><br/>
+<wo:repeat list="[entityRecords]" item="[entityRecord]">
+  <wo:repeat list="[entityRecord.allPropertyKeys]" item="[key]">
+    <div align="right" style="width:120px; padding:4px; margin-left:2em; float:left; background:#ddd;">
+    <wo:string value="[key]" />:</div>
+    <wo:textfield value="[value]" style="width:720px;" disabled="disabled"/><br/>
+  </wo:repeat><hr/>
+</wo:repeat>
+
+</wo:switch>

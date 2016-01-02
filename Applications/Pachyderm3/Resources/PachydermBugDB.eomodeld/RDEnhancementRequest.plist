@@ -1,0 +1,116 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = APPLICATIONSTATE; 
+            externalType = LONGTEXT; 
+            name = applicationState; 
+            serverTimeZone = "Canada/Mountain"; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ASSISTIVEDEVICES; 
+            externalType = INTEGER; 
+            name = assistiveDevices; 
+            serverTimeZone = "Canada/Mountain"; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = COMPPRIMARYUSE; 
+            externalType = VARCHAR; 
+            name = computerPrimaryUse; 
+            serverTimeZone = "Canada/Mountain"; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = CONTRIBUTORIDENTITY; 
+            externalType = VARCHAR; 
+            name = contributorIdentity; 
+            serverTimeZone = "Canada/Mountain"; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = DATECREATED; 
+            externalType = TIMESTAMP; 
+            name = dateCreated; 
+            serverTimeZone = "Canada/Mountain"; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = NETWORKCONNECTION; 
+            externalType = VARCHAR; 
+            name = networkConnection; 
+            serverTimeZone = "Canada/Mountain"; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = OPERATINGSYSTEM; 
+            externalType = VARCHAR; 
+            name = operatingSystem; 
+            serverTimeZone = "Canada/Mountain"; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = REQUESTSUMMARY; 
+            externalType = LONGTEXT; 
+            name = requestSummary; 
+            serverTimeZone = "Canada/Mountain"; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = REQUESTTITLE; 
+            externalType = MEDIUMTEXT; 
+            name = requestTitle; 
+            serverTimeZone = "Canada/Mountain"; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = RID; 
+            externalType = INTEGER; 
+            name = rid; 
+            serverTimeZone = "Canada/Mountain"; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = WEBBROWSER; 
+            externalType = VARCHAR; 
+            name = webBrowser; 
+            serverTimeZone = "Canada/Mountain"; 
+            valueClassName = NSString; 
+            width = 255; 
+        }
+    ); 
+    attributesUsedForLocking = (rid); 
+    className = "org.pachyderm.authoring.eof.RDEnhancementRequest"; 
+    classProperties = (
+        applicationState, 
+        assistiveDevices, 
+        computerPrimaryUse, 
+        contributorIdentity, 
+        dateCreated, 
+        networkConnection, 
+        operatingSystem, 
+        requestSummary, 
+        requestTitle, 
+        webBrowser
+    ); 
+    externalName = ENHANCEREQUEST; 
+    fetchSpecificationDictionary = {}; 
+    name = RDEnhancementRequest; 
+    primaryKeyAttributes = (rid); 
+}

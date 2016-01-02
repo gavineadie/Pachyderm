@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<component-definition>
+	<identification>
+		<localized-name>
+			<string lang="en">Dual Comparison Screen</string>
+		</localized-name>
+		<version>100</version>
+		<version-string>Version 1.0, Pachyderm 3.0, 2014-Dec-19</version-string>
+		<component-identifier>pachyderm.dual_comparison</component-identifier>
+		<conforming-identifiers>
+			<identifier>pachyderm.abstract.screen</identifier>
+		</conforming-identifiers>
+	</identification>
+	<binding-list>
+		<binding type="attribute" container="none">
+			<x-auto-instantiate>YES</x-auto-instantiate>
+			<binding-key>compoundTitle</binding-key>
+			<localized-name>
+				<string lang="en">Title and Subtitle</string>
+			</localized-name>
+			<content-types>
+				<identifier>pachyderm.general.compound_title</identifier>
+				<identifier>pachyderm.abstract.item</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Enter your screen title and subtitle as you wish it displayed.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			 <x-auto-instantiate>YES</x-auto-instantiate>
+			<binding-key>midground_image</binding-key>
+			<localized-name>
+				<string lang="en">Background Image (Optional)</string>
+			</localized-name>
+			<content-types>
+				<identifier>pachyderm.general.compound_title</identifier>
+				<identifier>pachyderm.abstract.item</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>OPTIONAL. Displays a background image behind the screen where normally a rounded white rectangle appears. If left empty, the white background will be used.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>mainText</binding-key>
+			<localized-name>
+				<string lang="en">Main Text</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.text</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Enter your main screen text.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="public.text" strict="YES">
+					<key>max-length</key>
+					<integer>1500</integer>
+				</limit>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			 <x-auto-instantiate>YES</x-auto-instantiate>
+			<binding-key>group</binding-key>
+			<localized-name>
+				<string lang="en">Dual Comparison Group</string>
+			</localized-name>
+			<content-types>
+				<identifier>pachyderm.dual_comparison.group</identifier>
+				<identifier>pachyderm.abstract.menu</identifier>
+			</content-types>
+			<help-tag></help-tag>
+			<x-help-text>Dual Comparison Group</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+			</limits>
+		</binding>
+	</binding-list>
+	<binding-validators>
+	</binding-validators>
+	<user-interface>
+		<preferred-binding-ordering>
+			<binding-key>compoundTitle</binding-key>
+			<binding-key>midground_image</binding-key>
+			<binding-key>mainText</binding-key>
+			<binding-key>group</binding-key>
+		</preferred-binding-ordering>
+	</user-interface>
+	<environment-support>
+		<environment>
+			<identifier>pachyderm.flash-environment</identifier>
+			<min-size>{0.0, 0.0}</min-size>
+			<max-size>{0.0, 0.0}</max-size>
+			<auto-layout>NO</auto-layout>
+			<accepts-children>NO</accepts-children>
+			<resources>
+				<resource>dual_comparison.swf</resource>
+			</resources>
+		</environment>
+	</environment-support>
+</component-definition>

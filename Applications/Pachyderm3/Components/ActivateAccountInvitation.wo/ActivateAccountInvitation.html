@@ -1,0 +1,24 @@
+<wo:switch WOComponentName="PXMinimalPageWrapper" 
+                      css1="style/pachyderm.css">
+
+<div id="mediaPanel">
+<h2>Activate My Pachyderm Authoring Account</h2>
+<wo:if condition="[message]"><p><wo:string value="[message]"/></p></wo:if>
+
+<wo:if condition="[invitationKey]">
+  <wo:if condition="[invitationKeyIsValid]" negate="TRUE">
+	Your invitation key appears to be invalid. Please contact an administrator for assistance.</wo:if>
+  <wo:else>Sorry. You need an invitation to activate a Pachyderm authoring account. 
+    Bug someone who has one - they can hook you up.</wo:else></wo:if>
+
+  <wo:form>
+	<p><label>Username:</label> <wo:textfield value="[username]"/></p>
+	<p><label>Password:</label> <wo:WOPasswordField value="[password1]"/></p>
+	<p><label>Password (confirm):</label> <wo:WOPasswordField value="[password2]"/></p>
+	<p><label>First Name:</label> <wo:textfield value="[firstName]"/></p>
+	<p><label>Last Name:</label> <wo:textfield value="[lastName]"/></p>
+	<p><label>Email:</label> <wo:textfield value="[email]" disabled="TRUE"/></p>
+	<p><wo:submit action="[createAccount]" value="Create my account"/></p>
+  </wo:form>
+</div>
+</wo:switch>

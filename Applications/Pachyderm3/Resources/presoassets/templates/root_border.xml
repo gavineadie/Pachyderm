@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<frame bg_color="0xa7bccc" nav_color="0xe8a600" name="Pachyderm" midground_opacity="40" midground_image="" > 
+	<text_group>
+		<text 	
+				layer="" 
+				x="" 
+				y="" 
+				width="" 
+				height="" 
+				txt="" 
+				font="" 
+				size="" 
+				color="" 
+				bold="" 
+				italic="" 
+				underline="" 
+				link="" 
+		/>
+	</text_group> 
+	<image_group> 
+		<!-- 
+			Replace the root_assets/RootBorder.jpg file with your own border.  It should be 790x540, and have the name RootBorder with either the swf, jpg, gif or png extension.. If you only want a color comment out the image tag below and set the bg_color parameter above to the hex value for your color in the form 0xRRGGBB.
+		-->
+		<image 	
+				layer="0" 
+				x="0" 
+				y="0" 
+				width="790" 
+				height="540" 
+				file="root_assets/RootBorder.jpg" 
+				link="" 
+		/>
+		<!--
+			Swap this out with your own logo or comment it out to remove the logo.  If your logo is a different size or you want to adjust the position, change the x, y, width and height components parameters.  Add a URL to the link parameter to make it an active link.  Make sure to give your file the name Logo with either the swf, jpg, gif or png extension.
+		-->
+		
+<!--<image 	
+				layer="1" 
+				x="26" 
+				y="14" 
+				width="125" 
+				height="35" 
+				file="root_assets/Logo.swf" 
+				link="" 
+		/>
+		<image 	
+				layer="" 
+				x="" 
+				y="" 
+				width="" 
+				height="" 
+				file="" 
+				link="" 
+		/>
+-->	</image_group>
+</frame>

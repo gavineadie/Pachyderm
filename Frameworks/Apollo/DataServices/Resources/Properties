@@ -1,0 +1,11 @@
+# Add framework properties here
+#
+# These properties are loaded into the Java system properties for applications linking against this framework.
+
+DataServices.IgnoreBundles	( "Pachyderm3", "AppServices", "CoreServices", "SimpleAuthenticationSupport", "ERJars", \
+						      "ERExtensions", "JavaWOExtensions", "Ajax", "ERJavaMail", "MySQLPlugIn", "DerbyPlugIn", \
+  						      "JavaEOAccess", "JavaEOControl", "JavaEOProject", "JavaFoundation", "JavaJDBCAdaptor", \
+ 							  "JavaWebObjects", "JavaWOJSPServlet", "JavaXML", "JavaDirectToWeb", "JavaDTWGeneration", \
+ 							  "JavaWebServicesSupport" )
+
+DataServices.SleeperModels	( "JUDModel" )

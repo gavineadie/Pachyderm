@@ -1,0 +1,10 @@
+**/Properties
+**/*.Properties
+**/*.eomodeld/
+**/*.d2wmodel
+**/*.wo/
+**/*.strings
+**/*.plist
+**/*.sql
+**/version
+**/presoassets/

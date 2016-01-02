@@ -1,0 +1,71 @@
+<wo:switch WOComponentName="[pageWrapperName]" 
+                      css1="style/pachyderm.css"
+                      css2="style/presentations.css">   	
+
+<h2>Edit Presentation: &quot;<wo:string value="[document.displayName]" />&quot;</h2>
+  <wo:form action="[nextPage]">
+    <p><strong><label for="presentationname">Presentation Name/Title:</label></strong><br />
+               <wo:textfield id="presentationname" size="30" value="[title]" /></p>
+    <p style="display:none"><label for="choosecategory"><strong>Choose Category:</strong></label><br />
+      (list editable at Administration level)<br />
+      <select id="choosecategory">
+        <option>Visual Communication</option>
+        <option>Art History</option>
+        <option>Default</option>
+        <option>Art</option>
+        <option>Art Education</option>
+        <option>Studio Art</option>
+      </select>
+    </p>
+    <p><label for="description"><strong>Description:</strong></label><br />
+       <wo:text cols="40" id="description" name="description" rows="4" value="[description]" /></p>
+    <p style="display:none"><label for="rights"><strong>Rights:</strong></label><br />
+      <textarea id="rights" name="rights" cols="40" rows="2">Something here about rights belonging to Pixar.</textarea></p>
+    <p style="display:none"><label for="keywords"><strong>Keywords:</strong></label><br />
+      <textarea id="keywords" name="keywords" cols="40" rows="2">3D animation, Pixar, movies</textarea>
+    </p>
+    <p style="display:none">
+      <label for="audience">
+        <strong>Audience:</strong>
+      </label>
+      <br />
+      <textarea id="audience" name="audience" cols="40" rows="2" />
+    </p>
+    <p style="display:none">
+      <label for="publisher">
+        <strong>Publisher:</strong>
+      </label>
+      <br />
+      <input type="text" size="30" id="publisher" name="publisher" />
+    </p>
+    <p style="display:none">
+      <label for="contributor">
+        <strong>Contributor:</strong>
+      </label>
+      <br />
+      <input type="text" size="30" id="contributor" name="contributor" />
+    </p>
+    <p style="display:none">
+      <label for="coverage">
+        <strong>Coverage:</strong>
+      </label>
+      <br />
+      <input type="text" size="30" id="coverage" name="coverage" />
+    </p>
+    <p style="display:none">
+      <label for="relation">
+        <strong>Relation:</strong>
+      </label>
+      <br />
+      <input type="text" size="30" id="relation" name="relation" />
+    </p>
+    <p style="display:none">
+      <label for="source">
+        <strong>Source:</strong>
+      </label>
+      <br />
+      <input type="text" size="30" id="source" name="source" />
+    </p>
+    <p><wo:submit action="[nextPage]" value="Done" class="blok tint edge"/></p>
+  </wo:form>
+</wo:switch>

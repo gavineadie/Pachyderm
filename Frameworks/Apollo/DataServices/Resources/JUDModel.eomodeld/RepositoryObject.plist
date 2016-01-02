@@ -1,0 +1,41 @@
+{
+    attributes = (
+        {
+            columnName = "element_id"; 
+            internalInfo = {"_nameInObjectStore" = "OBEJCT_ID"; }; 
+            name = "element_id"; 
+            valueClassName = NSString; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = metameta; 
+            name = metameta; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = userID; 
+            name = userID; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = xpaths; 
+            name = xpaths; 
+            valueClassName = NSString; 
+        }
+    ); 
+    attributesUsedForLocking = ("element_id", metameta, xpaths); 
+    className = "org.pachyderm.apollo.jud.JUDObjectRecord"; 
+    classProperties = (metameta, xpaths, "element_id"); 
+    externalName = "REPOSITORY_OBJECT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (score, owner, document); 
+        "_nameInObjectStore" = TEST; 
+    }; 
+    isReadOnly = Y; 
+    name = RepositoryObject; 
+    primaryKeyAttributes = ("element_id"); 
+}

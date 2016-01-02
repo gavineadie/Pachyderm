@@ -1,0 +1,13 @@
+<wo:switch WOComponentName="[pageWrapperName]" 
+                      css1="style/pachyderm.css"
+                      css2="style/media-import.css">
+
+<h2><wo:string value="[uploadHeaderText]" /></h2>
+ 
+<wo:if condition="uploadSuccess">
+ <span style="color=green;"><wo:string value="[uploadStatusText]" /></span> 
+<wo:else>
+ <span style="color=red;"><wo:string value="[uploadStatusText]" /></span> 
+</wo:else></wo:if>
+
+<wo:switch WOComponentName="[currentStepComponentName]" pageInControl="[self]" /></wo:switch>

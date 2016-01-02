@@ -1,0 +1,27 @@
+{
+    attributes = (
+        {
+            columnName = IDENTIFIER; 
+            externalType = VARCHAR; 
+            name = identifier; 
+            valueClassName = NSString; 
+            width = 255; 
+        }
+    ); 
+    attributesUsedForLocking = (identifier); 
+    className = "org.pachyderm.apollo.data.eof.APManagedObject"; 
+    classProperties = (identifier, attributes); 
+    externalName = "MANAGED_OBJECT"; 
+    fetchSpecificationDictionary = {}; 
+    name = APManagedObject; 
+    primaryKeyAttributes = (identifier); 
+    relationships = (
+        {
+            destination = APAttribute; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = identifier; sourceAttribute = identifier; }); 
+            name = attributes; 
+        }
+    ); 
+}

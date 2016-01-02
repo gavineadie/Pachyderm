@@ -1,0 +1,320 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = ADDRESS; 
+            externalType = BLOB; 
+            name = address; 
+            valueClassName = NSData; 
+            width = 1023; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "AIM_INSTANT"; 
+            externalType = BLOB; 
+            name = aimInstant; 
+            valueClassName = NSData; 
+            width = 1023; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = BIRTHDAY; 
+            externalType = DATETIME; 
+            name = birthday; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            columnName = "DATE_CREATED"; 
+            externalType = DATETIME; 
+            name = creationDate; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CUSTOM_PROPERTIES"; 
+            externalType = BLOB; 
+            name = customProperties; 
+            valueClassName = NSData; 
+            width = 8191; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = DEPARTMENT; 
+            externalType = VARCHAR; 
+            name = department; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = EMAIL; 
+            externalType = BLOB; 
+            name = emailData; 
+            valueClassName = NSData; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = FIRSTNAME; 
+            externalType = VARCHAR; 
+            name = firstName; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FIRSTNAME_PHONETIC"; 
+            externalType = VARCHAR; 
+            name = firstNamePhonetic; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = HOMEPAGE; 
+            externalType = VARCHAR; 
+            name = homePage; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ICQ_INSTANT"; 
+            externalType = BLOB; 
+            name = icqInstant; 
+            valueClassName = NSData; 
+            width = 1023; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IMAGE_DATA"; 
+            externalType = BLOB; 
+            name = imageData; 
+            valueClassName = NSData; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "JABBER_INSTANT"; 
+            externalType = BLOB; 
+            name = jabberInstant; 
+            valueClassName = NSData; 
+            width = 1023; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = JOBTITLE; 
+            externalType = VARCHAR; 
+            name = jobTitle; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            columnName = LASTNAME; 
+            externalType = VARCHAR; 
+            name = lastName; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LASTNAME_PHONETIC"; 
+            externalType = VARCHAR; 
+            name = lastNamePhonetic; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = MAIDENNAME; 
+            externalType = VARCHAR; 
+            name = maidenName; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = MIDDLENAME; 
+            externalType = VARCHAR; 
+            name = middleName; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MIDDLENAME_PHONETIC"; 
+            externalType = VARCHAR; 
+            name = middleNamePhonetic; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            columnName = "DATE_MODIFIED"; 
+            externalType = DATETIME; 
+            name = modificationDate; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MSN_INSTANT"; 
+            externalType = BLOB; 
+            name = msnInstant; 
+            valueClassName = NSData; 
+            width = 1023; 
+        }, 
+        {
+            columnName = MULTIMAIL; 
+            name = multiMail; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = NICKNAME; 
+            externalType = VARCHAR; 
+            name = nickname; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = NOTE; 
+            externalType = VARCHAR; 
+            name = note; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ORGANIZATION; 
+            externalType = VARCHAR; 
+            name = organization; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = OTHERDATES; 
+            externalType = BLOB; 
+            name = otherDates; 
+            valueClassName = NSData; 
+            width = 1023; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PERSON_FLAGS"; 
+            externalType = INTEGER; 
+            name = personFlags; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PERSON_ID"; 
+            externalType = INTEGER; 
+            name = personid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = PHONE; 
+            externalType = BLOB; 
+            name = phone; 
+            valueClassName = NSData; 
+            width = 1023; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = RELATEDNAMES; 
+            externalType = BLOB; 
+            name = relatedNames; 
+            valueClassName = NSData; 
+            width = 1023; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = SUFFIX; 
+            externalType = VARCHAR; 
+            name = suffix; 
+            valueClassName = NSString; 
+            width = 63; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = TITLE; 
+            externalType = VARCHAR; 
+            name = title; 
+            valueClassName = NSString; 
+            width = 63; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "YAHOO_INSTANT"; 
+            externalType = BLOB; 
+            name = yahooInstant; 
+            valueClassName = NSData; 
+            width = 1023; 
+        }
+    ); 
+    attributesUsedForLocking = (lastName, personid); 
+    className = "org.pachyderm.apollo.core.eof.CXDirectoryPersonEO"; 
+    classProperties = (
+        address, 
+        aimInstant, 
+        authmaps, 
+        birthday, 
+        creationDate, 
+        customProperties, 
+        department, 
+        emailData, 
+        firstName, 
+        firstNamePhonetic, 
+        groups, 
+        homePage, 
+        icqInstant, 
+        imageData, 
+        jabberInstant, 
+        jobTitle, 
+        lastName, 
+        lastNamePhonetic, 
+        maidenName, 
+        middleName, 
+        middleNamePhonetic, 
+        modificationDate, 
+        msnInstant, 
+        multiMail, 
+        nickname, 
+        note, 
+        organization, 
+        otherDates, 
+        personFlags, 
+        personid, 
+        phone, 
+        relatedNames, 
+        suffix, 
+        title, 
+        yahooInstant
+    ); 
+    externalName = APPERSON; 
+    fetchSpecificationDictionary = {}; 
+    name = APPerson; 
+    primaryKeyAttributes = (personid); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = AuthMap; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = personid; sourceAttribute = personid; }); 
+            name = authmaps; 
+        }, 
+        {definition = "membersJoin.group"; name = groups; }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GroupPersonJoin; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = personid; sourceAttribute = personid; }); 
+            name = membersJoin; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+}

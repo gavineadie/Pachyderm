@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+	<wo class="WOMessageFormatter" wocomponentcontent="false">
+
+		<binding name="value"/>
+
+		<validation message="'value' is a required binding">
+			<unbound name="value"/>
+		</validation>
+	<binding defaults="Number Format Strings" name="length"/>
+    <binding name="source"/>
+    </wo>
+</wodefinitions>

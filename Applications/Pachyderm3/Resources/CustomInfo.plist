@@ -1,0 +1,63 @@
+{
+     // ** Add your class paths here in the form of an array as follows:
+     // ** NSJavaUserPath = ("/some/class/path", "/another/class/path");
+     NSJavaUserPath = ();
+ 	"CFBundleDevelopmentRegion" = "English";
+	"CFBundleDocumentTypes" = ({
+		"CFBundleTypeName" = "PDBPresentation";
+		"CFBundleTypeRole" = "Editor";
+		"NSDocumentClass" = "org.pachyderm.authoring.PXDocument";
+	});
+	"CFBundleExecutable" = "Pachyderm3";
+	"CFBundleGetInfoString" = "3.0.0";
+	"CFBundleIconFile" = "WOAfile.icns";
+	"CFBundleInfoDictionaryVersion" = "6.0";
+	"CFBundleName" = "Pachyderm";
+	"CFBundlePackageType" = "APPL";
+	"CFBundleShortVersionString" = "Pachyderm";
+	"CFBundleSignature" = "webo";
+	"CFBundleVersion" = "0.0.1d1";
+	"Java" = {
+		"JVMVersion" = "1.5+";
+	}
+	"NSExecutable" = "Pachyderm3";
+	"NSJavaClientRoot" = "Contents/WebServerResources/Java";
+	"NSJavaNeeded" = "YES";
+	"NSJavaPath" = ("pachyderm3.jar");
+	"NSJavaPathClient" = "Pachyderm3.jar";
+	"NSJavaRoot" = "Contents/Resources/Java";
+	"UTImportedTypeDeclarations" = ({
+		"UTTypeConformsTo" = "public.movie";
+		"UTTypeDescription" = "Flash video";
+		"UTTypeIdentifier" = "com.macromedia.flash.flv";
+		"UTTypeTagSpecification" = {
+			"com.apple.ostype" = "MFLV";
+			"public.filename-extension" = "flv";
+			"public.mime-type" = "flv-application/octet-stream";
+		}
+	}
+	{
+		"UTTypeConformsTo" = ("public.data", "public.composite-content");
+		"UTTypeDescription" = "Flash project";
+		"UTTypeIdentifier" = "com.macromedia.flash.fla";
+		"UTTypeTagSpecification" = {
+			"com.apple.ostype" = ("SPA", "SSK ");
+			"public.filename-extension" = ("fla", "spa", "ssk");
+		}
+	}
+	{
+		"UTTypeConformsTo" = "public.movie";
+		"UTTypeDescription" = "Flash movie";
+		"UTTypeIdentifier" = "com.macromedia.flash.swf";
+		"UTTypeTagSpecification" = {
+			"com.apple.ostype" = "SWFL";
+			"public.filename-extension" = ("swf", "spl");
+			"public.mime-type" = (
+				"application/x-shockwave-flash", 
+				"application/futuresplash",
+				"application/x-shockwave-flash2-preview",
+				"image/vnd.rn-realflash"
+			)
+		}
+	})
+}

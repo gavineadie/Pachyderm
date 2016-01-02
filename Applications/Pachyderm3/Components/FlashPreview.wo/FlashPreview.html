@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Pachyderm FLV Previewer</title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+    <wo:ERXJavaScript filename="script/jwplayer.js" />
+  </head>
+  <body>
+<!-- START OF THE PLAYER EMBEDDING TO COPY-PASTE -->
+<div id="mediaplayer">JW Player goes here</div>
+
+<script type="text/javascript">
+	jwplayer("mediaplayer").setup({
+		flashplayer: "<wo:resourceURL filename="flash/player.swf"/>",
+		file: "<wo:string value="[previewPath]"/>",
+		width: 640, height: 520
+	});
+</script>
+<!-- END OF THE PLAYER EMBEDDING -->
+  </body>
+</html>

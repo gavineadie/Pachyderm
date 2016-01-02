@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<component-definition>
+	<identification>
+		<localized-name>
+			<string lang="en">Midground Image</string>
+		</localized-name>
+		<version>100</version>
+		<version-string>Version 1.0, Pachyderm 3.0, 2014-Dec-19</version-string>
+		<component-identifier>pachyderm.general.midground_image</component-identifier>
+		<conforming-identifiers>
+			<identifier>pachyderm.abstract.item</identifier>
+		</conforming-identifiers>
+	</identification>
+	<binding-list>
+		<binding type="attribute" container="none">
+			<binding-key>image</binding-key>
+			<localized-name>
+				<string lang="en">Image</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.image</identifier>
+				<identifier>pachyderm.resource</identifier>
+			</content-types>
+			<help-tag>The image to be used as a background for the screen. Optimal size is 746 wide by 460 tall.</help-tag>
+			<x-help-text>OPTIONAL. Displays a background image behind the screen where normally a rounded white rectangle
+			             appears. If left empty, the white background will be used. Optimal size is 746 wide by 460 tall.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="public.image" strict="YES">
+					<key>min-size</key>
+					<size>{746, 460}</size>
+					<key>max-size</key>
+					<size>{746, 460}</size>
+				</limit>
+			</limits>
+		</binding>
+		<binding type="attribute" container="none">
+			<binding-key>alpha</binding-key>
+			<localized-name>
+				<string lang="en">Image Opacity</string>
+			</localized-name>
+			<content-types>
+				<identifier>public.text</identifier>
+			</content-types>
+			<help-tag>Use a value from 0 to 100, 0 being completely transparent and 100 being fully opaque.
+			          Most images will be too bold and interfere with the screen's visibility at full opacity.
+			          Using an opacity in the range of 5 to 40 is generally best.</help-tag>
+			<x-help-text>Enter a value between 0 (transparent) and 100 (opaque). Default value is 40%.</x-help-text>
+			<editable>YES</editable>
+			<default-association><association><!-- insert serialized association here --></association></default-association>
+			<limits>
+				<limit for="public.text" strict="YES">
+					<key>max-length</key>
+					<integer>3</integer>
+				</limit>
+			</limits>
+		</binding>
+	</binding-list>
+	<binding-validators>
+	</binding-validators>
+	<user-interface>
+		<preferred-binding-ordering>
+			<binding-key>image</binding-key>
+			<binding-key>alpha</binding-key>
+		</preferred-binding-ordering>
+	</user-interface>
+	<environment-support>
+		<environment>
+			<identifier>pachyderm.flash-environment</identifier>
+			<min-size>{0.0, 0.0}</min-size>
+			<max-size>{0.0, 0.0}</max-size>
+			<auto-layout>NO</auto-layout>
+			<accepts-children>NO</accepts-children>
+			<resources>
+				<resource></resource>
+			</resources>
+		</environment>
+	</environment-support>
+</component-definition>

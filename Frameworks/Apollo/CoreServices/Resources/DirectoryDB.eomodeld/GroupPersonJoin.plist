@@ -1,0 +1,40 @@
+{
+    attributes = (
+        {
+            columnName = "GROUP_ID"; 
+            externalType = INTEGER; 
+            name = groupid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PERSON_ID"; 
+            externalType = INTEGER; 
+            name = personid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (groupid, personid); 
+    className = EOGenericRecord; 
+    externalName = GROUPPERSONJOIN; 
+    fetchSpecificationDictionary = {}; 
+    name = GroupPersonJoin; 
+    primaryKeyAttributes = (groupid, personid); 
+    relationships = (
+        {
+            destination = APGroup; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupid; sourceAttribute = groupid; }); 
+            name = group; 
+        }, 
+        {
+            destination = APPerson; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = personid; sourceAttribute = personid; }); 
+            name = person; 
+        }
+    ); 
+}

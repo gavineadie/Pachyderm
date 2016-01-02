@@ -1,0 +1,144 @@
+(
+
+	{
+		Class = "org.pachyderm.foundation.PXSystemBuildTarget";
+		ProductType = "org.pachyderm.product-type.asset-preflight";
+		Description = "Target for verifying existence of assets before publishing.";
+		Identifier = "assetpreflight";
+		Name = "Asset Preflight";
+		BuildPhases = (
+			{ Class = "org.pachyderm.foundation.PXPrepareManifest"; },
+			{ Class = "org.pachyderm.foundation.PXPreflightAssets"; }
+		);
+		CustomBuildSettings = { };
+		CustomProductSettings = { };
+	},
+	
+	{
+		Class = "org.pachyderm.foundation.PXSystemBuildTarget";
+		ProductType = "org.pachyderm.product-type.flash-presentation";
+		Description = "Target for previewing a single screen.";
+		Identifier = "webpreview";
+		Name = "Web Screen Preview";
+		CustomBuildSettings = { };
+		CustomProductSettings = { };
+		BuildPhases = (
+			{ Class = "org.pachyderm.foundation.PXCheckBundlePhase"; },
+			{ Class = "org.pachyderm.foundation.PXPrepareManifest"; },
+			{ Class = "org.pachyderm.foundation.PXCompileScreens";
+			  TimestampFormat = "%Y-%m-%d";
+			  DescriptionFields = (
+					{ name = "title"; keypath = "object.title"; },
+					{ name = "creation_date"; keypath = "object.dateCreated"; },
+					{ name = "last_modified"; keypath = "object.dateModified"; }
+			  );
+			},
+			{ Class = "org.pachyderm.foundation.PXCompileResources"; },
+			{ Class = "org.pachyderm.foundation.PXCopyTemplates"; },
+			{ Class = "org.pachyderm.foundation.PXCompilePresentationForPreview";
+			  TimestampFormat = "%Y-%m-%d";
+			  DescriptionFields = (
+					{ name = "title"; keypath = "object.infoModel.title"; },
+					{ name = "creation_date"; keypath = "object.infoModel.creationDate"; },
+					{ name = "last_modified"; keypath = "object.infoModel.modificationDate"; },
+					{ name = "author"; keypath = "object.infoModel.temporaryAuthor"; },
+					{ name = "owner"; keypath = "object.infoModel.temporaryOwner"; }
+			  );
+			  WebAndRootStuff = (
+					"index.html", "/",
+					"indexF.html", "/",
+					"root.swf", "/",
+					"root_border.swf", "/",
+					"root_border.xml", "/",
+					"audio_viewer.swf", "/",
+					"ClearOverPlaySeekMute.swf", "/",
+					"expressInstall.swf", "/",
+					"FEImageBox.swf", "/",
+					"FETextBox.swf", "/",
+					"iconization.xml", "/",
+					"image_viewer.swf", "/",
+					"media_viewer.swf", "/",
+					"scroll_text_viewer.swf", "/",
+					"sounds.swf", "/",
+					"swfobject.js", "/",
+					"video_viewer.swf", "/",
+
+					"icons/", "",
+					"root_assets/", "",
+					
+					"index5.html", "/",
+					"help.html", "/",
+					"info.html", "/",
+					"old-browser.html", "/",
+
+					"lib/", ""
+			  );
+			}
+		);
+	},
+
+	{
+		Class = "org.pachyderm.foundation.PXSystemBuildTarget";
+		ProductType = "org.pachyderm.product-type.flash-presentation";
+		Description = "Target for building a Pachyderm presentation for use on the web.";
+		Identifier = "webpresentation";
+		Name = "Web Presentation";
+		CustomBuildSettings = { };
+		CustomProductSettings = { };
+		BuildPhases = (
+			{ Class = "org.pachyderm.foundation.PXCheckBundlePhase"; },
+			{ Class = "org.pachyderm.foundation.PXPrepareManifest"; },
+			{ Class = "org.pachyderm.foundation.PXCompileScreens";
+			  TimestampFormat = "%Y-%m-%d";
+			  DescriptionFields = (
+					{ name = "title"; keypath = "object.title"; },
+					{ name = "creation_date"; keypath = "object.dateCreated"; },
+					{ name = "last_modified"; keypath = "object.dateModified"; }
+			  );
+			},
+			{ Class = "org.pachyderm.foundation.PXCompileResources"; },
+			{ Class = "org.pachyderm.foundation.PXCopyTemplates"; },
+			{ Class = "org.pachyderm.foundation.PXCompilePresentation";
+			  TimestampFormat = "%Y-%m-%d";
+			  DescriptionFields = (
+					{ name = "title"; keypath = "object.infoModel.title"; },
+					{ name = "creation_date"; keypath = "object.infoModel.creationDate"; },
+					{ name = "last_modified"; keypath = "object.infoModel.modificationDate"; },
+					{ name = "author"; keypath = "object.infoModel.temporaryAuthor"; },
+					{ name = "owner"; keypath = "object.infoModel.temporaryOwner"; },
+					{ name = "starting_screen"; keypath = "object.screenModel.primaryScreen.identifier"; }
+			  );
+			  WebAndRootStuff = (
+					"index.html", "/",
+					"indexF.html", "/",
+					"root.swf", "/",
+					"root_border.swf", "/",
+					"root_border.xml", "/",
+					"audio_viewer.swf", "/",
+					"ClearOverPlaySeekMute.swf", "/",
+					"expressInstall.swf", "/",
+					"FEImageBox.swf", "/",
+					"FETextBox.swf", "/",
+					"iconization.xml", "/",
+					"image_viewer.swf", "/",
+					"media_viewer.swf", "/",
+					"scroll_text_viewer.swf", "/",
+					"sounds.swf", "/",
+					"swfobject.js", "/",
+					"video_viewer.swf", "/",
+
+					"icons/", "",
+					"root_assets/", "",
+					
+					"index5.html", "/",
+					"help.html", "/",
+					"info.html", "/",
+					"old-browser.html", "/",
+
+					"lib/", ""
+			  );
+			},
+			{ Class = "org.pachyderm.foundation.PXCompileZipArchive"; }
+		);
+	}
+)

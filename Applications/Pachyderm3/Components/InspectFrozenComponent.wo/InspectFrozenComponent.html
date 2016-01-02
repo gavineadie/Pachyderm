@@ -1,0 +1,26 @@
+<table cellpadding="2" border="1" width="840px">
+  <tr>
+    <td align="right">class identifier</td>
+    <td><wo:string value="[component.componentDescription.componentIdentifier]"/></td>
+  </tr>
+
+  <tr>
+    <td align="right">identifier</td>
+    <td><wo:string value="[component.UUID]"/></td>
+  </tr>
+  
+  <tr>
+    <td align="right">binding values</td>
+    <td>
+      <table cellpadding="1" border="1">
+        <wo:repeat list="[component.componentDescription.bindingKeys]" item="[bindingKey]">
+		  <tr>
+            <td align="right"><wo:string value="[bindingDescription.key]"/></td>
+            <td><wo:string value="[valueAssociation]"/></td>
+		  </tr></wo:repeat></table></td>
+  </tr>
+</table> 
+
+<h3>child components:</h3>
+<wo:repeat list="[component.childComponents]" item="[child]">
+   <wo:InspectFrozenComponent component="[child]"/></wo:repeat>

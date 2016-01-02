@@ -1,0 +1,212 @@
+<wo:switch WOComponentName="[pageWrapperName]" 
+                      css1="style/pachyderm.css">
+
+<h2>Inspect Media File</h2>
+
+<div class="W160">
+ <wo:if condition="[isImageAsset]">
+  <wo:if condition="[resourceOffline]"><wo:image filename="images/asset_missing.gif"/>
+  <wo:else><wo:image src="[imagePreviewLink]"/></wo:else></wo:if>
+ <wo:else>
+  <wo:image filename="[thumbLink]"/></wo:else></wo:if>
+  <p><wo:if condition="[isFlashAsset]">
+     <wo:ERXDataHyperlink pageName="FlashPreview" 
+                       previewPath="[assetLink]" 
+                    otherTagString="target='_blank'" 
+                             class="blok tint edge">Preview Medium</wo:ERXDataHyperlink>
+     <wo:else>
+     <wo:link href="[assetLink]" target="_blank" class="blok tint edge">Preview Medium</wo:link></wo:else></wo:if></p>
+  Submitted:<br/><wo:string value="[dateSubmitted]" dateformat="%b %d, %Y at %I:%M %p"/><br /><br />
+   Modified:<br/><wo:string value="[dateModified]" dateformat="%b %d, %Y at %I:%M %p"/>
+</div>
+
+<div class="W545">
+  <table width="100%">
+    <tr>
+      <td colspan="2" 
+            align="right"><wo:link action="[nextPage]" 
+                                    class="blok tint edge">Return to Search Results</wo:link></td>
+    </tr>
+
+    <tr>
+      <td width="50%" valign="top">
+	    <h2 class="media_details">Basic Search Information:</h2>
+
+	    <label class="media_details">Title <sup>(+)</sup>:</label> 
+	    <div class="media_details_text"><wo:string value="[title]" valuewhenempty="Untitled" /></div>
+
+	    <label class="media_details">Unique Identifier / Accession # <sup>(+)</sup>:</label> 
+	    <div class="media_details_text"><wo:string value="[identifierURI]" /></div>
+
+	    <label class="media_details">Description <sup>(+)</sup>:</label> 
+	    <div class="media_details_text"><wo:string value="[description]" /></div>
+
+	    <label class="media_details">Subject / Keywords <sup>(+)</sup>:</label> 
+	    <div class="media_details_text"><wo:string value="[subject]" /></div></td>
+	    
+      <td width="50%" valign="top">
+        <h2 class="media_details">Accessibility:</h2>
+
+        <wo:if condition="[canHaveTranscript]" negate="TRUE">
+        <label class="media_details">Alternative Text:</label> 
+        <div class="media_details_text"><wo:string value="[altText]" /></div>
+        </wo:if>
+        
+        <wo:if condition="[canHaveTranscript]" negate="TRUE"> <!-- ### ERROR ??? -->
+        <label class="media_details">Long Description:</label> 
+        <div class="media_details_text"><wo:text value="[longDesc]" rows="6" cols="25" disabled="disabled" /></div>
+        </wo:if>
+        
+        <wo:if condition="[canHaveSynchronizedCaption]">
+        <label class="media_details">Synchronized Caption:</label> 
+        <div class="media_details_text"><wo:text value="[syncCaption]" rows="6" cols="25" disabled="disabled" /></div>
+        </wo:if> <br />
+        
+        <wo:if condition="[canHaveTranscript]">
+        <label class="media_details">Transcript for Audio/Video:</label> 
+        <div class="media_details_text"><wo:text value="[transcript]" rows="6" cols="25" disabled="disabled" /></div>
+        </wo:if>
+      </td>
+    </tr>
+  </table>
+   
+  <table width="100%">
+    <tr>
+	  <td width="50%" valign="top">
+	    <h2 class="media_details"><label class="media_details">Media Label:</label> </h2>
+
+	    <div class="media_details_text">
+	        <wo:string value="[mediaLabel]" valuewhenempty="None" escapehtml="false" /></div>
+
+	    <h2 class="media_details"><label class="media_details">Share with Others?</label></h2>
+	    
+	    <label class="media_details">Access Rights:</label>
+	    
+	    <div class="media_details_text">This asset is marked 
+	    <wo:if condition="[permissionsPrivate]">private.<wo:else>public.</wo:else></wo:if></div>
+	  </td>
+
+	  <td width="50%" valign="top">
+	    <h2 class="media_details">Copyright Information:</h2>
+
+	    <label class="media_details">Publisher <sup>(+)</sup>:</label> 
+	    <div class="media_details_text"><wo:string value="[publisher]" /></div>
+
+	    <label class="media_details">Rights Holder:</label> 
+	    <div class="media_details_text"><wo:string value="[rightsHolderValue]" /></div>
+
+	    <label class="media_details">License:</label> 
+	    <div class="media_details_text"><wo:string value="[license]" /></div>
+
+	    <label class="media_details">Date Copyrighted:</label> 
+	    <div class="media_details_text"><wo:string value="[dateCopyrighted]" /></div>
+
+	    <label class="media_details">Creator <sup>(+)</sup>:</label> 
+	    <div class="media_details_text"><wo:string value="[creator]" /></div>
+	  </td>
+	</tr>
+  </table>
+
+<wo:AjaxExpansion action="[toggleAction]" insertion="Effect.blind" insertionDuration="0.5" expanded="[expandedState]">
+
+  <div class="media_dotted_bottom"/>
+
+  <table width="100%">
+	<tr>
+      <td valign="top">
+        <h2 class="media_details">Extended Metadata:</h2>
+                
+	        <label class="media_details">Alternative Title:</label>
+	        <div class="media_details_text"><wo:string value="[alternative]"/></div>
+	
+	        <label class="media_details">Language <sup>(+)</sup>:</label>
+	        <div class="media_details_text"><wo:string value="[language]"/></div>
+	
+	        <label class="media_details">Relation <sup>(+)</sup>:</label>
+	        <div class="media_details_text"><wo:string value="[relation]"/></div>
+	
+	        <label class="media_details">Coverage <sup>(+)</sup>:</label>
+	        <div class="media_details_text"><wo:string value="[coverage]"/></div>
+	
+	        <label class="media_details">Source <sup>(+)</sup>:</label>
+	        <div class="media_details_text"><wo:string value="[source]"/></div>
+	
+	        <label class="media_details">Rights <sup>(+)</sup>:</label>
+	        <div class="media_details_text"><wo:string value="[rights]"/></div>
+	
+	        <label class="media_details">Mediator:</label>
+	        <div class="media_details_text"><wo:string value="[mediator]"/></div>
+	
+	        <label class="media_details">Date Accepted:</label>
+	        <div class="media_details_text"><wo:string value="[dateAccepted]"/></div>
+	
+	        <label class="media_details">Date Issued:</label>
+	        <div class="media_details_text"><wo:string value="[dateIssued]"/></div>
+	
+	        <label class="media_details">Date Created:</label>
+	        <div class="media_details_text"><wo:string value="[dateCreated]"/></div>
+	
+	        <label class="media_details">Date Associated <sup>(+)</sup>:</label>
+	        <div class="media_details_text"><wo:string value="[dateAssociated]"/></div>
+
+        </td>
+        <td valign="top">
+          <h2 class="media_details">Technical Information:</h2>
+                
+            <label class="media_details">Type <sup>(+)</sup>:</label>
+            <div class="media_details_text"><wo:string value="[type]"/></div>
+
+        <label class="media_details">Format <sup>(+)</sup>:</label>
+        <div class="media_details_text"><wo:string value="[format]"/></div>
+
+        <label class="media_details">Medium:</label>
+        <div class="media_details_text"><wo:string value="[medium]"/></div>
+
+        <label class="media_details">Extent:</label>
+        <div class="media_details_text"><wo:string value="[extent]"/></div>
+
+        <br />
+        <br />
+
+        <label class="media_details">Audience:</label>
+        <div class="media_details_text"><wo:string value="[audience]"/></div>
+
+        <label class="media_details">Education Level:</label>
+        <div class="media_details_text"><wo:string value="[educationLevel]"/></div>
+
+        <label class="media_details">Contributor <sup>(+)</sup>:</label>
+        <div class="media_details_text"><wo:string value="[contributor]"/></div>
+
+        <label class="media_details">Instructional Method:</label>
+        <div class="media_details_text"><wo:string value="[instructionalMethod]"/></div>
+
+        <label class="media_details">Spatial:</label>
+        <div class="media_details_text"><wo:string value="[spatial]"/></div>
+
+        <label class="media_details">Temporal:</label>
+        <div class="media_details_text"><wo:string value="[temporal]"/></div>
+
+        <label class="media_details">Provenance:</label>
+        <div class="media_details_text"><wo:string value="[provenance]"/></div>
+      </td>
+    </tr>
+    
+    <tr>
+      <td colspan="2"><sup>(+)</sup> Dublin Core element<div class="media_details_divider">&nbsp;</div></td>
+    </tr>
+	  
+    <tr>
+	  <td colspan="2" align="right"><wo:link action="[nextPage]" class="blok tint edge">Return to Search Results</wo:link></td>
+	</tr>
+  </table>
+  
+<wo:ERXWOTemplate templateName="label">
+ <span style="font-size:14px;"><wo:link action="[toggleAction]" class="blok tint edge">
+ <wo:if condition="[expandedState]">Show Less &#x25BC;<wo:else>Show more &#x25BA;</wo:else></wo:if>
+ </wo:link></span>
+</wo:ERXWOTemplate>
+
+</wo:AjaxExpansion>
+<br/>
+</div>
+</wo:switch>

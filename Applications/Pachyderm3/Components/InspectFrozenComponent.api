@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="InspectFrozenComponent" wocomponentcontent="false">
+
+		<binding name="component"/>
+
+		<validation message="&apos;component&apos; is a required binding">
+			<unbound name="component"/>
+		</validation>
+	</wo>
+</wodefinitions>

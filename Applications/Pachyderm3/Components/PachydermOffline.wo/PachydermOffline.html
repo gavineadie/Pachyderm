@@ -1,0 +1,20 @@
+<wo:switch WOComponentName="PageWrapFirstUse" logo="large"
+                    logout="FALSE" credits="TRUE" height="240px">
+
+<div class="panelWhite">
+<!-- - - - - - - - - - - - MESSAGE - - - - - - - - - - - -->
+ <wo:if condition="[application.messageOfTheDay.length]">
+  <div class="MOTD">
+   <wo:string value="[application.messageOfTheDay]" escapeHTML="FALSE"/></div></wo:if>
+
+<!-- - - - - - - - - - - - PANEL LEFT - - - - - - - - - - - -->
+ <wo:image class="Logo" filename="[pachyLogoPath]" alt="PachyLogo 3.0" />
+  <div class="W300">
+   <h2>Welcome to Pachyderm <wo:string value="[application.releaseVersion]"/></h2><br/>
+   <h2>Pachyderm is temporarily unavailable.</h2>
+  </div>
+<!-- - - - - - - - - - - - PANEL RIGHT - - - - - - - - - - - -->
+ <div class="W360 BL1S"><wo:string value="[pachyLicense]" escapeHTML="FALSE" /></div>
+</div>
+
+</wo:switch>

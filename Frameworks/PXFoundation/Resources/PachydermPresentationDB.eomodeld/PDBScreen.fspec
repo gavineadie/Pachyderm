@@ -1,0 +1,48 @@
+
+{
+    screenSearch = 
+    {
+        class = EOFetchSpecification;
+        entityName = PDBScreen;
+        fetchLimit = 0;
+        isDeep = YES;
+        qualifier = 
+        {
+            class = EOAndQualifier;
+            qualifiers = 
+            (
+               
+               {
+                   class = EOKeyValueQualifier;
+                   key = title;
+                   selectorName = isCaseInsensitiveLike:;
+                   value = 
+                   {
+                       _key = query;
+                       class = EOQualifierVariable;
+                   };
+               }, 
+               
+               {
+                   class = EOKeyValueQualifier;
+                   key = presentationId;
+                   selectorName = isEqualTo:;
+                   value = 
+                   {
+                       _key = presentationID;
+                       class = EOQualifierVariable;
+                   };
+               }
+            );
+        };
+        sortOrderings = 
+        (
+           
+           {
+               class = EOSortOrdering;
+               key = title;
+               selectorName = compareAscending:;
+           }
+        );
+    };
+}

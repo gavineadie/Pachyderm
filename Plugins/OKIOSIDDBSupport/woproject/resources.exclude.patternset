@@ -1,0 +1,6 @@
+**/*.eomodeld~/
+**/*.woa/**
+**/*.framework/**
+**/*.map
+**/*.eogen
+

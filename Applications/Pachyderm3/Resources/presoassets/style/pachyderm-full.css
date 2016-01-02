@@ -1,0 +1,42 @@
+@import "pachyderm.css";
+
+div#container {
+	background: white url(/pachyderm_2_1/images/base/content-background-full.gif) 0 0 repeat-y;
+	overflow: auto;
+}
+
+/*
+div#container::before, div#container::after {
+	display: block;
+	height: 21px;
+	content: "";
+}
+
+div#container::before { background: #e8e8e8 url(/pachyderm_2_1/images/base/topcurve-full.gif) 0 0 no-repeat; }
+div#container::after { background: #e8e8e8 url(/pachyderm_2_1/images/base/bottomcurve-full.gif) 0 0 no-repeat; }
+*/
+
+div#ctn-before {
+	background: url(/pachyderm_2_1/images/base/topcurve-full.gif) 0 0 no-repeat;
+}
+
+div#ctn-after {
+	background: url(/pachyderm_2_1/images/base/bottomcurve-full.gif) 0 0 no-repeat;
+}
+
+div#ctn-before, div#ctn-after {
+	height: 21px;
+	margin: 0 auto;
+	width: 900px;
+}
+
+div#guts { padding: 2px; }
+
+div#guts a:link		{ color:#036; font-weight: bold; }
+div#guts a:visited	{ color:#036; font-weight: bold; }
+div#guts a:hover	{ color:#000; font-weight: bold; background-color:#ddd; }
+div#guts a:active	{ color:#000; font-weight: bold; }
+
+div#credits {
+	display: none;
+}

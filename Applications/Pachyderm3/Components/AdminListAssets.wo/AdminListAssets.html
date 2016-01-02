@@ -1,0 +1,67 @@
+<wo:switch WOComponentName="PXMinimalPageWrapper" 
+                      css1="style/pachyderm.css" logo="small">
+
+<wo:form>
+<div style="float:right;"><h2>Administration &bull; All Assets</h2>
+<p style="text-align:right">
+  <wo:submit action="[cancelAction]" value="Admin Home" class="blok tint edge"/>&nbsp;&nbsp;</p></div>
+
+<div class="clearBoth"/>
+ <wo:if condition="[fewerThan200Assets]">
+
+<!-- - - - - - - - - - - - - - - - - - DATABASE ASSETS - - - - - - - - - - - - - - - - - - -->
+
+ <h2>"database" assets</h2>
+  <table border="1" cellpadding="3" width="100%">
+   <tr><th>dbKey</th><th>title</th><th>owner</th><th>submitted</th><th>format</th><th>location</th></tr>
+    <wo:repeat list="[dbAssets]" item="[dbAsset]">
+     <tr><td><wo:string value="[dbAsset.identifier]" /></td>
+         <td><wo:string value="[dbAsset.trunc75Title]" valueWhenEmpty="--" /></td>
+         <td><wo:if condition="[dbAssetOwner]"><wo:string value="[dbAssetOwner]"/>
+             <wo:else><span style="color:red;">NO OWNER</span><!-- 
+             
+               <wo:if condition="[dbAssetLocation]"><wo:if condition="[dbAsset.isPublic]" negate="TRUE">
+             
+               <br/><wo:submit action="[deleteOneAction]"
+                                value="Remove Asset" 
+                                class="blok mini tint edge"/></wo:if></wo:if>  -->
+             </wo:else></wo:if></td>
+         <td><wo:string value="[dbAsset.dateSubmitted]" dateformat="%b %d, %Y at %I:%M %p" valueWhenEmpty="--" /></td>
+         <td><wo:string value="[dbAsset.format]" valueWhenEmpty="--" /></td>
+         <td><wo:if condition="[dbAssetLocation]"><wo:string value="[dbAssetLocation]"/>
+			 <wo:if condition="[dbAsset.isPublic]"><span style="color:green">[Public]</span>
+			 <wo:else><wo:if condition="[dbAsset.isDeleted]"><span style="color:red">[Deleted]</span></wo:if></wo:else></wo:if>
+             <wo:else><span style="color:red">NO FILE</span></wo:else></wo:if></td>
+     </tr>
+    </wo:repeat>
+   </table><br/>
+  <div align="right"><wo:link action="[deleteAllNoOwner]" 
+                               class="blok tint edge">Remove Records for Assets with No Owner</wo:link>&nbsp;&nbsp;&nbsp;&nbsp;
+                     <wo:link action="[deleteAllNoAsset]" 
+                               class="blok tint edge">Remove Records for Assets with No File</wo:link>&nbsp;&nbsp;&nbsp;&nbsp;
+                     <wo:link action="[deleteAllDeleted]" 
+                               class="blok tint edge">Remove Records for 'Deleted' Assets</wo:link>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+<!-- - - - - - - - - - - - - - - - - FILE SYSTEM ASSETS - - - - - - - - - - - - - - - - - - -->
+
+ <h2>"file system" assets</h2>
+  <table border="1" cellpadding="3" width="100%">
+   <tr><th>location</th><th>dbKey</th><th>dbOwner</th><th>last modified</th></tr>
+    <wo:repeat list="[fsAssets]" item="[fsAsset]">
+     <wo:if condition="[fsAssetIsFile]">
+     <tr><td><wo:string value="[fsAssetLocation]"/></td>
+         <td><wo:if condition="[fsAssetInDB.identifier]"><wo:string value="[fsAssetInDB.identifier]" />
+             <wo:else><span style="color:red">NO RECORD</span></wo:else></wo:if></td>
+         <td><wo:string value="[fsAssetOwner]" valueWhenEmpty="--"></wo:string></td>
+         <td><wo:string value="[fsAssetDate]" dateformat="%b %d, %Y at %I:%M %p" valueWhenEmpty="--" /></td>
+     </tr></wo:if>
+    </wo:repeat>
+   </table><br/>
+ 
+  <div align="right"><wo:link action="[deleteAllNoEntry]" 
+                               class="blok tint edge">Remove Files for Assets with No Record</wo:link>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+ <wo:else>
+  Too many assets to show (>200) ...
+ </wo:else></wo:if>
+</wo:form>
+</wo:switch>

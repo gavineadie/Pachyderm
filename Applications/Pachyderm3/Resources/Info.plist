@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>Pachyderm3</string>
+	<key>CFBundleIconFile</key>
+	<string>WOAfile.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>Pachyderm3</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Pachyderm3</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleShortVersionString</key>
+	<string>3.0.0</string>
+	<key>CFBundleSignature</key>
+	<string>webo</string>
+	<key>CFBundleVersion</key>
+	<string>3.0</string>
+	<key>Has_WOComponents</key>
+	<true/>
+	<key>Java</key>
+	<dict>
+		<key>JVMVersion</key>
+		<string>1.5+</string>
+	</dict>
+	<key>NSExecutable</key>
+	<string>Pachyderm3</string>
+	<key>NSJavaClientRoot</key>
+	<string>WebServerResources/Java</string>
+	<key>NSJavaNeeded</key>
+	<true/>
+	<key>NSJavaPath</key>
+	<array>
+		<string>Pachyderm3.jar</string>
+	</array>
+	<key>NSJavaPathClient</key>
+	<string>Pachyderm3.jar</string>
+	<key>NSJavaRoot</key>
+	<string>Resources/Java</string>
+	<key>NSPrincipalClass</key>
+	<string>org.pachyderm.authoring.Application</string>
+</dict>
+</plist>

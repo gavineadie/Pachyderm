@@ -1,0 +1,19 @@
+<wo:switch WOComponentName="[pageWrapperName]" 
+                      css1="style/pachyderm.css"
+                      css2="style/presentations.css">   	
+
+<h2>Choose Screen</h2>
+<h4>Choose a Screen Template from the collection below:</h4>
+ 
+<p align="right"><wo:link action="[cancelAction]" class="blok tint edge">Cancel</wo:link>&nbsp;&nbsp;&nbsp;</p>
+
+<wo:repeat list="[componentTemplateList]" item="[componentTemplateItem]">
+  <div class="template">
+    <h2><wo:string value="[componentTemplateItem.name]" /></h2>
+    <wo:link action="[selectAction]"><wo:image filename="[screenThumbnailFile]" /></wo:link>
+  </div>
+</wo:repeat>
+
+<p align="right"><wo:link action="[cancelAction]" class="blok tint edge">Cancel</wo:link>&nbsp;&nbsp;&nbsp;<br/><br/></p>
+<div class="clearBoth"/>
+</wo:switch>

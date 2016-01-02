@@ -1,0 +1,12 @@
+<wo:switch WOComponentName="[pageWrapperName]" 
+                      css1="style/pachyderm.css">
+<div style="margin:15px;">
+  <wo:image filename="[screenThumbnailFile]" height="137" width="199" alt="[screen.title]" />
+  <h2>Confirm Delete &quot;<wo:string value="[screen.title]" />&quot;</h2>
+  <ul style="list-style:none;">
+	<li style="display:inline; margin:0.5em;"><wo:link action="[deleteScreenAction]" class="blok tint edge">Confirm Delete</wo:link></li>
+	<li style="display:inline; margin:0.5em;"><wo:link action="[cancelDeleteAction]" class="blok tint edge">Cancel</wo:link></li>
+  </ul>
+</div>
+<div style="height:1px; clear:both;"/>
+</wo:switch>

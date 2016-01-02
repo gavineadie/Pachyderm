@@ -1,0 +1,33 @@
+{
+    attributes = (
+        {
+            columnName = IDENTIFIER; 
+            externalType = VARCHAR; 
+            name = identifier; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            columnName = ATTRKEY; 
+            externalType = VARCHAR; 
+            name = key; 
+            valueClassName = NSString; 
+            width = 127; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = VALUE; 
+            externalType = BLOB; 
+            name = value; 
+            valueClassName = NSData; 
+            width = 8191; 
+        }
+    ); 
+    attributesUsedForLocking = (identifier, key); 
+    className = "org.pachyderm.apollo.data.eof.APAttribute"; 
+    classProperties = (identifier, key, value); 
+    externalName = ATTRIBUTE; 
+    fetchSpecificationDictionary = {}; 
+    name = APAttribute; 
+    primaryKeyAttributes = (identifier, key); 
+}

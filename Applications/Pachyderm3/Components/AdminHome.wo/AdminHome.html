@@ -1,0 +1,58 @@
+<wo:switch WOComponentName="[pageWrapperName]"
+                      css1="style/pachyderm.css">
+
+<h2>Pachyderm Administrative Functions</h2>
+
+<div style="float:left;position:relative;left:0px;width:170px;">
+  <h3>Account Management</h3>
+	<p><wo:link action="[userCreateLink]" class="blok tint edge">Create New User Account</wo:link><br/><br/>
+	<wo:if condition="[isMailEnabled]">
+	   <wo:link action="[userMailInvitation]" class="blok tint edge">Create Account Invitation</wo:link><br/><br/>
+	</wo:if>
+	   <wo:link action="[listAllUsers]" class="blok tint edge">List all Accounts</wo:link><br/><br/></p>
+</div>
+
+<wo:if condition="[adminExtras]">
+
+<div style="float:left;position:relative;left:100px;width:170px;">
+  <h3>Asset Management</h3>
+    <p><wo:link pageName="AdminListAssets" class="blok tint edge">List Assets</wo:link></p>
+</div>
+
+<div style="float:left;position:relative;left:200px;width:170px;">
+  <h3>Presentation Management</h3>
+    <p><wo:link pageName="AdminListPresos" class="blok tint edge">List Presentations</wo:link></p>
+</div>
+</wo:if>
+
+<br clear="all" />
+
+<wo:if condition="[isSuperAdmin]">
+
+<h2 style="color:red">SuperAdmin displays below .. dangerous .. don't all work .. don't rely on them yet</h2>
+
+<div style="float:left;position:relative;left:0px;width:170px;">
+  <h3>Application Management</h3>
+    <p><wo:link pageName="AdminEditSetup" class="blok tint edge">Pachyderm Edit</wo:link><br/><br/>
+       <wo:link pageName="AdminMonitor" class="blok tint edge">Pachyderm Monitor</wo:link><br/><br/>
+       <wo:link pageName="AdminSettings" class="blok tint edge">Pachyderm Settings</wo:link><br/><br/>
+       <wo:link action="[forceError]" class="blok tint edge">Force an Error</wo:link></p>
+</div>
+
+<div style="float:left;position:relative;left:100px;width:170px;">
+  <h3>Database Exploration</h3>
+	<p><wo:link pageName="AdminDataEditor" class="blok tint edge">Pachyderm Data Viewer</wo:link><br/><br/>
+       <wo:link pageName="AdminAttributes" class="blok tint edge">Attribute Viewer</wo:link><br/><br/>
+       <wo:link pageName="AdminDumpPresos" class="blok tint edge">Dump Presentations</wo:link></p>
+</div>
+
+<div style="float:left;position:relative;left:200px;width:170px;">   
+  <h3>Development Test Pages</h3>
+    <p><wo:link pageName="AdminGrooming" class="blok tint edge" >Data Grooming</wo:link><br/><br/>
+       <wo:link pageName="ComponentRegistryTester" class="blok tint edge" >Component Registry</wo:link><br/><br/>
+       <wo:link pageName="TemplateRegistryTester" class="blok tint edge" >Template Registry</wo:link></p>
+</div>
+
+</wo:if>
+
+</wo:switch>

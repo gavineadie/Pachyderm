@@ -1,0 +1,47 @@
+<wo:switch WOComponentName="[pageWrapperName]"
+                      css1="style/pachyderm.css"
+                      css2="style/screen-edit.css">
+
+<h2>Edit Screen</h2>
+
+<!-- - - - - - - - - - - - - TOPTABS - - - - - - - - - - - - -->
+ <ul id="ctxnav">
+  <wo:repeat list="[contextualItems]" item="[contextualItem]">
+   <li><wo:link action="[contextualAction]"><wo:string value="[contextualItem.label]" /></wo:link></li></wo:repeat>
+ </ul>
+
+<!-- - - - - - - - - - - - - LEFT SIDE (LEGEND AND ANNOTATIONS)  - - - - - - - - - - - - -->
+	<wo:form>
+	<div class="W320">
+		<p>Screen Name: <wo:textfield value="[screen.title]" id="default_text_box" size="20" /></p>
+		<p align="right">
+		  <wo:image filename="[screenLegend]" alt="Screen Thumbnail Image" /><br />
+		  <wo:string value="[screen.rootComponent.componentDescription.name]" /></p>
+		<p>Notes:<br/><wo:text value="[screen.primaryDescription]" cols="46" rows="4" id="notes"/></p>
+
+<!-- 	<p align="right"><label>Language for editing:</label>
+			<wo:popUpButton list="[application.locales]"
+                            item="[sessionLocale]"
+                   displayString="[sessionLocale.displayName]"
+                       selection="[sessionLocale]" /><wo:submit action="[selectLanguage]"
+                                                                 value="Select Language"
+                                                                 class="blok tint edge" /></p>    -->
+		<p align="right"><wo:submit action="[viewAction]"
+		                             value="Preview"
+		                             class="blok tint edge" />
+		                 <wo:submit action="[saveAction]"
+		                             value="  Done  "
+		                             class="blok tint edge"/></p>
+	</div>
+
+<!-- - - - - - - - - - - - - RIGHT SIDE (EXPAND-COLLAPSE TOGGLE) - - - - - - - - - - - - -->
+	<div class="W570 panelWhite">
+        <div style="font-size: 150%; font-weight: bold; margin: 4px 4px 8px 4px; float:left">
+            <wo:link action="[masterExpandAction]" class="blok tint edge" style="text-align:left;">Expand All</wo:link></div>
+        <div style="font-size: 150%; font-weight: bold; margin: 4px 4px 8px 4px; float:right">
+            <wo:link action="[masterShrinkAction]" class="blok tint edge" style="text-align:right;">Collapse All</wo:link></div>
+
+		<wo:InlineComponentEditor component="[screen.rootComponent]" localContext="[subContext]" />
+	</div>
+	</wo:form>
+</wo:switch>

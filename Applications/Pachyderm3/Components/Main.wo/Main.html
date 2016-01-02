@@ -1,0 +1,9 @@
+<wo:if condition="[application.isOffline]">
+  <wo:switch WOComponentName="PachydermOffline" />
+<wo:else>
+  <wo:if condition="[application.isFirstTime]">
+    <wo:switch WOComponentName="AdminEditSetup" />
+  <wo:else>
+    <wo:switch WOComponentName="UserAuthenticationPage" />
+  </wo:else></wo:if>
+</wo:else></wo:if>

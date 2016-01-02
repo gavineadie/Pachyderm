@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+	<wo class="ScreenSummaryDisplay" wocomponentcontent="false">
+
+		<binding name="screen"/>
+		<binding name="primaryAction"/>
+		<binding name="editAction"/>
+		<binding name="deleteAction"/>
+		<binding defaults="Boolean" name="showMakeHome"/>
+		<binding name="scrid"/>
+
+		<validation message="'object' is a required binding">
+			<unbound name="screen"/>
+		</validation>
+	</wo>
+</wodefinitions>

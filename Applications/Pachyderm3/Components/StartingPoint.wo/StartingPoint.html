@@ -1,0 +1,29 @@
+<wo:switch WOComponentName="PXMinimalPageWrapper" height="240"
+                      css1="style/pachyderm.css" logo="large">
+
+<!-- - - - - - - - - - - - PANEL CENTER - - - - - - - - - - -->
+ <div class="W300">
+  <h2 style="margin-bottom: 6px;">Welcome, <wo:string value="[personDisplayName]" valueWhenEmpty="Unknown Person" />
+      <wo:if condition="[session.userIsAdmin]"><br/>(Administrator)</wo:if></h2>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <div class="L150">
+    <wo:link pageName="EditAccount" class="blok tint edge">Edit my Account</wo:link>
+    <h3>View/Edit:</h3>
+    <wo:link action="[presoAction]"><wo:image filename="images/presentation_link.gif" alt="Preso" /></wo:link><br/><br/>
+    <wo:link action="[presoAction]" class="blok tint edge">Presentations</wo:link>
+  </div>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <div class="L150">
+	<wo:if condition="[session.userIsAdmin]">
+	  <wo:link pageName="AdminHome" class="blok tint edge">Administration</wo:link>
+	<wo:else>
+	  <span class="blok" />
+	</wo:else></wo:if>
+    <h3>&nbsp;</h3>
+    <wo:link action="[mediaAction]"><wo:image filename="images/media_link.jpg" alt="Media" /></wo:link><br/><br/>
+    <wo:link action="[mediaAction]" class="blok tint edge">Media Assets</wo:link>
+  </div>
+ </div>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+ <div class="W360 BL1S"><wo:string value="[pachyLicense]" escapeHTML="FALSE" /></div>
+</wo:switch>

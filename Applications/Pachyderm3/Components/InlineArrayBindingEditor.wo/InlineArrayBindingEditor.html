@@ -1,0 +1,44 @@
+<ol style="margin:0; padding:0; list-style:none;">
+<wo:repeat count="[actualNumberOfItemsInContainer]" 
+           index="[arrayIndex]">
+  <li>
+  <div style="position:relative; width:10px; top:-8px; left:250px;">
+  <wo:if condition="[isRoomAbove]"><wo:imageButton action="[raiseCurrentItem]" 
+                                                 filename="images/arrow_Up.gif" 
+                                                    class="input_button"/></wo:if></div>
+
+  <wo:AjaxExpansion id="[displayedLabelValue]" class="inlineEditBody" linkClass="fill" onComplete="[toggleHeaderText]"
+                   action="[toggleAction]" insertion="Effect.blind" insertionDuration="0.05" expanded="[expandedState]">
+
+		 <!-- <wo:string value="[bindingDescription.name]"/>#<wo:string value="[displayedIndexValue]"/> -->
+					<wo:if condition="[allowModifyArray]"><wo:if condition="[canRemoveItem]"><wo:submit action="[removeCurrentItem]" value="Remove" class="input_button" /></wo:if></wo:if>
+			
+			    <wo:switch WOComponentName="[editorComponentName]"
+						      localContext="[targetBindingContext]"
+		     			  	    bindingKey="[^bindingKey]"
+							     component="[destinationComponent]"
+						    containerIndex="[containerIndex]" />
+
+    <wo:ERXWOTemplate templateName="label">
+      <div class="expando-head"><span class="shape"><wo:string value="[displayedLabelValue]"/></span>
+                                <span class="beside"><wo:string value="[bindingDescription.name]"/></span>
+                                <span class="right"><wo:if condition="[expandedState]">Collapse &#x25BC;<wo:else>Expand &#x25C0;</wo:else></wo:if></span></div>
+    </wo:ERXWOTemplate>
+
+  </wo:AjaxExpansion>  
+
+  <div style="position:relative; width:10px; top:0px; left:260px;">
+  <wo:if condition="[isRoomBelow]"><wo:imageButton action="[lowerCurrentItem]" 
+                                                 filename="images/arrow_Down.gif" 
+                                                    class="input_button"/></wo:if></div>
+  </li>
+</wo:repeat></ol>
+
+<wo:if condition="[allowModifyArray]">
+	<div class="beditor">
+	  <wo:if condition="[canAppendItem]"><wo:submit action="[addNewItemToContainer]" 
+	                                                 value="[addNewLabel]" 
+	                                                 class="input_button"/></wo:if>
+      <div class="clearBoth"/>
+	</div>
+</wo:if>

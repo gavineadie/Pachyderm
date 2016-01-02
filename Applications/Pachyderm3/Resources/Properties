@@ -1,0 +1,22 @@
+#========================================================================================
+### These properties are loaded into the Java system properties for the application.
+#========================================================================================
+
+WOAllowRapidTurnaround                  true
+WOAllowsConcurrentRequestHandling       true
+WOAutoOpenClientApplication            false
+WOAutoOpenInBrowser                    false
+WOCachingEnabled                        true
+WODebuggingEnabled                     false
+WODirectConnectEnabled                  true
+WOHostName                         localhost
+WOStatisticsPassword              pachystats
+
+#========================================================================================
+### INCLUDE OTHER PROPERTY FILES HERE
+#========================================================================================
+
+#hostProperties.@host = [ this just triggers deriving the <host>.Properties name ]
+
+er.extensions.ERXProperties.OptionalConfigurationFiles \
+				("logging.Properties", "builder.Properties", "combine.Properties")

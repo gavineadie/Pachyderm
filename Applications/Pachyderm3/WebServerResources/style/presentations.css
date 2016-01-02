@@ -1,0 +1,168 @@
+div#main_options {
+  height: 125px;
+  margin-left: 100px; margin-right: 10px;
+  float: right;
+  text-align: right;
+}
+
+div#home_screen h2, div#linked_screens h2, h2#lscrhead {
+	clear: both;
+	margin: 0px 0px 10px 0px;
+	border-bottom: 1px solid #78a;
+}
+
+#home_screen_description {
+	margin-top: 40px;
+	font-style: italic;
+}
+
+/* ListPresentationsPage */
+
+* html ul#presgact { left: 1em; }
+
+div#presvopt {
+  margin-left: 160px;
+  border-left: 2px solid #ccc;
+  padding-bottom: 1.5em; padding-left: 1em;
+  text-transform: uppercase;
+}
+
+div#presvopt p, div#scrvopt p {
+	font-weight: bold;
+	display: inline;
+}
+
+div#presvopt ul, div#scrvopt ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+div#presvopt li, div#scrvopt li {
+  display: inline;
+}
+
+
+/* EditPresentationPage */
+
+div#screenscontainer {
+	position: relative;
+}
+
+ul#prescmd, div#scrvopt ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+ul#prescmd { float: left; }
+
+ul#prescmd li {
+	font-size: 14px;
+	padding: 0 0 .5em 0; 
+}
+
+div#scrvopt { text-align: right; text-transform: uppercase; }
+
+/* other options condensed with div#presvopt */
+
+div#homescrblock {
+	position: relative;
+	left: 66%;
+}
+
+* html div#homescrblock {
+	left: 50%;
+}
+
+
+h3#lscrhead, h3#homescr {
+	clear: left;
+	padding-top: 1em;
+}
+
+div.screen {
+	margin: 1em 2% 1em 0; 
+	width: 31%;
+	float: left;
+}
+
+div.template {
+	float: left;
+	width: 30%;
+	height: 200px;
+	margin: 10px;
+}
+
+div.template h2 {
+	font-size: 10pt;
+	height: 30px;
+}
+
+div#homescr {
+	float: left;
+}
+
+div.screen h4, div.screen p { margin: 0; }
+div.screen p { font-style: italic; }
+div.screen p em { text-transform: uppercase; }
+
+div.screen ul {
+	list-style: none;
+	margin: 0; padding: 0;
+}
+
+div.screen li { display: inline; }
+div.screen li:first-child  { padding-right: .75em; }
+
+div.screen #make_home_link {
+	color: #444;
+	background-color: #ccc;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 2px 5px 2px 5px;
+}
+
+div#homescr li:first-child { padding-right: 0; }
+
+table#scrstable {
+	width: 100%;
+}
+
+col#datemodcol { width: 12em; }
+col#optcol { width: 18em; }
+
+table#scrstable th {
+	text-align: left;
+}
+
+table#scrstable ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+table#scrstable li {
+	display: inline;
+}
+
+/* Publish Presentations Page */
+
+div#pressummary {
+	width: 180px; float: left; border-right: 2px solid lightgrey;
+}
+
+div#pressummary p {
+	font-weight: bold;
+}
+
+div#pressummary ul {
+	margin: 0;
+	padding: 0 0 0 2em;
+}
+
+#output_details_list {
+	display: none;
+}

@@ -1,0 +1,63 @@
+<html>
+ <head>
+  <title><wo:string value="[application.titleDisplay]"/></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<style type="text/css" media="screen">
+  body {
+    font-family:<wo:string  value="[bodyFontFamily]" escapeHTML="FALSE" />;
+    font-size:11px; margin:0px; padding:1em;
+    background-color:<wo:string value="[bodyGroundColor]"/>; 
+    border-top:5px solid <wo:string value="[bodyTopBarColor]"/>;
+  }
+  .panelWhite {
+    margin:0 auto; padding:8px; border-radius:12px; -moz-border-radius:12px;
+    background-color:<wo:string value="[panelGroundColor]"/>;
+    border:solid <wo:string value="[panelEdgeColor]"/> 2px;
+    height:<wo:string value="[panelHeight]"/>;
+  }
+
+  .BL1S {  border-left:1px solid <wo:string value="[panelEdgeColor]"/>; }
+  .BR1S { border-right:1px solid <wo:string value="[panelEdgeColor]"/>; }
+  .TINT { background-color:<wo:string value="[blokBackColor]"/>; 
+                     color:<wo:string value="[blokTextColor]"/>; }
+      a:hover.blok { color:<wo:string value="[blokTextHover]"/>;
+          background-color:<wo:string value="[blokBackHover]"/>; }
+  input[type="submit"]:hover { color:<wo:string value="[blokTextHover]"/>;
+                    background-color:<wo:string value="[blokBackHover]"/>; }
+  .EDGE { border:1px solid <wo:string value="[blokEdgeColor]"/>; }
+  .HIDE { font-size:x-small; color:<wo:string value="[bodyGroundColor]"/>; }
+
+  .MAXLOGO { float:left; padding:20px; }
+  .MINLOGO { float:left; padding:10px; height:53px; width:66px;}
+</style>
+  <wo:ERXStyleSheet filename="[^css1]" /><wo:if condition="[^css2]"><wo:ERXStyleSheet filename="[^css2]" /></wo:if>
+  <wo:ERXJavaScript filename="script/pachyderm.js" />
+</head>
+<!-- - - - - - - - - - - - - B O D Y - - - - - - - - - - - - -->
+<body><div style="width:924px;">
+
+<!-- - - - - - - - - - - - - TOPTABS - - - - - - - - - - - - --> 
+<wo:if condition="[showLogOut]">
+ <ul id="ctxnav">
+  <wo:repeat list="[contextualItems]" 
+             item="[contextualItem]">
+    <li><wo:link action="[contextualAction]"><wo:string value="[contextualItem.label]" /></wo:link></li>
+  </wo:repeat>
+ </ul>
+</wo:if>
+
+<!-- - - - - - - - - - - - - CONTENT - - - - - - - - - - - - -->
+ <div class="panelWhite" height="240px">
+   <wo:if condition="[isLogoLarge]"><wo:image class="maxlogo" filename="[pachyLogoPath]" alt="PachyLogo 3.0" /></wo:if>
+   <wo:if condition="[isLogoSmall]"><wo:image class="minlogo" filename="[pachyLogoPath]" alt="PachyLogo 3.0" /></wo:if>
+   <wo:componentContent /></div>
+
+<!-- - - - - - - - - - - - - FOOTER - - - - - - - - - - - - -->
+<wo:if condition="[showFooter]"><wo:PXPageFooter /></wo:if>
+
+<!-- - - - - - - - - - - - - CREDIT - - - - - - - - - - - - -->
+<wo:if condition="[showCredit]">
+ <div style="width: 900px; margin: 0 auto; text-align: left; font-size: x-small; color: #666;">
+  <wo:string value="[application.creditText]" escapeHTML="FALSE" /></div></wo:if>
+
+</div></body></html>
