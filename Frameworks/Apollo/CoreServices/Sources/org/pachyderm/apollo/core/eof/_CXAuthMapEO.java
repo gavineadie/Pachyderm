@@ -6,10 +6,12 @@ import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
 import java.math.*;
 import java.util.*;
-import org.apache.log4j.Logger;
 
 import er.extensions.eof.*;
 import er.extensions.foundation.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("all")
 public abstract class _CXAuthMapEO extends  ERXGenericRecord {
@@ -18,16 +20,18 @@ public abstract class _CXAuthMapEO extends  ERXGenericRecord {
   // Attribute Keys
   public static final ERXKey<String> EXTERNAL_ID = new ERXKey<String>("externalId");
   public static final ERXKey<String> EXTERNAL_REALM = new ERXKey<String>("externalRealm");
+
   // Relationship Keys
   public static final ERXKey<org.pachyderm.apollo.core.eof.CXDirectoryPersonEO> PERSON = new ERXKey<org.pachyderm.apollo.core.eof.CXDirectoryPersonEO>("person");
 
   // Attributes
   public static final String EXTERNAL_ID_KEY = EXTERNAL_ID.key();
   public static final String EXTERNAL_REALM_KEY = EXTERNAL_REALM.key();
+
   // Relationships
   public static final String PERSON_KEY = PERSON.key();
 
-  private static Logger LOG = Logger.getLogger(_CXAuthMapEO.class);
+  private static final Logger log = LoggerFactory.getLogger(_CXAuthMapEO.class);
 
   public CXAuthMapEO localInstanceIn(EOEditingContext editingContext) {
     CXAuthMapEO localInstance = (CXAuthMapEO)EOUtilities.localInstanceOfObject(editingContext, this);
@@ -42,9 +46,7 @@ public abstract class _CXAuthMapEO extends  ERXGenericRecord {
   }
 
   public void setExternalId(String value) {
-    if (_CXAuthMapEO.LOG.isDebugEnabled()) {
-    	_CXAuthMapEO.LOG.debug( "updating externalId from " + externalId() + " to " + value);
-    }
+    log.debug( "updating externalId from {} to {}", externalId(), value);
     takeStoredValueForKey(value, _CXAuthMapEO.EXTERNAL_ID_KEY);
   }
 
@@ -53,40 +55,36 @@ public abstract class _CXAuthMapEO extends  ERXGenericRecord {
   }
 
   public void setExternalRealm(String value) {
-    if (_CXAuthMapEO.LOG.isDebugEnabled()) {
-    	_CXAuthMapEO.LOG.debug( "updating externalRealm from " + externalRealm() + " to " + value);
-    }
+    log.debug( "updating externalRealm from {} to {}", externalRealm(), value);
     takeStoredValueForKey(value, _CXAuthMapEO.EXTERNAL_REALM_KEY);
   }
 
   public org.pachyderm.apollo.core.eof.CXDirectoryPersonEO person() {
     return (org.pachyderm.apollo.core.eof.CXDirectoryPersonEO)storedValueForKey(_CXAuthMapEO.PERSON_KEY);
   }
-  
+
   public void setPerson(org.pachyderm.apollo.core.eof.CXDirectoryPersonEO value) {
     takeStoredValueForKey(value, _CXAuthMapEO.PERSON_KEY);
   }
 
   public void setPersonRelationship(org.pachyderm.apollo.core.eof.CXDirectoryPersonEO value) {
-    if (_CXAuthMapEO.LOG.isDebugEnabled()) {
-      _CXAuthMapEO.LOG.debug("updating person from " + person() + " to " + value);
-    }
+    log.debug("updating person from {} to {}", person(), value);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	setPerson(value);
+      setPerson(value);
     }
     else if (value == null) {
-    	org.pachyderm.apollo.core.eof.CXDirectoryPersonEO oldValue = person();
-    	if (oldValue != null) {
-    		removeObjectFromBothSidesOfRelationshipWithKey(oldValue, _CXAuthMapEO.PERSON_KEY);
+      org.pachyderm.apollo.core.eof.CXDirectoryPersonEO oldValue = person();
+      if (oldValue != null) {
+        removeObjectFromBothSidesOfRelationshipWithKey(oldValue, _CXAuthMapEO.PERSON_KEY);
       }
     } else {
-    	addObjectToBothSidesOfRelationshipWithKey(value, _CXAuthMapEO.PERSON_KEY);
+      addObjectToBothSidesOfRelationshipWithKey(value, _CXAuthMapEO.PERSON_KEY);
     }
   }
-  
+
 
   public static CXAuthMapEO createAuthMap(EOEditingContext editingContext) {
-    CXAuthMapEO eo = (CXAuthMapEO) EOUtilities.createAndInsertInstance(editingContext, _CXAuthMapEO.ENTITY_NAME);    
+    CXAuthMapEO eo = (CXAuthMapEO) EOUtilities.createAndInsertInstance(editingContext, _CXAuthMapEO.ENTITY_NAME);
     return eo;
   }
 
@@ -104,13 +102,12 @@ public abstract class _CXAuthMapEO extends  ERXGenericRecord {
 
   public static NSArray<CXAuthMapEO> fetchAuthMaps(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
     ERXFetchSpecification<CXAuthMapEO> fetchSpec = new ERXFetchSpecification<CXAuthMapEO>(_CXAuthMapEO.ENTITY_NAME, qualifier, sortOrderings);
-    fetchSpec.setIsDeep(true);
     NSArray<CXAuthMapEO> eoObjects = fetchSpec.fetchObjects(editingContext);
     return eoObjects;
   }
 
   public static CXAuthMapEO fetchAuthMap(EOEditingContext editingContext, String keyName, Object value) {
-    return _CXAuthMapEO.fetchAuthMap(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _CXAuthMapEO.fetchAuthMap(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static CXAuthMapEO fetchAuthMap(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -130,7 +127,7 @@ public abstract class _CXAuthMapEO extends  ERXGenericRecord {
   }
 
   public static CXAuthMapEO fetchRequiredAuthMap(EOEditingContext editingContext, String keyName, Object value) {
-    return _CXAuthMapEO.fetchRequiredAuthMap(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _CXAuthMapEO.fetchRequiredAuthMap(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static CXAuthMapEO fetchRequiredAuthMap(EOEditingContext editingContext, EOQualifier qualifier) {

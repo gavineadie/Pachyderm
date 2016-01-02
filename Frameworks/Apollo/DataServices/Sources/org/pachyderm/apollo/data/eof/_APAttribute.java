@@ -6,10 +6,12 @@ import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
 import java.math.*;
 import java.util.*;
-import org.apache.log4j.Logger;
 
 import er.extensions.eof.*;
 import er.extensions.foundation.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("all")
 public abstract class _APAttribute extends  ERXGenericRecord {
@@ -19,15 +21,17 @@ public abstract class _APAttribute extends  ERXGenericRecord {
   public static final ERXKey<String> IDENTIFIER = new ERXKey<String>("identifier");
   public static final ERXKey<String> KEY = new ERXKey<String>("key");
   public static final ERXKey<NSData> VALUE = new ERXKey<NSData>("value");
+
   // Relationship Keys
 
   // Attributes
   public static final String IDENTIFIER_KEY = IDENTIFIER.key();
   public static final String KEY_KEY = KEY.key();
   public static final String VALUE_KEY = VALUE.key();
+
   // Relationships
 
-  private static Logger LOG = Logger.getLogger(_APAttribute.class);
+  private static final Logger log = LoggerFactory.getLogger(_APAttribute.class);
 
   public APAttribute localInstanceIn(EOEditingContext editingContext) {
     APAttribute localInstance = (APAttribute)EOUtilities.localInstanceOfObject(editingContext, this);
@@ -42,9 +46,7 @@ public abstract class _APAttribute extends  ERXGenericRecord {
   }
 
   public void setIdentifier(String value) {
-    if (_APAttribute.LOG.isDebugEnabled()) {
-    	_APAttribute.LOG.debug( "updating identifier from " + identifier() + " to " + value);
-    }
+    log.debug( "updating identifier from {} to {}", identifier(), value);
     takeStoredValueForKey(value, _APAttribute.IDENTIFIER_KEY);
   }
 
@@ -53,9 +55,7 @@ public abstract class _APAttribute extends  ERXGenericRecord {
   }
 
   public void setKey(String value) {
-    if (_APAttribute.LOG.isDebugEnabled()) {
-    	_APAttribute.LOG.debug( "updating key from " + key() + " to " + value);
-    }
+    log.debug( "updating key from {} to {}", key(), value);
     takeStoredValueForKey(value, _APAttribute.KEY_KEY);
   }
 
@@ -64,9 +64,7 @@ public abstract class _APAttribute extends  ERXGenericRecord {
   }
 
   public void setValue(NSData value) {
-    if (_APAttribute.LOG.isDebugEnabled()) {
-    	_APAttribute.LOG.debug( "updating value from " + value() + " to " + value);
-    }
+    log.debug( "updating value from {} to {}", value(), value);
     takeStoredValueForKey(value, _APAttribute.VALUE_KEY);
   }
 
@@ -74,9 +72,9 @@ public abstract class _APAttribute extends  ERXGenericRecord {
   public static APAttribute createAPAttribute(EOEditingContext editingContext, String identifier
 , String key
 ) {
-    APAttribute eo = (APAttribute) EOUtilities.createAndInsertInstance(editingContext, _APAttribute.ENTITY_NAME);    
-		eo.setIdentifier(identifier);
-		eo.setKey(key);
+    APAttribute eo = (APAttribute) EOUtilities.createAndInsertInstance(editingContext, _APAttribute.ENTITY_NAME);
+    eo.setIdentifier(identifier);
+    eo.setKey(key);
     return eo;
   }
 
@@ -94,13 +92,12 @@ public abstract class _APAttribute extends  ERXGenericRecord {
 
   public static NSArray<APAttribute> fetchAPAttributes(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
     ERXFetchSpecification<APAttribute> fetchSpec = new ERXFetchSpecification<APAttribute>(_APAttribute.ENTITY_NAME, qualifier, sortOrderings);
-    fetchSpec.setIsDeep(true);
     NSArray<APAttribute> eoObjects = fetchSpec.fetchObjects(editingContext);
     return eoObjects;
   }
 
   public static APAttribute fetchAPAttribute(EOEditingContext editingContext, String keyName, Object value) {
-    return _APAttribute.fetchAPAttribute(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _APAttribute.fetchAPAttribute(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static APAttribute fetchAPAttribute(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -120,7 +117,7 @@ public abstract class _APAttribute extends  ERXGenericRecord {
   }
 
   public static APAttribute fetchRequiredAPAttribute(EOEditingContext editingContext, String keyName, Object value) {
-    return _APAttribute.fetchRequiredAPAttribute(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _APAttribute.fetchRequiredAPAttribute(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static APAttribute fetchRequiredAPAttribute(EOEditingContext editingContext, EOQualifier qualifier) {

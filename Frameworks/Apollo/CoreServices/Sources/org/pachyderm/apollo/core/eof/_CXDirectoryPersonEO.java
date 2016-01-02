@@ -6,10 +6,12 @@ import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
 import java.math.*;
 import java.util.*;
-import org.apache.log4j.Logger;
 
 import er.extensions.eof.*;
 import er.extensions.foundation.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("all")
 public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
@@ -49,6 +51,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   public static final ERXKey<String> SUFFIX = new ERXKey<String>("suffix");
   public static final ERXKey<String> TITLE = new ERXKey<String>("title");
   public static final ERXKey<NSData> YAHOO_INSTANT = new ERXKey<NSData>("yahooInstant");
+
   // Relationship Keys
   public static final ERXKey<org.pachyderm.apollo.core.eof.CXAuthMapEO> AUTHMAPS = new ERXKey<org.pachyderm.apollo.core.eof.CXAuthMapEO>("authmaps");
   public static final ERXKey<org.pachyderm.apollo.core.eof.CXDirectoryGroupEO> GROUPS = new ERXKey<org.pachyderm.apollo.core.eof.CXDirectoryGroupEO>("groups");
@@ -87,11 +90,12 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   public static final String SUFFIX_KEY = SUFFIX.key();
   public static final String TITLE_KEY = TITLE.key();
   public static final String YAHOO_INSTANT_KEY = YAHOO_INSTANT.key();
+
   // Relationships
   public static final String AUTHMAPS_KEY = AUTHMAPS.key();
   public static final String GROUPS_KEY = GROUPS.key();
 
-  private static Logger LOG = Logger.getLogger(_CXDirectoryPersonEO.class);
+  private static final Logger log = LoggerFactory.getLogger(_CXDirectoryPersonEO.class);
 
   public CXDirectoryPersonEO localInstanceIn(EOEditingContext editingContext) {
     CXDirectoryPersonEO localInstance = (CXDirectoryPersonEO)EOUtilities.localInstanceOfObject(editingContext, this);
@@ -106,9 +110,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setAddress(NSData value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating address from " + address() + " to " + value);
-    }
+    log.debug( "updating address from {} to {}", address(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.ADDRESS_KEY);
   }
 
@@ -117,9 +119,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setAimInstant(NSData value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating aimInstant from " + aimInstant() + " to " + value);
-    }
+    log.debug( "updating aimInstant from {} to {}", aimInstant(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.AIM_INSTANT_KEY);
   }
 
@@ -128,9 +128,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setBirthday(NSTimestamp value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating birthday from " + birthday() + " to " + value);
-    }
+    log.debug( "updating birthday from {} to {}", birthday(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.BIRTHDAY_KEY);
   }
 
@@ -139,9 +137,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setCreationDate(NSTimestamp value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating creationDate from " + creationDate() + " to " + value);
-    }
+    log.debug( "updating creationDate from {} to {}", creationDate(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.CREATION_DATE_KEY);
   }
 
@@ -150,9 +146,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setCustomProperties(NSData value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating customProperties from " + customProperties() + " to " + value);
-    }
+    log.debug( "updating customProperties from {} to {}", customProperties(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.CUSTOM_PROPERTIES_KEY);
   }
 
@@ -161,9 +155,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setDepartment(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating department from " + department() + " to " + value);
-    }
+    log.debug( "updating department from {} to {}", department(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.DEPARTMENT_KEY);
   }
 
@@ -172,9 +164,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setEmailData(NSData value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating emailData from " + emailData() + " to " + value);
-    }
+    log.debug( "updating emailData from {} to {}", emailData(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.EMAIL_DATA_KEY);
   }
 
@@ -183,9 +173,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setFirstName(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating firstName from " + firstName() + " to " + value);
-    }
+    log.debug( "updating firstName from {} to {}", firstName(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.FIRST_NAME_KEY);
   }
 
@@ -194,9 +182,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setFirstNamePhonetic(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating firstNamePhonetic from " + firstNamePhonetic() + " to " + value);
-    }
+    log.debug( "updating firstNamePhonetic from {} to {}", firstNamePhonetic(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.FIRST_NAME_PHONETIC_KEY);
   }
 
@@ -205,9 +191,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setHomePage(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating homePage from " + homePage() + " to " + value);
-    }
+    log.debug( "updating homePage from {} to {}", homePage(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.HOME_PAGE_KEY);
   }
 
@@ -216,9 +200,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setIcqInstant(NSData value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating icqInstant from " + icqInstant() + " to " + value);
-    }
+    log.debug( "updating icqInstant from {} to {}", icqInstant(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.ICQ_INSTANT_KEY);
   }
 
@@ -227,9 +209,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setImageData(NSData value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating imageData from " + imageData() + " to " + value);
-    }
+    log.debug( "updating imageData from {} to {}", imageData(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.IMAGE_DATA_KEY);
   }
 
@@ -238,9 +218,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setJabberInstant(NSData value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating jabberInstant from " + jabberInstant() + " to " + value);
-    }
+    log.debug( "updating jabberInstant from {} to {}", jabberInstant(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.JABBER_INSTANT_KEY);
   }
 
@@ -249,9 +227,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setJobTitle(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating jobTitle from " + jobTitle() + " to " + value);
-    }
+    log.debug( "updating jobTitle from {} to {}", jobTitle(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.JOB_TITLE_KEY);
   }
 
@@ -260,9 +236,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setLastName(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating lastName from " + lastName() + " to " + value);
-    }
+    log.debug( "updating lastName from {} to {}", lastName(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.LAST_NAME_KEY);
   }
 
@@ -271,9 +245,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setLastNamePhonetic(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating lastNamePhonetic from " + lastNamePhonetic() + " to " + value);
-    }
+    log.debug( "updating lastNamePhonetic from {} to {}", lastNamePhonetic(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.LAST_NAME_PHONETIC_KEY);
   }
 
@@ -282,9 +254,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setMaidenName(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating maidenName from " + maidenName() + " to " + value);
-    }
+    log.debug( "updating maidenName from {} to {}", maidenName(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.MAIDEN_NAME_KEY);
   }
 
@@ -293,9 +263,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setMiddleName(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating middleName from " + middleName() + " to " + value);
-    }
+    log.debug( "updating middleName from {} to {}", middleName(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.MIDDLE_NAME_KEY);
   }
 
@@ -304,9 +272,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setMiddleNamePhonetic(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating middleNamePhonetic from " + middleNamePhonetic() + " to " + value);
-    }
+    log.debug( "updating middleNamePhonetic from {} to {}", middleNamePhonetic(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.MIDDLE_NAME_PHONETIC_KEY);
   }
 
@@ -315,9 +281,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setModificationDate(NSTimestamp value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating modificationDate from " + modificationDate() + " to " + value);
-    }
+    log.debug( "updating modificationDate from {} to {}", modificationDate(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.MODIFICATION_DATE_KEY);
   }
 
@@ -326,9 +290,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setMsnInstant(NSData value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating msnInstant from " + msnInstant() + " to " + value);
-    }
+    log.debug( "updating msnInstant from {} to {}", msnInstant(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.MSN_INSTANT_KEY);
   }
 
@@ -337,9 +299,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setMultiMail(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating multiMail from " + multiMail() + " to " + value);
-    }
+    log.debug( "updating multiMail from {} to {}", multiMail(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.MULTI_MAIL_KEY);
   }
 
@@ -348,9 +308,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setNickname(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating nickname from " + nickname() + " to " + value);
-    }
+    log.debug( "updating nickname from {} to {}", nickname(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.NICKNAME_KEY);
   }
 
@@ -359,9 +317,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setNote(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating note from " + note() + " to " + value);
-    }
+    log.debug( "updating note from {} to {}", note(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.NOTE_KEY);
   }
 
@@ -370,9 +326,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setOrganization(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating organization from " + organization() + " to " + value);
-    }
+    log.debug( "updating organization from {} to {}", organization(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.ORGANIZATION_KEY);
   }
 
@@ -381,9 +335,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setOtherDates(NSData value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating otherDates from " + otherDates() + " to " + value);
-    }
+    log.debug( "updating otherDates from {} to {}", otherDates(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.OTHER_DATES_KEY);
   }
 
@@ -392,9 +344,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setPersonFlags(Integer value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating personFlags from " + personFlags() + " to " + value);
-    }
+    log.debug( "updating personFlags from {} to {}", personFlags(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.PERSON_FLAGS_KEY);
   }
 
@@ -403,9 +353,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setPersonid(Integer value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating personid from " + personid() + " to " + value);
-    }
+    log.debug( "updating personid from {} to {}", personid(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.PERSONID_KEY);
   }
 
@@ -414,9 +362,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setPhone(NSData value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating phone from " + phone() + " to " + value);
-    }
+    log.debug( "updating phone from {} to {}", phone(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.PHONE_KEY);
   }
 
@@ -425,9 +371,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setRelatedNames(NSData value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating relatedNames from " + relatedNames() + " to " + value);
-    }
+    log.debug( "updating relatedNames from {} to {}", relatedNames(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.RELATED_NAMES_KEY);
   }
 
@@ -436,9 +380,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setSuffix(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating suffix from " + suffix() + " to " + value);
-    }
+    log.debug( "updating suffix from {} to {}", suffix(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.SUFFIX_KEY);
   }
 
@@ -447,9 +389,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setTitle(String value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating title from " + title() + " to " + value);
-    }
+    log.debug( "updating title from {} to {}", title(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.TITLE_KEY);
   }
 
@@ -458,9 +398,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void setYahooInstant(NSData value) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryPersonEO.LOG.debug( "updating yahooInstant from " + yahooInstant() + " to " + value);
-    }
+    log.debug( "updating yahooInstant from {} to {}", yahooInstant(), value);
     takeStoredValueForKey(value, _CXDirectoryPersonEO.YAHOO_INSTANT_KEY);
   }
 
@@ -480,16 +418,13 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
     NSArray<org.pachyderm.apollo.core.eof.CXAuthMapEO> results;
     if (fetch) {
       EOQualifier fullQualifier;
-      EOQualifier inverseQualifier = new EOKeyValueQualifier(org.pachyderm.apollo.core.eof.CXAuthMapEO.PERSON_KEY, EOQualifier.QualifierOperatorEqual, this);
-    	
+      EOQualifier inverseQualifier = ERXQ.equals(org.pachyderm.apollo.core.eof.CXAuthMapEO.PERSON_KEY, this);
+
       if (qualifier == null) {
         fullQualifier = inverseQualifier;
       }
       else {
-        NSMutableArray<EOQualifier> qualifiers = new NSMutableArray<EOQualifier>();
-        qualifiers.addObject(qualifier);
-        qualifiers.addObject(inverseQualifier);
-        fullQualifier = new EOAndQualifier(qualifiers);
+        fullQualifier = ERXQ.and(qualifier, inverseQualifier);
       }
 
       results = org.pachyderm.apollo.core.eof.CXAuthMapEO.fetchAuthMaps(editingContext(), fullQualifier, sortOrderings);
@@ -505,7 +440,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
     }
     return results;
   }
-  
+
   public void addToAuthmaps(org.pachyderm.apollo.core.eof.CXAuthMapEO object) {
     includeObjectIntoPropertyWithKey(object, _CXDirectoryPersonEO.AUTHMAPS_KEY);
   }
@@ -515,33 +450,27 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void addToAuthmapsRelationship(org.pachyderm.apollo.core.eof.CXAuthMapEO object) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-      _CXDirectoryPersonEO.LOG.debug("adding " + object + " to authmaps relationship");
-    }
+    log.debug("adding {} to authmaps relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	addToAuthmaps(object);
+      addToAuthmaps(object);
     }
     else {
-    	addObjectToBothSidesOfRelationshipWithKey(object, _CXDirectoryPersonEO.AUTHMAPS_KEY);
+      addObjectToBothSidesOfRelationshipWithKey(object, _CXDirectoryPersonEO.AUTHMAPS_KEY);
     }
   }
 
   public void removeFromAuthmapsRelationship(org.pachyderm.apollo.core.eof.CXAuthMapEO object) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-      _CXDirectoryPersonEO.LOG.debug("removing " + object + " from authmaps relationship");
-    }
+    log.debug("removing {} from authmaps relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	removeFromAuthmaps(object);
+      removeFromAuthmaps(object);
     }
     else {
-    	removeObjectFromBothSidesOfRelationshipWithKey(object, _CXDirectoryPersonEO.AUTHMAPS_KEY);
+      removeObjectFromBothSidesOfRelationshipWithKey(object, _CXDirectoryPersonEO.AUTHMAPS_KEY);
     }
   }
 
   public org.pachyderm.apollo.core.eof.CXAuthMapEO createAuthmapsRelationship() {
-    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName( org.pachyderm.apollo.core.eof.CXAuthMapEO.ENTITY_NAME );
-    EOEnterpriseObject eo = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
-    editingContext().insertObject(eo);
+    EOEnterpriseObject eo = EOUtilities.createAndInsertInstance(editingContext(),  org.pachyderm.apollo.core.eof.CXAuthMapEO.ENTITY_NAME );
     addObjectToBothSidesOfRelationshipWithKey(eo, _CXDirectoryPersonEO.AUTHMAPS_KEY);
     return (org.pachyderm.apollo.core.eof.CXAuthMapEO) eo;
   }
@@ -577,7 +506,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
       }
     return results;
   }
-  
+
   public void addToGroups(org.pachyderm.apollo.core.eof.CXDirectoryGroupEO object) {
     includeObjectIntoPropertyWithKey(object, _CXDirectoryPersonEO.GROUPS_KEY);
   }
@@ -587,33 +516,27 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public void addToGroupsRelationship(org.pachyderm.apollo.core.eof.CXDirectoryGroupEO object) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-      _CXDirectoryPersonEO.LOG.debug("adding " + object + " to groups relationship");
-    }
+    log.debug("adding {} to groups relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	addToGroups(object);
+      addToGroups(object);
     }
     else {
-    	addObjectToBothSidesOfRelationshipWithKey(object, _CXDirectoryPersonEO.GROUPS_KEY);
+      addObjectToBothSidesOfRelationshipWithKey(object, _CXDirectoryPersonEO.GROUPS_KEY);
     }
   }
 
   public void removeFromGroupsRelationship(org.pachyderm.apollo.core.eof.CXDirectoryGroupEO object) {
-    if (_CXDirectoryPersonEO.LOG.isDebugEnabled()) {
-      _CXDirectoryPersonEO.LOG.debug("removing " + object + " from groups relationship");
-    }
+    log.debug("removing {} from groups relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	removeFromGroups(object);
+      removeFromGroups(object);
     }
     else {
-    	removeObjectFromBothSidesOfRelationshipWithKey(object, _CXDirectoryPersonEO.GROUPS_KEY);
+      removeObjectFromBothSidesOfRelationshipWithKey(object, _CXDirectoryPersonEO.GROUPS_KEY);
     }
   }
 
   public org.pachyderm.apollo.core.eof.CXDirectoryGroupEO createGroupsRelationship() {
-    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName( org.pachyderm.apollo.core.eof.CXDirectoryGroupEO.ENTITY_NAME );
-    EOEnterpriseObject eo = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
-    editingContext().insertObject(eo);
+    EOEnterpriseObject eo = EOUtilities.createAndInsertInstance(editingContext(),  org.pachyderm.apollo.core.eof.CXDirectoryGroupEO.ENTITY_NAME );
     addObjectToBothSidesOfRelationshipWithKey(eo, _CXDirectoryPersonEO.GROUPS_KEY);
     return (org.pachyderm.apollo.core.eof.CXDirectoryGroupEO) eo;
   }
@@ -637,12 +560,12 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
 , String multiMail
 , Integer personid
 ) {
-    CXDirectoryPersonEO eo = (CXDirectoryPersonEO) EOUtilities.createAndInsertInstance(editingContext, _CXDirectoryPersonEO.ENTITY_NAME);    
-		eo.setCreationDate(creationDate);
-		eo.setLastName(lastName);
-		eo.setModificationDate(modificationDate);
-		eo.setMultiMail(multiMail);
-		eo.setPersonid(personid);
+    CXDirectoryPersonEO eo = (CXDirectoryPersonEO) EOUtilities.createAndInsertInstance(editingContext, _CXDirectoryPersonEO.ENTITY_NAME);
+    eo.setCreationDate(creationDate);
+    eo.setLastName(lastName);
+    eo.setModificationDate(modificationDate);
+    eo.setMultiMail(multiMail);
+    eo.setPersonid(personid);
     return eo;
   }
 
@@ -660,13 +583,12 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
 
   public static NSArray<CXDirectoryPersonEO> fetchAPPersons(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
     ERXFetchSpecification<CXDirectoryPersonEO> fetchSpec = new ERXFetchSpecification<CXDirectoryPersonEO>(_CXDirectoryPersonEO.ENTITY_NAME, qualifier, sortOrderings);
-    fetchSpec.setIsDeep(true);
     NSArray<CXDirectoryPersonEO> eoObjects = fetchSpec.fetchObjects(editingContext);
     return eoObjects;
   }
 
   public static CXDirectoryPersonEO fetchAPPerson(EOEditingContext editingContext, String keyName, Object value) {
-    return _CXDirectoryPersonEO.fetchAPPerson(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _CXDirectoryPersonEO.fetchAPPerson(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static CXDirectoryPersonEO fetchAPPerson(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -686,7 +608,7 @@ public abstract class _CXDirectoryPersonEO extends  ERXGenericRecord {
   }
 
   public static CXDirectoryPersonEO fetchRequiredAPPerson(EOEditingContext editingContext, String keyName, Object value) {
-    return _CXDirectoryPersonEO.fetchRequiredAPPerson(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _CXDirectoryPersonEO.fetchRequiredAPPerson(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static CXDirectoryPersonEO fetchRequiredAPPerson(EOEditingContext editingContext, EOQualifier qualifier) {

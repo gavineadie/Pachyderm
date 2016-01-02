@@ -6,10 +6,12 @@ import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
 import java.math.*;
 import java.util.*;
-import org.apache.log4j.Logger;
 
 import er.extensions.eof.*;
 import er.extensions.foundation.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("all")
 public abstract class _APManagedObject extends  ERXGenericRecord {
@@ -17,15 +19,17 @@ public abstract class _APManagedObject extends  ERXGenericRecord {
 
   // Attribute Keys
   public static final ERXKey<String> IDENTIFIER = new ERXKey<String>("identifier");
+
   // Relationship Keys
   public static final ERXKey<org.pachyderm.apollo.data.eof.APAttribute> ATTRIBUTES = new ERXKey<org.pachyderm.apollo.data.eof.APAttribute>("attributes");
 
   // Attributes
   public static final String IDENTIFIER_KEY = IDENTIFIER.key();
+
   // Relationships
   public static final String ATTRIBUTES_KEY = ATTRIBUTES.key();
 
-  private static Logger LOG = Logger.getLogger(_APManagedObject.class);
+  private static final Logger log = LoggerFactory.getLogger(_APManagedObject.class);
 
   public APManagedObject localInstanceIn(EOEditingContext editingContext) {
     APManagedObject localInstance = (APManagedObject)EOUtilities.localInstanceOfObject(editingContext, this);
@@ -40,9 +44,7 @@ public abstract class _APManagedObject extends  ERXGenericRecord {
   }
 
   public void setIdentifier(String value) {
-    if (_APManagedObject.LOG.isDebugEnabled()) {
-    	_APManagedObject.LOG.debug( "updating identifier from " + identifier() + " to " + value);
-    }
+    log.debug( "updating identifier from {} to {}", identifier(), value);
     takeStoredValueForKey(value, _APManagedObject.IDENTIFIER_KEY);
   }
 
@@ -65,7 +67,7 @@ public abstract class _APManagedObject extends  ERXGenericRecord {
       }
     return results;
   }
-  
+
   public void addToAttributes(org.pachyderm.apollo.data.eof.APAttribute object) {
     includeObjectIntoPropertyWithKey(object, _APManagedObject.ATTRIBUTES_KEY);
   }
@@ -75,33 +77,27 @@ public abstract class _APManagedObject extends  ERXGenericRecord {
   }
 
   public void addToAttributesRelationship(org.pachyderm.apollo.data.eof.APAttribute object) {
-    if (_APManagedObject.LOG.isDebugEnabled()) {
-      _APManagedObject.LOG.debug("adding " + object + " to attributes relationship");
-    }
+    log.debug("adding {} to attributes relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	addToAttributes(object);
+      addToAttributes(object);
     }
     else {
-    	addObjectToBothSidesOfRelationshipWithKey(object, _APManagedObject.ATTRIBUTES_KEY);
+      addObjectToBothSidesOfRelationshipWithKey(object, _APManagedObject.ATTRIBUTES_KEY);
     }
   }
 
   public void removeFromAttributesRelationship(org.pachyderm.apollo.data.eof.APAttribute object) {
-    if (_APManagedObject.LOG.isDebugEnabled()) {
-      _APManagedObject.LOG.debug("removing " + object + " from attributes relationship");
-    }
+    log.debug("removing {} from attributes relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	removeFromAttributes(object);
+      removeFromAttributes(object);
     }
     else {
-    	removeObjectFromBothSidesOfRelationshipWithKey(object, _APManagedObject.ATTRIBUTES_KEY);
+      removeObjectFromBothSidesOfRelationshipWithKey(object, _APManagedObject.ATTRIBUTES_KEY);
     }
   }
 
   public org.pachyderm.apollo.data.eof.APAttribute createAttributesRelationship() {
-    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName( org.pachyderm.apollo.data.eof.APAttribute.ENTITY_NAME );
-    EOEnterpriseObject eo = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
-    editingContext().insertObject(eo);
+    EOEnterpriseObject eo = EOUtilities.createAndInsertInstance(editingContext(),  org.pachyderm.apollo.data.eof.APAttribute.ENTITY_NAME );
     addObjectToBothSidesOfRelationshipWithKey(eo, _APManagedObject.ATTRIBUTES_KEY);
     return (org.pachyderm.apollo.data.eof.APAttribute) eo;
   }
@@ -121,8 +117,8 @@ public abstract class _APManagedObject extends  ERXGenericRecord {
 
   public static APManagedObject createAPManagedObject(EOEditingContext editingContext, String identifier
 ) {
-    APManagedObject eo = (APManagedObject) EOUtilities.createAndInsertInstance(editingContext, _APManagedObject.ENTITY_NAME);    
-		eo.setIdentifier(identifier);
+    APManagedObject eo = (APManagedObject) EOUtilities.createAndInsertInstance(editingContext, _APManagedObject.ENTITY_NAME);
+    eo.setIdentifier(identifier);
     return eo;
   }
 
@@ -140,13 +136,12 @@ public abstract class _APManagedObject extends  ERXGenericRecord {
 
   public static NSArray<APManagedObject> fetchAPManagedObjects(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
     ERXFetchSpecification<APManagedObject> fetchSpec = new ERXFetchSpecification<APManagedObject>(_APManagedObject.ENTITY_NAME, qualifier, sortOrderings);
-    fetchSpec.setIsDeep(true);
     NSArray<APManagedObject> eoObjects = fetchSpec.fetchObjects(editingContext);
     return eoObjects;
   }
 
   public static APManagedObject fetchAPManagedObject(EOEditingContext editingContext, String keyName, Object value) {
-    return _APManagedObject.fetchAPManagedObject(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _APManagedObject.fetchAPManagedObject(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static APManagedObject fetchAPManagedObject(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -166,7 +161,7 @@ public abstract class _APManagedObject extends  ERXGenericRecord {
   }
 
   public static APManagedObject fetchRequiredAPManagedObject(EOEditingContext editingContext, String keyName, Object value) {
-    return _APManagedObject.fetchRequiredAPManagedObject(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _APManagedObject.fetchRequiredAPManagedObject(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static APManagedObject fetchRequiredAPManagedObject(EOEditingContext editingContext, EOQualifier qualifier) {

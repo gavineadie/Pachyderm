@@ -6,10 +6,12 @@ import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
 import java.math.*;
 import java.util.*;
-import org.apache.log4j.Logger;
 
 import er.extensions.eof.*;
 import er.extensions.foundation.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("all")
 public abstract class _CXDirectoryGroupEO extends  ERXGenericRecord {
@@ -18,6 +20,7 @@ public abstract class _CXDirectoryGroupEO extends  ERXGenericRecord {
   // Attribute Keys
   public static final ERXKey<Integer> GROUPID = new ERXKey<Integer>("groupid");
   public static final ERXKey<String> NAME = new ERXKey<String>("name");
+
   // Relationship Keys
   public static final ERXKey<org.pachyderm.apollo.core.eof.CXDirectoryPersonEO> MEMBERS = new ERXKey<org.pachyderm.apollo.core.eof.CXDirectoryPersonEO>("members");
   public static final ERXKey<org.pachyderm.apollo.core.eof.CXDirectoryGroupEO> PARENT_GROUPS = new ERXKey<org.pachyderm.apollo.core.eof.CXDirectoryGroupEO>("parentGroups");
@@ -26,12 +29,13 @@ public abstract class _CXDirectoryGroupEO extends  ERXGenericRecord {
   // Attributes
   public static final String GROUPID_KEY = GROUPID.key();
   public static final String NAME_KEY = NAME.key();
+
   // Relationships
   public static final String MEMBERS_KEY = MEMBERS.key();
   public static final String PARENT_GROUPS_KEY = PARENT_GROUPS.key();
   public static final String SUBGROUPS_KEY = SUBGROUPS.key();
 
-  private static Logger LOG = Logger.getLogger(_CXDirectoryGroupEO.class);
+  private static final Logger log = LoggerFactory.getLogger(_CXDirectoryGroupEO.class);
 
   public CXDirectoryGroupEO localInstanceIn(EOEditingContext editingContext) {
     CXDirectoryGroupEO localInstance = (CXDirectoryGroupEO)EOUtilities.localInstanceOfObject(editingContext, this);
@@ -46,9 +50,7 @@ public abstract class _CXDirectoryGroupEO extends  ERXGenericRecord {
   }
 
   public void setGroupid(Integer value) {
-    if (_CXDirectoryGroupEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryGroupEO.LOG.debug( "updating groupid from " + groupid() + " to " + value);
-    }
+    log.debug( "updating groupid from {} to {}", groupid(), value);
     takeStoredValueForKey(value, _CXDirectoryGroupEO.GROUPID_KEY);
   }
 
@@ -57,9 +59,7 @@ public abstract class _CXDirectoryGroupEO extends  ERXGenericRecord {
   }
 
   public void setName(String value) {
-    if (_CXDirectoryGroupEO.LOG.isDebugEnabled()) {
-    	_CXDirectoryGroupEO.LOG.debug( "updating name from " + name() + " to " + value);
-    }
+    log.debug( "updating name from {} to {}", name(), value);
     takeStoredValueForKey(value, _CXDirectoryGroupEO.NAME_KEY);
   }
 
@@ -82,7 +82,7 @@ public abstract class _CXDirectoryGroupEO extends  ERXGenericRecord {
       }
     return results;
   }
-  
+
   public void addToMembers(org.pachyderm.apollo.core.eof.CXDirectoryPersonEO object) {
     includeObjectIntoPropertyWithKey(object, _CXDirectoryGroupEO.MEMBERS_KEY);
   }
@@ -92,33 +92,27 @@ public abstract class _CXDirectoryGroupEO extends  ERXGenericRecord {
   }
 
   public void addToMembersRelationship(org.pachyderm.apollo.core.eof.CXDirectoryPersonEO object) {
-    if (_CXDirectoryGroupEO.LOG.isDebugEnabled()) {
-      _CXDirectoryGroupEO.LOG.debug("adding " + object + " to members relationship");
-    }
+    log.debug("adding {} to members relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	addToMembers(object);
+      addToMembers(object);
     }
     else {
-    	addObjectToBothSidesOfRelationshipWithKey(object, _CXDirectoryGroupEO.MEMBERS_KEY);
+      addObjectToBothSidesOfRelationshipWithKey(object, _CXDirectoryGroupEO.MEMBERS_KEY);
     }
   }
 
   public void removeFromMembersRelationship(org.pachyderm.apollo.core.eof.CXDirectoryPersonEO object) {
-    if (_CXDirectoryGroupEO.LOG.isDebugEnabled()) {
-      _CXDirectoryGroupEO.LOG.debug("removing " + object + " from members relationship");
-    }
+    log.debug("removing {} from members relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	removeFromMembers(object);
+      removeFromMembers(object);
     }
     else {
-    	removeObjectFromBothSidesOfRelationshipWithKey(object, _CXDirectoryGroupEO.MEMBERS_KEY);
+      removeObjectFromBothSidesOfRelationshipWithKey(object, _CXDirectoryGroupEO.MEMBERS_KEY);
     }
   }
 
   public org.pachyderm.apollo.core.eof.CXDirectoryPersonEO createMembersRelationship() {
-    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName( org.pachyderm.apollo.core.eof.CXDirectoryPersonEO.ENTITY_NAME );
-    EOEnterpriseObject eo = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
-    editingContext().insertObject(eo);
+    EOEnterpriseObject eo = EOUtilities.createAndInsertInstance(editingContext(),  org.pachyderm.apollo.core.eof.CXDirectoryPersonEO.ENTITY_NAME );
     addObjectToBothSidesOfRelationshipWithKey(eo, _CXDirectoryGroupEO.MEMBERS_KEY);
     return (org.pachyderm.apollo.core.eof.CXDirectoryPersonEO) eo;
   }
@@ -154,7 +148,7 @@ public abstract class _CXDirectoryGroupEO extends  ERXGenericRecord {
       }
     return results;
   }
-  
+
   public void addToParentGroups(org.pachyderm.apollo.core.eof.CXDirectoryGroupEO object) {
     includeObjectIntoPropertyWithKey(object, _CXDirectoryGroupEO.PARENT_GROUPS_KEY);
   }
@@ -164,33 +158,27 @@ public abstract class _CXDirectoryGroupEO extends  ERXGenericRecord {
   }
 
   public void addToParentGroupsRelationship(org.pachyderm.apollo.core.eof.CXDirectoryGroupEO object) {
-    if (_CXDirectoryGroupEO.LOG.isDebugEnabled()) {
-      _CXDirectoryGroupEO.LOG.debug("adding " + object + " to parentGroups relationship");
-    }
+    log.debug("adding {} to parentGroups relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	addToParentGroups(object);
+      addToParentGroups(object);
     }
     else {
-    	addObjectToBothSidesOfRelationshipWithKey(object, _CXDirectoryGroupEO.PARENT_GROUPS_KEY);
+      addObjectToBothSidesOfRelationshipWithKey(object, _CXDirectoryGroupEO.PARENT_GROUPS_KEY);
     }
   }
 
   public void removeFromParentGroupsRelationship(org.pachyderm.apollo.core.eof.CXDirectoryGroupEO object) {
-    if (_CXDirectoryGroupEO.LOG.isDebugEnabled()) {
-      _CXDirectoryGroupEO.LOG.debug("removing " + object + " from parentGroups relationship");
-    }
+    log.debug("removing {} from parentGroups relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	removeFromParentGroups(object);
+      removeFromParentGroups(object);
     }
     else {
-    	removeObjectFromBothSidesOfRelationshipWithKey(object, _CXDirectoryGroupEO.PARENT_GROUPS_KEY);
+      removeObjectFromBothSidesOfRelationshipWithKey(object, _CXDirectoryGroupEO.PARENT_GROUPS_KEY);
     }
   }
 
   public org.pachyderm.apollo.core.eof.CXDirectoryGroupEO createParentGroupsRelationship() {
-    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName( org.pachyderm.apollo.core.eof.CXDirectoryGroupEO.ENTITY_NAME );
-    EOEnterpriseObject eo = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
-    editingContext().insertObject(eo);
+    EOEnterpriseObject eo = EOUtilities.createAndInsertInstance(editingContext(),  org.pachyderm.apollo.core.eof.CXDirectoryGroupEO.ENTITY_NAME );
     addObjectToBothSidesOfRelationshipWithKey(eo, _CXDirectoryGroupEO.PARENT_GROUPS_KEY);
     return (org.pachyderm.apollo.core.eof.CXDirectoryGroupEO) eo;
   }
@@ -226,7 +214,7 @@ public abstract class _CXDirectoryGroupEO extends  ERXGenericRecord {
       }
     return results;
   }
-  
+
   public void addToSubgroups(org.pachyderm.apollo.core.eof.CXDirectoryGroupEO object) {
     includeObjectIntoPropertyWithKey(object, _CXDirectoryGroupEO.SUBGROUPS_KEY);
   }
@@ -236,33 +224,27 @@ public abstract class _CXDirectoryGroupEO extends  ERXGenericRecord {
   }
 
   public void addToSubgroupsRelationship(org.pachyderm.apollo.core.eof.CXDirectoryGroupEO object) {
-    if (_CXDirectoryGroupEO.LOG.isDebugEnabled()) {
-      _CXDirectoryGroupEO.LOG.debug("adding " + object + " to subgroups relationship");
-    }
+    log.debug("adding {} to subgroups relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	addToSubgroups(object);
+      addToSubgroups(object);
     }
     else {
-    	addObjectToBothSidesOfRelationshipWithKey(object, _CXDirectoryGroupEO.SUBGROUPS_KEY);
+      addObjectToBothSidesOfRelationshipWithKey(object, _CXDirectoryGroupEO.SUBGROUPS_KEY);
     }
   }
 
   public void removeFromSubgroupsRelationship(org.pachyderm.apollo.core.eof.CXDirectoryGroupEO object) {
-    if (_CXDirectoryGroupEO.LOG.isDebugEnabled()) {
-      _CXDirectoryGroupEO.LOG.debug("removing " + object + " from subgroups relationship");
-    }
+    log.debug("removing {} from subgroups relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	removeFromSubgroups(object);
+      removeFromSubgroups(object);
     }
     else {
-    	removeObjectFromBothSidesOfRelationshipWithKey(object, _CXDirectoryGroupEO.SUBGROUPS_KEY);
+      removeObjectFromBothSidesOfRelationshipWithKey(object, _CXDirectoryGroupEO.SUBGROUPS_KEY);
     }
   }
 
   public org.pachyderm.apollo.core.eof.CXDirectoryGroupEO createSubgroupsRelationship() {
-    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName( org.pachyderm.apollo.core.eof.CXDirectoryGroupEO.ENTITY_NAME );
-    EOEnterpriseObject eo = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
-    editingContext().insertObject(eo);
+    EOEnterpriseObject eo = EOUtilities.createAndInsertInstance(editingContext(),  org.pachyderm.apollo.core.eof.CXDirectoryGroupEO.ENTITY_NAME );
     addObjectToBothSidesOfRelationshipWithKey(eo, _CXDirectoryGroupEO.SUBGROUPS_KEY);
     return (org.pachyderm.apollo.core.eof.CXDirectoryGroupEO) eo;
   }
@@ -282,8 +264,8 @@ public abstract class _CXDirectoryGroupEO extends  ERXGenericRecord {
 
   public static CXDirectoryGroupEO createAPGroup(EOEditingContext editingContext, Integer groupid
 ) {
-    CXDirectoryGroupEO eo = (CXDirectoryGroupEO) EOUtilities.createAndInsertInstance(editingContext, _CXDirectoryGroupEO.ENTITY_NAME);    
-		eo.setGroupid(groupid);
+    CXDirectoryGroupEO eo = (CXDirectoryGroupEO) EOUtilities.createAndInsertInstance(editingContext, _CXDirectoryGroupEO.ENTITY_NAME);
+    eo.setGroupid(groupid);
     return eo;
   }
 
@@ -301,13 +283,12 @@ public abstract class _CXDirectoryGroupEO extends  ERXGenericRecord {
 
   public static NSArray<CXDirectoryGroupEO> fetchAPGroups(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
     ERXFetchSpecification<CXDirectoryGroupEO> fetchSpec = new ERXFetchSpecification<CXDirectoryGroupEO>(_CXDirectoryGroupEO.ENTITY_NAME, qualifier, sortOrderings);
-    fetchSpec.setIsDeep(true);
     NSArray<CXDirectoryGroupEO> eoObjects = fetchSpec.fetchObjects(editingContext);
     return eoObjects;
   }
 
   public static CXDirectoryGroupEO fetchAPGroup(EOEditingContext editingContext, String keyName, Object value) {
-    return _CXDirectoryGroupEO.fetchAPGroup(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _CXDirectoryGroupEO.fetchAPGroup(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static CXDirectoryGroupEO fetchAPGroup(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -327,7 +308,7 @@ public abstract class _CXDirectoryGroupEO extends  ERXGenericRecord {
   }
 
   public static CXDirectoryGroupEO fetchRequiredAPGroup(EOEditingContext editingContext, String keyName, Object value) {
-    return _CXDirectoryGroupEO.fetchRequiredAPGroup(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _CXDirectoryGroupEO.fetchRequiredAPGroup(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static CXDirectoryGroupEO fetchRequiredAPGroup(EOEditingContext editingContext, EOQualifier qualifier) {

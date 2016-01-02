@@ -6,10 +6,12 @@ import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
 import java.math.*;
 import java.util.*;
-import org.apache.log4j.Logger;
 
 import er.extensions.eof.*;
 import er.extensions.foundation.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("all")
 public abstract class _RDBugReport extends  ERXGenericRecord {
@@ -29,6 +31,7 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   public static final ERXKey<String> PROBLEM_SUMMARY = new ERXKey<String>("problemSummary");
   public static final ERXKey<String> PROBLEM_TYPE = new ERXKey<String>("problemType");
   public static final ERXKey<String> WEB_BROWSER = new ERXKey<String>("webBrowser");
+
   // Relationship Keys
 
   // Attributes
@@ -45,9 +48,10 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   public static final String PROBLEM_SUMMARY_KEY = PROBLEM_SUMMARY.key();
   public static final String PROBLEM_TYPE_KEY = PROBLEM_TYPE.key();
   public static final String WEB_BROWSER_KEY = WEB_BROWSER.key();
+
   // Relationships
 
-  private static Logger LOG = Logger.getLogger(_RDBugReport.class);
+  private static final Logger log = LoggerFactory.getLogger(_RDBugReport.class);
 
   public RDBugReport localInstanceIn(EOEditingContext editingContext) {
     RDBugReport localInstance = (RDBugReport)EOUtilities.localInstanceOfObject(editingContext, this);
@@ -62,9 +66,7 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   }
 
   public void setAdditionalInformation(String value) {
-    if (_RDBugReport.LOG.isDebugEnabled()) {
-    	_RDBugReport.LOG.debug( "updating additionalInformation from " + additionalInformation() + " to " + value);
-    }
+    log.debug( "updating additionalInformation from {} to {}", additionalInformation(), value);
     takeStoredValueForKey(value, _RDBugReport.ADDITIONAL_INFORMATION_KEY);
   }
 
@@ -73,9 +75,7 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   }
 
   public void setApplicationState(String value) {
-    if (_RDBugReport.LOG.isDebugEnabled()) {
-    	_RDBugReport.LOG.debug( "updating applicationState from " + applicationState() + " to " + value);
-    }
+    log.debug( "updating applicationState from {} to {}", applicationState(), value);
     takeStoredValueForKey(value, _RDBugReport.APPLICATION_STATE_KEY);
   }
 
@@ -84,9 +84,7 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   }
 
   public void setAssistiveDevices(Integer value) {
-    if (_RDBugReport.LOG.isDebugEnabled()) {
-    	_RDBugReport.LOG.debug( "updating assistiveDevices from " + assistiveDevices() + " to " + value);
-    }
+    log.debug( "updating assistiveDevices from {} to {}", assistiveDevices(), value);
     takeStoredValueForKey(value, _RDBugReport.ASSISTIVE_DEVICES_KEY);
   }
 
@@ -95,9 +93,7 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   }
 
   public void setComputerPrimaryUse(String value) {
-    if (_RDBugReport.LOG.isDebugEnabled()) {
-    	_RDBugReport.LOG.debug( "updating computerPrimaryUse from " + computerPrimaryUse() + " to " + value);
-    }
+    log.debug( "updating computerPrimaryUse from {} to {}", computerPrimaryUse(), value);
     takeStoredValueForKey(value, _RDBugReport.COMPUTER_PRIMARY_USE_KEY);
   }
 
@@ -106,9 +102,7 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   }
 
   public void setContributorIdentity(String value) {
-    if (_RDBugReport.LOG.isDebugEnabled()) {
-    	_RDBugReport.LOG.debug( "updating contributorIdentity from " + contributorIdentity() + " to " + value);
-    }
+    log.debug( "updating contributorIdentity from {} to {}", contributorIdentity(), value);
     takeStoredValueForKey(value, _RDBugReport.CONTRIBUTOR_IDENTITY_KEY);
   }
 
@@ -117,9 +111,7 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   }
 
   public void setDateCreated(NSTimestamp value) {
-    if (_RDBugReport.LOG.isDebugEnabled()) {
-    	_RDBugReport.LOG.debug( "updating dateCreated from " + dateCreated() + " to " + value);
-    }
+    log.debug( "updating dateCreated from {} to {}", dateCreated(), value);
     takeStoredValueForKey(value, _RDBugReport.DATE_CREATED_KEY);
   }
 
@@ -128,9 +120,7 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   }
 
   public void setNetworkConnection(String value) {
-    if (_RDBugReport.LOG.isDebugEnabled()) {
-    	_RDBugReport.LOG.debug( "updating networkConnection from " + networkConnection() + " to " + value);
-    }
+    log.debug( "updating networkConnection from {} to {}", networkConnection(), value);
     takeStoredValueForKey(value, _RDBugReport.NETWORK_CONNECTION_KEY);
   }
 
@@ -139,9 +129,7 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   }
 
   public void setOperatingSystem(String value) {
-    if (_RDBugReport.LOG.isDebugEnabled()) {
-    	_RDBugReport.LOG.debug( "updating operatingSystem from " + operatingSystem() + " to " + value);
-    }
+    log.debug( "updating operatingSystem from {} to {}", operatingSystem(), value);
     takeStoredValueForKey(value, _RDBugReport.OPERATING_SYSTEM_KEY);
   }
 
@@ -150,9 +138,7 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   }
 
   public void setProblemReportTitle(String value) {
-    if (_RDBugReport.LOG.isDebugEnabled()) {
-    	_RDBugReport.LOG.debug( "updating problemReportTitle from " + problemReportTitle() + " to " + value);
-    }
+    log.debug( "updating problemReportTitle from {} to {}", problemReportTitle(), value);
     takeStoredValueForKey(value, _RDBugReport.PROBLEM_REPORT_TITLE_KEY);
   }
 
@@ -161,9 +147,7 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   }
 
   public void setProblemReproducibility(String value) {
-    if (_RDBugReport.LOG.isDebugEnabled()) {
-    	_RDBugReport.LOG.debug( "updating problemReproducibility from " + problemReproducibility() + " to " + value);
-    }
+    log.debug( "updating problemReproducibility from {} to {}", problemReproducibility(), value);
     takeStoredValueForKey(value, _RDBugReport.PROBLEM_REPRODUCIBILITY_KEY);
   }
 
@@ -172,9 +156,7 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   }
 
   public void setProblemSummary(String value) {
-    if (_RDBugReport.LOG.isDebugEnabled()) {
-    	_RDBugReport.LOG.debug( "updating problemSummary from " + problemSummary() + " to " + value);
-    }
+    log.debug( "updating problemSummary from {} to {}", problemSummary(), value);
     takeStoredValueForKey(value, _RDBugReport.PROBLEM_SUMMARY_KEY);
   }
 
@@ -183,9 +165,7 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   }
 
   public void setProblemType(String value) {
-    if (_RDBugReport.LOG.isDebugEnabled()) {
-    	_RDBugReport.LOG.debug( "updating problemType from " + problemType() + " to " + value);
-    }
+    log.debug( "updating problemType from {} to {}", problemType(), value);
     takeStoredValueForKey(value, _RDBugReport.PROBLEM_TYPE_KEY);
   }
 
@@ -194,15 +174,13 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   }
 
   public void setWebBrowser(String value) {
-    if (_RDBugReport.LOG.isDebugEnabled()) {
-    	_RDBugReport.LOG.debug( "updating webBrowser from " + webBrowser() + " to " + value);
-    }
+    log.debug( "updating webBrowser from {} to {}", webBrowser(), value);
     takeStoredValueForKey(value, _RDBugReport.WEB_BROWSER_KEY);
   }
 
 
   public static RDBugReport createRDBugReport(EOEditingContext editingContext) {
-    RDBugReport eo = (RDBugReport) EOUtilities.createAndInsertInstance(editingContext, _RDBugReport.ENTITY_NAME);    
+    RDBugReport eo = (RDBugReport) EOUtilities.createAndInsertInstance(editingContext, _RDBugReport.ENTITY_NAME);
     return eo;
   }
 
@@ -220,13 +198,12 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
 
   public static NSArray<RDBugReport> fetchRDBugReports(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
     ERXFetchSpecification<RDBugReport> fetchSpec = new ERXFetchSpecification<RDBugReport>(_RDBugReport.ENTITY_NAME, qualifier, sortOrderings);
-    fetchSpec.setIsDeep(true);
     NSArray<RDBugReport> eoObjects = fetchSpec.fetchObjects(editingContext);
     return eoObjects;
   }
 
   public static RDBugReport fetchRDBugReport(EOEditingContext editingContext, String keyName, Object value) {
-    return _RDBugReport.fetchRDBugReport(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _RDBugReport.fetchRDBugReport(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static RDBugReport fetchRDBugReport(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -246,7 +223,7 @@ public abstract class _RDBugReport extends  ERXGenericRecord {
   }
 
   public static RDBugReport fetchRequiredRDBugReport(EOEditingContext editingContext, String keyName, Object value) {
-    return _RDBugReport.fetchRequiredRDBugReport(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _RDBugReport.fetchRequiredRDBugReport(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static RDBugReport fetchRequiredRDBugReport(EOEditingContext editingContext, EOQualifier qualifier) {

@@ -6,10 +6,12 @@ import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
 import java.math.*;
 import java.util.*;
-import org.apache.log4j.Logger;
 
 import er.extensions.eof.*;
 import er.extensions.foundation.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("all")
 public abstract class _AuthRecordEO extends  ERXGenericRecord {
@@ -20,6 +22,7 @@ public abstract class _AuthRecordEO extends  ERXGenericRecord {
   public static final ERXKey<String> REALM = new ERXKey<String>("realm");
   public static final ERXKey<NSData> TEMPPASSWORD = new ERXKey<NSData>("temppassword");
   public static final ERXKey<String> USERNAME = new ERXKey<String>("username");
+
   // Relationship Keys
 
   // Attributes
@@ -27,9 +30,10 @@ public abstract class _AuthRecordEO extends  ERXGenericRecord {
   public static final String REALM_KEY = REALM.key();
   public static final String TEMPPASSWORD_KEY = TEMPPASSWORD.key();
   public static final String USERNAME_KEY = USERNAME.key();
+
   // Relationships
 
-  private static Logger LOG = Logger.getLogger(_AuthRecordEO.class);
+  private static final Logger log = LoggerFactory.getLogger(_AuthRecordEO.class);
 
   public AuthRecordEO localInstanceIn(EOEditingContext editingContext) {
     AuthRecordEO localInstance = (AuthRecordEO)EOUtilities.localInstanceOfObject(editingContext, this);
@@ -44,9 +48,7 @@ public abstract class _AuthRecordEO extends  ERXGenericRecord {
   }
 
   public void setPassword(NSData value) {
-    if (_AuthRecordEO.LOG.isDebugEnabled()) {
-    	_AuthRecordEO.LOG.debug( "updating password from " + password() + " to " + value);
-    }
+    log.debug( "updating password from {} to {}", password(), value);
     takeStoredValueForKey(value, _AuthRecordEO.PASSWORD_KEY);
   }
 
@@ -55,9 +57,7 @@ public abstract class _AuthRecordEO extends  ERXGenericRecord {
   }
 
   public void setRealm(String value) {
-    if (_AuthRecordEO.LOG.isDebugEnabled()) {
-    	_AuthRecordEO.LOG.debug( "updating realm from " + realm() + " to " + value);
-    }
+    log.debug( "updating realm from {} to {}", realm(), value);
     takeStoredValueForKey(value, _AuthRecordEO.REALM_KEY);
   }
 
@@ -66,9 +66,7 @@ public abstract class _AuthRecordEO extends  ERXGenericRecord {
   }
 
   public void setTemppassword(NSData value) {
-    if (_AuthRecordEO.LOG.isDebugEnabled()) {
-    	_AuthRecordEO.LOG.debug( "updating temppassword from " + temppassword() + " to " + value);
-    }
+    log.debug( "updating temppassword from {} to {}", temppassword(), value);
     takeStoredValueForKey(value, _AuthRecordEO.TEMPPASSWORD_KEY);
   }
 
@@ -77,9 +75,7 @@ public abstract class _AuthRecordEO extends  ERXGenericRecord {
   }
 
   public void setUsername(String value) {
-    if (_AuthRecordEO.LOG.isDebugEnabled()) {
-    	_AuthRecordEO.LOG.debug( "updating username from " + username() + " to " + value);
-    }
+    log.debug( "updating username from {} to {}", username(), value);
     takeStoredValueForKey(value, _AuthRecordEO.USERNAME_KEY);
   }
 
@@ -88,10 +84,10 @@ public abstract class _AuthRecordEO extends  ERXGenericRecord {
 , String realm
 , String username
 ) {
-    AuthRecordEO eo = (AuthRecordEO) EOUtilities.createAndInsertInstance(editingContext, _AuthRecordEO.ENTITY_NAME);    
-		eo.setPassword(password);
-		eo.setRealm(realm);
-		eo.setUsername(username);
+    AuthRecordEO eo = (AuthRecordEO) EOUtilities.createAndInsertInstance(editingContext, _AuthRecordEO.ENTITY_NAME);
+    eo.setPassword(password);
+    eo.setRealm(realm);
+    eo.setUsername(username);
     return eo;
   }
 
@@ -109,13 +105,12 @@ public abstract class _AuthRecordEO extends  ERXGenericRecord {
 
   public static NSArray<AuthRecordEO> fetchAuthRecords(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
     ERXFetchSpecification<AuthRecordEO> fetchSpec = new ERXFetchSpecification<AuthRecordEO>(_AuthRecordEO.ENTITY_NAME, qualifier, sortOrderings);
-    fetchSpec.setIsDeep(true);
     NSArray<AuthRecordEO> eoObjects = fetchSpec.fetchObjects(editingContext);
     return eoObjects;
   }
 
   public static AuthRecordEO fetchAuthRecord(EOEditingContext editingContext, String keyName, Object value) {
-    return _AuthRecordEO.fetchAuthRecord(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _AuthRecordEO.fetchAuthRecord(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static AuthRecordEO fetchAuthRecord(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -135,7 +130,7 @@ public abstract class _AuthRecordEO extends  ERXGenericRecord {
   }
 
   public static AuthRecordEO fetchRequiredAuthRecord(EOEditingContext editingContext, String keyName, Object value) {
-    return _AuthRecordEO.fetchRequiredAuthRecord(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _AuthRecordEO.fetchRequiredAuthRecord(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static AuthRecordEO fetchRequiredAuthRecord(EOEditingContext editingContext, EOQualifier qualifier) {

@@ -6,10 +6,12 @@ import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
 import java.math.*;
 import java.util.*;
-import org.apache.log4j.Logger;
 
 import er.extensions.eof.*;
 import er.extensions.foundation.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("all")
 public abstract class _PDBPresentation extends  ERXGenericRecord {
@@ -24,6 +26,7 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
   public static final ERXKey<String> METADATA = new ERXKey<String>("metadata");
   public static final ERXKey<Integer> PK = new ERXKey<Integer>("pk");
   public static final ERXKey<String> TITLE = new ERXKey<String>("title");
+
   // Relationship Keys
   public static final ERXKey<org.pachyderm.foundation.eof.PDBScreen> EVERY_SCREEN = new ERXKey<org.pachyderm.foundation.eof.PDBScreen>("everyScreen");
   public static final ERXKey<org.pachyderm.foundation.eof.PDBScreen> PRIME_SCREEN = new ERXKey<org.pachyderm.foundation.eof.PDBScreen>("primeScreen");
@@ -37,11 +40,12 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
   public static final String METADATA_KEY = METADATA.key();
   public static final String PK_KEY = PK.key();
   public static final String TITLE_KEY = TITLE.key();
+
   // Relationships
   public static final String EVERY_SCREEN_KEY = EVERY_SCREEN.key();
   public static final String PRIME_SCREEN_KEY = PRIME_SCREEN.key();
 
-  private static Logger LOG = Logger.getLogger(_PDBPresentation.class);
+  private static final Logger log = LoggerFactory.getLogger(_PDBPresentation.class);
 
   public PDBPresentation localInstanceIn(EOEditingContext editingContext) {
     PDBPresentation localInstance = (PDBPresentation)EOUtilities.localInstanceOfObject(editingContext, this);
@@ -56,9 +60,7 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
   }
 
   public void setAuthor(String value) {
-    if (_PDBPresentation.LOG.isDebugEnabled()) {
-    	_PDBPresentation.LOG.debug( "updating author from " + author() + " to " + value);
-    }
+    log.debug( "updating author from {} to {}", author(), value);
     takeStoredValueForKey(value, _PDBPresentation.AUTHOR_KEY);
   }
 
@@ -67,9 +69,7 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
   }
 
   public void setDateCreated(NSTimestamp value) {
-    if (_PDBPresentation.LOG.isDebugEnabled()) {
-    	_PDBPresentation.LOG.debug( "updating dateCreated from " + dateCreated() + " to " + value);
-    }
+    log.debug( "updating dateCreated from {} to {}", dateCreated(), value);
     takeStoredValueForKey(value, _PDBPresentation.DATE_CREATED_KEY);
   }
 
@@ -78,9 +78,7 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
   }
 
   public void setDateModified(NSTimestamp value) {
-    if (_PDBPresentation.LOG.isDebugEnabled()) {
-    	_PDBPresentation.LOG.debug( "updating dateModified from " + dateModified() + " to " + value);
-    }
+    log.debug( "updating dateModified from {} to {}", dateModified(), value);
     takeStoredValueForKey(value, _PDBPresentation.DATE_MODIFIED_KEY);
   }
 
@@ -89,9 +87,7 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
   }
 
   public void setIdentifier(String value) {
-    if (_PDBPresentation.LOG.isDebugEnabled()) {
-    	_PDBPresentation.LOG.debug( "updating identifier from " + identifier() + " to " + value);
-    }
+    log.debug( "updating identifier from {} to {}", identifier(), value);
     takeStoredValueForKey(value, _PDBPresentation.IDENTIFIER_KEY);
   }
 
@@ -100,9 +96,7 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
   }
 
   public void setLocalizedDescription(org.pachyderm.apollo.core.CXLocalizedValue value) {
-    if (_PDBPresentation.LOG.isDebugEnabled()) {
-    	_PDBPresentation.LOG.debug( "updating localizedDescription from " + localizedDescription() + " to " + value);
-    }
+    log.debug( "updating localizedDescription from {} to {}", localizedDescription(), value);
     takeStoredValueForKey(value, _PDBPresentation.LOCALIZED_DESCRIPTION_KEY);
   }
 
@@ -111,9 +105,7 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
   }
 
   public void setMetadata(String value) {
-    if (_PDBPresentation.LOG.isDebugEnabled()) {
-    	_PDBPresentation.LOG.debug( "updating metadata from " + metadata() + " to " + value);
-    }
+    log.debug( "updating metadata from {} to {}", metadata(), value);
     takeStoredValueForKey(value, _PDBPresentation.METADATA_KEY);
   }
 
@@ -122,9 +114,7 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
   }
 
   public void setPk(Integer value) {
-    if (_PDBPresentation.LOG.isDebugEnabled()) {
-    	_PDBPresentation.LOG.debug( "updating pk from " + pk() + " to " + value);
-    }
+    log.debug( "updating pk from {} to {}", pk(), value);
     takeStoredValueForKey(value, _PDBPresentation.PK_KEY);
   }
 
@@ -133,37 +123,33 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
   }
 
   public void setTitle(String value) {
-    if (_PDBPresentation.LOG.isDebugEnabled()) {
-    	_PDBPresentation.LOG.debug( "updating title from " + title() + " to " + value);
-    }
+    log.debug( "updating title from {} to {}", title(), value);
     takeStoredValueForKey(value, _PDBPresentation.TITLE_KEY);
   }
 
   public org.pachyderm.foundation.eof.PDBScreen primeScreen() {
     return (org.pachyderm.foundation.eof.PDBScreen)storedValueForKey(_PDBPresentation.PRIME_SCREEN_KEY);
   }
-  
+
   public void setPrimeScreen(org.pachyderm.foundation.eof.PDBScreen value) {
     takeStoredValueForKey(value, _PDBPresentation.PRIME_SCREEN_KEY);
   }
 
   public void setPrimeScreenRelationship(org.pachyderm.foundation.eof.PDBScreen value) {
-    if (_PDBPresentation.LOG.isDebugEnabled()) {
-      _PDBPresentation.LOG.debug("updating primeScreen from " + primeScreen() + " to " + value);
-    }
+    log.debug("updating primeScreen from {} to {}", primeScreen(), value);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	setPrimeScreen(value);
+      setPrimeScreen(value);
     }
     else if (value == null) {
-    	org.pachyderm.foundation.eof.PDBScreen oldValue = primeScreen();
-    	if (oldValue != null) {
-    		removeObjectFromBothSidesOfRelationshipWithKey(oldValue, _PDBPresentation.PRIME_SCREEN_KEY);
+      org.pachyderm.foundation.eof.PDBScreen oldValue = primeScreen();
+      if (oldValue != null) {
+        removeObjectFromBothSidesOfRelationshipWithKey(oldValue, _PDBPresentation.PRIME_SCREEN_KEY);
       }
     } else {
-    	addObjectToBothSidesOfRelationshipWithKey(value, _PDBPresentation.PRIME_SCREEN_KEY);
+      addObjectToBothSidesOfRelationshipWithKey(value, _PDBPresentation.PRIME_SCREEN_KEY);
     }
   }
-  
+
   public NSArray<org.pachyderm.foundation.eof.PDBScreen> everyScreen() {
     return (NSArray<org.pachyderm.foundation.eof.PDBScreen>)storedValueForKey(_PDBPresentation.EVERY_SCREEN_KEY);
   }
@@ -180,16 +166,13 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
     NSArray<org.pachyderm.foundation.eof.PDBScreen> results;
     if (fetch) {
       EOQualifier fullQualifier;
-      EOQualifier inverseQualifier = new EOKeyValueQualifier(org.pachyderm.foundation.eof.PDBScreen.PRESENTATION_KEY, EOQualifier.QualifierOperatorEqual, this);
-    	
+      EOQualifier inverseQualifier = ERXQ.equals(org.pachyderm.foundation.eof.PDBScreen.PRESENTATION_KEY, this);
+
       if (qualifier == null) {
         fullQualifier = inverseQualifier;
       }
       else {
-        NSMutableArray<EOQualifier> qualifiers = new NSMutableArray<EOQualifier>();
-        qualifiers.addObject(qualifier);
-        qualifiers.addObject(inverseQualifier);
-        fullQualifier = new EOAndQualifier(qualifiers);
+        fullQualifier = ERXQ.and(qualifier, inverseQualifier);
       }
 
       results = org.pachyderm.foundation.eof.PDBScreen.fetchPDBScreens(editingContext(), fullQualifier, sortOrderings);
@@ -205,7 +188,7 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
     }
     return results;
   }
-  
+
   public void addToEveryScreen(org.pachyderm.foundation.eof.PDBScreen object) {
     includeObjectIntoPropertyWithKey(object, _PDBPresentation.EVERY_SCREEN_KEY);
   }
@@ -215,33 +198,27 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
   }
 
   public void addToEveryScreenRelationship(org.pachyderm.foundation.eof.PDBScreen object) {
-    if (_PDBPresentation.LOG.isDebugEnabled()) {
-      _PDBPresentation.LOG.debug("adding " + object + " to everyScreen relationship");
-    }
+    log.debug("adding {} to everyScreen relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	addToEveryScreen(object);
+      addToEveryScreen(object);
     }
     else {
-    	addObjectToBothSidesOfRelationshipWithKey(object, _PDBPresentation.EVERY_SCREEN_KEY);
+      addObjectToBothSidesOfRelationshipWithKey(object, _PDBPresentation.EVERY_SCREEN_KEY);
     }
   }
 
   public void removeFromEveryScreenRelationship(org.pachyderm.foundation.eof.PDBScreen object) {
-    if (_PDBPresentation.LOG.isDebugEnabled()) {
-      _PDBPresentation.LOG.debug("removing " + object + " from everyScreen relationship");
-    }
+    log.debug("removing {} from everyScreen relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	removeFromEveryScreen(object);
+      removeFromEveryScreen(object);
     }
     else {
-    	removeObjectFromBothSidesOfRelationshipWithKey(object, _PDBPresentation.EVERY_SCREEN_KEY);
+      removeObjectFromBothSidesOfRelationshipWithKey(object, _PDBPresentation.EVERY_SCREEN_KEY);
     }
   }
 
   public org.pachyderm.foundation.eof.PDBScreen createEveryScreenRelationship() {
-    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName( org.pachyderm.foundation.eof.PDBScreen.ENTITY_NAME );
-    EOEnterpriseObject eo = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
-    editingContext().insertObject(eo);
+    EOEnterpriseObject eo = EOUtilities.createAndInsertInstance(editingContext(),  org.pachyderm.foundation.eof.PDBScreen.ENTITY_NAME );
     addObjectToBothSidesOfRelationshipWithKey(eo, _PDBPresentation.EVERY_SCREEN_KEY);
     return (org.pachyderm.foundation.eof.PDBScreen) eo;
   }
@@ -262,9 +239,9 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
   public static PDBPresentation createPDBPresentation(EOEditingContext editingContext, String identifier
 , Integer pk
 , org.pachyderm.foundation.eof.PDBScreen primeScreen) {
-    PDBPresentation eo = (PDBPresentation) EOUtilities.createAndInsertInstance(editingContext, _PDBPresentation.ENTITY_NAME);    
-		eo.setIdentifier(identifier);
-		eo.setPk(pk);
+    PDBPresentation eo = (PDBPresentation) EOUtilities.createAndInsertInstance(editingContext, _PDBPresentation.ENTITY_NAME);
+    eo.setIdentifier(identifier);
+    eo.setPk(pk);
     eo.setPrimeScreenRelationship(primeScreen);
     return eo;
   }
@@ -283,13 +260,12 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
 
   public static NSArray<PDBPresentation> fetchPDBPresentations(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
     ERXFetchSpecification<PDBPresentation> fetchSpec = new ERXFetchSpecification<PDBPresentation>(_PDBPresentation.ENTITY_NAME, qualifier, sortOrderings);
-    fetchSpec.setIsDeep(true);
     NSArray<PDBPresentation> eoObjects = fetchSpec.fetchObjects(editingContext);
     return eoObjects;
   }
 
   public static PDBPresentation fetchPDBPresentation(EOEditingContext editingContext, String keyName, Object value) {
-    return _PDBPresentation.fetchPDBPresentation(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _PDBPresentation.fetchPDBPresentation(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static PDBPresentation fetchPDBPresentation(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -309,7 +285,7 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
   }
 
   public static PDBPresentation fetchRequiredPDBPresentation(EOEditingContext editingContext, String keyName, Object value) {
-    return _PDBPresentation.fetchRequiredPDBPresentation(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _PDBPresentation.fetchRequiredPDBPresentation(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static PDBPresentation fetchRequiredPDBPresentation(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -332,27 +308,27 @@ public abstract class _PDBPresentation extends  ERXGenericRecord {
     fetchSpec = fetchSpec.fetchSpecificationWithQualifierBindings(bindings);
     return (NSArray<org.pachyderm.foundation.eof.PDBPresentation>)editingContext.objectsWithFetchSpecification(fetchSpec);
   }
-  
+
   public static NSArray<org.pachyderm.foundation.eof.PDBPresentation> fetchAllPresentations(EOEditingContext editingContext)
   {
     EOFetchSpecification fetchSpec = EOFetchSpecification.fetchSpecificationNamed("allPresentations", _PDBPresentation.ENTITY_NAME);
     return (NSArray<org.pachyderm.foundation.eof.PDBPresentation>)editingContext.objectsWithFetchSpecification(fetchSpec);
   }
-  
+
   public static NSArray<org.pachyderm.foundation.eof.PDBPresentation> fetchPresentationNamesAndIdentities(EOEditingContext editingContext, NSDictionary<String, Object> bindings) {
     EOFetchSpecification fetchSpec = EOFetchSpecification.fetchSpecificationNamed("presentationNamesAndIdentities", _PDBPresentation.ENTITY_NAME);
     fetchSpec = fetchSpec.fetchSpecificationWithQualifierBindings(bindings);
     return (NSArray<org.pachyderm.foundation.eof.PDBPresentation>)editingContext.objectsWithFetchSpecification(fetchSpec);
   }
-  
+
   public static NSArray<org.pachyderm.foundation.eof.PDBPresentation> fetchPresentationNamesAndIdentities(EOEditingContext editingContext,
-	String authorBinding)
+  String authorBinding)
   {
     EOFetchSpecification fetchSpec = EOFetchSpecification.fetchSpecificationNamed("presentationNamesAndIdentities", _PDBPresentation.ENTITY_NAME);
     NSMutableDictionary<String, Object> bindings = new NSMutableDictionary<String, Object>();
     bindings.takeValueForKey(authorBinding, "author");
-	fetchSpec = fetchSpec.fetchSpecificationWithQualifierBindings(bindings);
+    fetchSpec = fetchSpec.fetchSpecificationWithQualifierBindings(bindings);
     return (NSArray<org.pachyderm.foundation.eof.PDBPresentation>)editingContext.objectsWithFetchSpecification(fetchSpec);
   }
-  
+
 }

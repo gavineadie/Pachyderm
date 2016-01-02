@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# Remember to set JAVA_HOME for ant
+
 if [ -z $1 ]
 then
   PACHYNAME="pachyderm"
@@ -61,7 +63,7 @@ ant -DPACHYNAME=$PACHYNAME -DservletDeployment=$servletDeployment -DwebXML=$webX
 
 # extras ---------------------------------------------------------------------------------
 
-#TODO .. package up the Component and Template descriptions, and the fixed web assets ... 
+#TODO .. package up the Component and Template descriptions, and the fixed web assets ...
 #        store these in the Resources for first-time deployment ...
 
 # rm -f /tmp/p30-web-assets.zip

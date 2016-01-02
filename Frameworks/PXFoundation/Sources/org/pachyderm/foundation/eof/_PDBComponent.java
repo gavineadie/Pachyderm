@@ -6,10 +6,12 @@ import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
 import java.math.*;
 import java.util.*;
-import org.apache.log4j.Logger;
 
 import er.extensions.eof.*;
 import er.extensions.foundation.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("all")
 public abstract class _PDBComponent extends  ERXGenericRecord {
@@ -24,6 +26,7 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
   public static final ERXKey<Integer> PARENT_COMPONENT_ID = new ERXKey<Integer>("parentComponentID");
   public static final ERXKey<Integer> PK = new ERXKey<Integer>("pk");
   public static final ERXKey<String> TITLE = new ERXKey<String>("title");
+
   // Relationship Keys
   public static final ERXKey<org.pachyderm.foundation.eof.PDBComponent> INNER_COMPONENTS = new ERXKey<org.pachyderm.foundation.eof.PDBComponent>("innerComponents");
   public static final ERXKey<org.pachyderm.foundation.eof.PDBComponent> OUTER_COMPONENT = new ERXKey<org.pachyderm.foundation.eof.PDBComponent>("outerComponent");
@@ -37,11 +40,12 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
   public static final String PARENT_COMPONENT_ID_KEY = PARENT_COMPONENT_ID.key();
   public static final String PK_KEY = PK.key();
   public static final String TITLE_KEY = TITLE.key();
+
   // Relationships
   public static final String INNER_COMPONENTS_KEY = INNER_COMPONENTS.key();
   public static final String OUTER_COMPONENT_KEY = OUTER_COMPONENT.key();
 
-  private static Logger LOG = Logger.getLogger(_PDBComponent.class);
+  private static final Logger log = LoggerFactory.getLogger(_PDBComponent.class);
 
   public PDBComponent localInstanceIn(EOEditingContext editingContext) {
     PDBComponent localInstance = (PDBComponent)EOUtilities.localInstanceOfObject(editingContext, this);
@@ -56,9 +60,7 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
   }
 
   public void setBindingValues(org.pachyderm.foundation.PXBindingValues value) {
-    if (_PDBComponent.LOG.isDebugEnabled()) {
-    	_PDBComponent.LOG.debug( "updating bindingValues from " + bindingValues() + " to " + value);
-    }
+    log.debug( "updating bindingValues from {} to {}", bindingValues(), value);
     takeStoredValueForKey(value, _PDBComponent.BINDING_VALUES_KEY);
   }
 
@@ -67,9 +69,7 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
   }
 
   public void setComponentDescriptionClass(String value) {
-    if (_PDBComponent.LOG.isDebugEnabled()) {
-    	_PDBComponent.LOG.debug( "updating componentDescriptionClass from " + componentDescriptionClass() + " to " + value);
-    }
+    log.debug( "updating componentDescriptionClass from {} to {}", componentDescriptionClass(), value);
     takeStoredValueForKey(value, _PDBComponent.COMPONENT_DESCRIPTION_CLASS_KEY);
   }
 
@@ -78,9 +78,7 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
   }
 
   public void setDateCreated(NSTimestamp value) {
-    if (_PDBComponent.LOG.isDebugEnabled()) {
-    	_PDBComponent.LOG.debug( "updating dateCreated from " + dateCreated() + " to " + value);
-    }
+    log.debug( "updating dateCreated from {} to {}", dateCreated(), value);
     takeStoredValueForKey(value, _PDBComponent.DATE_CREATED_KEY);
   }
 
@@ -89,9 +87,7 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
   }
 
   public void setDateModified(NSTimestamp value) {
-    if (_PDBComponent.LOG.isDebugEnabled()) {
-    	_PDBComponent.LOG.debug( "updating dateModified from " + dateModified() + " to " + value);
-    }
+    log.debug( "updating dateModified from {} to {}", dateModified(), value);
     takeStoredValueForKey(value, _PDBComponent.DATE_MODIFIED_KEY);
   }
 
@@ -100,9 +96,7 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
   }
 
   public void setIdentifier(String value) {
-    if (_PDBComponent.LOG.isDebugEnabled()) {
-    	_PDBComponent.LOG.debug( "updating identifier from " + identifier() + " to " + value);
-    }
+    log.debug( "updating identifier from {} to {}", identifier(), value);
     takeStoredValueForKey(value, _PDBComponent.IDENTIFIER_KEY);
   }
 
@@ -111,9 +105,7 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
   }
 
   public void setParentComponentID(Integer value) {
-    if (_PDBComponent.LOG.isDebugEnabled()) {
-    	_PDBComponent.LOG.debug( "updating parentComponentID from " + parentComponentID() + " to " + value);
-    }
+    log.debug( "updating parentComponentID from {} to {}", parentComponentID(), value);
     takeStoredValueForKey(value, _PDBComponent.PARENT_COMPONENT_ID_KEY);
   }
 
@@ -122,9 +114,7 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
   }
 
   public void setPk(Integer value) {
-    if (_PDBComponent.LOG.isDebugEnabled()) {
-    	_PDBComponent.LOG.debug( "updating pk from " + pk() + " to " + value);
-    }
+    log.debug( "updating pk from {} to {}", pk(), value);
     takeStoredValueForKey(value, _PDBComponent.PK_KEY);
   }
 
@@ -133,37 +123,33 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
   }
 
   public void setTitle(String value) {
-    if (_PDBComponent.LOG.isDebugEnabled()) {
-    	_PDBComponent.LOG.debug( "updating title from " + title() + " to " + value);
-    }
+    log.debug( "updating title from {} to {}", title(), value);
     takeStoredValueForKey(value, _PDBComponent.TITLE_KEY);
   }
 
   public org.pachyderm.foundation.eof.PDBComponent outerComponent() {
     return (org.pachyderm.foundation.eof.PDBComponent)storedValueForKey(_PDBComponent.OUTER_COMPONENT_KEY);
   }
-  
+
   public void setOuterComponent(org.pachyderm.foundation.eof.PDBComponent value) {
     takeStoredValueForKey(value, _PDBComponent.OUTER_COMPONENT_KEY);
   }
 
   public void setOuterComponentRelationship(org.pachyderm.foundation.eof.PDBComponent value) {
-    if (_PDBComponent.LOG.isDebugEnabled()) {
-      _PDBComponent.LOG.debug("updating outerComponent from " + outerComponent() + " to " + value);
-    }
+    log.debug("updating outerComponent from {} to {}", outerComponent(), value);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	setOuterComponent(value);
+      setOuterComponent(value);
     }
     else if (value == null) {
-    	org.pachyderm.foundation.eof.PDBComponent oldValue = outerComponent();
-    	if (oldValue != null) {
-    		removeObjectFromBothSidesOfRelationshipWithKey(oldValue, _PDBComponent.OUTER_COMPONENT_KEY);
+      org.pachyderm.foundation.eof.PDBComponent oldValue = outerComponent();
+      if (oldValue != null) {
+        removeObjectFromBothSidesOfRelationshipWithKey(oldValue, _PDBComponent.OUTER_COMPONENT_KEY);
       }
     } else {
-    	addObjectToBothSidesOfRelationshipWithKey(value, _PDBComponent.OUTER_COMPONENT_KEY);
+      addObjectToBothSidesOfRelationshipWithKey(value, _PDBComponent.OUTER_COMPONENT_KEY);
     }
   }
-  
+
   public NSArray<org.pachyderm.foundation.eof.PDBComponent> innerComponents() {
     return (NSArray<org.pachyderm.foundation.eof.PDBComponent>)storedValueForKey(_PDBComponent.INNER_COMPONENTS_KEY);
   }
@@ -180,16 +166,13 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
     NSArray<org.pachyderm.foundation.eof.PDBComponent> results;
     if (fetch) {
       EOQualifier fullQualifier;
-      EOQualifier inverseQualifier = new EOKeyValueQualifier(org.pachyderm.foundation.eof.PDBComponent.OUTER_COMPONENT_KEY, EOQualifier.QualifierOperatorEqual, this);
-    	
+      EOQualifier inverseQualifier = ERXQ.equals(org.pachyderm.foundation.eof.PDBComponent.OUTER_COMPONENT_KEY, this);
+
       if (qualifier == null) {
         fullQualifier = inverseQualifier;
       }
       else {
-        NSMutableArray<EOQualifier> qualifiers = new NSMutableArray<EOQualifier>();
-        qualifiers.addObject(qualifier);
-        qualifiers.addObject(inverseQualifier);
-        fullQualifier = new EOAndQualifier(qualifiers);
+        fullQualifier = ERXQ.and(qualifier, inverseQualifier);
       }
 
       results = org.pachyderm.foundation.eof.PDBComponent.fetchPDBComponents(editingContext(), fullQualifier, sortOrderings);
@@ -205,7 +188,7 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
     }
     return results;
   }
-  
+
   public void addToInnerComponents(org.pachyderm.foundation.eof.PDBComponent object) {
     includeObjectIntoPropertyWithKey(object, _PDBComponent.INNER_COMPONENTS_KEY);
   }
@@ -215,33 +198,27 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
   }
 
   public void addToInnerComponentsRelationship(org.pachyderm.foundation.eof.PDBComponent object) {
-    if (_PDBComponent.LOG.isDebugEnabled()) {
-      _PDBComponent.LOG.debug("adding " + object + " to innerComponents relationship");
-    }
+    log.debug("adding {} to innerComponents relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	addToInnerComponents(object);
+      addToInnerComponents(object);
     }
     else {
-    	addObjectToBothSidesOfRelationshipWithKey(object, _PDBComponent.INNER_COMPONENTS_KEY);
+      addObjectToBothSidesOfRelationshipWithKey(object, _PDBComponent.INNER_COMPONENTS_KEY);
     }
   }
 
   public void removeFromInnerComponentsRelationship(org.pachyderm.foundation.eof.PDBComponent object) {
-    if (_PDBComponent.LOG.isDebugEnabled()) {
-      _PDBComponent.LOG.debug("removing " + object + " from innerComponents relationship");
-    }
+    log.debug("removing {} from innerComponents relationship", object);
     if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-    	removeFromInnerComponents(object);
+      removeFromInnerComponents(object);
     }
     else {
-    	removeObjectFromBothSidesOfRelationshipWithKey(object, _PDBComponent.INNER_COMPONENTS_KEY);
+      removeObjectFromBothSidesOfRelationshipWithKey(object, _PDBComponent.INNER_COMPONENTS_KEY);
     }
   }
 
   public org.pachyderm.foundation.eof.PDBComponent createInnerComponentsRelationship() {
-    EOClassDescription eoClassDesc = EOClassDescription.classDescriptionForEntityName( org.pachyderm.foundation.eof.PDBComponent.ENTITY_NAME );
-    EOEnterpriseObject eo = eoClassDesc.createInstanceWithEditingContext(editingContext(), null);
-    editingContext().insertObject(eo);
+    EOEnterpriseObject eo = EOUtilities.createAndInsertInstance(editingContext(),  org.pachyderm.foundation.eof.PDBComponent.ENTITY_NAME );
     addObjectToBothSidesOfRelationshipWithKey(eo, _PDBComponent.INNER_COMPONENTS_KEY);
     return (org.pachyderm.foundation.eof.PDBComponent) eo;
   }
@@ -264,11 +241,11 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
 , String identifier
 , Integer pk
 ) {
-    PDBComponent eo = (PDBComponent) EOUtilities.createAndInsertInstance(editingContext, _PDBComponent.ENTITY_NAME);    
-		eo.setBindingValues(bindingValues);
-		eo.setComponentDescriptionClass(componentDescriptionClass);
-		eo.setIdentifier(identifier);
-		eo.setPk(pk);
+    PDBComponent eo = (PDBComponent) EOUtilities.createAndInsertInstance(editingContext, _PDBComponent.ENTITY_NAME);
+    eo.setBindingValues(bindingValues);
+    eo.setComponentDescriptionClass(componentDescriptionClass);
+    eo.setIdentifier(identifier);
+    eo.setPk(pk);
     return eo;
   }
 
@@ -286,13 +263,12 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
 
   public static NSArray<PDBComponent> fetchPDBComponents(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
     ERXFetchSpecification<PDBComponent> fetchSpec = new ERXFetchSpecification<PDBComponent>(_PDBComponent.ENTITY_NAME, qualifier, sortOrderings);
-    fetchSpec.setIsDeep(true);
     NSArray<PDBComponent> eoObjects = fetchSpec.fetchObjects(editingContext);
     return eoObjects;
   }
 
   public static PDBComponent fetchPDBComponent(EOEditingContext editingContext, String keyName, Object value) {
-    return _PDBComponent.fetchPDBComponent(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _PDBComponent.fetchPDBComponent(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static PDBComponent fetchPDBComponent(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -312,7 +288,7 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
   }
 
   public static PDBComponent fetchRequiredPDBComponent(EOEditingContext editingContext, String keyName, Object value) {
-    return _PDBComponent.fetchRequiredPDBComponent(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _PDBComponent.fetchRequiredPDBComponent(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static PDBComponent fetchRequiredPDBComponent(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -335,11 +311,11 @@ public abstract class _PDBComponent extends  ERXGenericRecord {
     fetchSpec = fetchSpec.fetchSpecificationWithQualifierBindings(bindings);
     return (NSArray<org.pachyderm.foundation.eof.PDBComponent>)editingContext.objectsWithFetchSpecification(fetchSpec);
   }
-  
+
   public static NSArray<org.pachyderm.foundation.eof.PDBComponent> fetchAllComponents(EOEditingContext editingContext)
   {
     EOFetchSpecification fetchSpec = EOFetchSpecification.fetchSpecificationNamed("allComponents", _PDBComponent.ENTITY_NAME);
     return (NSArray<org.pachyderm.foundation.eof.PDBComponent>)editingContext.objectsWithFetchSpecification(fetchSpec);
   }
-  
+
 }

@@ -6,10 +6,12 @@ import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
 import java.math.*;
 import java.util.*;
-import org.apache.log4j.Logger;
 
 import er.extensions.eof.*;
 import er.extensions.foundation.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("all")
 public abstract class _Invitation extends  ERXGenericRecord {
@@ -21,6 +23,7 @@ public abstract class _Invitation extends  ERXGenericRecord {
   public static final ERXKey<NSTimestamp> DATE_CREATED = new ERXKey<NSTimestamp>("dateCreated");
   public static final ERXKey<Integer> IS_ACTIVATED = new ERXKey<Integer>("isActivated");
   public static final ERXKey<String> KEY = new ERXKey<String>("key");
+
   // Relationship Keys
 
   // Attributes
@@ -29,9 +32,10 @@ public abstract class _Invitation extends  ERXGenericRecord {
   public static final String DATE_CREATED_KEY = DATE_CREATED.key();
   public static final String IS_ACTIVATED_KEY = IS_ACTIVATED.key();
   public static final String KEY_KEY = KEY.key();
+
   // Relationships
 
-  private static Logger LOG = Logger.getLogger(_Invitation.class);
+  private static final Logger log = LoggerFactory.getLogger(_Invitation.class);
 
   public Invitation localInstanceIn(EOEditingContext editingContext) {
     Invitation localInstance = (Invitation)EOUtilities.localInstanceOfObject(editingContext, this);
@@ -46,9 +50,7 @@ public abstract class _Invitation extends  ERXGenericRecord {
   }
 
   public void setActivatedBy(Integer value) {
-    if (_Invitation.LOG.isDebugEnabled()) {
-    	_Invitation.LOG.debug( "updating activatedBy from " + activatedBy() + " to " + value);
-    }
+    log.debug( "updating activatedBy from {} to {}", activatedBy(), value);
     takeStoredValueForKey(value, _Invitation.ACTIVATED_BY_KEY);
   }
 
@@ -57,9 +59,7 @@ public abstract class _Invitation extends  ERXGenericRecord {
   }
 
   public void setCreatedBy(Integer value) {
-    if (_Invitation.LOG.isDebugEnabled()) {
-    	_Invitation.LOG.debug( "updating createdBy from " + createdBy() + " to " + value);
-    }
+    log.debug( "updating createdBy from {} to {}", createdBy(), value);
     takeStoredValueForKey(value, _Invitation.CREATED_BY_KEY);
   }
 
@@ -68,9 +68,7 @@ public abstract class _Invitation extends  ERXGenericRecord {
   }
 
   public void setDateCreated(NSTimestamp value) {
-    if (_Invitation.LOG.isDebugEnabled()) {
-    	_Invitation.LOG.debug( "updating dateCreated from " + dateCreated() + " to " + value);
-    }
+    log.debug( "updating dateCreated from {} to {}", dateCreated(), value);
     takeStoredValueForKey(value, _Invitation.DATE_CREATED_KEY);
   }
 
@@ -79,9 +77,7 @@ public abstract class _Invitation extends  ERXGenericRecord {
   }
 
   public void setIsActivated(Integer value) {
-    if (_Invitation.LOG.isDebugEnabled()) {
-    	_Invitation.LOG.debug( "updating isActivated from " + isActivated() + " to " + value);
-    }
+    log.debug( "updating isActivated from {} to {}", isActivated(), value);
     takeStoredValueForKey(value, _Invitation.IS_ACTIVATED_KEY);
   }
 
@@ -90,15 +86,13 @@ public abstract class _Invitation extends  ERXGenericRecord {
   }
 
   public void setKey(String value) {
-    if (_Invitation.LOG.isDebugEnabled()) {
-    	_Invitation.LOG.debug( "updating key from " + key() + " to " + value);
-    }
+    log.debug( "updating key from {} to {}", key(), value);
     takeStoredValueForKey(value, _Invitation.KEY_KEY);
   }
 
 
   public static Invitation createInvitation(EOEditingContext editingContext) {
-    Invitation eo = (Invitation) EOUtilities.createAndInsertInstance(editingContext, _Invitation.ENTITY_NAME);    
+    Invitation eo = (Invitation) EOUtilities.createAndInsertInstance(editingContext, _Invitation.ENTITY_NAME);
     return eo;
   }
 
@@ -116,13 +110,12 @@ public abstract class _Invitation extends  ERXGenericRecord {
 
   public static NSArray<Invitation> fetchInvitations(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
     ERXFetchSpecification<Invitation> fetchSpec = new ERXFetchSpecification<Invitation>(_Invitation.ENTITY_NAME, qualifier, sortOrderings);
-    fetchSpec.setIsDeep(true);
     NSArray<Invitation> eoObjects = fetchSpec.fetchObjects(editingContext);
     return eoObjects;
   }
 
   public static Invitation fetchInvitation(EOEditingContext editingContext, String keyName, Object value) {
-    return _Invitation.fetchInvitation(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _Invitation.fetchInvitation(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static Invitation fetchInvitation(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -142,7 +135,7 @@ public abstract class _Invitation extends  ERXGenericRecord {
   }
 
   public static Invitation fetchRequiredInvitation(EOEditingContext editingContext, String keyName, Object value) {
-    return _Invitation.fetchRequiredInvitation(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _Invitation.fetchRequiredInvitation(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static Invitation fetchRequiredInvitation(EOEditingContext editingContext, EOQualifier qualifier) {

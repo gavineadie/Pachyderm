@@ -6,10 +6,12 @@ import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
 import java.math.*;
 import java.util.*;
-import org.apache.log4j.Logger;
 
 import er.extensions.eof.*;
 import er.extensions.foundation.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("all")
 public abstract class _AssetDBRecord extends  ERXGenericRecord {
@@ -57,6 +59,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   public static final ERXKey<String> TRANSCRIPT = new ERXKey<String>("transcript");
   public static final ERXKey<String> TYPE = new ERXKey<String>("type");
   public static final ERXKey<String> VALID = new ERXKey<String>("valid");
+
   // Relationship Keys
 
   // Attributes
@@ -101,9 +104,10 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   public static final String TRANSCRIPT_KEY = TRANSCRIPT.key();
   public static final String TYPE_KEY = TYPE.key();
   public static final String VALID_KEY = VALID.key();
+
   // Relationships
 
-  private static Logger LOG = Logger.getLogger(_AssetDBRecord.class);
+  private static final Logger log = LoggerFactory.getLogger(_AssetDBRecord.class);
 
   public AssetDBRecord localInstanceIn(EOEditingContext editingContext) {
     AssetDBRecord localInstance = (AssetDBRecord)EOUtilities.localInstanceOfObject(editingContext, this);
@@ -118,9 +122,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setAccessRights(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating accessRights from " + accessRights() + " to " + value);
-    }
+    log.debug( "updating accessRights from {} to {}", accessRights(), value);
     takeStoredValueForKey(value, _AssetDBRecord.ACCESS_RIGHTS_KEY);
   }
 
@@ -129,9 +131,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setAlternative(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating alternative from " + alternative() + " to " + value);
-    }
+    log.debug( "updating alternative from {} to {}", alternative(), value);
     takeStoredValueForKey(value, _AssetDBRecord.ALTERNATIVE_KEY);
   }
 
@@ -140,9 +140,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setAltText(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating altText from " + altText() + " to " + value);
-    }
+    log.debug( "updating altText from {} to {}", altText(), value);
     takeStoredValueForKey(value, _AssetDBRecord.ALT_TEXT_KEY);
   }
 
@@ -151,9 +149,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setAudience(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating audience from " + audience() + " to " + value);
-    }
+    log.debug( "updating audience from {} to {}", audience(), value);
     takeStoredValueForKey(value, _AssetDBRecord.AUDIENCE_KEY);
   }
 
@@ -162,9 +158,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setContributor(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating contributor from " + contributor() + " to " + value);
-    }
+    log.debug( "updating contributor from {} to {}", contributor(), value);
     takeStoredValueForKey(value, _AssetDBRecord.CONTRIBUTOR_KEY);
   }
 
@@ -173,9 +167,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setCoverage(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating coverage from " + coverage() + " to " + value);
-    }
+    log.debug( "updating coverage from {} to {}", coverage(), value);
     takeStoredValueForKey(value, _AssetDBRecord.COVERAGE_KEY);
   }
 
@@ -184,9 +176,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setCreated(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating created from " + created() + " to " + value);
-    }
+    log.debug( "updating created from {} to {}", created(), value);
     takeStoredValueForKey(value, _AssetDBRecord.CREATED_KEY);
   }
 
@@ -195,9 +185,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setCreator(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating creator from " + creator() + " to " + value);
-    }
+    log.debug( "updating creator from {} to {}", creator(), value);
     takeStoredValueForKey(value, _AssetDBRecord.CREATOR_KEY);
   }
 
@@ -206,9 +194,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setDate(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating date from " + date() + " to " + value);
-    }
+    log.debug( "updating date from {} to {}", date(), value);
     takeStoredValueForKey(value, _AssetDBRecord.DATE_KEY);
   }
 
@@ -217,9 +203,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setDateAccepted(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating dateAccepted from " + dateAccepted() + " to " + value);
-    }
+    log.debug( "updating dateAccepted from {} to {}", dateAccepted(), value);
     takeStoredValueForKey(value, _AssetDBRecord.DATE_ACCEPTED_KEY);
   }
 
@@ -228,9 +212,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setDateCopyrighted(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating dateCopyrighted from " + dateCopyrighted() + " to " + value);
-    }
+    log.debug( "updating dateCopyrighted from {} to {}", dateCopyrighted(), value);
     takeStoredValueForKey(value, _AssetDBRecord.DATE_COPYRIGHTED_KEY);
   }
 
@@ -239,9 +221,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setDateIssued(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating dateIssued from " + dateIssued() + " to " + value);
-    }
+    log.debug( "updating dateIssued from {} to {}", dateIssued(), value);
     takeStoredValueForKey(value, _AssetDBRecord.DATE_ISSUED_KEY);
   }
 
@@ -250,9 +230,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setDateModified(NSTimestamp value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating dateModified from " + dateModified() + " to " + value);
-    }
+    log.debug( "updating dateModified from {} to {}", dateModified(), value);
     takeStoredValueForKey(value, _AssetDBRecord.DATE_MODIFIED_KEY);
   }
 
@@ -261,9 +239,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setDateSubmitted(NSTimestamp value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating dateSubmitted from " + dateSubmitted() + " to " + value);
-    }
+    log.debug( "updating dateSubmitted from {} to {}", dateSubmitted(), value);
     takeStoredValueForKey(value, _AssetDBRecord.DATE_SUBMITTED_KEY);
   }
 
@@ -272,9 +248,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setDescription(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating description from " + description() + " to " + value);
-    }
+    log.debug( "updating description from {} to {}", description(), value);
     takeStoredValueForKey(value, _AssetDBRecord.DESCRIPTION_KEY);
   }
 
@@ -283,9 +257,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setEducationLevel(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating educationLevel from " + educationLevel() + " to " + value);
-    }
+    log.debug( "updating educationLevel from {} to {}", educationLevel(), value);
     takeStoredValueForKey(value, _AssetDBRecord.EDUCATION_LEVEL_KEY);
   }
 
@@ -294,9 +266,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setExtent(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating extent from " + extent() + " to " + value);
-    }
+    log.debug( "updating extent from {} to {}", extent(), value);
     takeStoredValueForKey(value, _AssetDBRecord.EXTENT_KEY);
   }
 
@@ -305,9 +275,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setFormat(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating format from " + format() + " to " + value);
-    }
+    log.debug( "updating format from {} to {}", format(), value);
     takeStoredValueForKey(value, _AssetDBRecord.FORMAT_KEY);
   }
 
@@ -316,9 +284,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setIdentifieruri(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating identifieruri from " + identifieruri() + " to " + value);
-    }
+    log.debug( "updating identifieruri from {} to {}", identifieruri(), value);
     takeStoredValueForKey(value, _AssetDBRecord.IDENTIFIERURI_KEY);
   }
 
@@ -327,9 +293,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setInstructionalMethod(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating instructionalMethod from " + instructionalMethod() + " to " + value);
-    }
+    log.debug( "updating instructionalMethod from {} to {}", instructionalMethod(), value);
     takeStoredValueForKey(value, _AssetDBRecord.INSTRUCTIONAL_METHOD_KEY);
   }
 
@@ -338,9 +302,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setLanguage(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating language from " + language() + " to " + value);
-    }
+    log.debug( "updating language from {} to {}", language(), value);
     takeStoredValueForKey(value, _AssetDBRecord.LANGUAGE_KEY);
   }
 
@@ -349,9 +311,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setLicense(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating license from " + license() + " to " + value);
-    }
+    log.debug( "updating license from {} to {}", license(), value);
     takeStoredValueForKey(value, _AssetDBRecord.LICENSE_KEY);
   }
 
@@ -360,9 +320,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setLocation(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating location from " + location() + " to " + value);
-    }
+    log.debug( "updating location from {} to {}", location(), value);
     takeStoredValueForKey(value, _AssetDBRecord.LOCATION_KEY);
   }
 
@@ -371,9 +329,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setLongDesc(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating longDesc from " + longDesc() + " to " + value);
-    }
+    log.debug( "updating longDesc from {} to {}", longDesc(), value);
     takeStoredValueForKey(value, _AssetDBRecord.LONG_DESC_KEY);
   }
 
@@ -382,9 +338,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setMediaLabel(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating mediaLabel from " + mediaLabel() + " to " + value);
-    }
+    log.debug( "updating mediaLabel from {} to {}", mediaLabel(), value);
     takeStoredValueForKey(value, _AssetDBRecord.MEDIA_LABEL_KEY);
   }
 
@@ -393,9 +347,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setMediator(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating mediator from " + mediator() + " to " + value);
-    }
+    log.debug( "updating mediator from {} to {}", mediator(), value);
     takeStoredValueForKey(value, _AssetDBRecord.MEDIATOR_KEY);
   }
 
@@ -404,9 +356,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setMedium(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating medium from " + medium() + " to " + value);
-    }
+    log.debug( "updating medium from {} to {}", medium(), value);
     takeStoredValueForKey(value, _AssetDBRecord.MEDIUM_KEY);
   }
 
@@ -415,9 +365,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setProvenance(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating provenance from " + provenance() + " to " + value);
-    }
+    log.debug( "updating provenance from {} to {}", provenance(), value);
     takeStoredValueForKey(value, _AssetDBRecord.PROVENANCE_KEY);
   }
 
@@ -426,9 +374,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setPublisher(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating publisher from " + publisher() + " to " + value);
-    }
+    log.debug( "updating publisher from {} to {}", publisher(), value);
     takeStoredValueForKey(value, _AssetDBRecord.PUBLISHER_KEY);
   }
 
@@ -437,9 +383,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setRelation(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating relation from " + relation() + " to " + value);
-    }
+    log.debug( "updating relation from {} to {}", relation(), value);
     takeStoredValueForKey(value, _AssetDBRecord.RELATION_KEY);
   }
 
@@ -448,9 +392,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setRights(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating rights from " + rights() + " to " + value);
-    }
+    log.debug( "updating rights from {} to {}", rights(), value);
     takeStoredValueForKey(value, _AssetDBRecord.RIGHTS_KEY);
   }
 
@@ -459,9 +401,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setRightsHolder(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating rightsHolder from " + rightsHolder() + " to " + value);
-    }
+    log.debug( "updating rightsHolder from {} to {}", rightsHolder(), value);
     takeStoredValueForKey(value, _AssetDBRecord.RIGHTS_HOLDER_KEY);
   }
 
@@ -470,9 +410,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setSource(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating source from " + source() + " to " + value);
-    }
+    log.debug( "updating source from {} to {}", source(), value);
     takeStoredValueForKey(value, _AssetDBRecord.SOURCE_KEY);
   }
 
@@ -481,9 +419,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setSpatial(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating spatial from " + spatial() + " to " + value);
-    }
+    log.debug( "updating spatial from {} to {}", spatial(), value);
     takeStoredValueForKey(value, _AssetDBRecord.SPATIAL_KEY);
   }
 
@@ -492,9 +428,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setSubject(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating subject from " + subject() + " to " + value);
-    }
+    log.debug( "updating subject from {} to {}", subject(), value);
     takeStoredValueForKey(value, _AssetDBRecord.SUBJECT_KEY);
   }
 
@@ -503,9 +437,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setSyncCaption(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating syncCaption from " + syncCaption() + " to " + value);
-    }
+    log.debug( "updating syncCaption from {} to {}", syncCaption(), value);
     takeStoredValueForKey(value, _AssetDBRecord.SYNC_CAPTION_KEY);
   }
 
@@ -514,9 +446,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setTemporal(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating temporal from " + temporal() + " to " + value);
-    }
+    log.debug( "updating temporal from {} to {}", temporal(), value);
     takeStoredValueForKey(value, _AssetDBRecord.TEMPORAL_KEY);
   }
 
@@ -525,9 +455,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setTitle(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating title from " + title() + " to " + value);
-    }
+    log.debug( "updating title from {} to {}", title(), value);
     takeStoredValueForKey(value, _AssetDBRecord.TITLE_KEY);
   }
 
@@ -536,9 +464,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setTranscript(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating transcript from " + transcript() + " to " + value);
-    }
+    log.debug( "updating transcript from {} to {}", transcript(), value);
     takeStoredValueForKey(value, _AssetDBRecord.TRANSCRIPT_KEY);
   }
 
@@ -547,9 +473,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setType(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating type from " + type() + " to " + value);
-    }
+    log.debug( "updating type from {} to {}", type(), value);
     takeStoredValueForKey(value, _AssetDBRecord.TYPE_KEY);
   }
 
@@ -558,17 +482,15 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public void setValid(String value) {
-    if (_AssetDBRecord.LOG.isDebugEnabled()) {
-    	_AssetDBRecord.LOG.debug( "updating valid from " + valid() + " to " + value);
-    }
+    log.debug( "updating valid from {} to {}", valid(), value);
     takeStoredValueForKey(value, _AssetDBRecord.VALID_KEY);
   }
 
 
   public static AssetDBRecord createPXMetadata(EOEditingContext editingContext, String format
 ) {
-    AssetDBRecord eo = (AssetDBRecord) EOUtilities.createAndInsertInstance(editingContext, _AssetDBRecord.ENTITY_NAME);    
-		eo.setFormat(format);
+    AssetDBRecord eo = (AssetDBRecord) EOUtilities.createAndInsertInstance(editingContext, _AssetDBRecord.ENTITY_NAME);
+    eo.setFormat(format);
     return eo;
   }
 
@@ -586,13 +508,12 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
 
   public static NSArray<AssetDBRecord> fetchPXMetadatas(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
     ERXFetchSpecification<AssetDBRecord> fetchSpec = new ERXFetchSpecification<AssetDBRecord>(_AssetDBRecord.ENTITY_NAME, qualifier, sortOrderings);
-    fetchSpec.setIsDeep(true);
     NSArray<AssetDBRecord> eoObjects = fetchSpec.fetchObjects(editingContext);
     return eoObjects;
   }
 
   public static AssetDBRecord fetchPXMetadata(EOEditingContext editingContext, String keyName, Object value) {
-    return _AssetDBRecord.fetchPXMetadata(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _AssetDBRecord.fetchPXMetadata(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static AssetDBRecord fetchPXMetadata(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -612,7 +533,7 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
   }
 
   public static AssetDBRecord fetchRequiredPXMetadata(EOEditingContext editingContext, String keyName, Object value) {
-    return _AssetDBRecord.fetchRequiredPXMetadata(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _AssetDBRecord.fetchRequiredPXMetadata(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static AssetDBRecord fetchRequiredPXMetadata(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -635,27 +556,27 @@ public abstract class _AssetDBRecord extends  ERXGenericRecord {
     fetchSpec = fetchSpec.fetchSpecificationWithQualifierBindings(bindings);
     return (NSArray<org.pachyderm.assetdb.eof.AssetDBRecord>)editingContext.objectsWithFetchSpecification(fetchSpec);
   }
-  
+
   public static NSArray<org.pachyderm.assetdb.eof.AssetDBRecord> fetchAllAssets(EOEditingContext editingContext)
   {
     EOFetchSpecification fetchSpec = EOFetchSpecification.fetchSpecificationNamed("allAssets", _AssetDBRecord.ENTITY_NAME);
     return (NSArray<org.pachyderm.assetdb.eof.AssetDBRecord>)editingContext.objectsWithFetchSpecification(fetchSpec);
   }
-  
+
   public static NSArray<org.pachyderm.assetdb.eof.AssetDBRecord> fetchSimplesearch(EOEditingContext editingContext, NSDictionary<String, Object> bindings) {
     EOFetchSpecification fetchSpec = EOFetchSpecification.fetchSpecificationNamed("simplesearch", _AssetDBRecord.ENTITY_NAME);
     fetchSpec = fetchSpec.fetchSpecificationWithQualifierBindings(bindings);
     return (NSArray<org.pachyderm.assetdb.eof.AssetDBRecord>)editingContext.objectsWithFetchSpecification(fetchSpec);
   }
-  
+
   public static NSArray<org.pachyderm.assetdb.eof.AssetDBRecord> fetchSimplesearch(EOEditingContext editingContext,
-	String termBinding)
+  String termBinding)
   {
     EOFetchSpecification fetchSpec = EOFetchSpecification.fetchSpecificationNamed("simplesearch", _AssetDBRecord.ENTITY_NAME);
     NSMutableDictionary<String, Object> bindings = new NSMutableDictionary<String, Object>();
     bindings.takeValueForKey(termBinding, "term");
-	fetchSpec = fetchSpec.fetchSpecificationWithQualifierBindings(bindings);
+    fetchSpec = fetchSpec.fetchSpecificationWithQualifierBindings(bindings);
     return (NSArray<org.pachyderm.assetdb.eof.AssetDBRecord>)editingContext.objectsWithFetchSpecification(fetchSpec);
   }
-  
+
 }

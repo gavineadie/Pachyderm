@@ -10,3 +10,6 @@ Icon?
 
 
 # Eclipse
+**/bin/*
+builder.Properties
+Ramsay-Mobile.Properties

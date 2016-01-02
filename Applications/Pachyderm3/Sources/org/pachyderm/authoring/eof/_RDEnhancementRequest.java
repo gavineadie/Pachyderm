@@ -6,10 +6,12 @@ import com.webobjects.eocontrol.*;
 import com.webobjects.foundation.*;
 import java.math.*;
 import java.util.*;
-import org.apache.log4j.Logger;
 
 import er.extensions.eof.*;
 import er.extensions.foundation.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("all")
 public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
@@ -26,6 +28,7 @@ public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
   public static final ERXKey<String> REQUEST_SUMMARY = new ERXKey<String>("requestSummary");
   public static final ERXKey<String> REQUEST_TITLE = new ERXKey<String>("requestTitle");
   public static final ERXKey<String> WEB_BROWSER = new ERXKey<String>("webBrowser");
+
   // Relationship Keys
 
   // Attributes
@@ -39,9 +42,10 @@ public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
   public static final String REQUEST_SUMMARY_KEY = REQUEST_SUMMARY.key();
   public static final String REQUEST_TITLE_KEY = REQUEST_TITLE.key();
   public static final String WEB_BROWSER_KEY = WEB_BROWSER.key();
+
   // Relationships
 
-  private static Logger LOG = Logger.getLogger(_RDEnhancementRequest.class);
+  private static final Logger log = LoggerFactory.getLogger(_RDEnhancementRequest.class);
 
   public RDEnhancementRequest localInstanceIn(EOEditingContext editingContext) {
     RDEnhancementRequest localInstance = (RDEnhancementRequest)EOUtilities.localInstanceOfObject(editingContext, this);
@@ -56,9 +60,7 @@ public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
   }
 
   public void setApplicationState(String value) {
-    if (_RDEnhancementRequest.LOG.isDebugEnabled()) {
-    	_RDEnhancementRequest.LOG.debug( "updating applicationState from " + applicationState() + " to " + value);
-    }
+    log.debug( "updating applicationState from {} to {}", applicationState(), value);
     takeStoredValueForKey(value, _RDEnhancementRequest.APPLICATION_STATE_KEY);
   }
 
@@ -67,9 +69,7 @@ public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
   }
 
   public void setAssistiveDevices(Integer value) {
-    if (_RDEnhancementRequest.LOG.isDebugEnabled()) {
-    	_RDEnhancementRequest.LOG.debug( "updating assistiveDevices from " + assistiveDevices() + " to " + value);
-    }
+    log.debug( "updating assistiveDevices from {} to {}", assistiveDevices(), value);
     takeStoredValueForKey(value, _RDEnhancementRequest.ASSISTIVE_DEVICES_KEY);
   }
 
@@ -78,9 +78,7 @@ public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
   }
 
   public void setComputerPrimaryUse(String value) {
-    if (_RDEnhancementRequest.LOG.isDebugEnabled()) {
-    	_RDEnhancementRequest.LOG.debug( "updating computerPrimaryUse from " + computerPrimaryUse() + " to " + value);
-    }
+    log.debug( "updating computerPrimaryUse from {} to {}", computerPrimaryUse(), value);
     takeStoredValueForKey(value, _RDEnhancementRequest.COMPUTER_PRIMARY_USE_KEY);
   }
 
@@ -89,9 +87,7 @@ public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
   }
 
   public void setContributorIdentity(String value) {
-    if (_RDEnhancementRequest.LOG.isDebugEnabled()) {
-    	_RDEnhancementRequest.LOG.debug( "updating contributorIdentity from " + contributorIdentity() + " to " + value);
-    }
+    log.debug( "updating contributorIdentity from {} to {}", contributorIdentity(), value);
     takeStoredValueForKey(value, _RDEnhancementRequest.CONTRIBUTOR_IDENTITY_KEY);
   }
 
@@ -100,9 +96,7 @@ public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
   }
 
   public void setDateCreated(NSTimestamp value) {
-    if (_RDEnhancementRequest.LOG.isDebugEnabled()) {
-    	_RDEnhancementRequest.LOG.debug( "updating dateCreated from " + dateCreated() + " to " + value);
-    }
+    log.debug( "updating dateCreated from {} to {}", dateCreated(), value);
     takeStoredValueForKey(value, _RDEnhancementRequest.DATE_CREATED_KEY);
   }
 
@@ -111,9 +105,7 @@ public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
   }
 
   public void setNetworkConnection(String value) {
-    if (_RDEnhancementRequest.LOG.isDebugEnabled()) {
-    	_RDEnhancementRequest.LOG.debug( "updating networkConnection from " + networkConnection() + " to " + value);
-    }
+    log.debug( "updating networkConnection from {} to {}", networkConnection(), value);
     takeStoredValueForKey(value, _RDEnhancementRequest.NETWORK_CONNECTION_KEY);
   }
 
@@ -122,9 +114,7 @@ public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
   }
 
   public void setOperatingSystem(String value) {
-    if (_RDEnhancementRequest.LOG.isDebugEnabled()) {
-    	_RDEnhancementRequest.LOG.debug( "updating operatingSystem from " + operatingSystem() + " to " + value);
-    }
+    log.debug( "updating operatingSystem from {} to {}", operatingSystem(), value);
     takeStoredValueForKey(value, _RDEnhancementRequest.OPERATING_SYSTEM_KEY);
   }
 
@@ -133,9 +123,7 @@ public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
   }
 
   public void setRequestSummary(String value) {
-    if (_RDEnhancementRequest.LOG.isDebugEnabled()) {
-    	_RDEnhancementRequest.LOG.debug( "updating requestSummary from " + requestSummary() + " to " + value);
-    }
+    log.debug( "updating requestSummary from {} to {}", requestSummary(), value);
     takeStoredValueForKey(value, _RDEnhancementRequest.REQUEST_SUMMARY_KEY);
   }
 
@@ -144,9 +132,7 @@ public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
   }
 
   public void setRequestTitle(String value) {
-    if (_RDEnhancementRequest.LOG.isDebugEnabled()) {
-    	_RDEnhancementRequest.LOG.debug( "updating requestTitle from " + requestTitle() + " to " + value);
-    }
+    log.debug( "updating requestTitle from {} to {}", requestTitle(), value);
     takeStoredValueForKey(value, _RDEnhancementRequest.REQUEST_TITLE_KEY);
   }
 
@@ -155,15 +141,13 @@ public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
   }
 
   public void setWebBrowser(String value) {
-    if (_RDEnhancementRequest.LOG.isDebugEnabled()) {
-    	_RDEnhancementRequest.LOG.debug( "updating webBrowser from " + webBrowser() + " to " + value);
-    }
+    log.debug( "updating webBrowser from {} to {}", webBrowser(), value);
     takeStoredValueForKey(value, _RDEnhancementRequest.WEB_BROWSER_KEY);
   }
 
 
   public static RDEnhancementRequest createRDEnhancementRequest(EOEditingContext editingContext) {
-    RDEnhancementRequest eo = (RDEnhancementRequest) EOUtilities.createAndInsertInstance(editingContext, _RDEnhancementRequest.ENTITY_NAME);    
+    RDEnhancementRequest eo = (RDEnhancementRequest) EOUtilities.createAndInsertInstance(editingContext, _RDEnhancementRequest.ENTITY_NAME);
     return eo;
   }
 
@@ -181,13 +165,12 @@ public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
 
   public static NSArray<RDEnhancementRequest> fetchRDEnhancementRequests(EOEditingContext editingContext, EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
     ERXFetchSpecification<RDEnhancementRequest> fetchSpec = new ERXFetchSpecification<RDEnhancementRequest>(_RDEnhancementRequest.ENTITY_NAME, qualifier, sortOrderings);
-    fetchSpec.setIsDeep(true);
     NSArray<RDEnhancementRequest> eoObjects = fetchSpec.fetchObjects(editingContext);
     return eoObjects;
   }
 
   public static RDEnhancementRequest fetchRDEnhancementRequest(EOEditingContext editingContext, String keyName, Object value) {
-    return _RDEnhancementRequest.fetchRDEnhancementRequest(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _RDEnhancementRequest.fetchRDEnhancementRequest(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static RDEnhancementRequest fetchRDEnhancementRequest(EOEditingContext editingContext, EOQualifier qualifier) {
@@ -207,7 +190,7 @@ public abstract class _RDEnhancementRequest extends  ERXGenericRecord {
   }
 
   public static RDEnhancementRequest fetchRequiredRDEnhancementRequest(EOEditingContext editingContext, String keyName, Object value) {
-    return _RDEnhancementRequest.fetchRequiredRDEnhancementRequest(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    return _RDEnhancementRequest.fetchRequiredRDEnhancementRequest(editingContext, ERXQ.equals(keyName, value));
   }
 
   public static RDEnhancementRequest fetchRequiredRDEnhancementRequest(EOEditingContext editingContext, EOQualifier qualifier) {
