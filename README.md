@@ -45,10 +45,12 @@ any practical way (ie: they are actively using SourceForge), we'll
 negotiate and/or compromise all the good of all.
 
 ____
+(Jan03/16)
 
 Anyone who wants to explore this application will need to climb a bit of
 a learning curve.  At this point, it is assumed that the explorer is
 familiar with WebObjects (a very powerful Apple, originally NeXT, Java
 library on which enterprise web applications have been built), and the
 Wonder project, a major Open Source enhancement of WebObjects, which is
-under active development.
+under active development.  Pachyderm uses Wonder 7 and, therefore, needs
+Java 8.
