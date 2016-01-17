@@ -33,7 +33,7 @@ go to SourceForge for your masochistic reading pleasure!
 
 I note, again, that this first commit should be avoided.  It is a
 wholesale transfer of the most recent SourceForge version checked out to
-my development laptop.  Once it's all on GutHub, I will check it out
+my development laptop.  Once it's all on GitHub, I will check it out
 from there, rebuild it and make any necessary corrections. When that is
 done, I will edit this `README.md` to reflect that progress.
 
@@ -53,4 +53,4 @@ familiar with WebObjects (a very powerful Apple, originally NeXT, Java
 library on which enterprise web applications have been built), and the
 Wonder project, a major Open Source enhancement of WebObjects, which is
 under active development.  Pachyderm uses Wonder 7 and, therefore, needs
-Java 8.
+Java 7.
