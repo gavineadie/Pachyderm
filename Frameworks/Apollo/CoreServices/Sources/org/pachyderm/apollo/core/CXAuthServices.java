@@ -40,11 +40,11 @@ public class CXAuthServices {
     // gather authenticators ...
 
     NSArray<Class<?>> clazzes = CoreServices.kindOfClassInBundles(CXAuthenticator.class,
-        new NSArray<String>("AppServices", "CoreServices", "AssetDBSupport", "DataServices", 
+        new NSArray<String>(new String[] {"AppServices", "CoreServices", "AssetDBSupport", "DataServices", 
             "MySQLPlugIn", "PXFoundation", "ERExtensions", "ERJars", "Ajax", "ERJavaMail", 
             "JavaDirectToWeb", "JavaDTWGeneration", "JavaEOAccess", "JavaEOControl", 
             "JavaEOProject", "JavaFoundation", "JavaJDBCAdaptor", "JavaWebObjects", "JavaXML",
-            "JavaWebServicesSupport", "JavaWOExtensions", "JavaWOJSPServlet"));
+            "JavaWebServicesSupport", "JavaWOExtensions", "JavaWOJSPServlet"}));
     
       for (Class<?> clazz : clazzes) {
         try {

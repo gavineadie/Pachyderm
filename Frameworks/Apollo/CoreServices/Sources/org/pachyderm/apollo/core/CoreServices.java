@@ -79,8 +79,8 @@ public final class CoreServices {
     DEFAULT_LANGUAGE_ARRAY = new NSArray<String>(Locale.getDefault().getDisplayLanguage());
 
     //------------------------------------------------------------------------------------------------
-    NSArray.setOperatorForKey("first", new NSArrayOperatorAdditions.FirstOperator());
-    NSArray.setOperatorForKey("last", new NSArrayOperatorAdditions.LastOperator());
+//    NSArray.setOperatorForKey("first", new NSArrayOperatorAdditions.FirstOperator());
+//    NSArray.setOperatorForKey("last", new NSArrayOperatorAdditions.LastOperator());
 
     //------------------------------------------------------------------------------------------------
     Observer observer = new Observer();

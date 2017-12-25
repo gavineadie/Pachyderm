@@ -13,30 +13,30 @@ import com.webobjects.foundation.NSKeyValueCodingAdditions;
 
 public class NSArrayOperatorAdditions {
 	
-	public static class FirstOperator implements NSArray.Operator {
+	static abstract class FirstOperator implements NSArray.Operator {
 	
-		public Object compute(NSArray<?> values, String keyPath) {
+		public Object compute(NSArray values, String keyPath) {
 			if (values.count() == 0) {
 				return null;
 			}
 			
 			if (keyPath != null && keyPath.length() > 0)
 				return NSKeyValueCodingAdditions.Utility.valueForKeyPath(values.objectAtIndex(0), keyPath);
-      return values.objectAtIndex(0);
+			return values.objectAtIndex(0);
 		}
 		
 	}
 	
-	public static class LastOperator implements NSArray.Operator {
+	static abstract class LastOperator implements NSArray.Operator {
 		
-		public Object compute(NSArray<?> values, String keyPath) {
+		public Object compute(NSArray values, String keyPath) {
 			if (values.count() == 0) {
 				return null;
 			}
 			
 			if (keyPath != null && keyPath.length() > 0)
 				return NSKeyValueCodingAdditions.Utility.valueForKeyPath(values.lastObject(), keyPath);
-      return values.lastObject();
+			return values.lastObject();
 		}
 		
 	}

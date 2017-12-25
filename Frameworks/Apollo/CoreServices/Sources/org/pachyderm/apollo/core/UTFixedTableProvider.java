@@ -21,7 +21,7 @@ public class UTFixedTableProvider implements UTProvider {
    *  implementation of abstract class methods ...
    *------------------------------------------------------------------------------------------------*/
   public NSArray<String> allIdentifiersForTag(String tagClass, String tag, String conformingToUTI) {
-    NSArray<String>   result = new NSArray<String>("YYYY", "ZZZZ");
+    NSArray<String>   result = new NSArray<String>(new String[] {"YYYY", "ZZZZ"});
     LOG.trace("allIdentifiersForTag(" + tagClass + ", " + tag + ", " + conformingToUTI + ") --> " + result);
     return result;
   }
